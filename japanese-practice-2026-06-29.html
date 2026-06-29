@@ -3,217 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>日本語練習 — 2026-06-28</title>
+<title>日本語練習 — 2026-06-29</title>
 <style>
-  :root {
-    --bg: #1a1a2e;
-    --card: #16213e;
-    --accent: #e94560;
-    --text: #eaeaea;
-    --muted: #888;
-    --tooltip-bg: #0f3460;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Hiragino Sans', 'Meiryo', 'Yu Gothic', sans-serif;
-    padding: 16px;
-    max-width: 720px;
-    margin: 0 auto;
-    line-height: 2.6;
-    font-size: 20px;
-  }
-  h1 { text-align: center; color: var(--accent); margin: 24px 0 6px; font-size: 1.4em; }
-  .date { text-align: center; color: var(--muted); font-size: 0.8em; margin-bottom: 28px; }
-  .card {
-    background: var(--card);
-    border-radius: 14px;
-    padding: 22px 20px;
-    margin-bottom: 22px;
-    border-left: 4px solid var(--accent);
-  }
-  .card-title {
-    color: var(--accent);
-    font-size: 0.75em;
-    margin-bottom: 14px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.9;
-  }
-  ruby rt { font-size: 0.5em; color: #9ab; }
-  .word {
-    cursor: pointer;
-    border-bottom: 1.5px dotted #444;
-    transition: border-color 0.15s, color 0.15s;
-  }
-  .word:hover, .word.active {
-    border-bottom-color: var(--accent);
-    color: #fff;
-  }
-  .tooltip {
-    display: none;
-    position: fixed;
-    background: var(--tooltip-bg);
-    color: #fff;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 0.75em;
-    font-family: -apple-system, sans-serif;
-    max-width: 240px;
-    z-index: 9999;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.6);
-    border: 1px solid var(--accent);
-    pointer-events: none;
-    line-height: 1.4;
-  }
-  .tooltip.visible { display: block; }
-  h2 { color: var(--accent); margin: 32px 0 14px; font-size: 1em; letter-spacing: 0.1em; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.82em; font-family: -apple-system, sans-serif; }
-  th { background: #0f3460; padding: 10px 12px; text-align: left; color: #aab; font-weight: normal; }
-  td { padding: 9px 12px; border-bottom: 1px solid #252545; }
-  td:first-child { font-size: 1.05em; font-family: 'Hiragino Sans', 'Meiryo', sans-serif; }
-  td:nth-child(2) { color: #9ab; }
-  tr:hover td { background: #1c1c3a; }
-  .grammar-note { margin-top: 8px; font-size: 0.68em; color: #667; font-family: -apple-system, sans-serif; letter-spacing: 0.05em; }
+  :root { --bg:#1a1a2e; --card:#16213e; --accent:#e94560; --text:#eaeaea; --muted:#888; --tip-bg:#0f3460; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--text); font-family:'Hiragino Sans','Meiryo','Yu Gothic',sans-serif; padding:16px 16px 80px; max-width:720px; margin:0 auto; line-height:2.8; font-size:20px; }
+  h1 { text-align:center; color:var(--accent); margin:24px 0 6px; font-size:1.3em; }
+  .date { text-align:center; color:var(--muted); font-size:0.8em; margin-bottom:28px; }
+  .card { background:var(--card); border-radius:14px; padding:22px 18px; margin-bottom:22px; border-left:4px solid var(--accent); }
+  .card-title { color:var(--accent); font-size:0.72em; margin-bottom:14px; letter-spacing:.08em; text-transform:uppercase; }
+  ruby rt { font-size:.48em; color:#8ab; }
+  button.w { display:inline; background:none; border:none; border-bottom:1.5px dotted #556; color:inherit; font:inherit; font-size:1em; padding:0; margin:0; cursor:pointer; line-height:inherit; -webkit-tap-highlight-color:rgba(233,69,96,.2); }
+  button.w.on { border-bottom-color:var(--accent); color:#fff; }
+  #tip { display:none; position:fixed; background:var(--tip-bg); color:#fff; padding:8px 14px; border-radius:8px; font-size:.75em; font-family:-apple-system,sans-serif; z-index:9999; box-shadow:0 4px 20px rgba(0,0,0,.8); border:1px solid var(--accent); pointer-events:none; line-height:1.4; text-align:center; }
+  #tip.on { display:block; }
+  #tip::after { content:''; position:absolute; left:var(--ax,50%); transform:translateX(-50%); border:6px solid transparent; }
+  #tip.up::after { bottom:100%; border-bottom-color:var(--accent); }
+  #tip.dn::after { top:100%; border-top-color:var(--accent); }
+  .gnote { margin-top:10px; font-size:.65em; color:#557; font-family:-apple-system,sans-serif; }
+  h2 { color:var(--accent); margin:32px 0 12px; font-size:.95em; letter-spacing:.1em; }
+  table { width:100%; border-collapse:collapse; font-size:.8em; font-family:-apple-system,sans-serif; }
+  th { background:#0f3460; padding:9px 10px; text-align:left; color:#aab; font-weight:normal; }
+  td { padding:8px 10px; border-bottom:1px solid #222240; }
+  td:first-child { font-size:1.1em; font-family:'Hiragino Sans','Meiryo',sans-serif; }
+  td:nth-child(2) { color:#8ab; }
 </style>
 </head>
 <body>
-
 <h1>日本語練習</h1>
-<div class="date">2026年6月28日</div>
+<div class="date">2026年6月29日</div>
 
 <div class="card">
-  <div class="card-title">① ダブリンのサイクリング</div>
-  <p>
-    <span class="word" data-en="Dublin">ダブリン</span>で
-    <span class="word" data-en="bicycle"><ruby>自転車<rt>じてんしゃ</rt></ruby></span>に
-    <span class="word" data-en="to ride"><ruby>乗<rt>の</rt></ruby>る</span>のは、なかなか
-    <span class="word" data-en="tough / demanding"><ruby>大変<rt>たいへん</rt></ruby></span>です。<br>
-    <span class="word" data-en="work"><ruby>仕事<rt>しごと</rt></ruby></span>が
-    <span class="word" data-en="to finish"><ruby>終<rt>お</rt></ruby>わって</span>から、よく
-    <span class="word" data-en="river"><ruby>川<rt>かわ</rt></ruby></span>のそばを
-    <span class="word" data-en="to run"><ruby>走<rt>はし</rt></ruby>ります</span>。<br>
-    <span class="word" data-en="rain"><ruby>雨<rt>あめ</rt></ruby></span>が
-    <span class="word" data-en="is falling"><ruby>降<rt>ふ</rt></ruby>っている</span>のに、
-    <span class="word" data-en="want to run"><ruby>走<rt>はし</rt></ruby>りたい</span>
-    <span class="word" data-en="feeling"><ruby>気持<rt>きも</rt></ruby>ち</span>は
-    <span class="word" data-en="does not disappear"><ruby>消<rt>き</rt></ruby>えません</span>。<br>
-    <span class="word" data-en="at first"><ruby>最初<rt>さいしょ</rt></ruby></span>は
-    <span class="word" data-en="every day"><ruby>毎日<rt>まいにち</rt></ruby></span>
-    <span class="word" data-en="I'll run (intention)"><ruby>走<rt>はし</rt></ruby>ろう</span>と
-    <span class="word" data-en="was thinking"><ruby>思<rt>おも</rt></ruby>っていました</span>が、
-    つい<span class="word" data-en="ended up forgetting (〜てしまう)"><ruby>忘<rt>わす</rt></ruby>れてしまいます</span>。<br>
-    でも、<span class="word" data-en="after running"><ruby>走<rt>はし</rt></ruby>ったあと</span>は とても
-    <span class="word" data-en="feels great"><ruby>気持<rt>きも</rt></ruby>ちいい</span>ので、
-    <span class="word" data-en="can't quit">やめられません</span>。
-  </p>
-  <div class="grammar-note">〜てから ／ 〜のに ／ 〜てしまう</div>
+<div class="card-title">① ダブリンのサイクリング</div>
+<p>
+<button class="w" data-en="Dublin">ダブリン</button><button class="w" data-en="in / at (location particle)">で</button>
+<button class="w" data-en="bicycle"><ruby>自転車<rt>じてんしゃ</rt></ruby></button><button class="w" data-en="to ride (に乗る)">に <ruby>乗<rt>の</rt></ruby>る</button>のは、
+<button class="w" data-en="not easily / just can't quite">なかなか</button>
+<button class="w" data-en="tough / demanding"><ruby>大変<rt>たいへん</rt></ruby></button>です。<br>
+<button class="w" data-en="work"><ruby>仕事<rt>しごと</rt></ruby></button><button class="w" data-en="subject particle">が</button>
+<button class="w" data-en="to finish"><ruby>終<rt>お</rt></ruby>わって</button><button class="w" data-en="〜てから: after doing / since doing">から</button>、
+<button class="w" data-en="often">よく</button>
+<button class="w" data-en="river"><ruby>川<rt>かわ</rt></ruby></button><button class="w" data-en="beside / nearby">のそば</button><button class="w" data-en="along / object particle">を</button>
+<button class="w" data-en="to run"><ruby>走<rt>はし</rt></ruby>ります</button>。<br>
+<button class="w" data-en="rain"><ruby>雨<rt>あめ</rt></ruby></button><button class="w" data-en="subject particle">が</button>
+<button class="w" data-en="is falling"><ruby>降<rt>ふ</rt></ruby>っている</button><button class="w" data-en="〜のに: even though / despite">のに</button>、
+<button class="w" data-en="want to run"><ruby>走<rt>はし</rt></ruby>りたい</button>
+<button class="w" data-en="feeling / urge"><ruby>気持<rt>きも</rt></ruby>ち</button><button class="w" data-en="topic particle">は</button>
+<button class="w" data-en="does not disappear"><ruby>消<rt>き</rt></ruby>えません</button>。<br>
+<button class="w" data-en="at first"><ruby>最初<rt>さいしょ</rt></ruby></button><button class="w" data-en="topic particle">は</button>
+<button class="w" data-en="every day"><ruby>毎日<rt>まいにち</rt></ruby></button>
+<button class="w" data-en="I'll run (volitional)"><ruby>走<rt>はし</rt></ruby>ろう</button><button class="w" data-en="quotation particle と + thought verb">と</button>
+<button class="w" data-en="was thinking"><ruby>思<rt>おも</rt></ruby>っていました</button><button class="w" data-en="but / however">が</button>、
+<button class="w" data-en="inadvertently / before I realise">つい</button>
+<button class="w" data-en="ended up forgetting (〜てしまう: regret)"><ruby>忘<rt>わす</rt></ruby>れてしまいます</button>。<br>
+でも、<button class="w" data-en="after running"><ruby>走<rt>はし</rt></ruby>ったあと</button><button class="w" data-en="topic particle">は</button>
+<button class="w" data-en="very">とても</button>
+<button class="w" data-en="feels great"><ruby>気持<rt>きも</rt></ruby>ちいい</button><button class="w" data-en="so / because">ので</button>、
+<button class="w" data-en="can't quit">やめられません</button>。
+</p>
+<div class="gnote">〜てから ／ 〜のに ／ 〜てしまう</div>
 </div>
 
 <div class="card">
-  <div class="card-title">② ナルトの<ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>で</rt></ruby></div>
-  <p>
-    ナルトを<span class="word" data-en="every time I watch (〜たびに)"><ruby>見<rt>み</rt></ruby>るたびに</span>、
-    <span class="word" data-en="friend(s)"><ruby>友達<rt>ともだち</rt></ruby></span>のことを
-    <span class="word" data-en="to recall / be reminded of"><ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>だ</rt></ruby>します</span>。<br>
-    むかし、ウクライナに<span class="word" data-en="when I was living there"><ruby>住<rt>す</rt></ruby>んでいたころ</span>、
-    <span class="word" data-en="together"><ruby>一緒<rt>いっしょ</rt></ruby></span>に
-    アニメを<span class="word" data-en="used to watch"><ruby>見<rt>み</rt></ruby>ていました</span>。<br>
-    <span class="word" data-en="at night"><ruby>夜<rt>よる</rt></ruby></span>、
-    ごはんを<span class="word" data-en="while eating (〜ながら)"><ruby>食<rt>た</rt></ruby>べながら</span>
-    <span class="word" data-en="next episode"><ruby>続<rt>つづ</rt></ruby>き</span>を<span class="word" data-en="watched"><ruby>見<rt>み</rt></ruby>て</span>、
-    いつのまにか<span class="word" data-en="morning"><ruby>朝<rt>あさ</rt></ruby></span>に
-    <span class="word" data-en="before I knew it (〜てしまう)">なってしまいました</span>。<br>
-    <span class="word" data-en="even now"><ruby>今<rt>いま</rt></ruby>でも</span>
-    <span class="word" data-en="favourite scenes"><ruby>好<rt>す</rt></ruby>きなシーン</span>を
-    <span class="word" data-en="when I see"><ruby>見<rt>み</rt></ruby>ると</span>、
-    <span class="word" data-en="feel like I might cry"><ruby>泣<rt>な</rt></ruby>きそうに</span>なります。
-  </p>
-  <div class="grammar-note">〜たびに ／ 〜ながら ／ 〜てしまう</div>
+<div class="card-title">② ナルトの<ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>で</rt></ruby></div>
+<p>
+ナルトを
+<button class="w" data-en="every time I watch (〜たびに)"><ruby>見<rt>み</rt></ruby>るたびに</button>、
+<button class="w" data-en="friend(s)"><ruby>友達<rt>ともだち</rt></ruby></button><button class="w" data-en="のこと: about / regarding">のことを</button>
+<button class="w" data-en="to recall / be reminded of"><ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>だ</rt></ruby>します</button>。<br>
+<button class="w" data-en="long ago / in the old days">むかし</button>、
+ウクライナに
+<button class="w" data-en="when I was living there (ていた + ころ)"><ruby>住<rt>す</rt></ruby>んでいたころ</button>、
+<button class="w" data-en="together"><ruby>一緒<rt>いっしょ</rt></ruby>に</button>
+アニメを
+<button class="w" data-en="used to watch"><ruby>見<rt>み</rt></ruby>ていました</button>。<br>
+<button class="w" data-en="at night"><ruby>夜<rt>よる</rt></ruby></button>、
+<button class="w" data-en="rice / meal">ごはん</button>を
+<button class="w" data-en="while eating (〜ながら)"><ruby>食<rt>た</rt></ruby>べながら</button>
+<button class="w" data-en="next episode"><ruby>続<rt>つづ</rt></ruby>き</button>を
+<button class="w" data-en="watched"><ruby>見<rt>み</rt></ruby>て</button>、
+<button class="w" data-en="before I knew it">いつのまにか</button>
+<button class="w" data-en="morning"><ruby>朝<rt>あさ</rt></ruby></button>に
+<button class="w" data-en="morning came before I knew it (〜てしまう)">なってしまいました</button>。<br>
+<button class="w" data-en="even now"><ruby>今<rt>いま</rt></ruby>でも</button>
+<button class="w" data-en="favourite scenes"><ruby>好<rt>す</rt></ruby>きなシーン</button>を
+<button class="w" data-en="when I see">見ると</button>、
+<button class="w" data-en="feel like I might cry (〜そうになる)"><ruby>泣<rt>な</rt></ruby>きそうに</button>なります。
+</p>
+<div class="gnote">〜たびに ／ 〜ながら ／ 〜てしまう</div>
 </div>
 
 <div class="card">
-  <div class="card-title">③ ダブリンの<ruby>日本食<rt>にほんしょく</rt></ruby></div>
-  <p>
-    ダブリンには<span class="word" data-en="Japanese food"><ruby>日本<rt>にほん</rt></ruby>の<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby></span>が
-    <span class="word" data-en="scarce / few"><ruby>少<rt>すく</rt></ruby>ない</span>ので、<br>
-    <span class="word" data-en="by oneself"><ruby>自分<rt>じぶん</rt></ruby></span>で
-    <span class="word" data-en="must make (〜なければならない)"><ruby>作<rt>つく</rt></ruby>らなければなりません</span>。<br>
-    <span class="word" data-en="the nearby supermarket"><ruby>近<rt>ちか</rt></ruby>くのスーパー</span>では、
-    みそ<span class="word" data-en="only miso — nothing else (〜しか〜ない)">しか<ruby>売<rt>う</rt></ruby>っていません</span>。<br>
-    でも、<span class="word" data-en="recently"><ruby>最近<rt>さいきん</rt></ruby></span>は
-    <span class="word" data-en="cooking"><ruby>料理<rt>りょうり</rt></ruby></span>が
-    <span class="word" data-en="became skilled (〜ようになる)"><ruby>上手<rt>じょうず</rt></ruby>になりました</span>。<br>
-    <span class="word" data-en="wife"><ruby>妻<rt>つま</rt></ruby></span>と
-    <span class="word" data-en="together"><ruby>一緒<rt>いっしょ</rt></ruby></span>に
-    <span class="word" data-en="ramen we make together"><ruby>作<rt>つく</rt></ruby>るラーメン</span>は、
-    レストランより<span class="word" data-en="delicious">おいしい</span>と
-    <span class="word" data-en="I think"><ruby>思<rt>おも</rt></ruby>います</span>。
-  </p>
-  <div class="grammar-note">〜なければならない ／ 〜しか〜ない ／ 〜ようになる</div>
+<div class="card-title">③ ダブリンの<ruby>日本食<rt>にほんしょく</rt></ruby></div>
+<p>
+ダブリンには
+<button class="w" data-en="Japanese food"><ruby>日本<rt>にほん</rt></ruby>の<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby></button><button class="w" data-en="subject particle">が</button>
+<button class="w" data-en="few / scarce"><ruby>少<rt>すく</rt></ruby>ない</button><button class="w" data-en="so / because">ので</button>、<br>
+<button class="w" data-en="by oneself"><ruby>自分<rt>じぶん</rt></ruby>で</button>
+<button class="w" data-en="must make (〜なければならない)"><ruby>作<rt>つく</rt></ruby>らなければなりません</button>。<br>
+<button class="w" data-en="the nearby supermarket"><ruby>近<rt>ちか</rt></ruby>くのスーパー</button>では、
+<button class="w" data-en="miso paste">みそ</button>
+<button class="w" data-en="only miso — nothing else (〜しか〜ない)">しか<ruby>売<rt>う</rt></ruby>っていません</button>。<br>
+でも、<button class="w" data-en="recently"><ruby>最近<rt>さいきん</rt></ruby></button>は
+<button class="w" data-en="cooking"><ruby>料理<rt>りょうり</rt></ruby></button><button class="w" data-en="subject particle">が</button>
+<button class="w" data-en="became skilled at (〜ようになる)"><ruby>上手<rt>じょうず</rt></ruby>になりました</button>。<br>
+<button class="w" data-en="wife"><ruby>妻<rt>つま</rt></ruby></button>と
+<button class="w" data-en="together"><ruby>一緒<rt>いっしょ</rt></ruby>に</button>
+<button class="w" data-en="make / cook"><ruby>作<rt>つく</rt></ruby>る</button>
+<button class="w" data-en="ramen">ラーメン</button>は、
+<button class="w" data-en="restaurant">レストラン</button><button class="w" data-en="than / compared to">より</button>
+<button class="w" data-en="delicious">おいしい</button>と
+<button class="w" data-en="I think"><ruby>思<rt>おも</rt></ruby>います</button>。
+</p>
+<div class="gnote">〜なければならない ／ 〜しか〜ない ／ 〜ようになる</div>
 </div>
 
 <h2>📖 漢字一覧</h2>
 <table>
-  <thead><tr><th>漢字</th><th>読み方</th><th>意味</th></tr></thead>
-  <tbody>
-    <tr><td>自転車</td><td>じてんしゃ</td><td>bicycle</td></tr>
-    <tr><td>仕事</td><td>しごと</td><td>work</td></tr>
-    <tr><td>川</td><td>かわ</td><td>river</td></tr>
-    <tr><td>雨</td><td>あめ</td><td>rain</td></tr>
-    <tr><td>気持ち</td><td>きもち</td><td>feeling</td></tr>
-    <tr><td>最初</td><td>さいしょ</td><td>at first</td></tr>
-    <tr><td>毎日</td><td>まいにち</td><td>every day</td></tr>
-    <tr><td>忘れる</td><td>わすれる</td><td>to forget</td></tr>
-    <tr><td>友達</td><td>ともだち</td><td>friend(s)</td></tr>
-    <tr><td>一緒</td><td>いっしょ</td><td>together</td></tr>
-    <tr><td>夜</td><td>よる</td><td>night</td></tr>
-    <tr><td>続き</td><td>つづき</td><td>continuation / next episode</td></tr>
-    <tr><td>朝</td><td>あさ</td><td>morning</td></tr>
-    <tr><td>食べ物</td><td>たべもの</td><td>food</td></tr>
-    <tr><td>自分</td><td>じぶん</td><td>oneself</td></tr>
-    <tr><td>最近</td><td>さいきん</td><td>recently</td></tr>
-    <tr><td>料理</td><td>りょうり</td><td>cooking</td></tr>
-    <tr><td>上手</td><td>じょうず</td><td>skilled / good at</td></tr>
-    <tr><td>妻</td><td>つま</td><td>wife</td></tr>
-    <tr><td>思い出す</td><td>おもいだす</td><td>to recall / be reminded of</td></tr>
-  </tbody>
+<thead><tr><th>漢字</th><th>読み方</th><th>意味</th></tr></thead>
+<tbody>
+<tr><td>自転車</td><td>じてんしゃ</td><td>bicycle</td></tr>
+<tr><td>仕事</td><td>しごと</td><td>work</td></tr>
+<tr><td>川</td><td>かわ</td><td>river</td></tr>
+<tr><td>雨</td><td>あめ</td><td>rain</td></tr>
+<tr><td>気持ち</td><td>きもち</td><td>feeling</td></tr>
+<tr><td>最初</td><td>さいしょ</td><td>at first</td></tr>
+<tr><td>毎日</td><td>まいにち</td><td>every day</td></tr>
+<tr><td>忘れる</td><td>わすれる</td><td>to forget</td></tr>
+<tr><td>友達</td><td>ともだち</td><td>friend(s)</td></tr>
+<tr><td>一緒</td><td>いっしょ</td><td>together</td></tr>
+<tr><td>夜</td><td>よる</td><td>night</td></tr>
+<tr><td>続き</td><td>つづき</td><td>next episode</td></tr>
+<tr><td>朝</td><td>あさ</td><td>morning</td></tr>
+<tr><td>食べ物</td><td>たべもの</td><td>food</td></tr>
+<tr><td>自分</td><td>じぶん</td><td>oneself</td></tr>
+<tr><td>最近</td><td>さいきん</td><td>recently</td></tr>
+<tr><td>料理</td><td>りょうり</td><td>cooking</td></tr>
+<tr><td>上手</td><td>じょうず</td><td>skilled / good at</td></tr>
+<tr><td>妻</td><td>つま</td><td>wife</td></tr>
+<tr><td>思い出す</td><td>おもいだす</td><td>to recall</td></tr>
+</tbody>
 </table>
 
-<div class="tooltip" id="tooltip"></div>
+<div id="tip"></div>
 <script>
-  const tooltip = document.getElementById('tooltip');
-  let activeWord = null;
-  document.querySelectorAll('.word').forEach(el => {
-    el.addEventListener('click', function(e) {
-      e.stopPropagation();
-      const en = this.getAttribute('data-en');
-      if (!en) return;
-      if (activeWord === this && tooltip.classList.contains('visible')) {
-        tooltip.classList.remove('visible');
-        this.classList.remove('active');
-        activeWord = null;
-        return;
-      }
-      if (activeWord) activeWord.classList.remove('active');
-      tooltip.textContent = en;
-      tooltip.classList.add('visible');
-      this.classList.add('active');
-      activeWord = this;
-      const rect = this.getBoundingClientRect();
-      let top = rect.bottom + window.scrollY + 8;
-      let left = rect.left + window.scrollX;
-      if (left + 250 > window.innerWidth) left = window.innerWidth - 260;
-      if (left < 8) left = 8;
-      tooltip.style.top = top + 'px';
-      tooltip.style.left = left + 'px';
-    });
-  });
-  document.addEventListener('click', () => {
-    tooltip.classList.remove('visible');
-    if (activeWord) { activeWord.classList.remove('active'); activeWord = null; }
-  });
+var tip=document.getElementById('tip'),active=null;
+function pos(el){
+  var r=el.getBoundingClientRect(),vw=window.innerWidth,vh=window.innerHeight;
+  var tw=Math.min(260,vw*.82);
+  tip.style.maxWidth=tw+'px';
+  var cx=r.left+r.width/2;
+  var left=Math.max(8,Math.min(cx-tw/2,vw-tw-8));
+  tip.style.left=left+'px';
+  var ax=Math.max(14,Math.min(cx-left,tw-14));
+  tip.style.setProperty('--ax',ax+'px');
+  var th=tip.offsetHeight||38;
+  if(r.top>=th+14){
+    tip.style.top=(r.top-th-10)+'px';
+    tip.className='on dn';
+  } else {
+    tip.style.top=(r.bottom+10)+'px';
+    tip.className='on up';
+  }
+}
+function show(el){
+  if(active)active.classList.remove('on');
+  active=el; el.classList.add('on');
+  tip.textContent=el.getAttribute('data-en');
+  tip.classList.add('on');
+  pos(el);
+}
+function hide(){
+  if(active){active.classList.remove('on');active=null;}
+  tip.className='';
+}
+document.querySelectorAll('button.w').forEach(function(el){
+  el.addEventListener('click',function(e){e.stopPropagation();active===this?hide():show(this);});
+});
+document.addEventListener('click',hide);
+window.addEventListener('scroll',function(){if(active)pos(active);},{passive:true});
+window.addEventListener('resize',function(){if(active)pos(active);},{passive:true});
 </script>
 </body>
 </html>
