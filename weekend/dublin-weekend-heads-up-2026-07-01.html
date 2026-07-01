@@ -1,139 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dublin Weekend · Heads-Up · 4–5 Jul 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>週末情報 · Dublin · 5–6 July 2026</title>
 <style>
-:root{--ac:#cc0000;--link:#0050a0;--bg:#fff;--bar:#f5f5f5;--mu:#888;--br:#e0e0e0;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:#222;font:13px/1.5 -apple-system,'Helvetica Neue',Arial,sans-serif;}
-#topbar{background:var(--bar);border-bottom:1px solid #ccc;padding:5px 12px;display:flex;justify-content:space-between;align-items:center;font-size:12px;}
-#topbar .site{font-weight:700;}
-#topbar .dates{color:var(--mu);}
-#tabs{border-bottom:1px solid var(--br);padding:0 12px;display:flex;font-size:12px;font-weight:700;}
-#tabs a{display:inline-block;padding:6px 12px;color:var(--link);text-decoration:none;border-bottom:2px solid transparent;margin-bottom:-1px;}
-#tabs a.on{color:#111;border-bottom-color:var(--ac);}
-#tabs a:hover{color:#111;text-decoration:none;}
-#wrap{max-width:900px;margin:0 auto;padding:12px;display:grid;grid-template-columns:1fr 280px;gap:16px;}
-@media(max-width:620px){#wrap{grid-template-columns:1fr;}}
-.sh{font-size:12px;font-weight:700;text-transform:uppercase;border-left:3px solid var(--ac);padding:5px 8px;margin:14px 0 6px;border-bottom:1px solid var(--br);background:#fff;}
-.item{display:flex;gap:8px;padding:8px 0;border-bottom:1px solid #eee;align-items:flex-start;}
-.item img{width:70px;height:70px;object-fit:cover;border-radius:2px;flex-shrink:0;background:#eee;}
-.nm{font-size:13px;font-weight:700;}
-.nm a{color:var(--link);text-decoration:none;}
+body{background:#e8e8f0;font:12px/1.5 "Hiragino Sans","MS PGothic",Arial,sans-serif;color:#333;margin:0;padding:0;}
+#hd{background:#fff;border-bottom:3px solid #cc0000;padding:6px 12px;display:flex;justify-content:space-between;align-items:center;}
+#hd h1{font-size:15px;color:#cc0000;font-weight:bold;margin:0;}
+#hd .dt{font-size:11px;color:#888;}
+#tabs{background:#eeeef8;border-bottom:1px solid #aaaacc;padding:0 8px;font-size:12px;}
+#tabs a{display:inline-block;padding:4px 10px;color:#0000cc;text-decoration:none;border:1px solid transparent;border-bottom:none;margin-bottom:-1px;margin-right:2px;}
+#tabs a.on,#tabs a:hover{background:#fff;border-color:#aaaacc;color:#333;}
+#wrap{max-width:960px;margin:0 auto;padding:8px;display:grid;grid-template-columns:1fr 210px;gap:8px;}
+@media(max-width:600px){#wrap{grid-template-columns:1fr;}}
+.box{background:#fff;border:1px solid #aaaacc;margin-bottom:8px;}
+.bh{background:linear-gradient(#d8e8f8,#b8ccec);border-bottom:1px solid #aaaacc;padding:3px 8px;font-size:12px;font-weight:bold;}
+.item{display:flex;gap:6px;padding:5px 8px;border-bottom:1px solid #e0e0ee;align-items:flex-start;}
+.item:last-child{border-bottom:none;}
+.item img{width:60px;height:60px;object-fit:cover;flex-shrink:0;border:1px solid #ccc;}
+.nm{font-weight:bold;font-size:12px;}
+.nm a{color:#0000cc;text-decoration:none;}
 .nm a:hover{text-decoration:underline;}
-.me{font-size:11px;color:var(--mu);margin:2px 0 3px;}
+.me{font-size:11px;color:#888;margin:1px 0 2px;}
 .ds{font-size:12px;}
-.bl{color:var(--ac);margin-right:4px;font-size:11px;}
-.wx{padding:7px 0;border-bottom:1px solid #eee;}
-.wx .wd{font-weight:700;font-size:12px;margin-bottom:2px;}
-.wx .wf{font-size:11px;color:var(--mu);}
-footer{text-align:center;font-size:11px;color:var(--mu);border-top:1px solid var(--br);padding:8px;margin-top:12px;}
+.bl{color:#cc0000;font-size:11px;margin-right:3px;}
+.wx{padding:4px 8px;border-bottom:1px solid #e0e0ee;font-size:12px;}
+.wx:last-child{border-bottom:none;}
+.wd{font-weight:bold;}
+.wf{color:#666;font-size:11px;}
+footer{text-align:center;font-size:11px;color:#888;padding:8px;border-top:1px solid #ccc;margin-top:4px;}
 </style>
 </head>
 <body>
 
-<div id="topbar">
-  <span class="site">Dublin Weekend · Heads-Up</span>
-  <span class="dates">Sat 4 Jul – Sun 5 Jul</span>
+<div id="hd">
+  <h1>🗓 週末情報 · Dublin</h1>
+  <span class="dt">Sat 4 Jul – Sun 5 Jul 2026</span>
 </div>
 
 <div id="tabs">
-  <a href="#weather" class="on">Weather</a>
-  <a href="#events">Events</a>
-  <a href="#todo">Things To Do</a>
+  <a href="#wx" class="on">天気予報</a>
+  <a href="#ev">イベント</a>
+  <a href="#todo">おすすめ</a>
 </div>
 
 <div id="wrap">
 
   <div id="main">
 
-    <div class="sh" id="weather">Weekend Weather</div>
-    <p style="font-size:12px;padding:6px 0 10px;">Saturday looks decent — partly cloudy with a high of 21°C and barely any rain. Sunday warms up a touch to 23°C under overcast skies but stays dry, making it a good outdoor weekend overall for Dublin.</p>
-
-    <div class="sh" id="events">Events to Know About</div>
-
-    <div class="item">
-      <img src="https://webassets.premiertickets.co/assets/uploads/2026/01/New-Project-17.jpg" alt="Longitude Festival 2026">
-      <div>
-        <div class="nm"><a href="https://www.longitude.ie/">Longitude Festival 2026</a></div>
-        <div class="me">Marlay Park · Sat 4 &amp; Sun 5 Jul</div>
-        <div class="ds">Dublin's biggest outdoor music festival returns for two days of hip-hop, R&amp;B, electronic and pop across multiple stages. 40,000 fans per day at the beautiful grounds of Marlay Park in Rathfarnham.</div>
+    <div id="wx" class="box">
+      <div class="bh">週末の天気</div>
+      <div style="padding:8px;font-size:12px;">
+        土日ともに典型的なダブリンの夏模様 — 気温は17〜19°Cと過ごしやすく、西からの穏やかな風が吹きますが、にわか雨の可能性もあるため折りたたみ傘をお忘れなく。日曜は少し曇りがちで気温も若干低め。
       </div>
     </div>
 
-    <div class="item">
-      <img src="https://www.avivastadium.ie/images/jcogs_img/cache/TAKE_THAT_Banner_2_ebe2a85e6d15e003bee6d369241cfb5bf270264f.jpg" alt="Take That at Aviva Stadium">
-      <div>
-        <div class="nm"><a href="https://www.avivastadium.ie/whats-on/take-that-the-circus-live">Take That – The Circus Live</a></div>
-        <div class="me">Aviva Stadium · Sat 4 Jul</div>
-        <div class="ds">Take That bring their grand theatrical Circus Live production to Aviva Stadium — the final date of their 2026 UK &amp; Ireland tour. Expect spectacular staging, circus performers, and all the hits.</div>
+    <div id="ev" class="box">
+      <div class="bh">イベント情報</div>
+
+      <div class="item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Marlay_Park%2C_Dublin%2C_Ireland_%2814680219023%29.jpg/120px-Marlay_Park%2C_Dublin%2C_Ireland_%2814680219023%29.jpg" alt="Marlay Park">
+        <div>
+          <div class="nm"><a href="https://www.longitude.ie/" target="_blank">Longitude Festival 2026</a></div>
+          <div class="me">Marlay Park, Rathfarnham · 土 4日 &amp; 日 5日</div>
+          <div class="ds">アイルランド最大級のヒップホップ・R&amp;B・エレクトロニック音楽フェス。マーレイパークの緑豊かな会場で複数ステージが展開。週末2日間のビッグイベント。</div>
+        </div>
       </div>
+
+      <div class="item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Aviva_Stadium_%28cropped%29.jpg/120px-Aviva_Stadium_%28cropped%29.jpg" alt="Aviva Stadium">
+        <div>
+          <div class="nm"><a href="https://www.avivastadium.ie/whats-on/take-that-the-circus-live" target="_blank">Take That: The Circus Live</a></div>
+          <div class="me">Aviva Stadium · 土 4日（開場17:00）</div>
+          <div class="ds">英国の人気ポップグループTake Thatによるスタジアムコンサート。サポートはOneRepublic。6万人規模の大型ライブ — 周辺道路の混雑に注意。</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Iveagh_Gardens_fountain.jpg/120px-Iveagh_Gardens_fountain.jpg" alt="Iveagh Gardens">
+        <div>
+          <div class="nm"><a href="https://aikenpromotions.com/show/live-at-the-iveagh-gardens-2026/" target="_blank">Live at the Iveagh Gardens</a></div>
+          <div class="me">Iveagh Gardens, Dublin 2 · 土：The Scratch (18:00) / 日：Elvis Costello &amp; The Imposters (18:00)</div>
+          <div class="ds">ダブリン屈指の美しい庭園を舞台にした野外コンサートシリーズ（7/3〜19）。土曜はアイルランドのロックバンドThe Scratch、日曜は伝説のElvis Costelloが登場。</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/D%C3%BAn_Laoghaire_Harbour.jpg/120px-D%C3%BAn_Laoghaire_Harbour.jpg" alt="Dún Laoghaire">
+        <div>
+          <div class="nm"><a href="https://www.dlrsummerfest.com/" target="_blank">Dún Laoghaire Summerfest 2026</a></div>
+          <div class="me">Dún Laoghaire 各会場 · 7/3〜12 開催中</div>
+          <div class="ds">70組以上のアーティストが町中の会場で演奏するサマーフェスティバル。KílaやBagatelle、ABBA・Beatles・Fleetwood Macのトリビュートバンドなど多彩なラインナップ。無料イベントも多数。</div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="item">
-      <img src="https://i.scdn.co/image/ab6761610000f1781d205bf1c3d1017658dafc87" alt="The Scratch">
-      <div>
-        <div class="nm"><a href="https://open.spotify.com/concert/1BFJ7VRqz4IiYIP9cZJVVJ">The Scratch</a></div>
-        <div class="me">Iveagh Gardens · Sat 4 Jul, 8pm</div>
-        <div class="ds">Ireland's fiercest live act — guitar virtuosos who blur fingerstyle folk and metal — headline Dublin's beloved open-air garden series. One of the must-see homegrown acts of the summer.</div>
+    <div id="todo" class="box">
+      <div class="bh">おすすめ</div>
+
+      <div class="item">
+        <div>
+          <span class="bl">▶</span><strong>土曜午後：Dún Laoghaireの海沿いをサイクリング</strong><br>
+          天気が持てば、Dún Laoghaireの桟橋や海岸線はサイクリング・ウォーキングに最適。Summerfestの野外ステージも楽しめる。Aviva周辺は混雑するため、南下ルートがおすすめ。
+        </div>
       </div>
+
+      <div class="item">
+        <div>
+          <span class="bl">▶</span><strong>雨のバックアップ：Chester Beatty図書館 または 国立博物館</strong><br>
+          にわか雨が来たときの避難先として。Chester Beatty（ダブリン城内、無料）はアジア・中東の写本・芸術品が充実。Longitude/Iveaghのどちらかの合間に立ち寄れる距離感。
+        </div>
+      </div>
+
     </div>
 
-    <div class="item">
-      <img src="https://assets-eu-01.kc-usercontent.com:443/aa24ba70-9a12-01ae-259b-7ef588a0b2ef/09e3ab0d-aefa-48b2-8d05-6ef86a9ccdc4/11df07de-86e6-429e-8ac3-a7946fad4788.png?w=500&h=281&fm=jpg&fit=crop" alt="Elvis Costello at Iveagh Gardens">
-      <div>
-        <div class="nm"><a href="https://www.visitdublin.com/live-at-the-iveagh-gardens-2026">Elvis Costello &amp; The Imposters + Charlie Sexton</a></div>
-        <div class="me">Iveagh Gardens · Sun 5 Jul, 6pm</div>
-        <div class="ds">Radio Soul! — The Early Songs of Elvis Costello tour draws from classics spanning My Aim Is True (1977) to Blood &amp; Chocolate (1986). A rare deep-dive into the early catalogue, live in a garden setting.</div>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="https://newbridgehouseandfarm.com/wp-content/uploads/2025/05/flavours-of-fingal-2025-day-2-78-copy-2-1024x461.webp" alt="Flavours of Fingal County Show">
-      <div>
-        <div class="nm"><a href="https://www.flavoursoffingal.ie/">Flavours of Fingal County Show</a></div>
-        <div class="me">Newbridge House &amp; Farm, Donabate · Sat 4 &amp; Sun 5 Jul</div>
-        <div class="ds">14th year of this family favourite — local food &amp; drink producers, equestrian displays, live music, artisan stalls, and kids' activities set in the historic parklands of Newbridge House, just north of the city.</div>
-      </div>
-    </div>
-
-    <div class="sh" id="todo">Things to Do</div>
-
-    <div class="item">
-      <div>
-        <span class="bl">▶</span><strong>Dún Laoghaire Pier Walk</strong> — With temps hitting 21–23°C and winds staying light, a stroll along the East or West Pier is as good as Dublin gets. Grab a coffee at the end, watch the yachts, and swing by the Sunday Farmer's Market on the way back.
-      </div>
-    </div>
-
-    <div class="item">
-      <div>
-        <span class="bl">▶</span><strong>Phoenix Park Cycle</strong> — Hire a bike and explore Europe's largest urban park. The deer are reliably grazing in the south grounds and the Walled Kitchen Garden makes a good mid-ride stop. Best done Saturday morning before the afternoon crowd arrives.
-      </div>
-    </div>
-
-  </div>
+  </div><!-- /main -->
 
   <div id="sidebar">
-
-    <div class="sh">Weather</div>
-
-    <div class="wx">
-      <div class="wd">Saturday 4 Jul</div>
-      <div class="wf">⛅ Partly cloudy · High 21°C / Low 15°C · 0.2 mm rain · ~19 km/h W winds</div>
+    <div class="box">
+      <div class="bh">天気予報</div>
+      <div class="wx">
+        <div class="wd">🌥 土曜日（7月4日）</div>
+        <div class="wf">🌡 19°C / 14°C<br>🌧 降水確率 30%<br>💨 西風 18 km/h</div>
+      </div>
+      <div class="wx">
+        <div class="wd">☁️ 日曜日（7月5日）</div>
+        <div class="wf">🌡 17°C / 13°C<br>🌧 降水確率 40%<br>💨 西風 17 km/h</div>
+      </div>
     </div>
 
-    <div class="wx">
-      <div class="wd">Sunday 5 Jul</div>
-      <div class="wf">☁️ Overcast · High 23°C / Low 14°C · Dry · ~19 km/h W winds</div>
+    <div class="box">
+      <div class="bh">📌 メモ</div>
+      <div style="padding:5px 8px;font-size:11px;color:#555;">
+        ・Take Thatは土曜のみ<br>
+        ・Longitudeは2日間通し券あり<br>
+        ・Iveaghは各日別チケット<br>
+        ・Summerfestは一部無料<br>
+        ・傘必携 ☂️
+      </div>
     </div>
+  </div><!-- /sidebar -->
 
-  </div>
+</div><!-- /wrap -->
 
-</div>
-
-<footer>Early heads-up — detailed plan follows Friday.</footer>
+<footer>早めの情報 — 詳細は金曜日に。</footer>
 
 </body>
 </html>
