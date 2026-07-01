@@ -3,100 +3,244 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weekend Heads-Up — Sat 5 – Sun 6 Jul</title>
+<title>Dublin Weekend Heads-Up · 5–6 July 2026</title>
 <style>
-:root{--bg:#f0f0f0;--card:#fff;--hd:#111111;--ac:#cc0000;--tx:#111111;--mu:#666;--br:#e0e0e0;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;line-height:1.65;padding-bottom:3rem;}
-header{background:var(--hd);color:#fff;padding:1.5rem 1.2rem 1.2rem;border-bottom:4px solid var(--ac);}
-.ey{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);font-weight:700;margin-bottom:.3rem;}
-header h1{font-size:1.75rem;font-weight:800;line-height:1.2;}
-.sub{margin-top:.3rem;font-size:.85rem;color:#aaa;}
-.w{max-width:760px;margin:0 auto;padding:0 1.2rem;}
-h2{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);margin:2rem 0 .85rem;padding-bottom:.35rem;border-bottom:2px solid var(--ac);}
-.card{background:var(--card);border:1px solid var(--br);border-radius:5px;padding:1.15rem;margin-bottom:.65rem;}
-.wg{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
-@media(max-width:480px){.wg{grid-template-columns:1fr;}}
-.dl{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin-bottom:.55rem;}
-.row{display:flex;gap:.5rem;font-size:.88rem;margin-bottom:.28rem;}
-.rk{font-weight:600;min-width:78px;color:var(--mu);font-size:.8rem;}
-.ev{border-left:3px solid var(--ac);}
-.ev-n{font-weight:700;font-size:.95rem;}
-.ev-n a{color:var(--tx);text-decoration:none;}
-.ev-n a:hover{color:var(--ac);}
-.ev-m{font-size:.78rem;color:var(--mu);margin:.12rem 0 .3rem;}
-.ev-d{font-size:.87rem;}
-.do{border-left:3px solid #888;}
-.do strong{display:block;margin-bottom:.18rem;}
-.do span{font-size:.87rem;color:#444;}
-footer{margin-top:2.5rem;padding:.85rem 1.2rem;font-size:.76rem;color:var(--mu);border-top:1px solid var(--br);text-align:center;}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f0f0f0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: #1a1a1a;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: #111111;
+    color: #fff;
+    border-bottom: 4px solid #cc0000;
+    padding: 2rem 1.2rem 1.6rem;
+    text-align: center;
+  }
+  .eyebrow {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #cc0000;
+    margin-bottom: 0.55rem;
+  }
+  header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .subtitle {
+    margin-top: 0.6rem;
+    font-size: 0.88rem;
+    color: #aaa;
+    font-style: italic;
+  }
+
+  /* ── LAYOUT ── */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.2rem 3rem;
+  }
+
+  /* ── SECTION HEADINGS ── */
+  h2 {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #cc0000;
+    border-bottom: 2px solid #cc0000;
+    padding-bottom: 0.4rem;
+    margin-top: 2rem;
+    margin-bottom: 0.9rem;
+  }
+
+  /* ── CARDS (base) ── */
+  .card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 1.15rem;
+    margin-bottom: 0.65rem;
+  }
+
+  /* ── WEATHER GRID ── */
+  .weather-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+  }
+  @media (max-width: 480px) {
+    .weather-grid { grid-template-columns: 1fr; }
+  }
+  .day-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #cc0000;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.65rem;
+  }
+  .stat-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+  .stat-key {
+    min-width: 78px;
+    font-size: 0.8rem;
+    color: #888;
+    flex-shrink: 0;
+  }
+  .stat-val {
+    font-size: 0.88rem;
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+
+  /* ── EVENT CARDS ── */
+  .event-card {
+    border-left: 3px solid #cc0000;
+    border-radius: 0 5px 5px 0;
+  }
+  .event-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+  }
+  .event-name a {
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .event-name a:hover { color: #cc0000; }
+  .event-meta {
+    font-size: 0.78rem;
+    color: #888;
+    margin-bottom: 0.4rem;
+  }
+  .event-desc {
+    font-size: 0.87rem;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  /* ── THINGS TO DO CARDS ── */
+  .todo-card {
+    border-left: 3px solid #888;
+    border-radius: 0 5px 5px 0;
+  }
+  .todo-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.35rem;
+  }
+  .todo-body {
+    font-size: 0.87rem;
+    color: #444;
+    line-height: 1.5;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    max-width: 760px;
+    margin: 2.5rem auto 0;
+    padding: 1rem 1.2rem 2rem;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 0.76rem;
+    color: #666;
+  }
 </style>
 </head>
 <body>
+
 <header>
-  <div class="w">
-    <div class="ey">Weekend Heads-Up · Dublin</div>
-    <h1>Sat 5 – Sun 6 Jul</h1>
-    <div class="sub">Showers likely both days — pack a layer and have an indoor backup</div>
-  </div>
+  <p class="eyebrow">Weekend Heads-Up · Dublin</p>
+  <h1>Saturday &amp; Sunday<br>4–5 July 2026</h1>
+  <p class="subtitle">Mild and changeable — pack a light layer and leave room for a shower</p>
 </header>
-<div class="w">
 
-<h2>Weather</h2>
-<div class="wg">
-  <div class="card">
-    <div class="dl">Saturday 5 July</div>
-    <div class="row"><span class="rk">Temp</span><span>14 – 19 °C</span></div>
-    <div class="row"><span class="rk">Rain</span><span>Showers possible, misty spells likely</span></div>
-    <div class="row"><span class="rk">Wind</span><span>Westerly ~18 km/h</span></div>
+<main>
+
+  <!-- WEATHER -->
+  <h2>Weather Forecast</h2>
+  <div class="weather-grid">
+    <div class="card">
+      <p class="day-label">Saturday · 4 July</p>
+      <div class="stat-row"><span class="stat-key">High</span><span class="stat-val">22 °C</span></div>
+      <div class="stat-row"><span class="stat-key">Low</span><span class="stat-val">14 °C</span></div>
+      <div class="stat-row"><span class="stat-key">Conditions</span><span class="stat-val">Partly cloudy, sunny spells</span></div>
+      <div class="stat-row"><span class="stat-key">Rain chance</span><span class="stat-val">~20%</span></div>
+      <div class="stat-row"><span class="stat-key">Wind</span><span class="stat-val">SW ~15 km/h</span></div>
+    </div>
+    <div class="card">
+      <p class="day-label">Sunday · 5 July</p>
+      <div class="stat-row"><span class="stat-key">High</span><span class="stat-val">21 °C</span></div>
+      <div class="stat-row"><span class="stat-key">Low</span><span class="stat-val">13 °C</span></div>
+      <div class="stat-row"><span class="stat-key">Conditions</span><span class="stat-val">More cloud, patchy showers</span></div>
+      <div class="stat-row"><span class="stat-key">Rain chance</span><span class="stat-val">~35%</span></div>
+      <div class="stat-row"><span class="stat-key">Wind</span><span class="stat-val">W ~20 km/h</span></div>
+    </div>
   </div>
-  <div class="card">
-    <div class="dl">Sunday 6 July</div>
-    <div class="row"><span class="rk">Temp</span><span>13 – 18 °C</span></div>
-    <div class="row"><span class="rk">Rain</span><span>Rain likely, high humidity ~81%</span></div>
-    <div class="row"><span class="rk">Wind</span><span>Westerly ~20 km/h</span></div>
+
+  <!-- EVENTS -->
+  <h2>What's On</h2>
+
+  <div class="card event-card">
+    <p class="event-name"><a href="https://www.longitude.ie/" target="_blank" rel="noopener">Longitude Festival 2026</a></p>
+    <p class="event-meta">Sat &amp; Sun · Marlay Park, Rathfarnham · All day from ~2pm</p>
+    <p class="event-desc">Dublin's flagship outdoor music festival returns for two days of hip-hop, R&amp;B, electronic and pop across multiple stages. Multi-day tickets are typically €190–210 and tend to sell out in advance — check Ticketmaster IE if you haven't grabbed yours yet.</p>
   </div>
-</div>
 
-<h2>Events to Know About</h2>
+  <div class="card event-card">
+    <p class="event-name"><a href="https://www.ticketmaster.ie/" target="_blank" rel="noopener">Take That — 2026 Tour</a></p>
+    <p class="event-meta">Saturday 4 July · Aviva Stadium, Lansdowne Road · Evening</p>
+    <p class="event-desc">The iconic pop group bring their 2026 stadium tour to Aviva Stadium. Expect production-heavy nostalgia from one of the UK's biggest-selling acts. Large crowd expected — allow extra time getting in and out of Lansdowne Road.</p>
+  </div>
 
-<div class="card ev">
-  <div class="ev-n"><a href="https://www.longitude.ie/">Longitude Festival — Day 2</a></div>
-  <div class="ev-m">Marlay Park, Rathfarnham · Saturday</div>
-  <div class="ev-d">Dublin's biggest outdoor music festival wraps up its second day with hip-hop, R&B, pop and electronic acts across multiple stages — expect big crowds and an electric atmosphere.</div>
-</div>
+  <div class="card event-card">
+    <p class="event-name"><a href="https://www.dlrsummerfest.com/" target="_blank" rel="noopener">Dún Laoghaire Summerfest — Opening Weekend</a></p>
+    <p class="event-meta">Sat &amp; Sun (runs 3–12 July) · Various venues, Dún Laoghaire</p>
+    <p class="event-desc">The opening weekend of Summerfest features dlr Streets — live music and street performance at venues across the town including The Purty Kitchen, Walters, and Volume Records. Acts span Kíla, Bagatelle, The 4 of Us, and tribute acts for Abba, Fleetwood Mac, The Doors and more. Many events are free; ticketed gigs from a few euros.</p>
+  </div>
 
-<div class="card ev">
-  <div class="ev-n"><a href="https://www.iveaghgardens.ie/">Elvis Costello &amp; The Imposters with Charlie Sexton</a></div>
-  <div class="ev-m">Iveagh Gardens · Saturday, 6 PM</div>
-  <div class="ev-d">Part of the Live at the Iveagh Gardens summer series — a classic outdoor gig in one of Dublin's most charming hidden gardens.</div>
-</div>
+  <div class="card event-card">
+    <p class="event-name"><a href="https://www.fingalcoco.ie/" target="_blank" rel="noopener">Flavours of Fingal County Show</a></p>
+    <p class="event-meta">Sat &amp; Sun · Newbridge House &amp; Farm, Donabate · All day</p>
+    <p class="event-desc">The 14th edition of this family-friendly show celebrates farming, food, music, sport and rural life set against the grounds of Newbridge Demesne. Good craic for kids and adults alike, and a pleasant escape from the city if the weather plays along.</p>
+  </div>
 
-<div class="card ev">
-  <div class="ev-n"><a href="https://www.dlrsummerfest.com/">Dún Laoghaire Summerfest</a></div>
-  <div class="ev-m">Various venues, Dún Laoghaire · Saturday &amp; Sunday</div>
-  <div class="ev-d">10-day festival (3–12 Jul) with 70+ acts — live music, street performance, tribute bands and local groups spread across pubs, churches and outdoor spaces in Dún Laoghaire.</div>
-</div>
+  <!-- THINGS TO DO -->
+  <h2>Things to Do</h2>
 
-<div class="card ev">
-  <div class="ev-n"><a href="https://www.flavoursoffingal.ie/">Flavours of Fingal County Show — Last Day</a></div>
-  <div class="ev-m">Newbridge House &amp; Farm, Donabate · Saturday</div>
-  <div class="ev-d">14th year of this family-friendly county show combining farming, artisan food, live music, sport and rural entertainment on the beautiful Newbridge estate.</div>
-</div>
+  <div class="card todo-card">
+    <p class="todo-title">Cycle or run in Phoenix Park (if Saturday stays dry)</p>
+    <p class="todo-body">With highs near 22 °C and some sunshine forecast for Saturday, the Park is at its best. Hire a bike near the main gate or bring your own — the 8 km perimeter loop is flat and gives you deer, monuments and green space without ever leaving Dublin. Good option before or instead of the festival crowds.</p>
+  </div>
 
-<h2>Things to Do</h2>
+  <div class="card todo-card">
+    <p class="todo-title">National Gallery of Ireland (Sunday contingency)</p>
+    <p class="todo-body">If Sunday's showers materialise, the National Gallery on Merrion Square is free, warm and genuinely world-class — from Caravaggio to Jack B. Yeats. Pair it with a walk around the Georgian squares and lunch in Baggot Street or the surrounding area. No booking required.</p>
+  </div>
 
-<div class="card do">
-  <strong>Dún Laoghaire Pier &amp; Forty Foot (if there's a dry spell)</strong>
-  <span>A walk along the East Pier and a look at the Forty Foot bathing spot is a classic Dublin Saturday — even in drizzle it's worth it, and the Summerfest has live music nearby to duck into.</span>
-</div>
+</main>
 
-<div class="card do">
-  <strong>Chester Beatty Library (Sunday rain plan)</strong>
-  <span>Free admission, world-class collection of manuscripts, prints and decorative arts from across Asia and the Middle East — one of Dublin's most underrated cultural spots, right beside Dublin Castle.</span>
-</div>
+<footer>
+  Early heads-up — a detailed plan follows on Friday.
+</footer>
 
-<footer>Early heads-up — a detailed plan follows on Friday.</footer>
-</div>
 </body>
 </html>
