@@ -1,250 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weekend Heads-Up — 4–5 July 2026</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #e8f4fd;
-      color: #1a2a3a;
-      line-height: 1.6;
-      padding: 0 0 2rem;
-    }
-
-    header {
-      background: linear-gradient(135deg, #1e6fa8 0%, #2a9fd6 100%);
-      color: #fff;
-      text-align: center;
-      padding: 2.5rem 1rem 2rem;
-    }
-    header h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    header .dates {
-      margin-top: 0.4rem;
-      font-size: 1.1rem;
-      opacity: 0.88;
-      font-weight: 400;
-    }
-
-    .container {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 0 1.2rem;
-    }
-
-    h2 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1e6fa8;
-      margin: 2rem 0 0.9rem;
-      padding-bottom: 0.35rem;
-      border-bottom: 2px solid #b8ddf5;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* Weather */
-    .weather-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    @media (max-width: 520px) {
-      .weather-grid { grid-template-columns: 1fr; }
-    }
-    .weather-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1.2rem 1.4rem;
-      box-shadow: 0 2px 8px rgba(30,111,168,0.10);
-    }
-    .weather-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #1e6fa8;
-      margin-bottom: 0.7rem;
-    }
-    .weather-card .icon {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
-    .weather-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      font-size: 0.93rem;
-      margin-bottom: 0.35rem;
-      color: #2c3e50;
-    }
-    .weather-row .label {
-      font-weight: 600;
-      min-width: 70px;
-      color: #555;
-    }
-
-    /* Events */
-    .event-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .event-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 1rem 1.2rem;
-      box-shadow: 0 2px 8px rgba(30,111,168,0.08);
-      border-left: 4px solid #2a9fd6;
-    }
-    .event-card .event-name {
-      font-weight: 700;
-      font-size: 1rem;
-      color: #1a2a3a;
-    }
-    .event-card .event-name a {
-      color: #1e6fa8;
-      text-decoration: none;
-    }
-    .event-card .event-name a:hover {
-      text-decoration: underline;
-    }
-    .event-card .event-meta {
-      font-size: 0.85rem;
-      color: #666;
-      margin: 0.2rem 0 0.4rem;
-    }
-    .event-card .event-desc {
-      font-size: 0.92rem;
-      color: #334;
-    }
-
-    /* Things to do */
-    .todo-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .todo-item {
-      background: #fff;
-      border-radius: 10px;
-      padding: 1rem 1.2rem;
-      box-shadow: 0 2px 8px rgba(30,111,168,0.08);
-      border-left: 4px solid #5cb85c;
-      font-size: 0.95rem;
-    }
-    .todo-item strong {
-      display: block;
-      margin-bottom: 0.2rem;
-      color: #1a2a3a;
-    }
-    .todo-item span {
-      color: #445;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 2.5rem;
-      font-size: 0.85rem;
-      color: #778;
-      font-style: italic;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekend Heads-Up — Sat 5 – Sun 6 Jul</title>
+<style>
+:root{--bg:#f0f0f0;--card:#fff;--hd:#111111;--ac:#cc0000;--tx:#111111;--mu:#666;--br:#e0e0e0;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;line-height:1.65;padding-bottom:3rem;}
+header{background:var(--hd);color:#fff;padding:1.5rem 1.2rem 1.2rem;border-bottom:4px solid var(--ac);}
+.ey{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);font-weight:700;margin-bottom:.3rem;}
+header h1{font-size:1.75rem;font-weight:800;line-height:1.2;}
+.sub{margin-top:.3rem;font-size:.85rem;color:#aaa;}
+.w{max-width:760px;margin:0 auto;padding:0 1.2rem;}
+h2{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);margin:2rem 0 .85rem;padding-bottom:.35rem;border-bottom:2px solid var(--ac);}
+.card{background:var(--card);border:1px solid var(--br);border-radius:5px;padding:1.15rem;margin-bottom:.65rem;}
+.wg{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
+@media(max-width:480px){.wg{grid-template-columns:1fr;}}
+.dl{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin-bottom:.55rem;}
+.row{display:flex;gap:.5rem;font-size:.88rem;margin-bottom:.28rem;}
+.rk{font-weight:600;min-width:78px;color:var(--mu);font-size:.8rem;}
+.ev{border-left:3px solid var(--ac);}
+.ev-n{font-weight:700;font-size:.95rem;}
+.ev-n a{color:var(--tx);text-decoration:none;}
+.ev-n a:hover{color:var(--ac);}
+.ev-m{font-size:.78rem;color:var(--mu);margin:.12rem 0 .3rem;}
+.ev-d{font-size:.87rem;}
+.do{border-left:3px solid #888;}
+.do strong{display:block;margin-bottom:.18rem;}
+.do span{font-size:.87rem;color:#444;}
+footer{margin-top:2.5rem;padding:.85rem 1.2rem;font-size:.76rem;color:var(--mu);border-top:1px solid var(--br);text-align:center;}
+</style>
 </head>
 <body>
-
 <header>
-  <h1>🗓️ Weekend Heads-Up</h1>
-  <div class="dates">Dublin &nbsp;·&nbsp; Saturday 4 July &amp; Sunday 5 July 2026</div>
-</header>
-
-<div class="container">
-
-  <h2>🌦️ Weather</h2>
-  <div class="weather-grid">
-
-    <div class="weather-card">
-      <div class="icon">🌧️</div>
-      <h3>Saturday, 4 July</h3>
-      <div class="weather-row"><span class="label">Temp</span><span>16 – 22 °C</span></div>
-      <div class="weather-row"><span class="label">Conditions</span><span>Overcast with occasional light rain and drizzle through the day</span></div>
-      <div class="weather-row"><span class="label">Rain</span><span>Likely — bring a jacket</span></div>
-      <div class="weather-row"><span class="label">Wind</span><span>Moderate westerlies</span></div>
-    </div>
-
-    <div class="weather-card">
-      <div class="icon">⛅</div>
-      <h3>Sunday, 5 July</h3>
-      <div class="weather-row"><span class="label">Temp</span><span>16 – 21 °C</span></div>
-      <div class="weather-row"><span class="label">Conditions</span><span>Cloudy start, brightening with sunny spells developing through the afternoon</span></div>
-      <div class="weather-row"><span class="label">Rain</span><span>Drying out — much better by midday</span></div>
-      <div class="weather-row"><span class="label">Wind</span><span>Light to moderate, easing</span></div>
-    </div>
-
+  <div class="w">
+    <div class="ey">Weekend Heads-Up · Dublin</div>
+    <h1>Sat 5 – Sun 6 Jul</h1>
+    <div class="sub">Showers likely both days — pack a layer and have an indoor backup</div>
   </div>
+</header>
+<div class="w">
 
-  <h2>🎶 Events to Know About</h2>
-  <ul class="event-list">
+<h2>Weather</h2>
+<div class="wg">
+  <div class="card">
+    <div class="dl">Saturday 5 July</div>
+    <div class="row"><span class="rk">Temp</span><span>14 – 19 °C</span></div>
+    <div class="row"><span class="rk">Rain</span><span>Showers possible, misty spells likely</span></div>
+    <div class="row"><span class="rk">Wind</span><span>Westerly ~18 km/h</span></div>
+  </div>
+  <div class="card">
+    <div class="dl">Sunday 6 July</div>
+    <div class="row"><span class="rk">Temp</span><span>13 – 18 °C</span></div>
+    <div class="row"><span class="rk">Rain</span><span>Rain likely, high humidity ~81%</span></div>
+    <div class="row"><span class="rk">Wind</span><span>Westerly ~20 km/h</span></div>
+  </div>
+</div>
 
-    <li class="event-card">
-      <div class="event-name"><a href="https://www.songkick.com/metro-areas/29314-ireland-dublin/2026" target="_blank">Longitude Festival 2026</a></div>
-      <div class="event-meta">📍 Marlay Park, Rathfarnham &nbsp;·&nbsp; Sat 4 &amp; Sun 5 July</div>
-      <div class="event-desc">Dublin's biggest outdoor music festival is back over the weekend — international hip-hop, R&amp;B, electronic and pop acts across multiple stages. Two-day tickets from ~€200.</div>
-    </li>
+<h2>Events to Know About</h2>
 
-    <li class="event-card">
-      <div class="event-name"><a href="https://www.visitdublin.com/events" target="_blank">Take That — Live at Aviva Stadium</a></div>
-      <div class="event-meta">📍 Aviva Stadium, Ballsbridge &nbsp;·&nbsp; Sat 4 July</div>
-      <div class="event-desc">The British pop legends bring their tour to Dublin's Aviva Stadium on Saturday night. Big stadium singalong energy — expect a packed Lansdowne Road.</div>
-    </li>
+<div class="card ev">
+  <div class="ev-n"><a href="https://www.longitude.ie/">Longitude Festival — Day 2</a></div>
+  <div class="ev-m">Marlay Park, Rathfarnham · Saturday</div>
+  <div class="ev-d">Dublin's biggest outdoor music festival wraps up its second day with hip-hop, R&B, pop and electronic acts across multiple stages — expect big crowds and an electric atmosphere.</div>
+</div>
 
-    <li class="event-card">
-      <div class="event-name"><a href="https://www.visitdublin.com/events" target="_blank">Live at the Iveagh Gardens</a></div>
-      <div class="event-meta">📍 Iveagh Gardens, Dublin 2 &nbsp;·&nbsp; Sat 4 &amp; Sun 5 July (6 PM each evening)</div>
-      <div class="event-desc">The beloved open-air concert series in the walled gardens. <strong>The Scratch</strong> on Saturday, <strong>Elvis Costello &amp; The Imposters with Charlie Sexton</strong> on Sunday.</div>
-    </li>
+<div class="card ev">
+  <div class="ev-n"><a href="https://www.iveaghgardens.ie/">Elvis Costello &amp; The Imposters with Charlie Sexton</a></div>
+  <div class="ev-m">Iveagh Gardens · Saturday, 6 PM</div>
+  <div class="ev-d">Part of the Live at the Iveagh Gardens summer series — a classic outdoor gig in one of Dublin's most charming hidden gardens.</div>
+</div>
 
-    <li class="event-card">
-      <div class="event-name"><a href="https://www.songkick.com/metro-areas/29314-ireland-dublin/2026" target="_blank">Mumford &amp; Sons + The War on Drugs</a></div>
-      <div class="event-meta">📍 Marlay Park, Rathfarnham &nbsp;·&nbsp; Sun 5 July</div>
-      <div class="event-desc">A brilliant double-bill at Marlay Park on Sunday — folk-rock anthems from Mumford &amp; Sons alongside indie rock heavyweights The War on Drugs.</div>
-    </li>
+<div class="card ev">
+  <div class="ev-n"><a href="https://www.dlrsummerfest.com/">Dún Laoghaire Summerfest</a></div>
+  <div class="ev-m">Various venues, Dún Laoghaire · Saturday &amp; Sunday</div>
+  <div class="ev-d">10-day festival (3–12 Jul) with 70+ acts — live music, street performance, tribute bands and local groups spread across pubs, churches and outdoor spaces in Dún Laoghaire.</div>
+</div>
 
-    <li class="event-card">
-      <div class="event-name"><a href="https://www.visitdublin.com/events" target="_blank">dlr Streets Festival</a></div>
-      <div class="event-meta">📍 Dún Laoghaire &nbsp;·&nbsp; Sat 4 &amp; Sun 5 July</div>
-      <div class="event-desc">Dún Laoghaire comes alive with live music, street performances, and a festive seaside atmosphere over the whole weekend — free to attend.</div>
-    </li>
+<div class="card ev">
+  <div class="ev-n"><a href="https://www.flavoursoffingal.ie/">Flavours of Fingal County Show — Last Day</a></div>
+  <div class="ev-m">Newbridge House &amp; Farm, Donabate · Saturday</div>
+  <div class="ev-d">14th year of this family-friendly county show combining farming, artisan food, live music, sport and rural entertainment on the beautiful Newbridge estate.</div>
+</div>
 
-  </ul>
+<h2>Things to Do</h2>
 
-  <h2>💡 Things to Do</h2>
-  <ul class="todo-list">
+<div class="card do">
+  <strong>Dún Laoghaire Pier &amp; Forty Foot (if there's a dry spell)</strong>
+  <span>A walk along the East Pier and a look at the Forty Foot bathing spot is a classic Dublin Saturday — even in drizzle it's worth it, and the Summerfest has live music nearby to duck into.</span>
+</div>
 
-    <li class="todo-item">
-      <strong>Saturday — Embrace the Irish rain: museums &amp; galleries</strong>
-      <span>With a grey and showery Saturday, it's a perfect excuse to duck into the <strong>National Gallery of Ireland</strong> (free entry) or the <strong>Chester Beatty Library</strong> in Dublin Castle. If you want to be out, Longitude at Marlay Park is rain-or-shine — pack a poncho.</span>
-    </li>
+<div class="card do">
+  <strong>Chester Beatty Library (Sunday rain plan)</strong>
+  <span>Free admission, world-class collection of manuscripts, prints and decorative arts from across Asia and the Middle East — one of Dublin's most underrated cultural spots, right beside Dublin Castle.</span>
+</div>
 
-    <li class="todo-item">
-      <strong>Sunday — Coastal walk as it clears</strong>
-      <span>With sunny spells building through Sunday afternoon, head to the <strong>Dún Laoghaire promenade</strong> or the <strong>Howth cliff walk</strong> to make the most of the improving conditions. Pair with the free dlr Streets Festival while you're in Dún Laoghaire.</span>
-    </li>
-
-  </ul>
-
-  <footer>
-    <p>Early heads-up — a detailed plan follows on Friday.</p>
-    <p style="margin-top:0.3rem;">Weather source: Met Éireann &nbsp;·&nbsp; Events: Visit Dublin, Songkick, Live Nation</p>
-  </footer>
-
+<footer>Early heads-up — a detailed plan follows on Friday.</footer>
 </div>
 </body>
 </html>
