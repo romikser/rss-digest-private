@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunday Running Brief — 5 July 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f0f4f8;
+      color: #1a202c;
+      padding: 2rem 1rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2d3748;
+      letter-spacing: -0.5px;
+    }
+    header p.date {
+      margin-top: 0.35rem;
+      font-size: 1rem;
+      color: #718096;
+      font-weight: 500;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    section {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+    section h2 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #a0aec0;
+      margin-bottom: 1rem;
+    }
+
+    /* Weather grid */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .stat-card {
+      background: #f7fafc;
+      border-radius: 10px;
+      padding: 0.85rem 0.75rem;
+      text-align: center;
+    }
+    .stat-card .label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #a0aec0;
+      margin-bottom: 0.35rem;
+    }
+    .stat-card .value {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #2d3748;
+      line-height: 1.1;
+    }
+    .stat-card .sub {
+      font-size: 0.72rem;
+      color: #718096;
+      margin-top: 0.2rem;
+    }
+
+    /* Best time */
+    .best-time-block {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .time-badge {
+      background: #ebf8ff;
+      color: #2b6cb0;
+      border-radius: 10px;
+      padding: 0.6rem 1.1rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .best-time-block p {
+      font-size: 0.9rem;
+      color: #4a5568;
+      line-height: 1.5;
+    }
+
+    /* What to wear */
+    .gear-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .gear-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: #4a5568;
+      line-height: 1.45;
+    }
+    .gear-list li::before {
+      content: "•";
+      color: #63b3ed;
+      font-size: 1.1rem;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+
+    /* Heads up */
+    .alert-block {
+      background: #fffaf0;
+      border-left: 4px solid #f6ad55;
+      border-radius: 0 8px 8px 0;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      color: #744210;
+      line-height: 1.5;
+    }
+    .alert-block.clear {
+      background: #f0fff4;
+      border-left-color: #68d391;
+      color: #276749;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.72rem;
+      color: #a0aec0;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Sunday Running Brief</h1>
+      <p class="date">Sunday, 5 July 2026 &mdash; Dublin, Ireland</p>
+    </header>
+
+    <section>
+      <h2>Weather</h2>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="label">High / Low</div>
+          <div class="value">21°C</div>
+          <div class="sub">Low 15°C</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Feels Like</div>
+          <div class="value">19°C</div>
+          <div class="sub">with wind chill</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Rain Chance</div>
+          <div class="value">~10%</div>
+          <div class="sub">Light drizzle possible early</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Wind</div>
+          <div class="value">15 km/h</div>
+          <div class="sub">W/SW, gusts ~35 km/h</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Sunrise</div>
+          <div class="value">5:05</div>
+          <div class="sub">Dawn ~4:15 AM</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Sunset</div>
+          <div class="value">9:52</div>
+          <div class="sub">Dusk ~10:45 PM</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Best Time to Run</h2>
+      <div class="best-time-block">
+        <div class="time-badge">7:00 – 9:30 AM</div>
+        <p>Cool and calm before temperatures climb. Drizzle risk is minimal after 7 AM as any patchy early rain clears. Afternoon brings sunny intervals (1–7 PM) if you prefer a later slot, but temperatures will be warmer and westerly gusts pick up.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>What to Wear</h2>
+      <ul class="gear-list">
+        <li>Lightweight long-sleeve or a technical tee with a thin windproof layer — cool at 15°C first thing, strips off easily once warm</li>
+        <li>Shorts are fine; consider light running tights if you feel the morning chill</li>
+        <li>A packable light rain shell clipped to your waist — low rain risk but very Dublin of it to drizzle anyway</li>
+        <li>Cap or visor for any afternoon sunny intervals (UV can still surprise even through cloud)</li>
+        <li>Running gloves optional — likely too warm, but pop a pair in a pocket for the first kilometre</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Heads Up</h2>
+      <div class="alert-block">
+        <strong>Gusty westerly wind</strong> — gusts to ~35 km/h mean out-and-back routes heading west first (into the wind) will feel harder; plan your return leg with the wind at your back for a free push. Cloud cover will be patchy so UV exposure is still possible — sunscreen if you're out more than 45 mins.
+      </div>
+    </section>
+
+    <footer>
+      Generated by Magi &mdash; Sources: Met Éireann, Met Office &middot; 1 Jul 2026
+    </footer>
+  </div>
+</body>
+</html>
