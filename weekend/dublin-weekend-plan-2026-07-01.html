@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dublin Weekend Plan — 4–5 July 2026</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f4f5f7;
+      color: #1a1a2e;
+      line-height: 1.6;
+      padding: 2rem 1rem 4rem;
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 2.5rem;
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2e6da4 100%);
+      border-radius: 14px;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
+    header .subtitle {
+      margin-top: 0.4rem;
+      font-size: 1.05rem;
+      opacity: 0.85;
+      font-weight: 400;
+    }
+    header .generated {
+      margin-top: 0.9rem;
+      font-size: 0.78rem;
+      opacity: 0.6;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Day sections ── */
+    .day-section {
+      max-width: 780px;
+      margin: 0 auto 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      overflow: hidden;
+    }
+
+    .day-header {
+      padding: 1.1rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .day-sat .day-header { background: #e8f0fe; border-left: 5px solid #3b82f6; }
+    .day-sun .day-header { background: #fef9e7; border-left: 5px solid #f59e0b; }
+
+    .day-header h2 { font-size: 1.25rem; font-weight: 700; }
+    .day-header .date-label { font-size: 0.9rem; color: #666; font-weight: 400; }
+
+    .weather-bar {
+      padding: 0.85rem 1.8rem;
+      background: #f8fafd;
+      border-bottom: 1px solid #e8edf5;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+      color: #444;
+    }
+    .weather-bar .wi { font-size: 1.1rem; }
+    .weather-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: #edf2fb;
+      border-radius: 6px;
+      padding: 0.2rem 0.6rem;
+    }
+
+    /* ── Timeline ── */
+    .timeline {
+      padding: 1.4rem 1.8rem 1.6rem;
+      list-style: none;
+    }
+    .timeline li {
+      position: relative;
+      padding-left: 2.4rem;
+      margin-bottom: 1.4rem;
+    }
+    .timeline li:last-child { margin-bottom: 0; }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: 0.65rem;
+      top: 0.55rem;
+      bottom: -1.4rem;
+      width: 2px;
+      background: #dde3ed;
+    }
+    .timeline li:last-child::before { display: none; }
+    .timeline li::after {
+      content: "";
+      position: absolute;
+      left: 0.3rem;
+      top: 0.45rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #3b82f6;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px #3b82f6;
+    }
+    .day-sun .timeline li::after { background: #f59e0b; box-shadow: 0 0 0 2px #f59e0b; }
+
+    .tl-time {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #3b82f6;
+      margin-bottom: 0.2rem;
+    }
+    .day-sun .tl-time { color: #d97706; }
+    .tl-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; }
+    .tl-venue { font-size: 0.85rem; color: #555; margin-top: 0.1rem; }
+    .tl-desc { font-size: 0.88rem; color: #444; margin-top: 0.3rem; }
+    .tl-link { font-size: 0.82rem; margin-top: 0.4rem; }
+    .tl-link a { color: #2e6da4; text-decoration: none; }
+    .tl-link a:hover { text-decoration: underline; }
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    .badge-free { background: #d1fae5; color: #065f46; }
+    .badge-ticket { background: #fee2e2; color: #991b1b; }
+    .badge-outdoor { background: #dbeafe; color: #1e40af; }
+
+    /* ── Notes section ── */
+    .notes-section {
+      max-width: 780px;
+      margin: 0 auto 2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      overflow: hidden;
+    }
+    .notes-header {
+      padding: 1.1rem 1.8rem;
+      background: #f0fdf4;
+      border-left: 5px solid #22c55e;
+    }
+    .notes-header h2 { font-size: 1.1rem; font-weight: 700; }
+    .notes-list {
+      list-style: none;
+      padding: 1.2rem 1.8rem 1.6rem;
+    }
+    .notes-list li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
+      color: #333;
+    }
+    .notes-list li:last-child { margin-bottom: 0; }
+    .notes-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+      font-weight: 700;
+    }
+    .notes-list a { color: #2e6da4; text-decoration: none; }
+    .notes-list a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: 0.78rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🇮🇪 Dublin Weekend Plan</h1>
+  <div class="subtitle">Saturday 4 July &amp; Sunday 5 July 2026</div>
+  <div class="generated">Generated 1 July 2026 · Sources: Met Éireann, Transport for Ireland, dlr Summerfest, Aviva Stadium, Iveagh Gardens</div>
+</header>
+
+<!-- ══════════════ SATURDAY ══════════════ -->
+<section class="day-section day-sat">
+  <div class="day-header">
+    <div>
+      <h2>Saturday <span class="date-label">4 July 2026</span></h2>
+    </div>
+  </div>
+  <div class="weather-bar">
+    <span class="weather-tag"><span class="wi">🌧️</span> Overcast with light rain &amp; drizzle</span>
+    <span class="weather-tag">🌡️ 16–20°C</span>
+    <span class="weather-tag">💨 Moderate SW breeze</span>
+    <span class="weather-tag">☂️ Pack a waterproof — showers likely throughout</span>
+  </div>
+  <ul class="timeline">
+
+    <li>
+      <div class="tl-time">10:00 AM – 1:00 PM</div>
+      <div class="tl-title">Coastival Opening Day — Emergency Services Day
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="tl-venue">📍 St Michael's Pier, Dún Laoghaire</div>
+      <div class="tl-desc">Coastival's nine-day maritime festival kicks off with families meeting the people who keep coastal communities safe — emergency vehicles, RNLI boats, Coast Guard demo dives, and specialist marine equipment up close. Atmospheric waterfront setting even in light rain.</div>
+      <div class="tl-link"><a href="https://www.dlrcoco.ie/dlr-events/event/coastival-2026" target="_blank">dlrcoco.ie — Coastival 2026 →</a></div>
+    </li>
+
+    <li>
+      <div class="tl-time">12:00 PM – 4:00 PM</div>
+      <div class="tl-title">dlr Streets — Dún Laoghaire Busking Festival
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="tl-venue">📍 Myrtle Square · DLR Tourist Office · Dún Laoghaire Baths · St Michael's Church · dlr LexIcon Library Garden</div>
+      <div class="tl-desc">32 independent and emerging artists take over five spots across town as part of dlr Summerfest 2026. Great low-key way to wander the seafront and stumble on good music without needing tickets. Pairs well with a coffee in the LexIcon café if the rain picks up.</div>
+      <div class="tl-link"><a href="https://www.dlrtourism.ie/events-and-news" target="_blank">dlrtourism.ie — Events &amp; News →</a></div>
+    </li>
+
+    <li>
+      <div class="tl-time">All Day</div>
+      <div class="tl-title">Longitude Festival — Day 1
+        <span class="badge badge-outdoor">Outdoor</span>
+        <span class="badge badge-ticket">Ticketed</span>
+      </div>
+      <div class="tl-venue">📍 Marlay Park, Rathfarnham, Dublin 16</div>
+      <div class="tl-desc">Dublin's flagship outdoor music festival returns for its two-day run with major international acts across multiple stages — hip-hop, R&amp;B, electronic and pop. Gates open mid-afternoon; main stage headliner from ~9 PM. Wellies or waterproof footwear strongly recommended — Marlay gets muddy. Two-day tickets from ~€200.</div>
+      <div class="tl-link"><a href="https://www.longitude.ie/" target="_blank">longitude.ie — Official site →</a> · <a href="https://nialler9.com/marlay-park-gigs-longitude-festival-information/" target="_blank">Nialler9 — Practical info →</a></div>
+    </li>
+
+    <li>
+      <div class="tl-time">Doors ~6:00 PM</div>
+      <div class="tl-title">Take That: The Circus Live
+        <span class="badge badge-ticket">Ticketed</span>
+      </div>
+      <div class="tl-venue">📍 Aviva Stadium, Lansdowne Road, Dublin 4</div>
+      <div class="tl-desc">Take That bring their iconic stadium spectacular back to Dublin. One of the biggest concerts of the Irish summer. If you have tickets, allow extra time — road closures come into effect around 2 hours before showtime. No public parking on site; public transport is the only sensible option.</div>
+      <div class="tl-link"><a href="https://www.avivastadium.ie/whats-on/take-that-the-circus-live" target="_blank">avivastadium.ie — Event page →</a> · <a href="https://www.transportforireland.ie/events/take-that-the-circus-live-in-dublins-aviva-stadium-4th-jul-2026/" target="_blank">Transport for Ireland — Getting there →</a></div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- ══════════════ SUNDAY ══════════════ -->
+<section class="day-section day-sun">
+  <div class="day-header">
+    <div>
+      <h2>Sunday <span class="date-label">5 July 2026</span></h2>
+    </div>
+  </div>
+  <div class="weather-bar">
+    <span class="weather-tag"><span class="wi">⛅</span> Cloudy AM → sunny spells PM</span>
+    <span class="weather-tag">🌡️ 17–22°C</span>
+    <span class="weather-tag">🌤️ Improving through afternoon</span>
+    <span class="weather-tag">☔ Morning may still be damp — afternoon looks brighter</span>
+  </div>
+  <ul class="timeline">
+
+    <li>
+      <div class="tl-time">10:00 AM – 1:00 PM</div>
+      <div class="tl-title">Morning Walk: Dún Laoghaire Pier &amp; Coastival Waterfront
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="tl-venue">📍 Dún Laoghaire East Pier / West Pier — DART to Dún Laoghaire</div>
+      <div class="tl-desc">Coastival's maritime programming continues with sailing demos, kayaking sessions, and walking tours around the harbour. Sunday morning on the pier before the crowds arrive is one of Dublin's best free pleasures. Grab a coffee at KC Peaches or the Forty Foot area nearby.</div>
+      <div class="tl-link"><a href="https://www.dlrcoco.ie/dlr-events/event/coastival-2026" target="_blank">dlrcoco.ie — Coastival full programme →</a></div>
+    </li>
+
+    <li>
+      <div class="tl-time">12:00 PM – 4:00 PM</div>
+      <div class="tl-title">dlr Streets — Busking Festival Day 2
+        <span class="badge badge-free">Free</span>
+      </div>
+      <div class="tl-venue">📍 Five locations across Dún Laoghaire town centre</div>
+      <div class="tl-desc">The busking festival runs again on Sunday with 32 artists performing at Myrtle Square, the Tourist Office, the Baths, St Michael's Church and the LexIcon Library Garden. As the afternoon sun hopefully comes out, the seafront promenade is lively and easy to dip in and out of between acts.</div>
+      <div class="tl-link"><a href="https://www.dlrtourism.ie/events-and-news" target="_blank">dlrtourism.ie →</a></div>
+    </li>
+
+    <li>
+      <div class="tl-time">4:00 PM onwards</div>
+      <div class="tl-title">Longitude Festival — Day 2 feat. Mumford &amp; Sons + The War on Drugs
+        <span class="badge badge-outdoor">Outdoor</span>
+        <span class="badge badge-ticket">Ticketed</span>
+      </div>
+      <div class="tl-venue">📍 Marlay Park, Rathfarnham, Dublin 16</div>
+      <div class="tl-desc">The second and final day of Longitude, with Mumford &amp; Sons headlining from 4 PM and The War on Drugs also on the bill. Sunday's improving weather makes this a much more pleasant outdoor experience than Saturday. Luas Green Line to Balally or Dundrum + a short walk is the recommended route.</div>
+      <div class="tl-link"><a href="https://www.longitude.ie/" target="_blank">longitude.ie →</a> · <a href="https://nialler9.com/all-you-need-to-know-about-gigs-at-marlay-park-longitude-festival/" target="_blank">Nialler9 — Marlay Park practical guide →</a></div>
+    </li>
+
+    <li>
+      <div class="tl-time">Doors 6:00 PM</div>
+      <div class="tl-title">Live at the Iveagh Gardens: Elvis Costello &amp; The Imposters with Charlie Sexton
+        <span class="badge badge-outdoor">Outdoor</span>
+        <span class="badge badge-ticket">Ticketed</span>
+      </div>
+      <div class="tl-venue">📍 Iveagh Gardens, Clonmel St, Dublin 2 (off Harcourt St)</div>
+      <div class="tl-desc">One of Dublin's most atmospheric outdoor summer concert series — the walled Victorian gardens make for an intimate setting. Elvis Costello &amp; The Imposters are joined by Charlie Sexton for what should be a superb Sunday evening. Bring a picnic blanket; no re-entry once in. Book ahead — this series sells out.</div>
+      <div class="tl-link"><a href="https://www.visitdublin.com/events" target="_blank">visitdublin.com — Events →</a></div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- ══════════════ NOTES ══════════════ -->
+<section class="notes-section">
+  <div class="notes-header">
+    <h2>🗒️ Logistics &amp; Notes</h2>
+  </div>
+  <ul class="notes-list">
+    <li><strong>Take That / Aviva Stadium (Sat):</strong> No public parking available. Best options are DART to Lansdowne Road station (right beside stadium), buses 7, 8, 45, or 84 from city centre, or Luas Red Line to Connolly + walk. Road closures enforced by An Garda Síochána approximately 2 hours before showtime. <a href="https://www.transportforireland.ie/events/take-that-the-circus-live-in-dublins-aviva-stadium-4th-jul-2026/" target="_blank">TFI event transport info →</a></li>
+    <li><strong>Longitude / Marlay Park (Sat–Sun):</strong> No convenient Luas stop — take Luas Green Line to Balally or Dundrum and walk ~15 min. Limited car parking on site; buses 116 and 16 also serve the area. Wellies or waterproof boots essential — grass arena gets very muddy. No re-entry policy.</li>
+    <li><strong>Iveagh Gardens (Sun):</strong> Small, intimate venue — sells out fast. No re-entry after entry. Bring a blanket or low folding chair. Nearest Luas: Harcourt (Green Line). No parking nearby; walk from city centre or cycle.</li>
+    <li><strong>dlr Streets &amp; Coastival (free, both days):</strong> DART to Dún Laoghaire station, a 5-minute walk to the pier. No booking needed. Runs 12pm–4pm on both days. Seafront parking in Dún Laoghaire can be tight on event weekends.</li>
+    <li><strong>Weather heads-up:</strong> Saturday is the wetter day — layer up and pack a waterproof regardless of which event you're at. Sunday afternoon is forecast to brighten with sunny intervals, making it better for outdoor/seafront activities.</li>
+    <li><strong>Busy weekend overall:</strong> Three major music events (Take That, Longitude, Iveagh Gardens) plus dlr Summerfest all run simultaneously — expect city centre roads and public transport to be busier than usual, especially Saturday evening around Ballsbridge and the Harcourt/Rathmines corridor.</li>
+    <li><strong>Book ahead:</strong> Iveagh Gardens tickets sell out quickly. Longitude and Take That are ticketed events — check <a href="https://www.ticketmaster.ie" target="_blank">Ticketmaster.ie</a> for availability.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Built automatically on 1 July 2026 · Weather: <a href="https://www.met.ie/forecasts/Dublin" target="_blank">Met Éireann</a> · Events: Transport for Ireland, dlr Summerfest, Aviva Stadium, Iveagh Gardens, Longitude.ie</p>
+</footer>
+
+</body>
+</html>
