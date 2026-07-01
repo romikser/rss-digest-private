@@ -3,224 +3,234 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sunday Running Brief — 5 July 2026</title>
+  <title>Sunday Running Brief · Dublin · 2 July 2026</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background: #f0f4f8;
-      color: #1a202c;
-      padding: 2rem 1rem;
+      background: #f0f0f0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      color: #111;
+      line-height: 1.5;
     }
+
+    /* HEADER */
     header {
-      text-align: center;
-      margin-bottom: 2rem;
+      background: #111111;
+      color: #fff;
+      border-bottom: 4px solid #cc0000;
+      padding: 2rem 1.2rem 1.6rem;
+    }
+    .header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #cc0000;
+      margin-bottom: 0.4rem;
     }
     header h1 {
       font-size: 2rem;
       font-weight: 700;
-      color: #2d3748;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
     }
-    header p.date {
-      margin-top: 0.35rem;
-      font-size: 1rem;
-      color: #718096;
-      font-weight: 500;
+    .subtitle {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 0.5rem;
     }
-    .container {
-      max-width: 680px;
+
+    /* MAIN */
+    main {
+      max-width: 760px;
       margin: 0 auto;
+      padding: 0 1.2rem 2rem;
     }
-    section {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1.25rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-    }
-    section h2 {
-      font-size: 0.7rem;
-      font-weight: 700;
+
+    /* SECTION HEADING */
+    h2 {
+      font-size: 0.68rem;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: #a0aec0;
+      letter-spacing: 0.15em;
+      color: #cc0000;
+      border-bottom: 2px solid #cc0000;
+      padding-bottom: 0.4rem;
+      margin-top: 2rem;
       margin-bottom: 1rem;
     }
 
-    /* Weather grid */
+    /* STAT GRID */
     .stat-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 0.75rem;
     }
     .stat-card {
-      background: #f7fafc;
-      border-radius: 10px;
-      padding: 0.85rem 0.75rem;
-      text-align: center;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      padding: 0.85rem;
     }
-    .stat-card .label {
-      font-size: 0.65rem;
-      font-weight: 600;
+    .stat-key {
+      font-size: 0.68rem;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: #a0aec0;
-      margin-bottom: 0.35rem;
+      letter-spacing: 0.08em;
+      color: #666;
+      margin-bottom: 0.25rem;
     }
-    .stat-card .value {
-      font-size: 1.35rem;
+    .stat-value {
+      font-size: 1.1rem;
       font-weight: 700;
-      color: #2d3748;
-      line-height: 1.1;
+      color: #111;
     }
-    .stat-card .sub {
-      font-size: 0.72rem;
-      color: #718096;
+    .stat-detail {
+      font-size: 0.78rem;
+      color: #888;
       margin-top: 0.2rem;
     }
 
-    /* Best time */
-    .best-time-block {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
+    /* BEST TIME CARD */
+    .best-time-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-left: 4px solid #cc0000;
+      border-radius: 5px;
+      padding: 1rem 1.1rem;
     }
-    .time-badge {
-      background: #ebf8ff;
-      color: #2b6cb0;
-      border-radius: 10px;
-      padding: 0.6rem 1.1rem;
-      font-size: 1.3rem;
-      font-weight: 700;
-      white-space: nowrap;
-      flex-shrink: 0;
+    .best-time-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #cc0000;
+      margin-bottom: 0.4rem;
     }
-    .best-time-block p {
+    .best-time-card p {
       font-size: 0.9rem;
-      color: #4a5568;
-      line-height: 1.5;
+      color: #333;
     }
 
-    /* What to wear */
-    .gear-list {
+    /* WEAR / HEADS UP CARDS */
+    .info-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      padding: 0.85rem 1rem;
+    }
+    .info-card ul {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
     }
-    .gear-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
+    .info-card ul li {
+      font-size: 0.88rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid #e0e0e0;
+      color: #333;
+    }
+    .info-card ul li:last-child {
+      border-bottom: none;
+    }
+    .info-card ul li::before {
+      content: "· ";
+      color: #cc0000;
+      font-weight: 700;
+    }
+    .info-card p {
       font-size: 0.9rem;
-      color: #4a5568;
-      line-height: 1.45;
-    }
-    .gear-list li::before {
-      content: "•";
-      color: #63b3ed;
-      font-size: 1.1rem;
-      line-height: 1.3;
-      flex-shrink: 0;
+      color: #333;
     }
 
-    /* Heads up */
-    .alert-block {
-      background: #fffaf0;
-      border-left: 4px solid #f6ad55;
-      border-radius: 0 8px 8px 0;
-      padding: 0.75rem 1rem;
-      font-size: 0.9rem;
-      color: #744210;
-      line-height: 1.5;
-    }
-    .alert-block.clear {
-      background: #f0fff4;
-      border-left-color: #68d391;
-      color: #276749;
-    }
-
+    /* FOOTER */
     footer {
+      max-width: 760px;
+      margin: 2.5rem auto 0;
+      padding: 1rem 1.2rem 2rem;
+      border-top: 1px solid #e0e0e0;
       text-align: center;
-      font-size: 0.72rem;
-      color: #a0aec0;
-      margin-top: 1.5rem;
+      font-size: 0.76rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Sunday Running Brief</h1>
-      <p class="date">Sunday, 5 July 2026 &mdash; Dublin, Ireland</p>
-    </header>
 
-    <section>
-      <h2>Weather</h2>
-      <div class="stat-grid">
-        <div class="stat-card">
-          <div class="label">High / Low</div>
-          <div class="value">21°C</div>
-          <div class="sub">Low 15°C</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Feels Like</div>
-          <div class="value">19°C</div>
-          <div class="sub">with wind chill</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Rain Chance</div>
-          <div class="value">~10%</div>
-          <div class="sub">Light drizzle possible early</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Wind</div>
-          <div class="value">15 km/h</div>
-          <div class="sub">W/SW, gusts ~35 km/h</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Sunrise</div>
-          <div class="value">5:05</div>
-          <div class="sub">Dawn ~4:15 AM</div>
-        </div>
-        <div class="stat-card">
-          <div class="label">Sunset</div>
-          <div class="value">9:52</div>
-          <div class="sub">Dusk ~10:45 PM</div>
-        </div>
+  <header>
+    <div class="header-inner">
+      <div class="eyebrow">Sunday Running Brief · Dublin</div>
+      <h1>Sunday, 2 July 2026</h1>
+      <div class="subtitle">Mostly cloudy · 16–21°C · Patchy drizzle possible · SW–W winds</div>
+    </div>
+  </header>
+
+  <main>
+
+    <h2>Weather at a Glance</h2>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-key">Temperature</div>
+        <div class="stat-value">16–21°C</div>
+        <div class="stat-detail">High in the afternoon</div>
       </div>
-    </section>
-
-    <section>
-      <h2>Best Time to Run</h2>
-      <div class="best-time-block">
-        <div class="time-badge">7:00 – 9:30 AM</div>
-        <p>Cool and calm before temperatures climb. Drizzle risk is minimal after 7 AM as any patchy early rain clears. Afternoon brings sunny intervals (1–7 PM) if you prefer a later slot, but temperatures will be warmer and westerly gusts pick up.</p>
+      <div class="stat-card">
+        <div class="stat-key">Feels Like</div>
+        <div class="stat-value">14–18°C</div>
+        <div class="stat-detail">Wind chill from SW breeze</div>
       </div>
-    </section>
+      <div class="stat-card">
+        <div class="stat-key">Rain Risk</div>
+        <div class="stat-value">~40%</div>
+        <div class="stat-detail">Patchy drizzle, mainly morning</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-key">Wind</div>
+        <div class="stat-value">15–25 km/h</div>
+        <div class="stat-detail">SW–W, occasionally fresh</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-key">Sunrise</div>
+        <div class="stat-value">05:03</div>
+        <div class="stat-detail">Plenty of early light</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-key">Sunset</div>
+        <div class="stat-value">21:54</div>
+        <div class="stat-detail">16h 50min of daylight</div>
+      </div>
+    </div>
 
-    <section>
-      <h2>What to Wear</h2>
-      <ul class="gear-list">
-        <li>Lightweight long-sleeve or a technical tee with a thin windproof layer — cool at 15°C first thing, strips off easily once warm</li>
-        <li>Shorts are fine; consider light running tights if you feel the morning chill</li>
-        <li>A packable light rain shell clipped to your waist — low rain risk but very Dublin of it to drizzle anyway</li>
-        <li>Cap or visor for any afternoon sunny intervals (UV can still surprise even through cloud)</li>
-        <li>Running gloves optional — likely too warm, but pop a pair in a pocket for the first kilometre</li>
+    <h2>Best Time to Run</h2>
+    <div class="best-time-card">
+      <div class="best-time-label">Recommended Window</div>
+      <p>
+        <strong>10:00 – 13:00</strong> is the sweet spot. Any morning drizzle should ease by mid-morning as the front moves through. Temperatures will be comfortable in the high teens, and the afternoon risk of renewed showers increases after 15:00. If you prefer an early start, the window from 07:00 – 09:00 is also workable — just expect some light drizzle and cooler air around 16°C.
+      </p>
+    </div>
+
+    <h2>What to Wear</h2>
+    <div class="info-card">
+      <ul>
+        <li>Lightweight moisture-wicking base layer — temps are mild but the wind will cut</li>
+        <li>Light windproof jacket or gilet — SW–W gusts up to 30 km/h on exposed routes</li>
+        <li>Shorts or lightweight tights — 16°C+ feels fine once you're moving</li>
+        <li>Running cap — keeps drizzle off your face and shields from the low morning sun</li>
+        <li>Skip the waterproof shell — drizzle is light; breathability matters more</li>
       </ul>
-    </section>
+    </div>
 
-    <section>
-      <h2>Heads Up</h2>
-      <div class="alert-block">
-        <strong>Gusty westerly wind</strong> — gusts to ~35 km/h mean out-and-back routes heading west first (into the wind) will feel harder; plan your return leg with the wind at your back for a free push. Cloud cover will be patchy so UV exposure is still possible — sunscreen if you're out more than 45 mins.
-      </div>
-    </section>
+    <h2>Heads Up</h2>
+    <div class="info-card">
+      <p>
+        Dublin in July means "partly anything" — cloud and sun alternate quickly. The southwest wind will be in your face on southbound legs, so plan your route to tackle it early while you're fresh and have the tailwind on the way home. Phoenix Park and the Dodder path stay sheltered compared to the coast or open canal stretches. Paths may be slightly damp from overnight drizzle — watch footing on packed gravel. Nothing here should cancel the run; just layer right and go.
+      </p>
+    </div>
 
-    <footer>
-      Generated by Magi &mdash; Sources: Met Éireann, Met Office &middot; 1 Jul 2026
-    </footer>
-  </div>
+  </main>
+
+  <footer>
+    Weather sourced from Met Éireann &amp; world-weather.info · Generated 1 July 2026 by Magi
+  </footer>
+
 </body>
 </html>
