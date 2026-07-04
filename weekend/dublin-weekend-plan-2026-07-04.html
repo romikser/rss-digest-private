@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dublin Weekend Plan — Sat 5 &amp; Sun 6 July 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f0f0f0; font-family: -apple-system, 'Hiragino Sans', 'Meiryo', sans-serif; font-size: 14px; color: #333; }
+  #header { background: #cc0000; color: white; padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+  #header h1 { font-size: 20px; font-weight: bold; letter-spacing: .02em; }
+  #header .sub { font-size: 12px; opacity: .85; margin-left: auto; }
+  #wrap { max-width: 960px; margin: 0 auto; padding: 12px 8px 40px; display: grid; grid-template-columns: 1fr 320px; gap: 12px; }
+  @media(max-width:700px){ #wrap { grid-template-columns: 1fr; } #sidebar { display: none; } }
+  .card { background: white; border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,.1); margin-bottom: 10px; overflow: hidden; }
+  .card-header { border-left: 4px solid #cc0000; padding: 8px 12px; font-weight: bold; font-size: 15px; background: #fff; border-bottom: 1px solid #eee; }
+  .card-body { padding: 12px; }
+  .weather-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .weather-day { border: 1px solid #e8e8e8; border-radius: 3px; padding: 10px; text-align: center; }
+  .weather-day .date { font-size: 12px; color: #888; margin-bottom: 4px; }
+  .weather-day .temp { font-size: 22px; font-weight: bold; color: #cc0000; }
+  .weather-day .desc { font-size: 12px; color: #555; margin-top: 4px; }
+  .weather-day .rain { font-size: 11px; color: #1a6fc4; margin-top: 2px; }
+  .weather-detail { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .weather-period { background: #fafafa; border: 1px solid #eee; border-radius: 3px; padding: 8px; font-size: 12px; }
+  .weather-period .period-label { font-weight: bold; color: #888; font-size: 11px; margin-bottom: 4px; }
+  .event-item { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+  .event-item:last-child { border-bottom: none; }
+  .event-img { width: 120px; height: 80px; object-fit: cover; border-radius: 2px; flex-shrink: 0; background: #eee; }
+  .event-img-placeholder { width: 120px; height: 80px; background: linear-gradient(135deg, #e8e8e8, #d0d0d0); border-radius: 2px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #bbb; font-size: 22px; }
+  .event-info { flex: 1; min-width: 0; }
+  .event-title { font-weight: bold; font-size: 14px; line-height: 1.4; margin-bottom: 4px; }
+  .event-title a { color: #1a6fc4; text-decoration: none; }
+  .event-title a:hover { text-decoration: underline; }
+  .event-meta { font-size: 11px; color: #888; margin-bottom: 3px; }
+  .event-desc { font-size: 12px; color: #555; line-height: 1.5; }
+  .tag { display: inline-block; background: #cc0000; color: white; font-size: 10px; padding: 1px 5px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+  .tag-blue { background: #1a6fc4; }
+  .tag-green { background: #2a8a2a; }
+  .tag-orange { background: #e07000; }
+  .sidebar-card { background: white; border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,.1); margin-bottom: 10px; overflow: hidden; }
+  .sidebar-header { border-left: 3px solid #cc0000; padding: 7px 10px; font-weight: bold; font-size: 13px; border-bottom: 1px solid #eee; }
+  .sidebar-body { padding: 10px; font-size: 13px; }
+  .stat-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid #f5f5f5; gap: 8px; }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: #666; }
+  .stat-val { font-weight: bold; }
+  .notes-list { list-style: none; }
+  .notes-list li { padding: 5px 0; border-bottom: 1px solid #f5f5f5; font-size: 12px; color: #555; padding-left: 14px; position: relative; }
+  .notes-list li:last-child { border-bottom: none; }
+  .notes-list li::before { content: '▶'; font-size: 9px; color: #cc0000; position: absolute; left: 0; top: 7px; }
+  .timeline-item { padding: 8px 0 8px 16px; border-left: 2px solid #e0e0e0; margin-left: 6px; position: relative; margin-bottom: 4px; }
+  .timeline-item::before { content: ''; width: 8px; height: 8px; background: #cc0000; border-radius: 50%; position: absolute; left: -5px; top: 12px; }
+  .timeline-time { font-size: 11px; color: #cc0000; font-weight: bold; margin-bottom: 2px; }
+  .timeline-title { font-size: 13px; font-weight: bold; }
+  .timeline-detail { font-size: 11px; color: #888; }
+  .section-label { font-size: 11px; font-weight: bold; color: #999; text-transform: uppercase; letter-spacing: .08em; margin: 12px 0 6px; }
+  footer { text-align: center; font-size: 11px; color: #999; padding: 20px 0; }
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>🏙️ Dublin Weekend Plan</h1>
+  <span class="sub">Sat 5 July – Sun 6 July 2026</span>
+</div>
+<div id="wrap">
+  <main>
+
+    <!-- Weather card -->
+    <div class="card">
+      <div class="card-header">🌤 Weekend Weather — Dublin</div>
+      <div class="card-body">
+        <div class="weather-grid">
+          <div class="weather-day">
+            <div class="date">Saturday 5 July</div>
+            <div class="temp">19°C</div>
+            <div class="desc">Mostly cloudy, largely dry · Low 14°C</div>
+            <div class="rain">☔ Rain: ~15% · 💨 Moderate W winds</div>
+          </div>
+          <div class="weather-day">
+            <div class="date">Sunday 6 July</div>
+            <div class="temp">19°C</div>
+            <div class="desc">Cloudy, sunny spells later · Low 12°C</div>
+            <div class="rain">☔ Rain: ~10% · 💨 Mod W–SW winds</div>
+          </div>
+        </div>
+        <div style="margin-top:10px; font-size:12px; color:#666; padding: 8px; background:#fafafa; border-radius:3px; border:1px solid #eee;">
+          ☁️ <strong>Outlook:</strong> A typical Dublin summer weekend — mild and mostly cloudy but largely dry. Bring a light layer; short sunny spells expected Sunday afternoon. Source: Met Éireann.
+        </div>
+      </div>
+    </div>
+
+    <!-- Saturday plan -->
+    <div class="card">
+      <div class="card-header">📅 Saturday 5 July</div>
+      <div class="card-body">
+        <div class="section-label">Suggested Day Timeline</div>
+        <div class="timeline-item">
+          <div class="timeline-time">10:00 – 12:00</div>
+          <div class="timeline-title">Morning Stroll &amp; Coffee</div>
+          <div class="timeline-detail">📍 Grand Canal Docks or St. Stephen's Green · Easy start before the crowds</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">12:00 – 16:00</div>
+          <div class="timeline-title">Blossoms &amp; Bees — Summer in Dublin</div>
+          <div class="timeline-detail">📍 Parliament Street · FREE family event — pollinators, crafts, live entertainment</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">All Day</div>
+          <div class="timeline-title">Longitude Festival (Day 2)</div>
+          <div class="timeline-detail">📍 Marlay Park, Rathfarnham · Ticketed — Dublin's biggest outdoor music festival</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">From 14:00</div>
+          <div class="timeline-title">Trinity Summer Series — Final Day</div>
+          <div class="timeline-detail">📍 Trinity College Dublin · Cian Ducrot, The Kooks, OMD — outdoor stage</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">18:00</div>
+          <div class="timeline-title">Elvis Costello &amp; The Imposters</div>
+          <div class="timeline-detail">📍 Iveagh Gardens · Evening outdoor concert — gates open ~17:00</div>
+        </div>
+
+        <div class="section-label" style="margin-top:16px;">Featured Events</div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">🎵</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag">Ticketed</span> <a href="https://www.longitude.ie/" target="_blank">Longitude Festival — Day 2</a></div>
+            <div class="event-meta">📍 Marlay Park, Rathfarnham · 🕐 Gates open ~12:00 · July 4–5</div>
+            <div class="event-desc">Dublin's biggest outdoor music festival returns to Marlay Park. Multi-stage, all-day event with international hip-hop, R&amp;B, electronic and pop acts. D15 bus or taxi from city centre recommended — parking extremely limited.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">🎸</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag">Ticketed</span> <a href="https://dublin.ie/whats-on/listings/live-the-iveagh-gardens/" target="_blank">Elvis Costello &amp; The Imposters — Live at The Iveagh Gardens</a></div>
+            <div class="event-meta">📍 Iveagh Gardens, Clonmel St, D02 · 🕐 18:00 (doors ~17:00)</div>
+            <div class="event-desc">Part of the Live at The Iveagh Gardens 2026 series (July 3–17). One of the most intimate outdoor venues in Dublin — no bad spots. Also featuring Charlie Sexton as support. Clonmel Street entrance; nearest Luas: Harcourt (Green Line).</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">🌸</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">FREE</span> <a href="https://www.dublincity.ie/events" target="_blank">Blossoms &amp; Bees — Summer in Dublin</a></div>
+            <div class="event-meta">📍 Parliament Street, Dublin City Centre · 🕐 12:00 – 16:00</div>
+            <div class="event-desc">Dublin City Council's Summer in Dublin transforms Parliament Street into a traffic-free zone with live entertainment, food &amp; craft markets, and family-friendly activities. This weekend's theme: pollinators and urban nature. Free entry.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">🎶</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag">Ticketed</span> <a href="https://www.visitdublin.com/events" target="_blank">Trinity Summer Series — Final Day</a></div>
+            <div class="event-meta">📍 College Park, Trinity College Dublin · 🕐 Afternoon gates</div>
+            <div class="event-desc">The last day of the beloved open-air concert series in the heart of Dublin. Featuring Cian Ducrot, OMD, and The Kooks on the outdoor stage inside Trinity's iconic grounds. Pearse St DART stop nearby.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sunday plan -->
+    <div class="card">
+      <div class="card-header">📅 Sunday 6 July</div>
+      <div class="card-body">
+        <div class="section-label">Suggested Day Timeline</div>
+        <div class="timeline-item">
+          <div class="timeline-time">10:00 – 12:00</div>
+          <div class="timeline-title">Brunch + Coastal Walk</div>
+          <div class="timeline-detail">📍 Dún Laoghaire Pier · 20 min by DART from Connolly — sea air and coffee</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">12:00 – 16:00</div>
+          <div class="timeline-title">Blossoms &amp; Bees — Summer in Dublin (Day 2)</div>
+          <div class="timeline-detail">📍 Parliament Street · FREE — same programme as Saturday</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">All Day</div>
+          <div class="timeline-title">Dún Laoghaire Summerfest 2026</div>
+          <div class="timeline-detail">📍 Various venues, Dún Laoghaire · Mix of free and ticketed events (July 3–12)</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">Afternoon</div>
+          <div class="timeline-title">Sunny spells expected 🌤</div>
+          <div class="timeline-detail">📍 Phoenix Park / Portmarnock Beach · Best window for outdoor time</div>
+        </div>
+
+        <div class="section-label" style="margin-top:16px;">Featured Events</div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">⚓</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag-blue tag">Festival</span> <a href="https://www.dlrsummerfest.com/" target="_blank">Dún Laoghaire Summerfest 2026</a></div>
+            <div class="event-meta">📍 Various venues, Dún Laoghaire · 🕐 All day · July 3–12</div>
+            <div class="event-desc">Over 70 acts across 10 days at the Purty Kitchen, Volume Records, Monkstown Parish Church and more. Sunday lineup includes tribute acts and local bands covering Fleetwood Mac, The Doors, ABBA. 20 min by DART from Connolly.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">🌸</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">FREE</span> <a href="https://dublin.ie/whats-on/listings/summer-in-dublin-2/" target="_blank">Blossoms &amp; Bees — Summer in Dublin (Day 2)</a></div>
+            <div class="event-meta">📍 Parliament Street, Dublin City Centre · 🕐 12:00 – 16:00</div>
+            <div class="event-desc">Second day of Dublin City Council's free family festival on Parliament Street. Interactive pollinator workshops, storytellers, street performers, food stalls. Traffic-free zone — arrive by bus, DART or bike.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">🎠</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">FREE</span> <a href="https://www.dublincity.ie/news/summer-starts-here-summer-dublin-launches-packed-program-free-events-families-heart-capital" target="_blank">We Love July — Dublin City Council</a></div>
+            <div class="event-meta">📍 Dublin City Centre · 🕐 12:00 – 18:00 (Saturdays in July)</div>
+            <div class="event-desc">Four free Saturdays in July celebrating Dublin's culture, heritage and community. Circus performers, live music, street art, and family-friendly zones across the city centre. Check dublincity.ie for exact locations.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notes & Logistics -->
+    <div class="card">
+      <div class="card-header">📌 Notes &amp; Logistics</div>
+      <div class="card-body">
+        <ul class="notes-list">
+          <li><strong>Luas &amp; DART normal this weekend</strong> — no engineering works confirmed. Green Line to Harcourt for Iveagh Gardens; DART to Dún Laoghaire or Pearse for Trinity.</li>
+          <li><strong>Longitude Festival transport:</strong> Avoid driving — Marlay Park parking extremely limited. Bus routes 16/75/116 from city centre, or taxi/rideshare. Allow extra time.</li>
+          <li><strong>Bus diversions from Monday 7 July:</strong> Routes 1, 15, 27, 44, 52, C1–C3 divert via D'Olier St due to roadworks. Doesn't affect the weekend but plan your Sunday evening return.</li>
+          <li><strong>Parliament Street (Summer in Dublin):</strong> Traffic-free zone 12–16:00 both days. Best accessed via Dame Street or Capel Street on foot.</li>
+          <li><strong>Iveagh Gardens tickets:</strong> Concert starts 18:00 — arrive by 17:15 to settle in. No re-entry. Bag check policy applies.</li>
+          <li><strong>Weather tip:</strong> Pack a light waterproof jacket — typical Dublin July. Mostly dry but a shower can't be ruled out, especially Saturday morning.</li>
+          <li><strong>Dún Laoghaire Summerfest:</strong> Mix of free street events and ticketed venue shows. Check dlrsummerfest.com for full Sunday schedule and advance booking.</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>Dublin Weekend Plan · Generated 4 July 2026 · Sources: Met Éireann, Dublin.ie, DLR Summerfest, Aiken Promotions, Dublin City Council</footer>
+  </main>
+
+  <aside id="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-header">🌡️ Weather Summary</div>
+      <div class="sidebar-body">
+        <div class="stat-row"><span class="stat-label">Sat 5 Jul high</span><span class="stat-val">19°C</span></div>
+        <div class="stat-row"><span class="stat-label">Sat 5 Jul low</span><span class="stat-val">14°C</span></div>
+        <div class="stat-row"><span class="stat-label">Sun 6 Jul high</span><span class="stat-val">19°C</span></div>
+        <div class="stat-row"><span class="stat-label">Sun 6 Jul low</span><span class="stat-val">12°C</span></div>
+        <div class="stat-row"><span class="stat-label">Rain risk</span><span class="stat-val" style="color:#1a6fc4">LOW</span></div>
+        <div class="stat-row"><span class="stat-label">Wind</span><span class="stat-val">Mod W</span></div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-header">🎭 Events This Weekend</div>
+      <div class="sidebar-body">
+        <div class="stat-row"><span class="tag">SAT</span><span style="font-size:12px">Longitude Festival Day 2 — Marlay Park</span></div>
+        <div class="stat-row"><span class="tag">SAT</span><span style="font-size:12px">Elvis Costello — Iveagh Gardens 18:00</span></div>
+        <div class="stat-row"><span class="tag">SAT</span><span style="font-size:12px">Trinity Summer Series (final day)</span></div>
+        <div class="stat-row"><span class="tag-green tag">SAT</span><span style="font-size:12px">Blossoms &amp; Bees, Parliament St (FREE)</span></div>
+        <div class="stat-row"><span class="tag-blue tag">SUN</span><span style="font-size:12px">Dún Laoghaire Summerfest (ongoing)</span></div>
+        <div class="stat-row"><span class="tag-green tag">SUN</span><span style="font-size:12px">Blossoms &amp; Bees Day 2 (FREE)</span></div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-header">🚌 Getting Around</div>
+      <div class="sidebar-body">
+        <div class="stat-row"><span class="stat-label">Luas Green Line</span><span class="stat-val">Normal ✅</span></div>
+        <div class="stat-row"><span class="stat-label">DART</span><span class="stat-val">Normal ✅</span></div>
+        <div class="stat-row"><span class="stat-label">Dublin Bus</span><span class="stat-val">Normal ✅</span></div>
+        <div class="stat-row"><span class="stat-label">Marlay Park</span><span class="stat-val" style="color:#cc0000">No Parking ⚠️</span></div>
+        <div style="font-size:11px; color:#888; margin-top:6px;">Bus diversions start Mon 7 July on routes 1, 15, 27, 44.</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-header">📍 Quick Links</div>
+      <div class="sidebar-body" style="font-size:12px; line-height:1.8;">
+        <a href="https://www.met.ie/forecasts/dublin/" style="color:#1a6fc4; display:block;">🌦 Met Éireann Dublin</a>
+        <a href="https://www.longitude.ie/" style="color:#1a6fc4; display:block;">🎵 Longitude Festival</a>
+        <a href="https://dublin.ie/whats-on/listings/live-the-iveagh-gardens/" style="color:#1a6fc4; display:block;">🎸 Live at Iveagh Gardens</a>
+        <a href="https://www.dlrsummerfest.com/" style="color:#1a6fc4; display:block;">⚓ DLR Summerfest</a>
+        <a href="https://www.dublincity.ie/events" style="color:#1a6fc4; display:block;">🏛 Dublin City Council Events</a>
+        <a href="https://www.transportforireland.ie/plan-a-journey/" style="color:#1a6fc4; display:block;">🚌 Transport for Ireland</a>
+      </div>
+    </div>
+  </aside>
+</div>
+</body>
+</html>
