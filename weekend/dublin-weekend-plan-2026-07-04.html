@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dublin Weekend Plan — Sat 5 &amp; Sun 6 July 2026</title>
+<title>Dublin Weekend Plan — Sat 4 July &amp; Sun 5 July 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: #f0f0f0; font-family: -apple-system, 'Hiragino Sans', 'Meiryo', sans-serif; font-size: 14px; color: #333; }
@@ -20,13 +20,11 @@
   .weather-day .temp { font-size: 22px; font-weight: bold; color: #cc0000; }
   .weather-day .desc { font-size: 12px; color: #555; margin-top: 4px; }
   .weather-day .rain { font-size: 11px; color: #1a6fc4; margin-top: 2px; }
-  .weather-detail { margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .weather-period { background: #fafafa; border: 1px solid #eee; border-radius: 3px; padding: 8px; font-size: 12px; }
-  .weather-period .period-label { font-weight: bold; color: #888; font-size: 11px; margin-bottom: 4px; }
+  .weather-detail { font-size: 11px; color: #777; margin-top: 8px; padding-top: 8px; border-top: 1px solid #f0f0f0; line-height: 1.6; }
   .event-item { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
   .event-item:last-child { border-bottom: none; }
   .event-img { width: 120px; height: 80px; object-fit: cover; border-radius: 2px; flex-shrink: 0; background: #eee; }
-  .event-img-placeholder { width: 120px; height: 80px; background: linear-gradient(135deg, #e8e8e8, #d0d0d0); border-radius: 2px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #bbb; font-size: 22px; }
+  .event-img-placeholder { width: 120px; height: 80px; background: #f0f0f0; border-radius: 2px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #bbb; font-size: 11px; }
   .event-info { flex: 1; min-width: 0; }
   .event-title { font-weight: bold; font-size: 14px; line-height: 1.4; margin-bottom: 4px; }
   .event-title a { color: #1a6fc4; text-decoration: none; }
@@ -36,16 +34,16 @@
   .tag { display: inline-block; background: #cc0000; color: white; font-size: 10px; padding: 1px 5px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
   .tag-blue { background: #1a6fc4; }
   .tag-green { background: #2a8a2a; }
-  .tag-orange { background: #e07000; }
+  .tag-purple { background: #6a3fa0; }
   .sidebar-card { background: white; border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,.1); margin-bottom: 10px; overflow: hidden; }
   .sidebar-header { border-left: 3px solid #cc0000; padding: 7px 10px; font-weight: bold; font-size: 13px; border-bottom: 1px solid #eee; }
   .sidebar-body { padding: 10px; font-size: 13px; }
   .stat-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid #f5f5f5; gap: 8px; }
   .stat-row:last-child { border-bottom: none; }
-  .stat-label { color: #666; }
-  .stat-val { font-weight: bold; }
+  .stat-label { color: #666; flex-shrink: 0; }
+  .stat-val { font-weight: bold; text-align: right; }
   .notes-list { list-style: none; }
-  .notes-list li { padding: 5px 0; border-bottom: 1px solid #f5f5f5; font-size: 12px; color: #555; padding-left: 14px; position: relative; }
+  .notes-list li { padding: 5px 0; border-bottom: 1px solid #f5f5f5; font-size: 12px; color: #555; padding-left: 12px; position: relative; }
   .notes-list li:last-child { border-bottom: none; }
   .notes-list li::before { content: '▶'; font-size: 9px; color: #cc0000; position: absolute; left: 0; top: 7px; }
   .timeline-item { padding: 8px 0 8px 16px; border-left: 2px solid #e0e0e0; margin-left: 6px; position: relative; margin-bottom: 4px; }
@@ -53,234 +51,354 @@
   .timeline-time { font-size: 11px; color: #cc0000; font-weight: bold; margin-bottom: 2px; }
   .timeline-title { font-size: 13px; font-weight: bold; }
   .timeline-detail { font-size: 11px; color: #888; }
-  .section-label { font-size: 11px; font-weight: bold; color: #999; text-transform: uppercase; letter-spacing: .08em; margin: 12px 0 6px; }
   footer { text-align: center; font-size: 11px; color: #999; padding: 20px 0; }
+  .mubi-banner { background: linear-gradient(135deg, #1c3f6e 0%, #0d2240 100%); color: white; padding: 8px 12px; border-radius: 3px; margin-bottom: 10px; font-size: 12px; display: flex; align-items: center; gap: 8px; }
+  .mubi-banner strong { font-size: 13px; }
+  .film-times { font-size: 11px; color: #666; background: #f8f8f8; padding: 4px 8px; border-radius: 2px; margin-top: 4px; display: inline-block; }
 </style>
 </head>
 <body>
 <div id="header">
   <h1>🏙️ Dublin Weekend Plan</h1>
-  <span class="sub">Sat 5 July – Sun 6 July 2026</span>
+  <span class="sub">Sat 4 July – Sun 5 July 2026</span>
 </div>
 <div id="wrap">
   <main>
 
-    <!-- Weather card -->
+    <!-- Weather -->
     <div class="card">
       <div class="card-header">🌤 Weekend Weather — Dublin</div>
       <div class="card-body">
         <div class="weather-grid">
           <div class="weather-day">
-            <div class="date">Saturday 5 July</div>
-            <div class="temp">19°C</div>
-            <div class="desc">Mostly cloudy, largely dry · Low 14°C</div>
-            <div class="rain">☔ Rain: ~15% · 💨 Moderate W winds</div>
+            <div class="date">Saturday 4 July</div>
+            <div class="temp">17°C</div>
+            <div class="desc">Mostly cloudy, dry · Low 14°C</div>
+            <div class="rain">☔ Rain: ~15% · 💨 Moderate SW</div>
           </div>
           <div class="weather-day">
-            <div class="date">Sunday 6 July</div>
-            <div class="temp">19°C</div>
-            <div class="desc">Cloudy, sunny spells later · Low 12°C</div>
-            <div class="rain">☔ Rain: ~10% · 💨 Mod W–SW winds</div>
+            <div class="date">Sunday 5 July</div>
+            <div class="temp">20°C</div>
+            <div class="desc">Cloudy, sunny spells later · Low 13°C</div>
+            <div class="rain">☔ Rain: ~10% · 💨 Moderate W/SW</div>
           </div>
         </div>
-        <div style="margin-top:10px; font-size:12px; color:#666; padding: 8px; background:#fafafa; border-radius:3px; border:1px solid #eee;">
-          ☁️ <strong>Outlook:</strong> A typical Dublin summer weekend — mild and mostly cloudy but largely dry. Bring a light layer; short sunny spells expected Sunday afternoon. Source: Met Éireann.
+        <div class="weather-detail">
+          🌦 <strong>Saturday:</strong> Generally dry with overcast skies. Moderate SW winds. Cloudy evening — bring a layer.<br>
+          ☀️ <strong>Sunday:</strong> Best day of the weekend — sunny spells expected in the afternoon, particularly in south Dublin. Warmer, up to 21°C possible.
+          Source: Met Éireann
         </div>
       </div>
     </div>
 
-    <!-- Saturday plan -->
+    <!-- Saturday -->
     <div class="card">
-      <div class="card-header">📅 Saturday 5 July</div>
+      <div class="card-header">📅 Saturday 4 July</div>
       <div class="card-body">
-        <div class="section-label">Suggested Day Timeline</div>
         <div class="timeline-item">
-          <div class="timeline-time">10:00 – 12:00</div>
-          <div class="timeline-title">Morning Stroll &amp; Coffee</div>
-          <div class="timeline-detail">📍 Grand Canal Docks or St. Stephen's Green · Easy start before the crowds</div>
+          <div class="timeline-time">ALL DAY</div>
+          <div class="timeline-title">Longitude Festival — Day 1</div>
+          <div class="timeline-detail">📍 Marlay Park, Rathfarnham · Dublin's biggest outdoor music festival</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-time">12:00 – 16:00</div>
-          <div class="timeline-title">Blossoms &amp; Bees — Summer in Dublin</div>
-          <div class="timeline-detail">📍 Parliament Street · FREE family event — pollinators, crafts, live entertainment</div>
+          <div class="timeline-title">Blossoms &amp; Bees</div>
+          <div class="timeline-detail">📍 Dublin City Centre · Family day — bee experts, plant-and-grow, face painting, interactive games</div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-time">All Day</div>
-          <div class="timeline-title">Longitude Festival (Day 2)</div>
-          <div class="timeline-detail">📍 Marlay Park, Rathfarnham · Ticketed — Dublin's biggest outdoor music festival</div>
+          <div class="timeline-time">ALL DAY</div>
+          <div class="timeline-title">ReStyle Dublin — Sustainable Fashion Expo</div>
+          <div class="timeline-detail">📍 Lexicon Library, Dún Laoghaire · Free · Swap shops, upcycling workshops, fashion show</div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-time">From 14:00</div>
-          <div class="timeline-title">Trinity Summer Series — Final Day</div>
-          <div class="timeline-detail">📍 Trinity College Dublin · Cian Ducrot, The Kooks, OMD — outdoor stage</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-time">18:00</div>
-          <div class="timeline-title">Elvis Costello &amp; The Imposters</div>
-          <div class="timeline-detail">📍 Iveagh Gardens · Evening outdoor concert — gates open ~17:00</div>
+          <div class="timeline-time">17:00 – 11pm</div>
+          <div class="timeline-title">Dún Laoghaire Summerfest — Opening Weekend</div>
+          <div class="timeline-detail">📍 Various venues, Dún Laoghaire · dlr Streets — live music and street performance around town</div>
         </div>
 
-        <div class="section-label" style="margin-top:16px;">Featured Events</div>
-
-        <div class="event-item">
-          <div class="event-img-placeholder">🎵</div>
+        <!-- Featured events -->
+        <div class="event-item" style="margin-top:12px">
+          <img class="event-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Aviva_Stadium%2C_Dublin.jpg/320px-Aviva_Stadium%2C_Dublin.jpg" alt="Aviva Stadium" onerror="this.style.display='none'">
           <div class="event-info">
-            <div class="event-title"><span class="tag">Ticketed</span> <a href="https://www.longitude.ie/" target="_blank">Longitude Festival — Day 2</a></div>
-            <div class="event-meta">📍 Marlay Park, Rathfarnham · 🕐 Gates open ~12:00 · July 4–5</div>
-            <div class="event-desc">Dublin's biggest outdoor music festival returns to Marlay Park. Multi-stage, all-day event with international hip-hop, R&amp;B, electronic and pop acts. D15 bus or taxi from city centre recommended — parking extremely limited.</div>
+            <div class="event-title"><span class="tag">Concert</span> <a href="https://www.avivastadium.ie/whats-on/take-that-the-circus-live">Take That — The Circus Live</a></div>
+            <div class="event-meta">📍 Aviva Stadium · 🕔 Doors 5:00 PM · Support: OneRepublic</div>
+            <div class="event-desc">Gary Barlow, Howard Donald &amp; Mark Owen bring their spectacular "Circus Live" to Dublin — fire-breathers, acrobats, stilt-walkers, and a 30-foot mechanical elephant. One of the biggest shows of the summer.</div>
           </div>
         </div>
 
         <div class="event-item">
-          <div class="event-img-placeholder">🎸</div>
+          <img class="event-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/IveaghGardens.jpg/320px-IveaghGardens.jpg" alt="Iveagh Gardens" onerror="this.style.display='none'">
           <div class="event-info">
-            <div class="event-title"><span class="tag">Ticketed</span> <a href="https://dublin.ie/whats-on/listings/live-the-iveagh-gardens/" target="_blank">Elvis Costello &amp; The Imposters — Live at The Iveagh Gardens</a></div>
-            <div class="event-meta">📍 Iveagh Gardens, Clonmel St, D02 · 🕐 18:00 (doors ~17:00)</div>
-            <div class="event-desc">Part of the Live at The Iveagh Gardens 2026 series (July 3–17). One of the most intimate outdoor venues in Dublin — no bad spots. Also featuring Charlie Sexton as support. Clonmel Street entrance; nearest Luas: Harcourt (Green Line).</div>
+            <div class="event-title"><span class="tag">Music</span> <a href="https://www.mcd.ie">Live at the Iveagh Gardens: The Scratch</a></div>
+            <div class="event-meta">📍 Iveagh Gardens, Dublin 2 · 🕕 6:00 PM</div>
+            <div class="event-desc">Irish hip-hop and spoken word collective The Scratch perform in the beautiful walled Iveagh Gardens — one of the finest outdoor music settings in Dublin.</div>
           </div>
         </div>
 
         <div class="event-item">
-          <div class="event-img-placeholder">🌸</div>
+          <img class="event-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Marlay_Park%2C_Dublin_-_geograph.org.uk_-_1921533.jpg/320px-Marlay_Park%2C_Dublin_-_geograph.org.uk_-_1921533.jpg" alt="Marlay Park" onerror="this.style.display='none'">
           <div class="event-info">
-            <div class="event-title"><span class="tag-green tag">FREE</span> <a href="https://www.dublincity.ie/events" target="_blank">Blossoms &amp; Bees — Summer in Dublin</a></div>
-            <div class="event-meta">📍 Parliament Street, Dublin City Centre · 🕐 12:00 – 16:00</div>
-            <div class="event-desc">Dublin City Council's Summer in Dublin transforms Parliament Street into a traffic-free zone with live entertainment, food &amp; craft markets, and family-friendly activities. This weekend's theme: pollinators and urban nature. Free entry.</div>
+            <div class="event-title"><span class="tag">Festival</span> <a href="https://www.longitude.ie/">Longitude Festival 2026</a></div>
+            <div class="event-meta">📍 Marlay Park, Rathfarnham · 🕛 All day</div>
+            <div class="event-desc">Dublin's flagship outdoor music festival returns to Marlay Park. Day ticket or weekend pass — multiple stages, food village, and summer vibes in the foothills of the Dublin mountains.</div>
           </div>
         </div>
 
         <div class="event-item">
-          <div class="event-img-placeholder">🎶</div>
+          <img class="event-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Newbridge_House_-_geograph.org.uk_-_1382490.jpg/320px-Newbridge_House_-_geograph.org.uk_-_1382490.jpg" alt="Newbridge House" onerror="this.style.display='none'">
           <div class="event-info">
-            <div class="event-title"><span class="tag">Ticketed</span> <a href="https://www.visitdublin.com/events" target="_blank">Trinity Summer Series — Final Day</a></div>
-            <div class="event-meta">📍 College Park, Trinity College Dublin · 🕐 Afternoon gates</div>
-            <div class="event-desc">The last day of the beloved open-air concert series in the heart of Dublin. Featuring Cian Ducrot, OMD, and The Kooks on the outdoor stage inside Trinity's iconic grounds. Pearse St DART stop nearby.</div>
+            <div class="event-title"><span class="tag-green tag">Family</span> <a href="https://www.fingal.ie">Flavours of Fingal County Show</a></div>
+            <div class="event-meta">📍 Newbridge House &amp; Farm, Donabate · 🕛 All day</div>
+            <div class="event-desc">A classic Irish county show — animals, crafts, food producers, and family activities at the historic Newbridge estate, just 10 minutes from Dublin Airport.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Sunday plan -->
+    <!-- Sunday -->
     <div class="card">
-      <div class="card-header">📅 Sunday 6 July</div>
+      <div class="card-header">📅 Sunday 5 July</div>
       <div class="card-body">
-        <div class="section-label">Suggested Day Timeline</div>
         <div class="timeline-item">
-          <div class="timeline-time">10:00 – 12:00</div>
-          <div class="timeline-title">Brunch + Coastal Walk</div>
-          <div class="timeline-detail">📍 Dún Laoghaire Pier · 20 min by DART from Connolly — sea air and coffee</div>
+          <div class="timeline-time">ALL DAY</div>
+          <div class="timeline-title">Longitude Festival — Day 2</div>
+          <div class="timeline-detail">📍 Marlay Park, Rathfarnham · Final day of the festival</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-time">12:00 – 16:00</div>
-          <div class="timeline-title">Blossoms &amp; Bees — Summer in Dublin (Day 2)</div>
-          <div class="timeline-detail">📍 Parliament Street · FREE — same programme as Saturday</div>
+          <div class="timeline-title">Blossoms &amp; Bees</div>
+          <div class="timeline-detail">📍 Dublin City Centre · Talks, plant activities, face painting — free family event</div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-time">All Day</div>
-          <div class="timeline-title">Dún Laoghaire Summerfest 2026</div>
-          <div class="timeline-detail">📍 Various venues, Dún Laoghaire · Mix of free and ticketed events (July 3–12)</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-time">Afternoon</div>
-          <div class="timeline-title">Sunny spells expected 🌤</div>
-          <div class="timeline-detail">📍 Phoenix Park / Portmarnock Beach · Best window for outdoor time</div>
+          <div class="timeline-time">ALL DAY</div>
+          <div class="timeline-title">Dún Laoghaire Summerfest continues</div>
+          <div class="timeline-detail">📍 Various venues, Dún Laoghaire · Live music, street acts, and performances through town</div>
         </div>
 
-        <div class="section-label" style="margin-top:16px;">Featured Events</div>
-
-        <div class="event-item">
-          <div class="event-img-placeholder">⚓</div>
+        <div class="event-item" style="margin-top:12px">
+          <img class="event-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/IveaghGardens.jpg/320px-IveaghGardens.jpg" alt="Iveagh Gardens" onerror="this.style.display='none'">
           <div class="event-info">
-            <div class="event-title"><span class="tag-blue tag">Festival</span> <a href="https://www.dlrsummerfest.com/" target="_blank">Dún Laoghaire Summerfest 2026</a></div>
-            <div class="event-meta">📍 Various venues, Dún Laoghaire · 🕐 All day · July 3–12</div>
-            <div class="event-desc">Over 70 acts across 10 days at the Purty Kitchen, Volume Records, Monkstown Parish Church and more. Sunday lineup includes tribute acts and local bands covering Fleetwood Mac, The Doors, ABBA. 20 min by DART from Connolly.</div>
+            <div class="event-title"><span class="tag">Music</span> <a href="https://www.mcd.ie">Live at the Iveagh Gardens: Elvis Costello &amp; The Imposters</a></div>
+            <div class="event-meta">📍 Iveagh Gardens, Dublin 2 · 🕕 6:00 PM · With Charlie Sexton</div>
+            <div class="event-desc">A legend returns to Dublin. Elvis Costello &amp; The Imposters, joined by acclaimed guitarist Charlie Sexton, headline the Iveagh Gardens in what promises to be one of the summer's finest nights.</div>
           </div>
         </div>
 
         <div class="event-item">
-          <div class="event-img-placeholder">🌸</div>
+          <img class="event-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Newbridge_House_-_geograph.org.uk_-_1382490.jpg/320px-Newbridge_House_-_geograph.org.uk_-_1382490.jpg" alt="Newbridge House" onerror="this.style.display='none'">
           <div class="event-info">
-            <div class="event-title"><span class="tag-green tag">FREE</span> <a href="https://dublin.ie/whats-on/listings/summer-in-dublin-2/" target="_blank">Blossoms &amp; Bees — Summer in Dublin (Day 2)</a></div>
-            <div class="event-meta">📍 Parliament Street, Dublin City Centre · 🕐 12:00 – 16:00</div>
-            <div class="event-desc">Second day of Dublin City Council's free family festival on Parliament Street. Interactive pollinator workshops, storytellers, street performers, food stalls. Traffic-free zone — arrive by bus, DART or bike.</div>
+            <div class="event-title"><span class="tag-green tag">Family</span> <a href="https://www.fingal.ie">Flavours of Fingal County Show — Day 2</a></div>
+            <div class="event-meta">📍 Newbridge House &amp; Farm, Donabate · 🕛 All day</div>
+            <div class="event-desc">Second day of the county show — livestock, local food, crafts, and a proper country outing from the city.</div>
           </div>
         </div>
 
         <div class="event-item">
-          <div class="event-img-placeholder">🎠</div>
+          <img class="event-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Dun-Laoghaire-Harbour.jpg/320px-Dun-Laoghaire-Harbour.jpg" alt="Dun Laoghaire" onerror="this.style.display='none'">
           <div class="event-info">
-            <div class="event-title"><span class="tag-green tag">FREE</span> <a href="https://www.dublincity.ie/news/summer-starts-here-summer-dublin-launches-packed-program-free-events-families-heart-capital" target="_blank">We Love July — Dublin City Council</a></div>
-            <div class="event-meta">📍 Dublin City Centre · 🕐 12:00 – 18:00 (Saturdays in July)</div>
-            <div class="event-desc">Four free Saturdays in July celebrating Dublin's culture, heritage and community. Circus performers, live music, street art, and family-friendly zones across the city centre. Check dublincity.ie for exact locations.</div>
+            <div class="event-title"><span class="tag-blue tag">Festival</span> <a href="https://www.dlrsummerfest.com/">Dún Laoghaire Summerfest</a></div>
+            <div class="event-meta">📍 Dún Laoghaire (DART from city) · July 3–12, 70+ acts</div>
+            <div class="event-desc">Acts include Kíla, The 4 of Us, Rob Strong Band, Bagatelle, and tribute acts to ABBA, The Doors, Santana and more at venues across Dún Laoghaire all weekend.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Notes & Logistics -->
+    <!-- Cinema -->
+    <div class="card">
+      <div class="card-header">🎬 Cinema This Weekend</div>
+      <div class="card-body">
+        <!-- MUBI Go -->
+        <div class="mubi-banner">
+          ⭐ <strong>MUBI Go pick this week</strong> — you have a MUBI Go subscription: use it at a participating cinema for free!
+        </div>
+        <div class="event-item">
+          <div class="event-img-placeholder" style="background:#1c3f6e;color:#aac;font-size:13px;font-weight:bold;">MUBI<br>Go</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag" style="background:#1c3f6e">MUBI Go</span> <a href="https://mubi.com/en/gb/go">Sherman's March (1986)</a></div>
+            <div class="event-meta">🎭 Ross McElwee · 155 min · Documentary</div>
+            <div class="event-desc">A newly released 4K restoration of Ross McElwee's singular diaristic documentary — he sets out to film General Sherman's March to the Sea, then gets sidetracked by a string of romantic encounters across the American South. Funny, melancholic, and wholly original. Check MUBI app for participating cinemas near you.</div>
+          </div>
+        </div>
+
+        <!-- IFI picks -->
+        <div class="event-item">
+          <img class="event-img" src="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Boogie_Nights_ver2.jpg/220px-Boogie_Nights_ver2.jpg" alt="Boogie Nights" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">IFI</span> <a href="https://www.ifi.ie/whats-on/">Boogie Nights (1997)</a></div>
+            <div class="event-meta">🎭 Paul Thomas Anderson · 📍 Irish Film Institute, Temple Bar</div>
+            <div class="event-desc">PTA's breakthrough epic about the porn industry's golden age. Mark Wahlberg, Burt Reynolds, Julianne Moore. Sunday 12:00 only — a rare big-screen treat.</div>
+            <div class="film-times">☀️ Sun: 12:00</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">IFI</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">IFI</span> <a href="https://www.ifi.ie/whats-on/">Disclosure Day (70mm)</a></div>
+            <div class="event-meta">🎭 Steven Spielberg · 📍 Irish Film Institute, Temple Bar</div>
+            <div class="event-desc">Spielberg's new release, screening in glorious 70mm on Saturday — IFI's large-format presentation is one of the best screen experiences in Ireland.</div>
+            <div class="film-times">🗓 Sat: 17:40 (70mm) · Sun: 15:10 (Digital)</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">IFI</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">IFI</span> <a href="https://www.ifi.ie/whats-on/">The Last Viking</a></div>
+            <div class="event-meta">🎭 Anders Thomas Jensen · 📍 Irish Film Institute, Temple Bar</div>
+            <div class="event-desc">New film from the Danish writer-director of Riders of Justice — darkly comic Nordic storytelling at its best.</div>
+            <div class="film-times">🗓 Sat: 15:00, 20:40 · Sun: 13:30, 20:40</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">IFI</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">IFI</span> <a href="https://www.ifi.ie/whats-on/">The Invite</a></div>
+            <div class="event-meta">🎭 Olivia Wilde · 📍 Irish Film Institute, Temple Bar</div>
+            <div class="event-desc">Olivia Wilde's new film, showing throughout the weekend with multiple screenings each day.</div>
+            <div class="film-times">🗓 Sat: 13:00, 18:00, 20:30 · Sun: 11:00, 18:30, 20:50</div>
+          </div>
+        </div>
+
+        <!-- Lighthouse picks -->
+        <div class="event-item">
+          <div class="event-img-placeholder">LH</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">Lighthouse</span> <a href="https://www.lighthousecinema.ie/films">Nirvanna the Band the Show the Movie</a></div>
+            <div class="event-meta">🕕 18:00 &amp; 20:30 · 📍 Market Square, Smithfield</div>
+            <div class="event-desc">Canadian cult comedy phenomenon finally gets its feature film treatment — anarchic, meta, and beloved by its devoted fanbase. A Lighthouse specialty.</div>
+            <div class="film-times">🗓 Sat: 18:00, 20:30</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">LH</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">Lighthouse</span> <a href="https://www.lighthousecinema.ie/films">Toy Story 5</a></div>
+            <div class="event-meta">🕔 16:25 · 📍 Market Square, Smithfield · G / 102 min</div>
+            <div class="event-desc">Pixar's long-awaited fifth instalment of the beloved franchise — the whole family back together again.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder">LH</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">Lighthouse</span> <a href="https://www.lighthousecinema.ie/films">American Movie (Club 18+)</a></div>
+            <div class="event-meta">🕘 21:00 · 📍 Market Square, Smithfield</div>
+            <div class="event-desc">Chris Smith's hilarious, heartbreaking documentary about a Wisconsin filmmaker's obsessive quest to finish his low-budget horror film. A late-night cult classic screening.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Food & Openings -->
+    <div class="card">
+      <div class="card-header">🍽️ New Openings &amp; Food News</div>
+      <div class="card-body">
+        <div class="event-item">
+          <div class="event-img-placeholder" style="background:#f5f0e8;color:#888;">🍕</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">New</span> <a href="https://www.allthefood.ie">La Strada</a></div>
+            <div class="event-meta">📍 Aungier Street, Dublin 2 · Italian Café &amp; Pizzeria</div>
+            <div class="event-desc">Chef-owner Lucio Paduano's new "slow food" Italian — artisan producers, seasonality, and lunch pizzas from €7.50. A neighbourhood gem in the making.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder" style="background:#f5f0e8;color:#888;">🌮</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">New</span> <a href="https://www.allthefood.ie">Chubby's Kitchen</a></div>
+            <div class="event-meta">📍 Clontarf, Dublin 3 · Mexican / Tacos</div>
+            <div class="event-desc">The beloved Just Chubby's taco truck graduates to a proper brick-and-mortar restaurant in Clontarf — ~50 seats and a full kitchen. Worth the trek north.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder" style="background:#f5f0e8;color:#888;">🍽️</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">New</span> <a href="https://www.allthefood.ie">Comet</a></div>
+            <div class="event-meta">📍 Joshua Lane, off Dawson Street · Fine Dining / Nordic-inspired</div>
+            <div class="event-desc">Chef Kevin O'Donnell's intimate new spot — Nordic technique applied to Irish produce. Think pea &amp; broad bean plates, roast quail on toast. Quiet lane, big ambition.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-img-placeholder" style="background:#f5f0e8;color:#888;">🍓</div>
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">Seasonal</span> <a href="https://www.allthefood.ie">Strawberry &amp; Co</a></div>
+            <div class="event-meta">📍 William Street South / Powerscourt Townhouse · Dessert Pop-up</div>
+            <div class="event-desc">Wexford strawberries dipped in Swiss chocolate with various toppings — a summer pop-up that perfectly captures the season. From €9.50.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notes -->
     <div class="card">
       <div class="card-header">📌 Notes &amp; Logistics</div>
       <div class="card-body">
         <ul class="notes-list">
-          <li><strong>Luas &amp; DART normal this weekend</strong> — no engineering works confirmed. Green Line to Harcourt for Iveagh Gardens; DART to Dún Laoghaire or Pearse for Trinity.</li>
-          <li><strong>Longitude Festival transport:</strong> Avoid driving — Marlay Park parking extremely limited. Bus routes 16/75/116 from city centre, or taxi/rideshare. Allow extra time.</li>
-          <li><strong>Bus diversions from Monday 7 July:</strong> Routes 1, 15, 27, 44, 52, C1–C3 divert via D'Olier St due to roadworks. Doesn't affect the weekend but plan your Sunday evening return.</li>
-          <li><strong>Parliament Street (Summer in Dublin):</strong> Traffic-free zone 12–16:00 both days. Best accessed via Dame Street or Capel Street on foot.</li>
-          <li><strong>Iveagh Gardens tickets:</strong> Concert starts 18:00 — arrive by 17:15 to settle in. No re-entry. Bag check policy applies.</li>
-          <li><strong>Weather tip:</strong> Pack a light waterproof jacket — typical Dublin July. Mostly dry but a shower can't be ruled out, especially Saturday morning.</li>
-          <li><strong>Dún Laoghaire Summerfest:</strong> Mix of free street events and ticketed venue shows. Check dlrsummerfest.com for full Sunday schedule and advance booking.</li>
+          <li><strong>Take That / Aviva:</strong> Nearest DART — Lansdowne Road or Grand Canal Dock. Bag policy strict: A4-sized bags only. No tickets sold at venue — Ticketmaster only.</li>
+          <li><strong>Longitude / Marlay Park:</strong> Take the 16 bus from city centre or drive to Rathfarnham. No parking on festival days — use bus or taxi.</li>
+          <li><strong>Iveagh Gardens:</strong> Short walk from St Stephen's Green. Gates open around 5pm for 6pm show.</li>
+          <li><strong>Dún Laoghaire Summerfest:</strong> DART from Pearse/Tara St to Dún Laoghaire in ~30 min. Ticketed venues include The Purty Kitchen, Walters, Volume Records.</li>
+          <li><strong>IFI Booking:</strong> Book 70mm Disclosure Day well in advance — these screenings sell out fast.</li>
+          <li><strong>MUBI Go:</strong> Open the MUBI app, go to MUBI Go, and redeem your weekly ticket for Sherman's March at a participating cinema near you.</li>
+          <li><strong>Weather:</strong> Sunday is the warmer day — plan outdoor activities then. Saturday bring a layer for the evening.</li>
+          <li><strong>Flavours of Fingal:</strong> Dublin Airport area — car recommended or 33 / 33a bus toward Donabate.</li>
         </ul>
       </div>
     </div>
 
-    <footer>Dublin Weekend Plan · Generated 4 July 2026 · Sources: Met Éireann, Dublin.ie, DLR Summerfest, Aiken Promotions, Dublin City Council</footer>
+    <footer>Dublin Weekend Plan · Sat 4 – Sun 5 July 2026 · Generated 4 July 2026</footer>
   </main>
 
   <aside id="sidebar">
     <div class="sidebar-card">
       <div class="sidebar-header">🌡️ Weather Summary</div>
       <div class="sidebar-body">
-        <div class="stat-row"><span class="stat-label">Sat 5 Jul high</span><span class="stat-val">19°C</span></div>
-        <div class="stat-row"><span class="stat-label">Sat 5 Jul low</span><span class="stat-val">14°C</span></div>
-        <div class="stat-row"><span class="stat-label">Sun 6 Jul high</span><span class="stat-val">19°C</span></div>
-        <div class="stat-row"><span class="stat-label">Sun 6 Jul low</span><span class="stat-val">12°C</span></div>
+        <div class="stat-row"><span class="stat-label">Sat high</span><span class="stat-val">17°C</span></div>
+        <div class="stat-row"><span class="stat-label">Sat low</span><span class="stat-val">14°C</span></div>
+        <div class="stat-row"><span class="stat-label">Sun high</span><span class="stat-val">20°C</span></div>
+        <div class="stat-row"><span class="stat-label">Sun low</span><span class="stat-val">13°C</span></div>
         <div class="stat-row"><span class="stat-label">Rain risk</span><span class="stat-val" style="color:#1a6fc4">LOW</span></div>
-        <div class="stat-row"><span class="stat-label">Wind</span><span class="stat-val">Mod W</span></div>
+        <div class="stat-row"><span class="stat-label">Wind</span><span class="stat-val">Moderate SW→W</span></div>
+        <div class="stat-row"><span class="stat-label">Best day</span><span class="stat-val">☀️ Sunday</span></div>
       </div>
     </div>
 
     <div class="sidebar-card">
       <div class="sidebar-header">🎭 Events This Weekend</div>
       <div class="sidebar-body">
-        <div class="stat-row"><span class="tag">SAT</span><span style="font-size:12px">Longitude Festival Day 2 — Marlay Park</span></div>
-        <div class="stat-row"><span class="tag">SAT</span><span style="font-size:12px">Elvis Costello — Iveagh Gardens 18:00</span></div>
-        <div class="stat-row"><span class="tag">SAT</span><span style="font-size:12px">Trinity Summer Series (final day)</span></div>
-        <div class="stat-row"><span class="tag-green tag">SAT</span><span style="font-size:12px">Blossoms &amp; Bees, Parliament St (FREE)</span></div>
-        <div class="stat-row"><span class="tag-blue tag">SUN</span><span style="font-size:12px">Dún Laoghaire Summerfest (ongoing)</span></div>
-        <div class="stat-row"><span class="tag-green tag">SUN</span><span style="font-size:12px">Blossoms &amp; Bees Day 2 (FREE)</span></div>
+        <div class="stat-row"><span class="tag">SAT</span> <span>Take That – Aviva Stadium</span></div>
+        <div class="stat-row"><span class="tag">SAT</span> <span>The Scratch – Iveagh Gardens</span></div>
+        <div class="stat-row" style="margin-top:4px"><span class="tag" style="background:#cc7700">SAT+SUN</span> <span>Longitude Festival</span></div>
+        <div class="stat-row"><span class="tag" style="background:#cc7700">SAT+SUN</span> <span>DLR Summerfest</span></div>
+        <div class="stat-row"><span class="tag" style="background:#cc7700">SAT+SUN</span> <span>Flavours of Fingal</span></div>
+        <div class="stat-row" style="margin-top:4px"><span class="tag" style="background:#555">SUN</span> <span>Elvis Costello – Iveagh</span></div>
+        <div class="stat-row"><span class="tag" style="background:#555">SUN</span> <span>Boogie Nights – IFI</span></div>
       </div>
     </div>
 
     <div class="sidebar-card">
-      <div class="sidebar-header">🚌 Getting Around</div>
+      <div class="sidebar-header">🎬 Cinema Highlights</div>
       <div class="sidebar-body">
-        <div class="stat-row"><span class="stat-label">Luas Green Line</span><span class="stat-val">Normal ✅</span></div>
-        <div class="stat-row"><span class="stat-label">DART</span><span class="stat-val">Normal ✅</span></div>
-        <div class="stat-row"><span class="stat-label">Dublin Bus</span><span class="stat-val">Normal ✅</span></div>
-        <div class="stat-row"><span class="stat-label">Marlay Park</span><span class="stat-val" style="color:#cc0000">No Parking ⚠️</span></div>
-        <div style="font-size:11px; color:#888; margin-top:6px;">Bus diversions start Mon 7 July on routes 1, 15, 27, 44.</div>
+        <div class="stat-row"><span class="stat-label" style="font-size:11px">MUBI Go</span><span class="stat-val" style="font-size:11px;color:#1c3f6e">Sherman's March</span></div>
+        <div class="stat-row"><span class="stat-label" style="font-size:11px">IFI 70mm</span><span class="stat-val" style="font-size:11px">Disclosure Day</span></div>
+        <div class="stat-row"><span class="stat-label" style="font-size:11px">IFI Sun</span><span class="stat-val" style="font-size:11px">Boogie Nights</span></div>
+        <div class="stat-row"><span class="stat-label" style="font-size:11px">Lighthouse</span><span class="stat-val" style="font-size:11px">Nirvanna the Band</span></div>
       </div>
     </div>
 
     <div class="sidebar-card">
-      <div class="sidebar-header">📍 Quick Links</div>
-      <div class="sidebar-body" style="font-size:12px; line-height:1.8;">
-        <a href="https://www.met.ie/forecasts/dublin/" style="color:#1a6fc4; display:block;">🌦 Met Éireann Dublin</a>
-        <a href="https://www.longitude.ie/" style="color:#1a6fc4; display:block;">🎵 Longitude Festival</a>
-        <a href="https://dublin.ie/whats-on/listings/live-the-iveagh-gardens/" style="color:#1a6fc4; display:block;">🎸 Live at Iveagh Gardens</a>
-        <a href="https://www.dlrsummerfest.com/" style="color:#1a6fc4; display:block;">⚓ DLR Summerfest</a>
-        <a href="https://www.dublincity.ie/events" style="color:#1a6fc4; display:block;">🏛 Dublin City Council Events</a>
-        <a href="https://www.transportforireland.ie/plan-a-journey/" style="color:#1a6fc4; display:block;">🚌 Transport for Ireland</a>
+      <div class="sidebar-header">🍽️ New This Week</div>
+      <div class="sidebar-body">
+        <div class="stat-row"><span class="stat-label" style="font-size:11px">Aungier St</span><span class="stat-val" style="font-size:11px">La Strada</span></div>
+        <div class="stat-row"><span class="stat-label" style="font-size:11px">Clontarf</span><span class="stat-val" style="font-size:11px">Chubby's Kitchen</span></div>
+        <div class="stat-row"><span class="stat-label" style="font-size:11px">Dawson St</span><span class="stat-val" style="font-size:11px">Comet</span></div>
+        <div class="stat-row"><span class="stat-label" style="font-size:11px">Powerscourt</span><span class="stat-val" style="font-size:11px">Strawberry &amp; Co</span></div>
       </div>
     </div>
   </aside>
