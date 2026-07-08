@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dublin Weekend Heads-Up — 11 Jul &amp; 12 Jul 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#e8e8f0;font:13px/1.5 "Hiragino Sans","MS PGothic",Arial,sans-serif;color:#333;}
+a{color:#0000cc;text-decoration:none;}
+a:hover{text-decoration:underline;color:#cc0000;}
+#header{background:#fff;border-bottom:3px solid #cc0000;padding:5px 10px;display:flex;align-items:center;justify-content:space-between;}
+#header h1{font-size:15px;font-weight:bold;color:#cc0000;}
+#header .sub{font-size:11px;color:#666;}
+#wrap{max-width:760px;margin:6px auto;padding:0 6px 40px;}
+#sidebar{display:none;}
+.card{background:#fff;border:1px solid #aaaacc;margin-bottom:6px;overflow:hidden;}
+.card-header{background:linear-gradient(180deg,#d8e8f8 0%,#b8ccec 100%);border-bottom:1px solid #aaaacc;padding:4px 8px;font-weight:bold;font-size:12px;color:#333;line-height:1.6;}
+.card-body{padding:8px 10px;}
+.weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.weather-day{border:1px solid #aaaacc;padding:8px;text-align:center;background:#f7f7fd;}
+.weather-day .date{font-size:11px;color:#666;margin-bottom:3px;}
+.weather-day .temp{font-size:20px;font-weight:bold;color:#cc0000;}
+.weather-day .desc{font-size:11px;color:#555;margin-top:3px;}
+.weather-day .rain{font-size:10px;color:#0000cc;margin-top:2px;}
+.event-item{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #e0e0ee;}
+.event-item:last-child{border-bottom:none;}
+.event-img{width:110px;height:74px;object-fit:cover;border:1px solid #aaaacc;flex-shrink:0;background:#eeeef8;}
+.event-img-placeholder{width:110px;height:74px;background:#eeeef8;border:1px solid #aaaacc;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:10px;}
+.event-info{flex:1;min-width:0;}
+.event-title{font-weight:bold;font-size:13px;line-height:1.4;margin-bottom:3px;}
+.event-title a{color:#0000cc;text-decoration:none;}
+.event-title a:hover{text-decoration:underline;color:#cc0000;}
+.event-meta{font-size:10px;color:#888;margin-bottom:2px;}
+.event-desc{font-size:11px;color:#555;line-height:1.5;}
+.tag{display:inline-block;background:#cc0000;color:#fff;font-size:10px;padding:1px 4px;margin-right:3px;vertical-align:middle;}
+.tag-blue{background:#0000cc;}
+.tag-green{background:#1a7a1a;}
+.tag-mubi{background:#1c3f6e;}
+.sidebar-card{display:none;}
+.notes-list{list-style:none;}
+.notes-list li{padding:4px 0 4px 12px;border-bottom:1px solid #e0e0ee;font-size:11px;color:#555;position:relative;}
+.notes-list li::before{content:'▶';font-size:8px;color:#cc0000;position:absolute;left:0;top:6px;}
+.timeline-item{padding:6px 0 6px 14px;border-left:2px solid #aaaacc;margin-left:4px;position:relative;margin-bottom:3px;}
+.timeline-item::before{content:'';width:7px;height:7px;background:#cc0000;border-radius:50%;position:absolute;left:-5px;top:10px;}
+.timeline-time{font-size:10px;color:#cc0000;font-weight:bold;margin-bottom:1px;}
+.timeline-title{font-size:12px;font-weight:bold;}
+.timeline-detail{font-size:10px;color:#888;}
+footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px solid #ccc;background:#f0f0f8;margin-top:4px;}
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>🏙️ Dublin Weekend Heads-Up</h1>
+  <span class="sub">Sat 11 Jul – Sun 12 Jul 2026 · Early look</span>
+</div>
+<div id="wrap">
+  <main>
+
+    <!-- Weather card -->
+    <div class="card">
+      <div class="card-header">🌤 Weather Forecast</div>
+      <div class="card-body">
+        <div class="weather-grid">
+          <div class="weather-day">
+            <div class="date">Saturday 11 Jul</div>
+            <div class="temp">22°C</div>
+            <div class="desc">Sunny, very warm · Moderate NE breeze</div>
+            <div class="rain">☔ Rain: ~15%</div>
+          </div>
+          <div class="weather-day">
+            <div class="date">Sunday 12 Jul</div>
+            <div class="temp">23°C</div>
+            <div class="desc">Mostly sunny · Light to moderate E breeze</div>
+            <div class="rain">☔ Rain: ~10%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Events card -->
+    <div class="card">
+      <div class="card-header">🎭 Events to Know About</div>
+      <div class="card-body">
+
+        <div class="event-item">
+          <img class="event-img" src="https://images.sk-static.com/images/media/profile_images/artists/8732299/medium_avatar" alt="Dermot Kennedy" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag">SAT</span> <a href="https://www.avivastadium.ie/whats-on/dermot-kennedy">Dermot Kennedy — Let Me In Tour</a></div>
+            <div class="event-meta">📍 Aviva Stadium · 🕐 6:00 PM</div>
+            <div class="event-desc">Dermot Kennedy headlines two landmark nights at Aviva Stadium with Amble and Aaron Rowe in support — the biggest Irish gig of the summer.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <img class="event-img" src="https://images.sk-static.com/images/media/profile_images/artists/78581/medium_avatar" alt="Bell X1" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag">SAT</span> <a href="https://www.songkick.com/concerts/42902695-bell-x1-at-iveagh-gardens">Bell X1 at Iveagh Gardens</a></div>
+            <div class="event-meta">📍 Iveagh Gardens · 🕐 6:00 PM</div>
+            <div class="event-desc">The beloved Dublin indie veterans play the walled garden with Bren Berry &amp; The Beautiful Losers — a nostalgic summer evening.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <img class="event-img" src="https://www.gaa.ie/api/images/image/private/t_ratio16_9-size30/prd/ppyaqqjrwmcoe5h9mg9e" alt="All-Ireland SFC Semi-Final Mayo v Louth" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag">SAT</span> <a href="https://www.rte.ie/sport/football/2026/0628/1580743-two-pairings-to-be-kept-apart-as-gaa-confirm-draw-details/">All-Ireland SFC Semi-Final: Mayo v Louth</a></div>
+            <div class="event-meta">📍 Croke Park · 🕐 6:00 PM</div>
+            <div class="event-desc">First of the two All-Ireland Football semi-finals — Mayo face Louth at Croke Park, live on RTÉ2.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <img class="event-img" src="https://www.gaa.ie/api/images/image/private/t_ratio16_9-size30/prd/ppyaqqjrwmcoe5h9mg9e" alt="Dublin v Kerry" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag" style="background:#004a99">SUN</span> <a href="https://www.irishnews.com/gaa/gaelic-football/dublin-v-kerry-how-to-watch-tv-channel-and-stream-throw-in-time-and-ticket-info-as-legendary-sides-renew-their-rivalry-in-their-clash-at-croke-park-D5EEZALSIFGIXAQRNM66ADRJ3Y/">All-Ireland SFC Semi-Final: Dublin v Kerry</a></div>
+            <div class="event-meta">📍 Croke Park · 🕐 4:00 PM · Ref: Brendan Cawley</div>
+            <div class="event-desc">The heavyweight clash — two sides with 70 All-Ireland titles between them. Live on RTÉ2 / BBC Sport NI. The Sunday that stops Dublin.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <img class="event-img" src="https://images.sk-static.com/images/media/profile_images/artists/431970/medium_avatar" alt="James Taylor" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag" style="background:#004a99">SUN</span> <a href="https://www.songkick.com/concerts/42905711-james-taylor-at-iveagh-gardens">James Taylor at Iveagh Gardens</a></div>
+            <div class="event-meta">📍 Iveagh Gardens · 🕐 6:00 PM</div>
+            <div class="event-desc">The legendary American singer-songwriter brings his timeless catalogue to Dublin's beautiful walled garden — one to savour on a summer Sunday evening.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Cinema card -->
+    <div class="card">
+      <div class="card-header">🎬 Cinema This Weekend</div>
+      <div class="card-body">
+
+        <div class="event-item">
+          <img class="event-img" src="https://images.mubicdn.net/images/film/461851/cache-1102850-1765545126/image-w1280.jpg?size=800x" alt="If I Go Will They Miss Me" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag" style="background:#1c3f6e">MUBI Go</span> <a href="https://mubi.com/en/gb/films/if-i-go-will-they-miss-me-2026">If I Go Will They Miss Me</a></div>
+            <div class="event-meta">🎭 2026 · Use your MUBI Go ticket at a participating cinema</div>
+            <div class="event-desc">Twelve-year-old Lil Ant struggles to connect with his father while experiencing surreal, spectral visions of boys drifting around his neighbourhood — a striking new US indie.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <img class="event-img" src="https://ifi.ie/wp-content/uploads/2026/06/s_141121.png" alt="Aguirre, the Wrath of God" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">IFI</span> <a href="https://ifi.ie/film/odysseys-aguirre-the-wrath-of-god/">Aguirre, the Wrath of God</a></div>
+            <div class="event-meta">🎭 Werner Herzog · 1972 · 95 min · West Germany · 🕐 Sat 16:00 · 📍 Irish Film Institute, Temple Bar</div>
+            <div class="event-desc">Part of the Odysseys season — Klaus Kinski's defining, unhinged performance as the conquistador descending into madness deep in the Amazon. Essential.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <img class="event-img" src="https://ifi.ie/wp-content/uploads/2026/07/A.I-ARTIFICIAL-INTELLIGENCE-7.jpg" alt="Rosebush Pruning" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">IFI</span> <a href="https://ifi.ie/whats-on/">Rosebush Pruning</a></div>
+            <div class="event-meta">🎭 Karim Aïnouz · 🕐 Sun 12:45 / 15:50 / 18:45 · 📍 Irish Film Institute, Temple Bar</div>
+            <div class="event-desc">The acclaimed Brazilian director's latest — a tender portrait of grief and womanhood. Three screenings Sunday; opened July 10.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <img class="event-img" src="https://web-booking.lighthousegroup.ie/CDN/Image/Entity/FilmPosterGraphic/HO00003175" alt="My Father's Island" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">Lighthouse</span> <a href="https://www.lighthousecinema.ie/film/my-fathers-island">My Father's Island</a></div>
+            <div class="event-meta">🎭 Vladimir de Fontenay · 2026 · 115 min · 🕐 13:00 · 📍 Smithfield</div>
+            <div class="event-desc">A haunted young man travels to a remote island to reconcile with his father and confront a shared trauma. Starring Swann Arlaud and Alma Pöysti — the art-house pick of the week.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Food & Drink openings card -->
+    <div class="card">
+      <div class="card-header">🍽️ New Openings &amp; Food News</div>
+      <div class="card-body">
+
+        <div class="event-item">
+          <img class="event-img" src="https://static.wixstatic.com/media/416aaa_382fcfb9587e45718a72dd583d12ed87~mv2.png" alt="Kin Dee" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">New</span> <a href="https://www.allthefood.ie/single-post/fiveteen-new-openings-in-dublin-and-five-coming-soon">Kin Dee</a></div>
+            <div class="event-meta">📍 Leeson Street Upper · Thai / Southeast Asian</div>
+            <div class="event-desc">Sister site to Little Kitchen from former Indo-Chine chefs — thirteen signature dishes including Thai scotch egg with isan sausage and beef rendang with sweet potato fondant.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <img class="event-img" src="https://static.wixstatic.com/media/416aaa_df2cf065efd4445eb21659af00060f29~mv2.png" alt="BoCo" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">New</span> <a href="https://www.allthefood.ie/single-post/fiveteen-new-openings-in-dublin-and-five-coming-soon">BoCo</a></div>
+            <div class="event-meta">📍 Clontarf · Neapolitan Pizza</div>
+            <div class="event-desc">Second sit-down location for the popular Bolton Street pizza spot — warm tones, wraparound banquettes, all-organic wines. More upscale than the original.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <img class="event-img" src="https://static.wixstatic.com/media/416aaa_4c590e153f4c4e55bceb99447e3a4d1c~mv2.png" alt="Tábla" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">New</span> <a href="https://www.allthefood.ie/single-post/fiveteen-new-openings-in-dublin-and-five-coming-soon">Tábla</a></div>
+            <div class="event-meta">📍 Mount Merrion · French Bistro</div>
+            <div class="event-desc">French chefs Tanguy Gros Daillon and Thomas Loisel bring jamon beurre, cordon bleu, and proper French onion soup to the southside. Dinner service launching soon.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>Early heads-up — detailed plan follows on Friday · Generated 2026-07-08</footer>
+  </main>
+  <aside id="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-header">🌡️ At a Glance</div>
+      <div class="sidebar-body">
+        <div class="stat-row"><span class="stat-label">Weekend</span><span class="stat-val">11–12 Jul 2026</span></div>
+        <div class="stat-row"><span class="stat-label">Sat high</span><span class="stat-val">22°C</span></div>
+        <div class="stat-row"><span class="stat-label">Sun high</span><span class="stat-val">23°C</span></div>
+        <div class="stat-row"><span class="stat-label">Events</span><span class="stat-val">5 found</span></div>
+      </div>
+    </div>
+  </aside>
+</div>
+</body>
+</html>
