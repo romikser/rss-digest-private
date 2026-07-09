@@ -13,8 +13,8 @@ a{color:#0000cc;text-decoration:none;}
 #logo{font-size:15px;font-weight:bold;color:#cc0000;}
 #logo span{color:#333;font-weight:normal;font-size:13px;}
 #hd-r{font-size:11px;color:#666;}
-#nav{background:#eeeef8;border-bottom:1px solid #aaaacc;padding:0 10px;line-height:1;}
-#nav a{display:inline-block;padding:4px 10px;font-size:12px;color:#0000cc;border:1px solid transparent;border-bottom:none;margin-bottom:-1px;position:relative;background:transparent;text-decoration:none;}
+#nav{background:#eeeef8;border-bottom:1px solid #aaaacc;padding:0 10px;line-height:1;overflow-x:auto;white-space:nowrap;}
+#nav a{display:inline-block;padding:4px 8px;font-size:12px;color:#0000cc;border:1px solid transparent;border-bottom:none;margin-bottom:-1px;position:relative;background:transparent;text-decoration:none;}
 #nav a.on{background:#fff;border-color:#aaaacc #aaaacc #fff;color:#333;font-weight:bold;}
 #nav a:hover{background:#f5f5ff;border-color:#aaaacc;color:#333;}
 #wrap{max-width:760px;margin:6px auto;padding:0 6px;}
@@ -22,6 +22,7 @@ a{color:#0000cc;text-decoration:none;}
 .bh{background:linear-gradient(180deg,#d8e8f8 0%,#b8ccec 100%);border-bottom:1px solid #aaaacc;padding:3px 8px;font-size:12px;font-weight:bold;color:#333;line-height:1.6;}
 .bh .sub{float:right;font-size:10px;font-weight:normal;color:#555;line-height:1.9;}
 .text-area{padding:14px 16px;font-size:18px;line-height:2.8;font-family:"Hiragino Sans","Meiryo","Yu Gothic",sans-serif;}
+.text-area p{margin-bottom:8px;}
 .gnote{padding:4px 10px 6px;font-size:11px;color:#666;background:#f7f7fd;border-top:1px solid #e0e0ee;}
 ruby rt{font-size:.45em;color:#888;}
 button.w{display:inline;background:none;border:none;border-bottom:1px dotted #0000cc;color:#0000cc;font:inherit;font-size:1em;padding:0;margin:0;cursor:pointer;line-height:inherit;-webkit-tap-highlight-color:rgba(0,0,204,.15);}
@@ -44,68 +45,124 @@ footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px so
 </style>
 </head>
 <body>
-<div id="hd"><div id="hd-in"><div id="logo">日本語練習<span> · ダブリン</span></div><div id="hd-r">2026年7月9日</div></div></div>
-<div id="nav"><a href="#t1" class="on">第1テキスト</a><a href="#t2">第2テキスト</a><a href="#t3">第3テキスト</a><a href="#vocab">語彙</a></div>
+<div id="hd"><div id="hd-in"><div id="logo">日本語練習<span> · ✈️ フライトエディション</span></div><div id="hd-r">2026年7月9日</div></div></div>
+<div id="nav">
+<a href="#t1" class="on">① ひこうき</a><a href="#t2">② スノーボード</a><a href="#t3">③ アーセナル</a><a href="#t4">④ にほんご</a><a href="#t5">⑤ おんがく</a>
+</div>
 <div id="wrap">
 
 <div class="box" id="t1">
-<div class="bh">① ダブリンのあさ<span class="sub">文法: 〜てから ／ 〜ながら</span></div>
+<div class="bh">① ひこうきのたび<span class="sub">文法: 〜てから ／ 〜ながら ／ 〜たびに ／ 〜はず ／ 〜でしょう</span></div>
 <div class="text-area"><p>
-<button class="w" data-en="today">きょう</button>、<button class="w" data-en="I">わたし</button><button class="w" data-en="topic particle">は</button><button class="w" data-en="morning">あさ</button><button class="w" data-en="6 o'clock"><ruby>六<rt>ろく</rt></ruby>じ</button><button class="w" data-en="at (time)">に</button><button class="w" data-en="after waking up (おきる)">おきてから</button>、<button class="w" data-en="coffee">コーヒー</button><button class="w" data-en="object particle">を</button><button class="w" data-en="drank (のむ)">のみました</button>。<br>
-<button class="w" data-en="Dublin">ダブリン</button><button class="w" data-en="belonging to / 's">の</button><button class="w" data-en="sky"><ruby>空<rt>そら</rt></ruby></button><button class="w" data-en="topic particle">は</button><button class="w" data-en="was cloudy (くもる)">くもっていて</button>、<button class="w" data-en="a little">すこし</button><button class="w" data-en="cold">さむい</button><button class="w" data-en="seems like">みたいです</button>。<br>
-<button class="w" data-en="train">でん<ruby>車<rt>しゃ</rt></ruby></button><button class="w" data-en="belonging to / 's">の</button><button class="w" data-en="inside"><ruby>中<rt>なか</rt></ruby></button><button class="w" data-en="in / at (location)">で</button><button class="w" data-en="music">おんがく</button><button class="w" data-en="object particle">を</button><button class="w" data-en="while listening (きく)">ききながら</button>、<button class="w" data-en="office / company">かいしゃ</button><button class="w" data-en="to / direction">に</button><button class="w" data-en="went (いく)">いきました</button>。<br>
-<button class="w" data-en="work">しごと</button><button class="w" data-en="object particle">を</button><button class="w" data-en="after doing (する)">してから</button>、<button class="w" data-en="friend">ともだち</button><button class="w" data-en="with / and">と</button><button class="w" data-en="restaurant">レストラン</button><button class="w" data-en="to / direction">に</button><button class="w" data-en="went (いく)">いきました</button>。<br>
-<button class="w" data-en="restaurant">レストラン</button><button class="w" data-en="in / at (location)">で</button><button class="w" data-en="ramen">ラーメン</button><button class="w" data-en="object particle">を</button><button class="w" data-en="while eating (たべる)">たべながら</button>、<button class="w" data-en="various">いろいろな</button><button class="w" data-en="things / nominalizer">こと</button><button class="w" data-en="object particle">を</button><button class="w" data-en="talked (はなす)">はなしました</button>。<br>
-<button class="w" data-en="friend">ともだち</button><button class="w" data-en="topic particle">は</button><button class="w" data-en="very">とても</button><button class="w" data-en="kind (やさしい)">やさしくて</button>、<button class="w" data-en="I">わたし</button><button class="w" data-en="topic particle">は</button><button class="w" data-en="very">とても</button><button class="w" data-en="happy">しあわせです</button>。
+<button class="w" data-en="today">きょう</button>、<button class="w" data-en="Dublin">ダブリン</button>を<button class="w" data-en="left (でる = to leave/exit)"><ruby>出<rt>で</rt></ruby>て</button>から、もう<button class="w" data-en="several hours">すうじかん</button>が<button class="w" data-en="passed (たつ = to elapse)">たちました</button>。<br>
+<button class="w" data-en="airport"><ruby>空<rt>くう</rt></ruby>こう</button>に<button class="w" data-en="entered (はいる = to enter)"><ruby>入<rt>はい</rt></ruby>って</button>から、すぐに<button class="w" data-en="boarding gate">とうじょうゲート</button>に<button class="w" data-en="headed (むかう = to head towards)">むかいました</button>。<br>
+きないでは、<button class="w" data-en="music"><ruby>音<rt>おん</rt></ruby>がく</button>を<button class="w" data-en="listening (きく = to listen)">きき</button>ながら、にほんごの<button class="w" data-en="book"><ruby>本<rt>ほん</rt></ruby></button>を<button class="w" data-en="reading (よむ = to read)">よんで</button>います。<br>
+ひこうきが<button class="w" data-en="flies (とぶ = to fly)">とぶ</button>たびに、もっと<button class="w" data-en="far away">とおく</button>に<button class="w" data-en="want to go (いく = to go)">いきたい</button>という<button class="w" data-en="feeling / emotion"><ruby>気<rt>き</rt></ruby>もち</button>に<button class="w" data-en="become (なる = to become)">なります</button>。<br>
+まどの<button class="w" data-en="outside">そと</button>を<button class="w" data-en="looking at (みる = to look)"><ruby>見<rt>み</rt></ruby>ると</button>、<button class="w" data-en="white"><ruby>白<rt>しろ</rt></ruby>い</button><button class="w" data-en="clouds">くも</button>が<button class="w" data-en="a lot / many">たくさん</button><button class="w" data-en="there are (ある = to exist [objects])">あります</button>。<br>
+くもの<button class="w" data-en="above / on top"><ruby>上<rt>うえ</rt></ruby></button>は<button class="w" data-en="always / at all times">いつも</button><button class="w" data-en="blue"><ruby>青<rt>あお</rt></ruby>い</button><button class="w" data-en="sky">そら</button>が<button class="w" data-en="spreads / is there">ひろがって</button>います。<br>
+この<button class="w" data-en="trip">たび</button>は<button class="w" data-en="work">しごと</button>の<button class="w" data-en="supposed to be (はず = assumption / expectation)">はず</button>でしたが、<button class="w" data-en="a little">すこし</button><button class="w" data-en="sightseeing">かんこう</button>も<button class="w" data-en="probably can do (できる = to be able to)">できる</button><button class="w" data-en="probably (でしょう = assumption)">でしょう</button>。<br>
+つぎに<button class="w" data-en="Japan">にほん</button>に<button class="w" data-en="can go (いく = to go)">いける</button>のは<button class="w" data-en="someday / when">いつか</button><button class="w" data-en="do not know (わかる = to understand)">わかりません</button>。<br>
+でも、いつか<button class="w" data-en="definitely">かならず</button><button class="w" data-en="intend to go (いく = to go)">いくつもりです</button>。
 </p></div>
-<div class="gnote">〜てから：after doing～ ／ 〜ながら：while doing～</div>
+<div class="gnote">〜てから: after doing〜 ／ 〜ながら: while doing〜 ／ 〜たびに: every time〜 ／ 〜はず: supposed to be〜 ／ 〜でしょう: probably〜</div>
 <div class="quiz-bar"><span>クイズモード:</span><button class="quiz-btn">クイズ開始</button></div>
-<table class="ktable"><thead><tr><th>漢字</th><th>読み方</th><th>意味</th></tr></thead><tbody>
-<tr><td><ruby>六<rt>ろく</rt></ruby></td><td>ろく</td><td>six</td></tr>
-<tr><td><ruby>空<rt>そら</rt></ruby></td><td>そら</td><td>sky</td></tr>
-<tr><td><ruby>車<rt>しゃ</rt></ruby></td><td>しゃ</td><td>[train — でんしゃ]</td></tr>
-<tr><td><ruby>中<rt>なか</rt></ruby></td><td>なか</td><td>inside</td></tr>
+<table class="ktable"><thead><tr><th>漢字</th><th>よみかた</th><th>いみ</th></tr></thead><tbody>
+<tr><td><ruby>出<rt>で</rt></ruby></td><td>でる / しゅつ</td><td>to exit / leave</td></tr>
+<tr><td><ruby>空<rt>くう</rt></ruby></td><td>そら / くう</td><td>sky / empty (空港 = airport)</td></tr>
+<tr><td><ruby>入<rt>はい</rt></ruby></td><td>はいる / にゅう</td><td>to enter</td></tr>
+<tr><td><ruby>音<rt>おん</rt></ruby></td><td>おと / おん</td><td>sound (音楽 = music)</td></tr>
+<tr><td><ruby>本<rt>ほん</rt></ruby></td><td>ほん / もと</td><td>book / origin</td></tr>
+<tr><td><ruby>気<rt>き</rt></ruby></td><td>き / げ</td><td>feeling / spirit (気持ち = feeling)</td></tr>
+<tr><td><ruby>見<rt>み</rt></ruby></td><td>みる / けん</td><td>to see / look</td></tr>
+<tr><td><ruby>白<rt>しろ</rt></ruby></td><td>しろ / はく</td><td>white</td></tr>
+<tr><td><ruby>青<rt>あお</rt></ruby></td><td>あお / せい</td><td>blue / green</td></tr>
+<tr><td><ruby>上<rt>うえ</rt></ruby></td><td>うえ / じょう</td><td>above / on top</td></tr>
 </tbody></table>
 </div>
 
 <div class="box" id="t2">
-<div class="bh">② ダブリンでランニング<span class="sub">文法: 〜たびに ／ 〜しか〜ない</span></div>
+<div class="bh">② スノーボードのおもいで<span class="sub">文法: 〜てしまう ／ 〜たびに ／ 〜ようになる ／ 〜なければならない ／ 〜ほうがいい</span></div>
 <div class="text-area"><p>
-<button class="w" data-en="I">わたし</button><button class="w" data-en="topic particle">は</button><button class="w" data-en="every morning">まいあさ</button><button class="w" data-en="running">ランニング</button><button class="w" data-en="object particle">を</button><button class="w" data-en="do (する)">する</button><button class="w" data-en="nominalizer">の</button><button class="w" data-en="subject particle">が</button><button class="w" data-en="like">すきです</button>。<br>
-<button class="w" data-en="Dublin">ダブリン</button><button class="w" data-en="belonging to / 's">の</button><button class="w" data-en="park">こうえん</button><button class="w" data-en="to / direction">に</button><button class="w" data-en="every time I go (いく)">いくたびに</button>、<button class="w" data-en="air"><ruby>空<rt>くう</rt></ruby><ruby>気<rt>き</rt></ruby></button><button class="w" data-en="subject particle">が</button><button class="w" data-en="clean / beautiful">きれいだ</button><button class="w" data-en="I think (おもう)">とおもいます</button>。<br>
-<button class="w" data-en="but">でも</button>、<button class="w" data-en="Dublin">ダブリン</button><button class="w" data-en="in / at (location)">で</button><button class="w" data-en="topic particle (contrast)">は</button><button class="w" data-en="rain"><ruby>雨<rt>あめ</rt></ruby></button><button class="w" data-en="subject particle">が</button><button class="w" data-en="a lot">たくさん</button><button class="w" data-en="falls (ふる)">ふります</button>。<br>
-<button class="w" data-en="rain"><ruby>雨<rt>あめ</rt></ruby></button><button class="w" data-en="subject particle">が</button><button class="w" data-en="every time it rains (ふる)">ふるたびに</button>、<button class="w" data-en="outside">そと</button><button class="w" data-en="in / at (location)">で</button><button class="w" data-en="run (はしる)">はしる</button><button class="w" data-en="nominalizer">こと</button><button class="w" data-en="subject particle">が</button><button class="w" data-en="cannot (できる)">できません</button>。<br>
-<button class="w" data-en="usually">たいていは</button><button class="w" data-en="Saturday"><ruby>土<rt>ど</rt></ruby>よう<ruby>日<rt>び</rt></ruby></button><button class="w" data-en="only (nothing but)">しか</button><button class="w" data-en="long distance">ながいきょり</button><button class="w" data-en="object particle">を</button><button class="w" data-en="run (はしる)">はしる</button><button class="w" data-en="nominalizer">こと</button><button class="w" data-en="subject particle">が</button><button class="w" data-en="cannot (できる)">できません</button>。<br>
-<button class="w" data-en="but">でも</button>、<button class="w" data-en="after running (はしる)">はしったあと</button><button class="w" data-en="topic particle">は</button><button class="w" data-en="very">とても</button><button class="w" data-en="feeling"><ruby>気<rt>き</rt></ruby>もち</button><button class="w" data-en="subject particle">が</button><button class="w" data-en="good">いいです</button>。<br>
-<button class="w" data-en="someday">いつか</button><button class="w" data-en="Dublin Marathon">ダブリンマラソン</button><button class="w" data-en="in / at">に</button><button class="w" data-en="want to participate (でる)">でたい</button><button class="w" data-en="I think (おもう)">とおもいます</button>。
+きょねんの<button class="w" data-en="winter">ふゆ</button>、はじめてスノーボードを<button class="w" data-en="learned (ならう = to learn)">ならいました</button>。<br>
+<button class="w" data-en="at first">さいしょ</button>は<button class="w" data-en="not at all">ぜんぜん</button>うまく<button class="w" data-en="could not do (できる = to be able to)">できなくて</button>、<button class="w" data-en="many times">なんども</button><button class="w" data-en="fell (ころぶ = to fall over)">ころんで</button><button class="w" data-en="ended up (てしまう = regret / completion)">しまいました</button>。<br>
+でも、れんしゅうする<button class="w" data-en="every time (〜たびに)">たびに</button>、<button class="w" data-en="little by little">すこしずつ</button>うまく<button class="w" data-en="became (なる = to become)">なって</button>きました。<br>
+<ruby>大<rt>おお</rt></ruby>きな<button class="w" data-en="slope / hill">さか</button>でも<button class="w" data-en="became able to slide (すべる = to slide)">すべれるようになりました</button>。<br>
+スノーボードをするのは<button class="w" data-en="fun / enjoyable">たのしい</button>のに、<button class="w" data-en="body / physical strength">からだ</button>が<button class="w" data-en="hurts (いたい = painful)">いたくて</button>、<button class="w" data-en="the next day">つぎのひ</button>は<button class="w" data-en="cannot move (うごく = to move)">うごけなく</button><button class="w" data-en="ended up (てしまう = regret)">なってしまいます</button>。<br>
+<button class="w" data-en="next year">らいねん</button>はもっとむずかしいコースに<button class="w" data-en="intend to challenge (ちょうせんする = to challenge)">ちょうせんするつもりです</button>。<br>
+そのためには、<button class="w" data-en="physical strength"><ruby>力<rt>ちから</rt></ruby></button>をつけ<button class="w" data-en="must do (〜なければならない)">なければなりません</button>。<br>
+まいにち<button class="w" data-en="running (はしる = to run)">はしった</button><button class="w" data-en="would be better to (〜ほうがいい)">ほうがいい</button>と<button class="w" data-en="thinking (おもう = to think)">おもいます</button>。<br>
+スノーボードみたいな<button class="w" data-en="sport">スポーツ</button>は、<button class="w" data-en="the more you continue / the longer you keep at it">つづければつづけるほど</button>うまく<button class="w" data-en="probably will become (なる = to become)">なるでしょう</button>。
 </p></div>
-<div class="gnote">〜たびに：every time～ ／ 〜しか〜ない：only～ (nothing but)</div>
+<div class="gnote">〜てしまう: ended up (doing) / regret ／ 〜たびに: every time〜 ／ 〜ようになる: came to be able to〜 ／ 〜なければならない: must〜 ／ 〜ほうがいい: it would be better to〜</div>
 <div class="quiz-bar"><span>クイズモード:</span><button class="quiz-btn">クイズ開始</button></div>
-<table class="ktable"><thead><tr><th>漢字</th><th>読み方</th><th>意味</th></tr></thead><tbody>
-<tr><td><ruby>空<rt>くう</rt></ruby></td><td>くう</td><td>[air — 空気]</td></tr>
-<tr><td><ruby>気<rt>き</rt></ruby></td><td>き</td><td>[air 空気 / feeling 気もち]</td></tr>
-<tr><td><ruby>雨<rt>あめ</rt></ruby></td><td>あめ</td><td>rain</td></tr>
-<tr><td><ruby>土<rt>ど</rt></ruby></td><td>ど</td><td>[Saturday — 土よう日]</td></tr>
-<tr><td><ruby>日<rt>び</rt></ruby></td><td>び</td><td>[day — 土よう日]</td></tr>
+<table class="ktable"><thead><tr><th>漢字</th><th>よみかた</th><th>いみ</th></tr></thead><tbody>
+<tr><td><ruby>大<rt>おお</rt></ruby></td><td>おおきい / だい</td><td>big / large</td></tr>
+<tr><td><ruby>力<rt>ちから</rt></ruby></td><td>ちから / りょく</td><td>strength / power</td></tr>
 </tbody></table>
 </div>
 
 <div class="box" id="t3">
-<div class="bh">③ エヴァンゲリオンのこと<span class="sub">文法: 〜なければならない ／ 〜のに ／ 〜ようになる</span></div>
+<div class="bh">③ アーセナルとサッカー<span class="sub">文法: 〜って ／ 〜らしい ／ 〜のに ／ 〜かもしれない ／ 〜でしょう</span></div>
 <div class="text-area"><p>
-<button class="w" data-en="I">わたし</button><button class="w" data-en="topic particle">は</button><button class="w" data-en="Evangelion">エヴァンゲリオン</button><button class="w" data-en="subject particle">が</button><button class="w" data-en="love / really like">だいすきです</button>。<br>
-<button class="w" data-en="Shinji (character name)">シンジくん</button><button class="w" data-en="topic particle">は</button><button class="w" data-en="Eva (Evangelion unit)">エヴァ</button><button class="w" data-en="in / on">に</button><button class="w" data-en="had to ride (のる)">のらなければなりませんでした</button>。<br>
-<button class="w" data-en="even though he didn't want to ride (のる)">のりたくないのに</button>、<button class="w" data-en="had to ride (のる)">のらなければなりませんでした</button>。<br>
-<button class="w" data-en="Eva's story">エヴァのはなし</button><button class="w" data-en="topic particle">は</button><button class="w" data-en="very">とても</button><button class="w" data-en="difficult">むずかしい</button><button class="w" data-en="but">ですが</button>、<button class="w" data-en="every time I watch (みる)">みるたびに</button><button class="w" data-en="new">あたらしい</button><button class="w" data-en="things / nominalizer">こと</button><button class="w" data-en="subject particle">が</button><button class="w" data-en="came to understand (わかる)">わかるようになります</button>。<br>
-<button class="w" data-en="Rei (character name)">レイ</button><button class="w" data-en="and">と</button><button class="w" data-en="Asuka (character name)">アスカ</button><button class="w" data-en="topic particle">は</button><button class="w" data-en="very">とても</button><button class="w" data-en="strength / power"><ruby>力<rt>ちから</rt></ruby></button><button class="w" data-en="subject particle">が</button><button class="w" data-en="have (ある)">あります</button>。<br>
-<button class="w" data-en="oneself">じぶん</button><button class="w" data-en="belonging to / 's">の</button><button class="w" data-en="heart / mind">こころ</button><button class="w" data-en="with / against">と</button><button class="w" data-en="must fight (たたかう)">たたかわなければならない</button><button class="w" data-en="the part / aspect">ところ</button><button class="w" data-en="subject particle">が</button>、<button class="w" data-en="very">とても</button><button class="w" data-en="human-like (にんげん)">にんげんらしい</button><button class="w" data-en="is">です</button>。<br>
-<button class="w" data-en="Eva (Evangelion)">エヴァ</button><button class="w" data-en="object particle">を</button><button class="w" data-en="after watching (みる)">みてから</button>、<button class="w" data-en="people / person"><ruby>人<rt>ひと</rt></ruby></button><button class="w" data-en="belonging to / 's">の</button><button class="w" data-en="heart / mind">こころ</button><button class="w" data-en="about">について</button><button class="w" data-en="more">もっと</button><button class="w" data-en="came to think (かんがえる)">かんがえるようになりました</button>。
+アーセナルはプレミアリーグで<button class="w" data-en="the most / number 1">いちばん</button><button class="w" data-en="favourite (すき = to like)">すきな</button>チームです。<br>
+さいきん、アーセナルがまた<button class="w" data-en="looks like they will win the championship (ゆうしょうする = to win)">ゆうしょうしそうだ</button><button class="w" data-en="I heard that〜 (hearsay, casual)">って</button><button class="w" data-en="heard (きく = to hear)">ききました</button>。<br>
+ことしの<button class="w" data-en="season">シーズン</button>は<button class="w" data-en="condition / form">ちょうし</button>がいい<button class="w" data-en="it seems / rumour has it (らしい = seems, typical of)">らしくて</button>、<button class="w" data-en="fans">ファン</button>はみんな<button class="w" data-en="looking forward to it / expecting (きたいする = to expect)">きたいしています</button>。<br>
+<button class="w" data-en="injured players">けがにん</button>が<button class="w" data-en="many">おおい</button><button class="w" data-en="even though / despite (のに = unexpected contrast)">のに</button>、よくここまで<button class="w" data-en="been doing their best (がんばる = to do one's best)">がんばって</button>いると<button class="w" data-en="thinking (おもう = to think)">おもいます</button>。<br>
+つぎの<button class="w" data-en="match / game">しあい</button>も<button class="w" data-en="win (かつ = to win)">かてる</button><button class="w" data-en="probably (でしょう = assumption)">でしょう</button>。<br>
+<button class="w" data-en="strong">つよい</button>チームと<button class="w" data-en="when fighting (たたかう = to fight)">たたかう</button>ときは、<button class="w" data-en="defense">しゅび</button>を<button class="w" data-en="strengthen (かためる = to solidify)">かためた</button><button class="w" data-en="might be better to (〜ほうがいいかもしれない)">ほうがいいかもしれません</button>。<br>
+でも、アーセナルの<button class="w" data-en="attacking style">こうげきのスタイル</button>はとても<button class="w" data-en="unique (どくとくな = unique)">どくとくな</button>もので、それが<button class="w" data-en="the charm / appeal">みりょく</button><button class="w" data-en="it seems that is the appeal (らしい = seems)">らしいです</button>。<br>
+どんな<button class="w" data-en="result">けっか</button>になっても、ずっと<button class="w" data-en="intend to cheer for them (おうえんする = to support/cheer)">おうえんするつもりです</button>。<br>
+にほんでも<button class="w" data-en="surprisingly many">おどろくほど</button>アーセナルのファンが<button class="w" data-en="there are / exist (いる = to exist [living things])">いる</button><button class="w" data-en="I heard that〜 (って = hearsay)">って</button>きいて、<button class="w" data-en="was surprised (おどろく = to be surprised)">おどろきました</button>。
 </p></div>
-<div class="gnote">〜なければならない：must～ ／ 〜のに：even though～ ／ 〜ようになる：came to (do)～</div>
+<div class="gnote">〜って: I heard that〜 (casual hearsay) ／ 〜らしい（推量）: seems / rumour has it ／ 〜のに: even though〜 ／ 〜かもしれない: might〜 ／ 〜でしょう: probably〜</div>
 <div class="quiz-bar"><span>クイズモード:</span><button class="quiz-btn">クイズ開始</button></div>
-<table class="ktable"><thead><tr><th>漢字</th><th>読み方</th><th>意味</th></tr></thead><tbody>
-<tr><td><ruby>力<rt>ちから</rt></ruby></td><td>ちから</td><td>strength / power</td></tr>
-<tr><td><ruby>人<rt>ひと</rt></ruby></td><td>ひと</td><td>person / people</td></tr>
+<table class="ktable"><thead><tr><th>漢字</th><th>よみかた</th><th>いみ</th></tr></thead><tbody>
+<tr><td><ruby>見<rt>み</rt></ruby></td><td>みる / けん</td><td>to see / watch</td></tr>
+</tbody></table>
+</div>
+
+<div class="box" id="t4">
+<div class="bh">④ にほんごの<ruby>力<rt>ちから</rt></ruby><span class="sub">文法: 〜てから ／ 〜ようになる ／ 〜たびに ／ 〜なければならない ／ 〜みたいに</span></div>
+<div class="text-area"><p>
+にほんごを<button class="w" data-en="started studying (べんきょうする = to study)">べんきょうしはじめて</button>から、もう<button class="w" data-en="over one year">いちねんいじょう</button>が<button class="w" data-en="passed (たつ = to elapse)">たちました</button>。<br>
+さいしょは<button class="w" data-en="hiragana">ひらがな</button>と<button class="w" data-en="katakana">カタカナ</button>を<button class="w" data-en="memorise (おぼえる = to memorise)">おぼえる</button>のが<button class="w" data-en="was tough (たいへん = hard / a lot of trouble)">たいへんでした</button>。<br>
+でも、れんしゅうする<button class="w" data-en="every time (〜たびに)">たびに</button>、<button class="w" data-en="reading speed">よむはやさ</button>が<button class="w" data-en="improved (あがる = to go up / improve)">あがって</button>きました。<br>
+いまでは、アニメを<button class="w" data-en="without subtitles">じまくなし</button>で<button class="w" data-en="became able to understand (わかる = to understand)">わかるようになって</button>きました。<br>
+<button class="w" data-en="vocabulary">ごい</button>が<button class="w" data-en="increases (ふえる = to increase)">ふえる</button>たびに、<button class="w" data-en="real Japanese people">ほんものの にほんじん</button>みたいに<button class="w" data-en="want to be able to talk (はなす = to talk)">はなしたい</button>という<button class="w" data-en="feeling / motivation">きもち</button>が<button class="w" data-en="grows stronger (つよくなる = to grow stronger)">つよくなります</button>。<br>
+もちろん、<button class="w" data-en="grammar">ぶんぽう</button>もまだまだ<button class="w" data-en="must study (べんきょうする = to study)">べんきょうしなければなりません</button>。<br>
+でも、にほんのアニメや<button class="w" data-en="music"><ruby>音<rt>おん</rt></ruby>がく</button>が<button class="w" data-en="because I like (すきだ = to like)">すきなので</button>、<button class="w" data-en="motivation">モチベーション</button>が<button class="w" data-en="there is / have (ある = to exist)">あります</button>。<br>
+ナルト<button class="w" data-en="sort of like (〜みたいな = resembling)">みたいな</button>アニメは、<button class="w" data-en="every time I watch (みる = to watch)">みるたびに</button>あたらしい<button class="w" data-en="expressions / vocabulary">ひょうげん</button>を<button class="w" data-en="can learn (まなぶ = to learn)"><ruby>学<rt>まな</rt></ruby>べます</button>。<br>
+いつか、にほんで<button class="w" data-en="only in Japanese">にほんごだけで</button><button class="w" data-en="daily life">せいかつ</button>できる<button class="w" data-en="want to reach a point where (〜ようになりたい)">ようになりたいです</button>。
+</p></div>
+<div class="gnote">〜てから: since / after doing〜 ／ 〜ようになる: came to be able to〜 ／ 〜たびに: every time〜 ／ 〜なければならない: must〜 ／ 〜みたいに: like〜 / in the same way as〜</div>
+<div class="quiz-bar"><span>クイズモード:</span><button class="quiz-btn">クイズ開始</button></div>
+<table class="ktable"><thead><tr><th>漢字</th><th>よみかた</th><th>いみ</th></tr></thead><tbody>
+<tr><td><ruby>力<rt>ちから</rt></ruby></td><td>ちから / りょく</td><td>strength / power</td></tr>
+<tr><td><ruby>音<rt>おん</rt></ruby></td><td>おと / おん</td><td>sound (音楽 = music)</td></tr>
+<tr><td><ruby>学<rt>まな</rt></ruby></td><td>まなぶ / がく</td><td>to learn / study</td></tr>
+</tbody></table>
+</div>
+
+<div class="box" id="t5">
+<div class="bh">⑤ <ruby>音<rt>おん</rt></ruby>がくと<ruby>気<rt>き</rt></ruby>もち<span class="sub">文法: 〜てしまう ／ 〜みたいだ ／ 〜かもしれない ／ 〜がり ／ 〜ながら</span></div>
+<div class="text-area"><p>
+さいきん、サンプラーで<button class="w" data-en="music"><ruby>音<rt>おん</rt></ruby>がく</button>を<button class="w" data-en="started making (つくる = to make/create)">つくりはじめました</button>。<br>
+さいしょはリズムを<button class="w" data-en="getting used to (なれる = to get used to)">なれる</button>のにじかんが<button class="w" data-en="took (かかる = to take time)">かかって</button><button class="w" data-en="ended up (てしまう = completion / regret)">しまいました</button>。<br>
+でも、シティポップみたいなジャンルは<button class="w" data-en="easy to make (つくる = to make)">つくりやすい</button><button class="w" data-en="seems like (みたいです = looks like / seems)">みたいです</button>。<br>
+にほんのレコードを<button class="w" data-en="collecting (あつめる = to collect)">あつめて</button>いて、もう<button class="w" data-en="about 30 records">さんじゅうまいぐらい</button><button class="w" data-en="have (ある = to have/exist)">あります</button>。<br>
+きく<button class="w" data-en="every time (〜たびに)">たびに</button>、あたらしいアイデアが<button class="w" data-en="comes out (でてくる = to come out)"><ruby>出<rt>で</rt></ruby>てきます</button>。<br>
+しゃしんとおんがくせいさくは、どちらも<button class="w" data-en="unique (どくとくな = unique)">どくとくな</button>しゅみですが、<button class="w" data-en="relaxing / de-stressing">リラックスできます</button>。<br>
+ダブリンのまちで<button class="w" data-en="while walking (あるく = to walk)">あるきながら</button>しゃしんをとっていると、<button class="w" data-en="without realising / before you know it">いつのまにか</button>じかんが<button class="w" data-en="passed (たつ = to elapse)">たって</button><button class="w" data-en="ended up (てしまう = unnoticed completion)">しまいます</button>。<br>
+いつか、じぶんでつくった<button class="w" data-en="music">おんがく</button>を<button class="w" data-en="might want to release (はっぴょうする = to announce/release)">はっぴょうしたいかもしれません</button>。<br>
+<button class="w" data-en="person who hates the cold (さむがり = cold-sensitive person)">さむがりな</button>わたしには、ダブリンのふゆは<button class="w" data-en="tough (たいへん = hard / a lot of trouble)">たいへん</button>ですが、いえの<ruby>中<rt>なか</rt></ruby>で<button class="w" data-en="while making music (つくる = to make)">おんがくをつくりながら</button><button class="w" data-en="can spend the time (すごす = to spend time)">すごせます</button>。
+</p></div>
+<div class="gnote">〜てしまう: ended up (doing) / unnoticed completion ／ 〜みたいです: seems like〜 ／ 〜かもしれない: might〜 ／ 〜がり: tendency to easily feel〜 (さむがり = cold-sensitive person) ／ 〜ながら: while doing〜</div>
+<div class="quiz-bar"><span>クイズモード:</span><button class="quiz-btn">クイズ開始</button></div>
+<table class="ktable"><thead><tr><th>漢字</th><th>よみかた</th><th>いみ</th></tr></thead><tbody>
+<tr><td><ruby>音<rt>おん</rt></ruby></td><td>おと / おん</td><td>sound (音楽 = music)</td></tr>
+<tr><td><ruby>気<rt>き</rt></ruby></td><td>き / げ</td><td>feeling / spirit</td></tr>
+<tr><td><ruby>出<rt>で</rt></ruby></td><td>でる / しゅつ</td><td>to come out / exit</td></tr>
+<tr><td><ruby>中<rt>なか</rt></ruby></td><td>なか / ちゅう</td><td>inside / middle</td></tr>
 </tbody></table>
 </div>
 
@@ -139,8 +196,6 @@ document.querySelectorAll('button.w').forEach(function(el){
 document.addEventListener('click',hide);
 window.addEventListener('scroll',function(){if(active)pos(active);},{passive:true});
 window.addEventListener('resize',function(){if(active)pos(active);},{passive:true});
-
-// Quiz mode
 var quizMode=false;
 document.querySelectorAll('.quiz-btn').forEach(function(btn){
   btn.addEventListener('click',function(){
@@ -157,6 +212,6 @@ document.querySelectorAll('.quiz-btn').forEach(function(btn){
   });
 });
 </script>
-<footer>日本語練習 · ダブリン ｜ デイリー練習</footer>
+<footer>日本語練習 · ✈️ フライトエディション · 2026年7月9日</footer>
 </body>
 </html>
