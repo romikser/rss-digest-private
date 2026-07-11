@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sunday Running Brief — 12 July 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#e8e8f0;font:13px/1.5 "Hiragino Sans","MS PGothic",Arial,sans-serif;color:#333;}
+a{color:#0000cc;text-decoration:none;}
+a:hover{text-decoration:underline;color:#cc0000;}
+#header{background:#fff;border-bottom:3px solid #cc0000;padding:5px 10px;display:flex;align-items:center;justify-content:space-between;}
+#header h1{font-size:15px;font-weight:bold;color:#cc0000;}
+#header .sub{font-size:11px;color:#666;}
+#wrap{max-width:760px;margin:6px auto;padding:0 6px 40px;}
+#sidebar{display:none;}
+.card{background:#fff;border:1px solid #aaaacc;margin-bottom:6px;overflow:hidden;}
+.card-header{background:linear-gradient(180deg,#d8e8f8 0%,#b8ccec 100%);border-bottom:1px solid #aaaacc;padding:4px 8px;font-weight:bold;font-size:12px;color:#333;line-height:1.6;}
+.card-body{padding:8px 10px;}
+.weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.weather-day{border:1px solid #aaaacc;padding:8px;text-align:center;background:#f7f7fd;}
+.weather-day .date{font-size:11px;color:#666;margin-bottom:3px;}
+.weather-day .temp{font-size:20px;font-weight:bold;color:#cc0000;}
+.weather-day .desc{font-size:11px;color:#555;margin-top:3px;}
+.weather-day .rain{font-size:10px;color:#0000cc;margin-top:2px;}
+.event-item{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #e0e0ee;}
+.event-item:last-child{border-bottom:none;}
+.event-img{width:110px;height:74px;object-fit:cover;border:1px solid #aaaacc;flex-shrink:0;background:#eeeef8;}
+.event-img-placeholder{width:110px;height:74px;background:#eeeef8;border:1px solid #aaaacc;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:10px;}
+.event-info{flex:1;min-width:0;}
+.event-title{font-weight:bold;font-size:13px;line-height:1.4;margin-bottom:3px;}
+.event-title a{color:#0000cc;text-decoration:none;}
+.event-title a:hover{text-decoration:underline;color:#cc0000;}
+.event-meta{font-size:10px;color:#888;margin-bottom:2px;}
+.event-desc{font-size:11px;color:#555;line-height:1.5;}
+.tag{display:inline-block;background:#cc0000;color:#fff;font-size:10px;padding:1px 4px;margin-right:3px;vertical-align:middle;}
+.tag-blue{background:#0000cc;}
+.tag-green{background:#1a7a1a;}
+.tag-mubi{background:#1c3f6e;}
+.sidebar-card{display:none;}
+.notes-list{list-style:none;}
+.notes-list li{padding:4px 0 4px 12px;border-bottom:1px solid #e0e0ee;font-size:11px;color:#555;position:relative;}
+.notes-list li::before{content:'&#9658;';font-size:8px;color:#cc0000;position:absolute;left:0;top:6px;}
+.timeline-item{padding:6px 0 6px 14px;border-left:2px solid #aaaacc;margin-left:4px;position:relative;margin-bottom:3px;}
+.timeline-item::before{content:'';width:7px;height:7px;background:#cc0000;border-radius:50%;position:absolute;left:-5px;top:10px;}
+.timeline-time{font-size:10px;color:#cc0000;font-weight:bold;margin-bottom:1px;}
+.timeline-title{font-size:12px;font-weight:bold;}
+.timeline-detail{font-size:10px;color:#888;}
+.hero-img{width:100%;height:180px;object-fit:cover;display:block;border-bottom:1px solid #aaaacc;}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+.stat-box{background:#f7f7fd;border:1px solid #aaaacc;padding:8px;text-align:center;}
+.stat-box .label{font-size:11px;color:#666;margin-bottom:3px;}
+.stat-box .value{font-size:20px;font-weight:bold;color:#cc0000;}
+.stat-box .unit{font-size:11px;color:#888;}
+footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px solid #ccc;background:#f0f0f8;margin-top:4px;}
+.alert-box{background:#fff8e1;border:1px solid #f0c040;border-left:4px solid #cc0000;padding:8px 10px;font-size:11px;color:#555;line-height:1.6;}
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>&#x1F3C3; Sunday Running Brief</h1>
+  <span class="sub">Dublin &middot; Sunday 12 July 2026</span>
+</div>
+<div id="wrap" style="grid-template-columns:1fr">
+  <main>
+
+    <div class="card">
+      <div class="card-header">&#x1F324; Tomorrow&rsquo;s Conditions &mdash; Dublin, Sunday 12 July</div>
+      <div class="card-body">
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="label">High</div>
+            <div class="value">22</div>
+            <div class="unit">&deg;C</div>
+          </div>
+          <div class="stat-box">
+            <div class="label">Feels like</div>
+            <div class="value">19</div>
+            <div class="unit">&deg;C</div>
+          </div>
+          <div class="stat-box">
+            <div class="label">Rain chance</div>
+            <div class="value">5</div>
+            <div class="unit">%</div>
+          </div>
+          <div class="stat-box">
+            <div class="label">Wind</div>
+            <div class="value">20</div>
+            <div class="unit">km/h E</div>
+          </div>
+          <div class="stat-box">
+            <div class="label">Sunrise</div>
+            <div class="value">5:15</div>
+            <div class="unit">AM IST</div>
+          </div>
+          <div class="stat-box">
+            <div class="label">Sunset</div>
+            <div class="value">21:35</div>
+            <div class="unit">IST</div>
+          </div>
+        </div>
+        <p style="margin-top:8px;font-size:11px;color:#666;">Source: Met &Eacute;ireann forecast issued 11 July 2026. Dry and mostly sunny all day. Warmest inland; coastal Dublin cooled by onshore easterly. Overnight low: 14&ndash;17&deg;C.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">&#x23F0; Best Time to Run</div>
+      <div class="card-body">
+        <div class="timeline-item">
+          <div class="timeline-time">06:00 &ndash; 09:00</div>
+          <div class="timeline-title">&#x2605; Prime window &mdash; morning cool</div>
+          <div class="timeline-detail">Temps around 17&ndash;19&deg;C, UV building but still manageable, roads quiet. Light headwind heading east, tailwind heading west. Best for longer efforts.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">19:30 &ndash; 21:00</div>
+          <div class="timeline-title">Good fallback &mdash; evening cool-down</div>
+          <div class="timeline-detail">Heat drops back below 20&deg;C, UV gone, still 90+ minutes until sunset. Great for a relaxed 5&ndash;10 km. Phoenix Park paths and the Liffey boardwalk will still have good light.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">11:00 &ndash; 17:00</div>
+          <div class="timeline-title">Avoid if possible &mdash; peak heat &amp; UV</div>
+          <div class="timeline-detail">Up to 24&deg;C inland, UV index HIGH. Coastal breeze helps on the Docklands / Grand Canal Dock loop but otherwise uncomfortable for sustained effort.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">&#x1F455; What to Wear</div>
+      <div class="card-body">
+        <ul class="notes-list">
+          <li><strong>Singlet + shorts</strong> &mdash; it&rsquo;s a warm one even at 6 AM; no need for layers</li>
+          <li><strong>SPF 50+ sunscreen</strong> &mdash; UV is HIGH all day, apply before you leave</li>
+          <li><strong>Sunglasses</strong> &mdash; direct sun from low angle in the morning</li>
+          <li><strong>Lightweight cap or visor</strong> &mdash; shade your face, especially if running toward the sun</li>
+          <li><strong>Extra water / hydration vest</strong> &mdash; warmer than usual Dublin summer; plan 500 ml per 40 min minimum</li>
+          <li><strong>No jacket needed</strong> &mdash; overnight low is mild, dry night, morning will feel pleasant</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">&#x26A0;&#xFE0F; Heads Up</div>
+      <div class="card-body">
+        <div class="alert-box">
+          <strong>Pollen &mdash; HIGH.</strong> Met &Eacute;ireann flagged high pollen on both Saturday and Sunday. If you&rsquo;re prone to hay fever, take an antihistamine the night before or first thing in the morning. Avoid wooded areas like the Furry Glen in Phoenix Park if symptomatic &mdash; open paths along the Liffey or Grand Canal are better bets.<br><br>
+          <strong>UV &mdash; HIGH.</strong> Don&rsquo;t skip the sunscreen even for an early run; UV builds quickly on clear days by 9 AM.<br><br>
+          <strong>Easterly wind (20 km/h, gusts ~30 km/h).</strong> Coastal routes (Sandymount Strand, Docklands, North Bull Wall) will feel noticeably cooler and windier &mdash; plan your route accordingly so you&rsquo;re not fighting a headwind on the way home.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">&#x1F5FA;&#xFE0F; Suggested Routes</div>
+      <div class="card-body">
+        <ul class="notes-list">
+          <li><strong>Phoenix Park perimeter</strong> (11 km) &mdash; shaded by tree-lined alles, flat, car-light on Sunday mornings. Start at Parkgate Street Gate.</li>
+          <li><strong>Grand Canal towpath</strong> (5&ndash;10 km, Portobello to Ringsend) &mdash; flat, scenic, dog-friendly, good surface. Easterly tail/crosswind depending on direction.</li>
+          <li><strong>Docklands / Liffey boardwalk loop</strong> (~8 km) &mdash; urban, open, sea breeze off the bay. Best for seeing the city quiet on a Sunday morning.</li>
+          <li><strong>Sandymount Strand</strong> (5 km out-and-back) &mdash; flat sand, fresh sea air, expect strong easterly headwind on the way out.</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>Sunday Running Brief &middot; Dublin &middot; Generated 11 July 2026</footer>
+  </main>
+</div>
+</body>
+</html>
