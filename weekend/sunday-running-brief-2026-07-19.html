@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sunday Running Brief — 2026-07-19</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#e8e8f0;font:13px/1.5 "Hiragino Sans","MS PGothic",Arial,sans-serif;color:#333;}
+a{color:#0000cc;text-decoration:none;}
+a:hover{text-decoration:underline;color:#cc0000;}
+#header{background:#fff;border-bottom:3px solid #cc0000;padding:5px 10px;display:flex;align-items:center;justify-content:space-between;}
+#header h1{font-size:15px;font-weight:bold;color:#cc0000;}
+#header .sub{font-size:11px;color:#666;}
+#wrap{max-width:760px;margin:6px auto;padding:0 6px 40px;}
+#sidebar{display:none;}
+.card{background:#fff;border:1px solid #aaaacc;margin-bottom:6px;overflow:hidden;}
+.card-header{background:linear-gradient(180deg,#d8e8f8 0%,#b8ccec 100%);border-bottom:1px solid #aaaacc;padding:4px 8px;font-weight:bold;font-size:12px;color:#333;line-height:1.6;}
+.card-body{padding:8px 10px;}
+.weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.weather-day{border:1px solid #aaaacc;padding:8px;text-align:center;background:#f7f7fd;}
+.weather-day .date{font-size:11px;color:#666;margin-bottom:3px;}
+.weather-day .temp{font-size:20px;font-weight:bold;color:#cc0000;}
+.weather-day .desc{font-size:11px;color:#555;margin-top:3px;}
+.weather-day .rain{font-size:10px;color:#0000cc;margin-top:2px;}
+.event-item{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #e0e0ee;}
+.event-item:last-child{border-bottom:none;}
+.event-img{width:110px;height:74px;object-fit:cover;border:1px solid #aaaacc;flex-shrink:0;background:#eeeef8;}
+.event-img-placeholder{width:110px;height:74px;background:#eeeef8;border:1px solid #aaaacc;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:10px;}
+.event-info{flex:1;min-width:0;}
+.event-title{font-weight:bold;font-size:13px;line-height:1.4;margin-bottom:3px;}
+.event-title a{color:#0000cc;text-decoration:none;}
+.event-title a:hover{text-decoration:underline;color:#cc0000;}
+.event-meta{font-size:10px;color:#888;margin-bottom:2px;}
+.event-desc{font-size:11px;color:#555;line-height:1.5;}
+.tag{display:inline-block;background:#cc0000;color:#fff;font-size:10px;padding:1px 4px;margin-right:3px;vertical-align:middle;}
+.tag-blue{background:#0000cc;}
+.tag-green{background:#1a7a1a;}
+.tag-mubi{background:#1c3f6e;}
+.sidebar-card{display:none;}
+.notes-list{list-style:none;}
+.notes-list li{padding:4px 0 4px 12px;border-bottom:1px solid #e0e0ee;font-size:11px;color:#555;position:relative;}
+.notes-list li::before{content:'▶';font-size:8px;color:#cc0000;position:absolute;left:0;top:6px;}
+.timeline-item{padding:6px 0 6px 14px;border-left:2px solid #aaaacc;margin-left:4px;position:relative;margin-bottom:3px;}
+.timeline-item::before{content:'';width:7px;height:7px;background:#cc0000;border-radius:50%;position:absolute;left:-5px;top:10px;}
+.timeline-time{font-size:10px;color:#cc0000;font-weight:bold;margin-bottom:1px;}
+.timeline-title{font-size:12px;font-weight:bold;}
+.timeline-detail{font-size:10px;color:#888;}
+.hero-img{width:100%;height:180px;object-fit:cover;display:block;border-bottom:1px solid #aaaacc;}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+.stat-box{background:#f7f7fd;border:1px solid #aaaacc;padding:8px;text-align:center;}
+.stat-box .label{font-size:11px;color:#666;margin-bottom:3px;}
+.stat-box .value{font-size:20px;font-weight:bold;color:#cc0000;}
+.stat-box .unit{font-size:11px;color:#888;}
+footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px solid #ccc;background:#f0f0f8;margin-top:4px;}
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>🏃 Sunday Running Brief</h1>
+  <span class="sub">Dublin · Sunday 19 July 2026</span>
+</div>
+<img class="hero-img" src="https://www.phoenixpark.ie/wp-content/uploads/2017/08/Wild-Deer-Roam-Freely-In-The-Park.jpg" alt="Dublin Phoenix Park" onerror="this.remove()">
+<div id="wrap" style="grid-template-columns:1fr">
+  <main>
+    <div class="card">
+      <div class="card-header">🌤 Tomorrow's Conditions — Sunday 19 July</div>
+      <div class="card-body">
+        <div class="stat-grid">
+          <div class="stat-box"><div class="label">High</div><div class="value">24</div><div class="unit">°C</div></div>
+          <div class="stat-box"><div class="label">Feels like</div><div class="value">22</div><div class="unit">°C</div></div>
+          <div class="stat-box"><div class="label">Rain chance</div><div class="value">5</div><div class="unit">%</div></div>
+          <div class="stat-box"><div class="label">Wind</div><div class="value">12</div><div class="unit">km/h N</div></div>
+          <div class="stat-box"><div class="label">Sunrise</div><div class="value">05:23</div><div class="unit"></div></div>
+          <div class="stat-box"><div class="label">Sunset</div><div class="value">21:42</div><div class="unit"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">⏰ Best Time to Run</div>
+      <div class="card-body">
+        <div class="timeline-item">
+          <div class="timeline-time">06:00 – 09:00</div>
+          <div class="timeline-title">Prime morning window</div>
+          <div class="timeline-detail">Cool air (16–18°C), low UV, golden light over Phoenix Park or the Grand Canal. Best for longer efforts.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">19:30 – 21:00</div>
+          <div class="timeline-title">Evening alternative</div>
+          <div class="timeline-detail">UV drops after 7 pm, still 20°C+, long Dublin summer light until 21:42. Good if you're sleeping in.</div>
+        </div>
+        <div style="font-size:11px;color:#888;margin-top:6px;padding-top:4px;border-top:1px solid #e0e0ee;">
+          Met Éireann: dry with hazy sunshine all day, light northerly breeze. UV and pollen both HIGH — mid-day (11–16:00) is the one window to dodge.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">👕 What to Wear</div>
+      <div class="card-body">
+        <ul class="notes-list">
+          <li><strong>Light technical tee or singlet</strong> — 24°C with sunshine means you'll be warm fast</li>
+          <li><strong>Running shorts</strong> — no tights needed, even early morning</li>
+          <li><strong>Running cap or visor</strong> — hazy sunshine + high UV, shade your face</li>
+          <li><strong>Sunglasses</strong> — sun will be low and in your eyes on an early eastward leg</li>
+          <li><strong>Sunscreen SPF 50+</strong> — apply before you leave; UV is HIGH all day</li>
+          <li><strong>Hydration vest or belt</strong> — warm and dry = you'll sweat more than you expect; carry water on anything over 8 km</li>
+          <li><strong>Skip the jacket</strong> — northerly breeze is light, not cold; a base layer will overheat you</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">⚠️ Heads Up</div>
+      <div class="card-body">
+        <ul class="notes-list">
+          <li><strong>High UV index</strong> — sunscreen is not optional; reapply if you're out for 90 min+</li>
+          <li><strong>High pollen count</strong> — if you're hay-fever prone, take antihistamine the night before and avoid grassy areas mid-run</li>
+          <li><strong>Hazy conditions</strong> — not full clear-sky sun, but still warm and bright; light scattering can make UV sneaky</li>
+          <li><strong>Phoenix Park deer</strong> — July is post-rut calm, but give them space especially on early-morning trails near the Fifteen Acres</li>
+        </ul>
+      </div>
+    </div>
+    <footer>Sunday Running Brief · Generated Saturday 18 July 2026 · Source: Met Éireann</footer>
+  </main>
+</div>
+</body>
+</html>
