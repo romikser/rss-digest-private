@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dublin Weekend Plan — Sat 25 &amp; Sun 26 July 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#e8e8f0;font:13px/1.5 "Hiragino Sans","MS PGothic",Arial,sans-serif;color:#333;}
+a{color:#0000cc;text-decoration:none;}
+a:hover{text-decoration:underline;color:#cc0000;}
+#header{background:#fff;border-bottom:3px solid #cc0000;padding:5px 10px;display:flex;align-items:center;justify-content:space-between;}
+#header h1{font-size:15px;font-weight:bold;color:#cc0000;}
+#header .sub{font-size:11px;color:#666;}
+#wrap{max-width:760px;margin:6px auto;padding:0 6px 40px;}
+#sidebar{display:none;}
+.card{background:#fff;border:1px solid #aaaacc;margin-bottom:6px;overflow:hidden;}
+.card-header{background:linear-gradient(180deg,#d8e8f8 0%,#b8ccec 100%);border-bottom:1px solid #aaaacc;padding:4px 8px;font-weight:bold;font-size:12px;color:#333;line-height:1.6;}
+.card-body{padding:8px 10px;}
+.weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.weather-day{border:1px solid #aaaacc;padding:8px;text-align:center;background:#f7f7fd;}
+.weather-day .date{font-size:11px;color:#666;margin-bottom:3px;}
+.weather-day .temp{font-size:20px;font-weight:bold;color:#cc0000;}
+.weather-day .desc{font-size:11px;color:#555;margin-top:3px;}
+.weather-day .rain{font-size:10px;color:#0000cc;margin-top:2px;}
+.event-item{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #e0e0ee;}
+.event-item:last-child{border-bottom:none;}
+.event-img{width:110px;height:74px;object-fit:cover;border:1px solid #aaaacc;flex-shrink:0;background:#eeeef8;}
+.event-img-placeholder{width:110px;height:74px;background:#eeeef8;border:1px solid #aaaacc;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:10px;}
+.event-info{flex:1;min-width:0;}
+.event-title{font-weight:bold;font-size:13px;line-height:1.4;margin-bottom:3px;}
+.event-title a{color:#0000cc;text-decoration:none;}
+.event-title a:hover{text-decoration:underline;color:#cc0000;}
+.event-meta{font-size:10px;color:#888;margin-bottom:2px;}
+.event-desc{font-size:11px;color:#555;line-height:1.5;}
+.tag{display:inline-block;background:#cc0000;color:#fff;font-size:10px;padding:1px 4px;margin-right:3px;vertical-align:middle;}
+.tag-blue{background:#0000cc;}
+.tag-green{background:#1a7a1a;}
+.tag-mubi{background:#1c3f6e;}
+.sidebar-card{display:none;}
+.notes-list{list-style:none;}
+.notes-list li{padding:4px 0 4px 12px;border-bottom:1px solid #e0e0ee;font-size:11px;color:#555;position:relative;}
+.notes-list li::before{content:'▶';font-size:8px;color:#cc0000;position:absolute;left:0;top:6px;}
+.timeline-item{padding:6px 0 6px 14px;border-left:2px solid #aaaacc;margin-left:4px;position:relative;margin-bottom:3px;}
+.timeline-item::before{content:'';width:7px;height:7px;background:#cc0000;border-radius:50%;position:absolute;left:-5px;top:10px;}
+.timeline-time{font-size:10px;color:#cc0000;font-weight:bold;margin-bottom:1px;}
+.timeline-title{font-size:12px;font-weight:bold;}
+.timeline-detail{font-size:10px;color:#888;}
+footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px solid #ccc;background:#f0f0f8;margin-top:4px;}
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>&#x1F3D9;&#xFE0F; Dublin Weekend Plan</h1>
+  <span class="sub">Sat 25 &ndash; Sun 26 July 2026</span>
+</div>
+<div id="wrap">
+  <main>
+
+    <!-- Weather -->
+    <div class="card">
+      <div class="card-header">&#x1F324; Weekend Weather — Met Éireann</div>
+      <div class="card-body">
+        <div class="weather-grid">
+          <div class="weather-day">
+            <div class="date">Saturday 25 July</div>
+            <div class="temp">19°C</div>
+            <div class="desc">Bright start, cloud &amp; drizzle from afternoon · Low 14°C</div>
+            <div class="rain">&#x2614; Rain: ~50% (aft/eve) · &#x1F4A8; Moderate W</div>
+          </div>
+          <div class="weather-day">
+            <div class="date">Sunday 26 July</div>
+            <div class="temp">18°C</div>
+            <div class="desc">Wet morning, drying up through afternoon · Low 12°C</div>
+            <div class="rain">&#x2614; Rain: ~70% (morning) · &#x1F4A8; Moderate W</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saturday -->
+    <div class="card">
+      <div class="card-header">&#x1F4C5; Saturday 25 July</div>
+      <div class="card-body">
+        <div class="timeline-item">
+          <div class="timeline-time">10:30</div>
+          <div class="timeline-title">National Senior Track &amp; Field Championships</div>
+          <div class="timeline-detail">&#x1F4CD; Morton Stadium, Santry · Runs until 18:30 · Olympians, European Champions, record breakers</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">12:00</div>
+          <div class="timeline-title">We Love July — Free Festival Day</div>
+          <div class="timeline-detail">&#x1F4CD; Fairview Park · Yoga, aerial circus, silent disco, rounders, talks · Free · Until 18:00</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">13:00</div>
+          <div class="timeline-title">IFI: The Odyssey (70mm) / An Irish Atlantic Rainforest</div>
+          <div class="timeline-detail">&#x1F4CD; IFI, Temple Bar · Odyssey also at 12:10, 16:00, 19:50 · Rainforest at 13:00, 18:25</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">15:00</div>
+          <div class="timeline-title">Colombian Day 2026</div>
+          <div class="timeline-detail">&#x1F4CD; National Stadium, Dublin 8 · Live music, dance classes, food market · From €6.34</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">16:30</div>
+          <div class="timeline-title">Paddy Power Comedy Festival — Afternoon Show</div>
+          <div class="timeline-detail">&#x1F4CD; The Only Joke Inn, Iveagh Gardens · Chris Redd, Kat O'Hanlon, Chris Kent + MC Duane Doogan</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">17:50</div>
+          <div class="timeline-title">IFI: Nostalghia 4K (Tarkovsky)</div>
+          <div class="timeline-detail">&#x1F4CD; IFI, Temple Bar · Also Sunday 20:10</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">19:30</div>
+          <div class="timeline-title">Agnes Obel at National Concert Hall</div>
+          <div class="timeline-detail">&#x1F4CD; NCH, Earlsfort Terrace · With Peter Gregson · Presented by Foggy Notions · SOLD OUT</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">19:00</div>
+          <div class="timeline-title">Paddy Power Comedy Festival — Evening Show</div>
+          <div class="timeline-detail">&#x1F4CD; The Bleedin Massive Stage, Iveagh Gardens · Dylan Moran, Killian Sundermann, Fern Brady, Barry Murphy</div>
+        </div>
+
+        <div class="event-item" style="margin-top:10px">
+          <img class="event-img" src="https://www.rte.ie/images/00237004-500.jpg" alt="Paddy Power Comedy Festival" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag">Comedy</span> <a href="https://www.rte.ie/lifestyle/living/2026/0723/1584765-things-to-do-in-dublin-this-weekend-july-24-26/">Paddy Power Comedy Festival</a></div>
+            <div class="event-meta">&#x1F4CD; Iveagh Gardens · &#x1F550; Thu–Sun, multiple shows · From €25</div>
+            <div class="event-desc">Four days of comedy across multiple stages — Dylan Moran, Chris Redd (former SNL), Fern Brady, Neil Delamere, Robbie Wilde, Barry Murphy and more. Afternoon and evening shows still available for Sunday.</div>
+          </div>
+        </div>
+        <div class="event-item">
+          <img class="event-img" src="https://tickets.nch.ie/content/Images/NCH-2018/EVENT%20IMAGES/July-2026/26_07_25-Agnes-Obel.jpg" alt="Agnes Obel" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag" style="background:#5a2d82">Music</span> <a href="https://www.nch.ie/all-events-listing/agnes-obel-jul26/">Agnes Obel</a></div>
+            <div class="event-meta">&#x1F4CD; National Concert Hall · &#x1F550; 19:30 · With Peter Gregson · &#x26A0;&#xFE0F; SOLD OUT</div>
+            <div class="event-desc">Danish-Berlin chamber pop artist, classically trained pianist and self-producing songwriter. Known for poised, melancholic neo-classical pop. Her fourth album Myopia was followed by a five-year touring hiatus — this is a rare Dublin appearance. Check nch.ie for returns.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sunday -->
+    <div class="card">
+      <div class="card-header">&#x1F4C5; Sunday 26 July</div>
+      <div class="card-body">
+        <div class="timeline-item">
+          <div class="timeline-time">11:00</div>
+          <div class="timeline-title">Dublin Ratha Yatra — Festival of the Chariots</div>
+          <div class="timeline-detail">&#x1F4CD; Garden of Remembrance, Parnell Square · Free · Until 17:00</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">13:10</div>
+          <div class="timeline-title">IFI: On the Sea / An Irish Atlantic Rainforest</div>
+          <div class="timeline-detail">&#x1F4CD; IFI, Temple Bar · On the Sea: 13:10, 18:00 · Rainforest: 10:50, 20:30</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">15:30</div>
+          <div class="timeline-title">All-Ireland Senior Football Final: Kerry v Mayo</div>
+          <div class="timeline-detail">&#x1F4CD; Croke Park, Jones Road · Live on RTÉ One · Road closures from 09:00 — use public transport</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">16:15</div>
+          <div class="timeline-title">IFI Odysseys: The Deer Hunter</div>
+          <div class="timeline-detail">&#x1F4CD; IFI, Temple Bar · Dir. Michael Cimino · Special Odysseys series screening</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">17:00</div>
+          <div class="timeline-title">Riverdance 30 — The New Generation (Early Evening)</div>
+          <div class="timeline-detail">&#x1F4CD; Gaiety Theatre · No late entry</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">20:00</div>
+          <div class="timeline-title">Bob the Drag Queen — Road Werk Ireland Edition</div>
+          <div class="timeline-detail">&#x1F4CD; Vicar Street · Until 22:00</div>
+        </div>
+
+        <div class="event-item" style="margin-top:10px">
+          <div class="event-info">
+            <div class="event-title"><span class="tag" style="background:#1a5e1a">GAA</span> <a href="https://www.gaa.ie">All-Ireland Football Final: Kerry v Mayo</a></div>
+            <div class="event-meta">&#x1F4CD; Croke Park (82,300 cap.) · &#x1F550; Throw-in 15:30 · Ref: Martin McNally (Monaghan) · Live RTÉ One</div>
+            <div class="event-desc">Kerry (defending champions, bidding for 40th title and two-in-a-row since 2006–07) face Mayo (chasing first All-Ireland since 1951). Their 31st championship meeting — Kerry lead 20–6 with 4 draws. Expect massive crowds citywide. Road closures near Croke Park from 09:00; use DART, Luas or Dublin Bus.</div>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag">Free</span> <a href="https://allevents.in/dublin/this-weekend">Dublin Ratha Yatra — Festival of the Chariots</a></div>
+            <div class="event-meta">&#x1F4CD; Garden of Remembrance, Parnell Square · &#x1F550; 11:00–17:00 · Free</div>
+            <div class="event-desc">Dublin's biggest Festival of Chariots with vibrant colours, music, community celebrations and chariot processions. One of the city's most distinctive annual street spectacles — good for street photography too.</div>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag" style="background:#8b0057">Dance</span> <a href="https://www.gaietytheatre.ie">Riverdance 30 — The New Generation</a></div>
+            <div class="event-meta">&#x1F4CD; Gaiety Theatre · &#x1F550; 17:00 (Early Evening) · No late entry</div>
+            <div class="event-desc">30th anniversary production of the iconic Irish dance show, featuring the new generation of performers. The early evening slot makes it easy to combine with dinner.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cinema -->
+    <div class="card">
+      <div class="card-header">&#x1F3AC; Cinema This Weekend</div>
+      <div class="card-body">
+
+        <!-- MUBI Go -->
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag" style="background:#1c3f6e">MUBI Go</span> <a href="https://mubi.com/en/ie/go">Your Weekly Free Cinema Ticket</a></div>
+            <div class="event-meta">&#x1F4CD; IFI Temple Bar + VUE participating venues · Open the MUBI Go app today for this week's pick</div>
+            <div class="event-desc">You have MUBI Go — the weekly hand-picked cinema ticket refreshes on Fridays. Open the app, choose a screening, generate your QR code and present it at the box office on the day. IFI is a MUBI Go partner in Dublin. This week's film is shown in the app now.</div>
+          </div>
+        </div>
+
+        <!-- The Odyssey -->
+        <div class="event-item">
+          <img class="event-img" src="https://ifi.ie/wp-content/uploads/2026/06/s_141116.png" alt="The Odyssey" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-blue tag">IFI</span> <a href="https://ifi.ie/whats-on/">The Odyssey (70mm)</a></div>
+            <div class="event-meta">&#x1F3AD; Dir. Christopher Nolan · 172 min · &#x1F550; Sat &amp; Sun: 12:10, 16:00, 19:50 · &#x1F4CD; IFI, Temple Bar</div>
+            <div class="event-desc">Nolan's epic Homer adaptation — Matt Damon, Anne Hathaway, Tom Holland. Shot and presented in 70mm on the IFI's big screen. A genuine event screening and a rare format in Dublin. Book ahead.</div>
+          </div>
+        </div>
+
+        <!-- Nostalghia -->
+        <div class="event-item">
+          <img class="event-img" src="https://ifi.ie/wp-content/uploads/2026/07/whats-on-posters-5.jpg" alt="Nostalghia" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-blue tag">IFI</span> <a href="https://ifi.ie/whats-on/">Nostalghia (4K Restoration)</a></div>
+            <div class="event-meta">&#x1F3AD; Dir. Andrei Tarkovsky · &#x1F550; Sat 17:50 · Sun 20:10 · &#x1F4CD; IFI, Temple Bar</div>
+            <div class="event-desc">Newly restored 4K version of Tarkovsky's transcendent meditation on memory, exile and longing. One of two spectacular Tarkovsky 4K restorations in the IFI's July programme.</div>
+          </div>
+        </div>
+
+        <!-- On the Sea -->
+        <div class="event-item">
+          <img class="event-img" src="https://ifi.ie/wp-content/uploads/2026/07/whats-on-posters-7.jpg" alt="On the Sea" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-blue tag">IFI</span> <a href="https://ifi.ie/whats-on/">On the Sea</a></div>
+            <div class="event-meta">&#x1F3AD; Dir. Helen Walsh · &#x1F550; Sat 12:50, 20:25 · Sun 13:10, 18:00 · &#x1F4CD; IFI</div>
+            <div class="event-desc">Tender and emotionally resonant new Irish drama. Q&amp;A with actor Barry Ward on opening night. A strong local production worth catching while it's in its opening weekend run.</div>
+          </div>
+        </div>
+
+        <!-- Taxi Driver -->
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-blue tag">Lighthouse</span> <a href="https://www.lighthousecinema.ie/films">Taxi Driver (50th Anniversary)</a></div>
+            <div class="event-meta">&#x1F3AD; Dir. Martin Scorsese · 1976 · 114 min · &#x1F550; ~21:00 · &#x1F4CD; Smithfield</div>
+            <div class="event-desc">The definitive Scorsese late-night showing for its 50th anniversary. Robert De Niro as Travis Bickle in its full theatrical glory. Lighthouse also has The Odyssey in 35mm across multiple slots this weekend.</div>
+          </div>
+        </div>
+
+        <!-- An Irish Atlantic Rainforest -->
+        <div class="event-item">
+          <img class="event-img" src="https://ifi.ie/wp-content/uploads/2026/07/9.jpg" alt="An Irish Atlantic Rainforest" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-blue tag">IFI</span> <a href="https://ifi.ie/whats-on/">An Irish Atlantic Rainforest</a></div>
+            <div class="event-meta">&#x1F3AD; Dir. Gary Lennon · &#x1F550; Sat 13:00, 18:25 · Sun 10:50, 20:30 · &#x1F4CD; IFI</div>
+            <div class="event-desc">Striking ecological documentary following Eoghan Daltun's campaign to restore native Irish rainforests. Beautifully shot and genuinely inspiring — director appeared for Q&amp;A at the preview screening.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Food -->
+    <div class="card">
+      <div class="card-header">&#x1F37D;&#xFE0F; New Openings &amp; Food News</div>
+      <div class="card-body">
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">New</span> <a href="https://www.earlytable.ie/articles/10-dublin-restaurant-openings">Kaldero</a></div>
+            <div class="event-meta">&#x1F4CD; South King Street, Dublin 2 · Irish-Filipino · Open fire cooking</div>
+            <div class="event-desc">Dublin's first Irish-Filipino restaurant, featuring open-fire cooking that marries local Irish produce with Filipino technique. One of the most talked-about new openings of summer 2026.</div>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">New</span> <a href="https://www.earlytable.ie/articles/10-dublin-restaurant-openings">Achara</a></div>
+            <div class="event-meta">&#x1F4CD; Aston Quay, Dublin 2 · Northern Thai BBQ</div>
+            <div class="event-desc">Great Irish produce meets Northern Thai technique, with a wine list that "makes a second bottle feel inevitable." Near the quays — a strong option for a weekend dinner.</div>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">New</span> <a href="https://www.earlytable.ie/articles/10-dublin-restaurant-openings">Allta na Farraige</a></div>
+            <div class="event-meta">&#x1F4CD; Grand Canal Dock, Dublin 2 · Seafood &amp; Cocktail Bar</div>
+            <div class="event-desc">"Equally original and thrilling" per Irish Times critics. A new seafood and cocktail bar at Grand Canal Dock earning serious early praise as one of the year's freshest openings.</div>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">New</span> <a href="https://www.earlytable.ie/articles/10-dublin-restaurant-openings">Hawker</a></div>
+            <div class="event-meta">&#x1F4CD; Rathgar Road, Dublin 6 · Modern Chinese Street Food</div>
+            <div class="event-desc">Hong Kong street food concept from the Hang Dai team. Cheeseburger spring rolls with Sichuan ketchup among the shareable plates. Casual, inventive, good for a relaxed lunch or early dinner.</div>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag-green tag">New</span> <a href="https://www.earlytable.ie/articles/10-dublin-restaurant-openings">Comet</a></div>
+            <div class="event-meta">&#x1F4CD; Joshua Lane, Dublin 2 · Seasonal Modern Irish</div>
+            <div class="event-desc">Nordic-influenced modern Irish cooking in a small room off Dame Street. Roast quail on toast noted as a standout. Precise, seasonal, understated — the kind of place worth booking ahead.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notes -->
+    <div class="card">
+      <div class="card-header">&#x1F4CC; Notes &amp; Logistics</div>
+      <div class="card-body">
+        <ul class="notes-list">
+          <li><strong>All-Ireland Final (Sun 15:30):</strong> Road closures around Croke Park from 09:00. Use DART (to Connolly), Luas Green Line (Parnell/Marlborough), or Dublin Bus. No parking near the stadium — clamping in operation. Avoid the north inner city by car all Sunday afternoon.</li>
+          <li><strong>Agnes Obel (Sat 19:30):</strong> NCH is SOLD OUT. Worth checking nch.ie for returns, or try the box office on the day. Earlsfort Terrace area will be busy.</li>
+          <li><strong>Weather — Saturday:</strong> Bright morning is ideal for outdoor plans (Fairview Park, Colombian Day). Cloud and drizzle move in from the west by afternoon — bring a rain layer.</li>
+          <li><strong>Weather — Sunday:</strong> Plan indoor activities in the morning (cinema, gallery). Conditions improve through the afternoon for the All-Ireland or Ratha Yatra procession.</li>
+          <li><strong>Paddy Power Comedy Festival:</strong> Runs Thursday–Sunday at Iveagh Gardens. Sunday afternoon and evening shows still have tickets — check paddypowercomedyfestival.ie. Dylan Moran is headlining both days.</li>
+          <li><strong>IFI — The Odyssey (70mm):</strong> Multiple daily screenings but likely filling fast. Book ahead at ifi.ie. Also screening in 35mm at Lighthouse Cinema, Smithfield.</li>
+          <li><strong>MUBI Go:</strong> Open the app — your weekly free cinema ticket is ready to claim. IFI and participating VUE cinemas in Dublin are on the programme. Tickets are same-day only.</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>Dublin Weekend Plan &middot; Generated Friday 24 July 2026 &middot; Sources: Met Éireann, RTÉ, IFI, NCH, AllEvents, Songkick, EarlyTable</footer>
+  </main>
+  <aside id="sidebar"></aside>
+</div>
+</body>
+</html>
