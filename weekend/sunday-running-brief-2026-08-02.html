@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sunday Running Brief — 2 August 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#e8e8f0;font:13px/1.5 "Hiragino Sans","MS PGothic",Arial,sans-serif;color:#333;}
+a{color:#0000cc;text-decoration:none;}
+a:hover{text-decoration:underline;color:#cc0000;}
+#header{background:#fff;border-bottom:3px solid #cc0000;padding:5px 10px;display:flex;align-items:center;justify-content:space-between;}
+#header h1{font-size:15px;font-weight:bold;color:#cc0000;}
+#header .sub{font-size:11px;color:#666;}
+#wrap{max-width:760px;margin:6px auto;padding:0 6px 40px;}
+#sidebar{display:none;}
+.card{background:#fff;border:1px solid #aaaacc;margin-bottom:6px;overflow:hidden;}
+.card-header{background:linear-gradient(180deg,#d8e8f8 0%,#b8ccec 100%);border-bottom:1px solid #aaaacc;padding:4px 8px;font-weight:bold;font-size:12px;color:#333;line-height:1.6;}
+.card-body{padding:8px 10px;}
+.weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.weather-day{border:1px solid #aaaacc;padding:8px;text-align:center;background:#f7f7fd;}
+.weather-day .date{font-size:11px;color:#666;margin-bottom:3px;}
+.weather-day .temp{font-size:20px;font-weight:bold;color:#cc0000;}
+.weather-day .desc{font-size:11px;color:#555;margin-top:3px;}
+.weather-day .rain{font-size:10px;color:#0000cc;margin-top:2px;}
+.event-item{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #e0e0ee;}
+.event-item:last-child{border-bottom:none;}
+.event-img{width:110px;height:74px;object-fit:cover;border:1px solid #aaaacc;flex-shrink:0;background:#eeeef8;}
+.event-img-placeholder{width:110px;height:74px;background:#eeeef8;border:1px solid #aaaacc;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:10px;}
+.event-info{flex:1;min-width:0;}
+.event-title{font-weight:bold;font-size:13px;line-height:1.4;margin-bottom:3px;}
+.event-title a{color:#0000cc;text-decoration:none;}
+.event-title a:hover{text-decoration:underline;color:#cc0000;}
+.event-meta{font-size:10px;color:#888;margin-bottom:2px;}
+.event-desc{font-size:11px;color:#555;line-height:1.5;}
+.tag{display:inline-block;background:#cc0000;color:#fff;font-size:10px;padding:1px 4px;margin-right:3px;vertical-align:middle;}
+.tag-blue{background:#0000cc;}
+.tag-green{background:#1a7a1a;}
+.tag-mubi{background:#1c3f6e;}
+.sidebar-card{display:none;}
+.notes-list{list-style:none;}
+.notes-list li{padding:4px 0 4px 12px;border-bottom:1px solid #e0e0ee;font-size:11px;color:#555;position:relative;}
+.notes-list li:last-child{border-bottom:none;}
+.notes-list li::before{content:'▶';font-size:8px;color:#cc0000;position:absolute;left:0;top:6px;}
+.timeline-item{padding:6px 0 6px 14px;border-left:2px solid #aaaacc;margin-left:4px;position:relative;margin-bottom:3px;}
+.timeline-item::before{content:'';width:7px;height:7px;background:#cc0000;border-radius:50%;position:absolute;left:-5px;top:10px;}
+.timeline-time{font-size:10px;color:#cc0000;font-weight:bold;margin-bottom:1px;}
+.timeline-title{font-size:12px;font-weight:bold;}
+.timeline-detail{font-size:10px;color:#888;}
+.hero-img{width:100%;height:180px;object-fit:cover;display:block;border-bottom:1px solid #aaaacc;}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+.stat-box{background:#f7f7fd;border:1px solid #aaaacc;padding:8px;text-align:center;}
+.stat-box .label{font-size:11px;color:#666;margin-bottom:3px;}
+.stat-box .value{font-size:20px;font-weight:bold;color:#cc0000;}
+.stat-box .unit{font-size:11px;color:#888;}
+footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px solid #ccc;background:#f0f0f8;margin-top:4px;}
+.route-card{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #e0e0ee;}
+.route-card:last-child{border-bottom:none;}
+.route-info{flex:1;}
+.route-name{font-weight:bold;font-size:13px;margin-bottom:2px;}
+.route-detail{font-size:11px;color:#555;line-height:1.5;}
+.route-meta{font-size:10px;color:#888;margin-top:2px;}
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>🏃 Sunday Running Brief</h1>
+  <span class="sub">Dublin · Sunday 2 August 2026</span>
+</div>
+<img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/d/d0/P%C3%A1irc_an_Fhionnuisce%2C_Baile_%C3%81tha_Cliath_-_Phoenix_Park%2C_Dublin_%28agost_2011%29_-_panoramio.jpg" alt="Phoenix Park, Dublin" onerror="this.remove()">
+<div id="wrap" style="grid-template-columns:1fr">
+  <main>
+
+    <!-- Weather Conditions -->
+    <div class="card">
+      <div class="card-header">🌤 Tomorrow's Conditions — Sunday 2 August</div>
+      <div class="card-body">
+        <div class="stat-grid">
+          <div class="stat-box"><div class="label">High</div><div class="value">18</div><div class="unit">°C</div></div>
+          <div class="stat-box"><div class="label">Feels like</div><div class="value">16</div><div class="unit">°C</div></div>
+          <div class="stat-box"><div class="label">Rain chance</div><div class="value">40</div><div class="unit">% (pm)</div></div>
+          <div class="stat-box"><div class="label">Wind</div><div class="value">15</div><div class="unit">km/h E</div></div>
+          <div class="stat-box"><div class="label">Sunrise</div><div class="value">5:43</div><div class="unit">AM IST</div></div>
+          <div class="stat-box"><div class="label">Sunset</div><div class="value">9:19</div><div class="unit">PM IST</div></div>
+        </div>
+        <p style="font-size:11px;color:#555;margin-top:8px;padding-top:6px;border-top:1px solid #e0e0ee;">
+          <strong>Met Éireann summary:</strong> Dry in the morning with some brightness. Cloud builds steadily through the day. Patchy rain likely by mid-afternoon, spreading into the evening. Light easterly breeze. Overnight: rain and drizzle continuing with milder temperatures (11–15°C). — <em>Bank holiday weekend: unsettled continues into Monday.</em>
+        </p>
+      </div>
+    </div>
+
+    <!-- Best Time to Run -->
+    <div class="card">
+      <div class="card-header">⏰ Best Time to Run</div>
+      <div class="card-body">
+        <div class="timeline-item">
+          <div class="timeline-time">07:00 – 10:00 AM</div>
+          <div class="timeline-title">Prime window <span class="tag tag-green">GO</span></div>
+          <div class="timeline-detail">Dry, clearer skies before cloud builds. Light easterly breeze. Still cool (~12–14°C at 7am, rising to ~16°C by 10am). Ideal for longer efforts.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">10:00 AM – 1:00 PM</div>
+          <div class="timeline-title">Acceptable <span class="tag" style="background:#e06000;">MARGINAL</span></div>
+          <div class="timeline-detail">Cloud thickening but still dry. Temperatures comfortable. Workable for shorter runs — avoid if you want guaranteed dry conditions.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">2:00 PM onwards</div>
+          <div class="timeline-title">Rain risk rises <span class="tag">AVOID</span></div>
+          <div class="timeline-detail">Patchy rain likely in the afternoon and into the evening. Not worth the gamble on a bank holiday Sunday when morning is clear.</div>
+        </div>
+        <p style="font-size:11px;color:#555;margin-top:8px;padding-top:6px;border-top:1px solid #e0e0ee;">
+          <strong>Verdict:</strong> Set the alarm and get out early. A 7–9am run in Phoenix Park or along the Grand Canal will catch the best of the day before the cloud closes in.
+        </p>
+      </div>
+    </div>
+
+    <!-- Route Suggestions -->
+    <div class="card">
+      <div class="card-header">🗺 Route Picks for Sunday</div>
+      <div class="card-body">
+        <div class="route-card">
+          <div class="route-info">
+            <div class="route-name"><span class="tag tag-green">TOP PICK</span> Phoenix Park — Chesterfield Avenue loop</div>
+            <div class="route-detail">The classic Dublin long run. Chesterfield Avenue is 4.2km end-to-end; combine with the perimeter wall for 11km total. Deer likely out in the early morning mist. Flat and runnable in any weather — but a morning run here when it's quiet is genuinely special.</div>
+            <div class="route-meta">Distance: 8–11km · Surface: tarmac paths · From Liberties: ~20 min bike/bus · <a href="https://maps.google.com/?q=Phoenix+Park+Dublin" target="_blank">Google Maps</a> · <a href="https://maps.apple.com/?q=Phoenix+Park+Dublin" target="_blank">Apple Maps</a></div>
+          </div>
+        </div>
+        <div class="route-card">
+          <div class="route-info">
+            <div class="route-name">Grand Canal — Portobello to Clondalkin towpath</div>
+            <div class="route-detail">Starts on your doorstep. Flat, sheltered towpath that stays runnable even if light drizzle arrives. Head west from Portobello for a quieter stretch; return via the same path or loop back on the road.</div>
+            <div class="route-meta">Distance: 6–10km · Surface: mixed (tarmac + gravel) · From Liberties: 5 min walk · <a href="https://maps.google.com/?q=Portobello,+Dublin" target="_blank">Google Maps</a> · <a href="https://maps.apple.com/?q=Portobello+Dublin" target="_blank">Apple Maps</a></div>
+          </div>
+        </div>
+        <div class="route-card">
+          <div class="route-info">
+            <div class="route-name">Howth Cliff Path <span class="tag tag-blue">SCENIC</span></div>
+            <div class="route-detail">Worth it if you leave early. Take the DART to Howth (35 min from Connolly), run the ~8km cliff loop, then head to the harbour for coffee. Check the weather window — if rain holds until afternoon you'll be back before it arrives.</div>
+            <div class="route-meta">Distance: ~8km loop · Surface: trail · DART from Connolly: 35 min · <a href="https://maps.google.com/?q=Howth+Cliff+Path+Dublin" target="_blank">Google Maps</a> · <a href="https://maps.apple.com/?q=Howth+Cliff+Path" target="_blank">Apple Maps</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What to Wear -->
+    <div class="card">
+      <div class="card-header">👕 What to Wear</div>
+      <div class="card-body">
+        <ul class="notes-list">
+          <li><strong>Short-sleeve top</strong> — 12–18°C range is comfortable for running; you'll warm up fast</li>
+          <li><strong>Light windbreaker or packable jacket</strong> — easterly breeze will feel cool at the start; stuff it in your waistband once you're warm</li>
+          <li><strong>Running shorts or 3/4 tights</strong> — either works; tights if you're going early morning when it's ~12°C</li>
+          <li><strong>No rain jacket needed for a morning run</strong> — but bring one if you're heading out past 11am</li>
+          <li><strong>UV Moderate</strong> — apply sunscreen if running between 9am–1pm, even through cloud cover</li>
+          <li><strong>Grip shoes optional</strong> — Phoenix Park paths are tarmac and fine; Howth cliff path benefits from trail shoes if wet</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Heads Up -->
+    <div class="card">
+      <div class="card-header">⚠️ Heads Up</div>
+      <div class="card-body">
+        <ul class="notes-list">
+          <li><strong>Bank holiday weekend:</strong> Phoenix Park will be busier than a normal Sunday — especially from 10am onwards. Get out early to beat the crowds.</li>
+          <li><strong>Mist patches possible early morning</strong> — Met Éireann flagged patchy mist tonight; it should clear by 8am but visibility may be low right at sunrise.</li>
+          <li><strong>Rain from afternoon:</strong> Cloud builds steadily — don't delay if you want a dry run. Once you're back by midday you're sorted.</li>
+          <li><strong>Monday also unsettled</strong> — if Sunday doesn't work, Monday looks cloudy with scattered rain too. Sunday morning is genuinely the best window of the bank holiday.</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>Sunday Running Brief · Dublin · Generated Saturday 1 August 2026 · Source: Met Éireann</footer>
+  </main>
+</div>
+</body>
+</html>
