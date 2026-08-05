@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dublin Weekend Heads-Up — Sat 8 &amp; Sun 9 August</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#e8e8f0;font:13px/1.5 "Hiragino Sans","MS PGothic",Arial,sans-serif;color:#333;}
+a{color:#0000cc;text-decoration:none;}
+a:hover{text-decoration:underline;color:#cc0000;}
+#header{background:#fff;border-bottom:3px solid #cc0000;padding:5px 10px;display:flex;align-items:center;justify-content:space-between;}
+#header h1{font-size:15px;font-weight:bold;color:#cc0000;}
+#header .sub{font-size:11px;color:#666;}
+#wrap{max-width:760px;margin:6px auto;padding:0 6px 40px;}
+#sidebar{display:none;}
+.card{background:#fff;border:1px solid #aaaacc;margin-bottom:6px;overflow:hidden;}
+.card-header{background:linear-gradient(180deg,#d8e8f8 0%,#b8ccec 100%);border-bottom:1px solid #aaaacc;padding:4px 8px;font-weight:bold;font-size:12px;color:#333;line-height:1.6;}
+.card-body{padding:8px 10px;}
+.weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.weather-day{border:1px solid #aaaacc;padding:8px;text-align:center;background:#f7f7fd;}
+.weather-day .date{font-size:11px;color:#666;margin-bottom:3px;}
+.weather-day .temp{font-size:20px;font-weight:bold;color:#cc0000;}
+.weather-day .desc{font-size:11px;color:#555;margin-top:3px;}
+.weather-day .rain{font-size:10px;color:#0000cc;margin-top:2px;}
+.event-item{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #e0e0ee;}
+.event-item:last-child{border-bottom:none;}
+.event-img{width:110px;height:74px;object-fit:cover;border:1px solid #aaaacc;flex-shrink:0;background:#eeeef8;}
+.event-img-placeholder{width:110px;height:74px;background:#eeeef8;border:1px solid #aaaacc;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:10px;}
+.event-info{flex:1;min-width:0;}
+.event-title{font-weight:bold;font-size:13px;line-height:1.4;margin-bottom:3px;}
+.event-title a{color:#0000cc;text-decoration:none;}
+.event-title a:hover{text-decoration:underline;color:#cc0000;}
+.event-meta{font-size:10px;color:#888;margin-bottom:2px;}
+.event-desc{font-size:11px;color:#555;line-height:1.5;}
+.tag{display:inline-block;background:#cc0000;color:#fff;font-size:10px;padding:1px 4px;margin-right:3px;vertical-align:middle;}
+.tag-blue{background:#0000cc;}
+.tag-green{background:#1a7a1a;}
+.tag-mubi{background:#1c3f6e;}
+.tag-star{background:#b06000;}
+.sidebar-card{display:none;}
+.notes-list{list-style:none;}
+.notes-list li{padding:4px 0 4px 12px;border-bottom:1px solid #e0e0ee;font-size:11px;color:#555;position:relative;}
+.notes-list li::before{content:'▶';font-size:8px;color:#cc0000;position:absolute;left:0;top:6px;}
+.timeline-item{padding:6px 0 6px 14px;border-left:2px solid #aaaacc;margin-left:4px;position:relative;margin-bottom:3px;}
+.timeline-item::before{content:'';width:7px;height:7px;background:#cc0000;border-radius:50%;position:absolute;left:-5px;top:10px;}
+.timeline-time{font-size:10px;color:#cc0000;font-weight:bold;margin-bottom:1px;}
+.timeline-title{font-size:12px;font-weight:bold;}
+.timeline-detail{font-size:10px;color:#888;}
+.mubi-note{background:#f0f4ff;border:1px solid #8888cc;padding:6px 8px;font-size:11px;color:#333;margin-bottom:6px;}
+.mubi-note strong{color:#1c3f6e;}
+footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px solid #ccc;background:#f0f0f8;margin-top:4px;}
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>&#127961;&#65039; Dublin Weekend Heads-Up</h1>
+  <span class="sub">Sat 8 – Sun 9 August · Early look · Wednesday brief</span>
+</div>
+<div id="wrap">
+  <main>
+
+    <!-- Weather card -->
+    <div class="card">
+      <div class="card-header">&#127780; Weather Forecast — met.ie</div>
+      <div class="card-body">
+        <div class="weather-grid">
+          <div class="weather-day">
+            <div class="date">Saturday 8 Aug</div>
+            <div class="temp">15–17°C</div>
+            <div class="desc">Cloudy with outbreaks of rain, spreading from the SW. Mild but grey.</div>
+            <div class="rain">&#9730; Rain: ~65%</div>
+          </div>
+          <div class="weather-day">
+            <div class="date">Sunday 9 Aug</div>
+            <div class="temp">16–19°C</div>
+            <div class="desc">Showers clearing through the morning, sunny spells developing. Better of the two days.</div>
+            <div class="rain">&#9730; Rain: ~35%</div>
+          </div>
+        </div>
+        <p style="font-size:10px;color:#888;margin-top:6px;">Source: met.ie national outlook issued 05 Aug 05:24. Saturday more changeable; Sunday improving. Confirm closer to the weekend.</p>
+      </div>
+    </div>
+
+    <!-- Events card -->
+    <div class="card">
+      <div class="card-header">&#127917; Events to Know About</div>
+      <div class="card-body">
+
+        <!-- Quantic at Fidelity -->
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title">
+              <span class="tag">SAT</span>
+              <span class="tag tag-star">&#9733;</span>
+              <a href="https://www.songkick.com/concerts/43338061-quantic-at-fidelity-studio">Quantic — Fidelity Studio</a>
+            </div>
+            <div class="event-meta">&#128205; Fidelity, Dublin 2 · &#128336; Evening (check Songkick for time)</div>
+            <div class="event-desc">UK-born, Colombia-based producer Will Holland plays his eclectic blend of funk, soul, nu-jazz and Latin breakbeat. Relevant: he's playing at <em>your</em> bar. Good fit if you want a night out that isn't a standard club.</div>
+          </div>
+        </div>
+
+        <!-- Howth Roots & Blues Festival -->
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title">
+              <span class="tag">SAT</span>
+              <span class="tag">SUN</span>
+              <a href="https://www.howthrootsandblues.com/">Howth Roots &amp; Blues Festival</a>
+            </div>
+            <div class="event-meta">&#128205; Throughout Howth village · &#128336; From 7 pm evenings, all-day pub trail · FREE (some headline shows ticketed)</div>
+            <div class="event-desc">40+ free live performances across 7 venues — The Abbey Tavern, The Bloody Stream, The Harbour Bar and more. Blues, roots, Americana, bluegrass. Headliners: Hothouse Flowers, Crow Black Chicken, Rob Strong Band, Zoé Basha. Easy DART from city centre (~30 min), extended late services to 12:25 am. If Sunday clears up as forecast, pair with the cliff walk and harbour seafood.</div>
+          </div>
+        </div>
+
+        <!-- Dublin Horse Show -->
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title">
+              <span class="tag">SAT</span>
+              <span class="tag">SUN</span>
+              <a href="https://www.dublinhorseshow.com/">Dublin Horse Show — RDS</a>
+            </div>
+            <div class="event-meta">&#128205; RDS, Ballsbridge · &#128336; All day · Ticketed</div>
+            <div class="event-desc">Annual show jumping and Irish cultural event running all weekend. World-class equestrian competition plus artisan food, fashion, live entertainment. More of a social occasion than a pure sport spectacle — good option if you want a classic Dublin summer day out with a crowd.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Cinema card -->
+    <div class="card">
+      <div class="card-header">&#127916; Cinema This Weekend</div>
+      <div class="card-body">
+
+        <!-- MUBI Go note -->
+        <div class="mubi-note">
+          <strong>MUBI Go:</strong> You have a MUBI Go subscription — check <a href="https://mubi.com/go">mubi.com/go</a> for this week's free cinema ticket (resets weekly, valid at Vue cinemas in Dublin). Couldn't confirm this week's pick as of Wednesday morning.
+        </div>
+
+        <!-- IFI: The Odyssey 70mm -->
+        <div class="event-item">
+          <img class="event-img" src="https://www.impawards.com/2026/posters/odyssey.jpg" alt="The Odyssey" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">IFI</span> <a href="https://ifi.ie/film/the-odyssey">The Odyssey — 70mm</a></div>
+            <div class="event-meta">&#127917; Christopher Nolan · 2026 · 172 min · UK/USA · <strong>Exclusive 70mm format</strong></div>
+            <div class="event-meta">&#128336; Sat &amp; Sun: 12:20, 16:10, 19:50 · &#128205; Irish Film Institute, Eustace St, Temple Bar</div>
+            <div class="event-desc">Nolan's follow-up to Oppenheimer — Homer's epic as swords-and-sandals blockbuster. Matt Damon as Odysseus, Anne Hathaway, Tom Holland, Robert Pattinson. The IFI runs it exclusively on 70mm; this is the version to see. Big event film and fits Roman's "genuine event film" threshold.</div>
+          </div>
+        </div>
+
+        <!-- IFI: The Summer Book -->
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">IFI</span> <a href="https://ifi.ie/film/the-summer-book/">The Summer Book</a></div>
+            <div class="event-meta">&#127917; Charlie McDowell · 2025 · 90 min · USA/Finland/UK</div>
+            <div class="event-meta">&#128336; Sat: 13:05 / 18:50 &nbsp;·&nbsp; Sun: 13:25 / 17:50 · &#128205; IFI, Temple Bar</div>
+            <div class="event-desc">Tove Jansson (Moomin author) adaptation. Glenn Close as a grandmother spending a transformative Finnish island summer with her granddaughter and widowed son. Quietly powerful — RogerEbert calls it "a meditative and sensitive portrayal of grief and intergenerational bonds." Solid counter-programme to the Nolan epic if you want something smaller.</div>
+          </div>
+        </div>
+
+        <!-- IFI: Odysseys season — Deer Hunter / Searchers -->
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">IFI</span> Odysseys Season Classics</div>
+            <div class="event-meta">&#128336; The Deer Hunter (Cimino) — Sat 15:15 only &nbsp;|&nbsp; The Searchers (John Ford) — Sun 15:40 only</div>
+            <div class="event-desc">Companion season to the Nolan film exploring homecoming and exile in cinema. The Deer Hunter is an essential if you haven't seen it on a big screen.</div>
+          </div>
+        </div>
+
+        <!-- Lighthouse: The Odyssey 35mm -->
+        <div class="event-item">
+          <img class="event-img" src="https://www.impawards.com/2026/posters/odyssey.jpg" alt="The Odyssey" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">Lighthouse</span> <a href="https://www.lighthousecinema.ie/film/the-odyssey">The Odyssey — 35mm</a></div>
+            <div class="event-meta">&#127917; Christopher Nolan · 172 min · 15A · &#128205; Smithfield</div>
+            <div class="event-meta">&#128336; Sat &amp; Sun — check <a href="https://www.lighthousecinema.ie/films">lighthousecinema.ie</a> for times</div>
+            <div class="event-desc">Same Nolan film on 35mm at Lighthouse — solid alternative to the 70mm IFI screenings if IFI is sold out. Robert Pattinson, Zendaya, Lupita Nyong'o, Charlize Theron also in the cast.</div>
+          </div>
+        </div>
+
+        <!-- Lighthouse: Spider-Man Brand New Day -->
+        <div class="event-item">
+          <img class="event-img" src="https://www.impawards.com/2026/posters/spiderman_brand_new_day.jpg" alt="Spider-Man: Brand New Day" onerror="this.style.display='none'">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-blue">Lighthouse</span> <a href="https://www.lighthousecinema.ie/film/spider-man-brand-new-day">Spider-Man: Brand New Day</a></div>
+            <div class="event-meta">&#127917; Destin Daniel Cretton · 2026 · 145 min · 12A · &#128205; Smithfield</div>
+            <div class="event-meta">&#128336; Sat &amp; Sun — check <a href="https://www.lighthousecinema.ie/films">lighthousecinema.ie</a> for times</div>
+            <div class="event-desc">New chapter for Peter Parker — now a full-time adult Spider-Man in a world that doesn't remember him. Tom Holland, Zendaya, Sadie Sink (as Jean Grey), Jon Bernthal as Punisher. Opened last week. The one for a big commercial night out.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Food & Drink card -->
+    <div class="card">
+      <div class="card-header">&#127869;&#65039; New Openings &amp; Food News</div>
+      <div class="card-body">
+
+        <!-- Jumon Dublin -->
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-green">Opening Soon</span> <a href="https://www.jumon.co.uk/">Jumon Dublin</a></div>
+            <div class="event-meta">&#128205; 52–53 South William Street, D2 · Asian-inspired restaurant</div>
+            <div class="event-desc">The much-loved Belfast Asian restaurant (4.6★ on TripAdvisor, 347 reviews) is opening its Dublin location this August in the old Mercado 52 space. Website currently says "ALMOST READY BABY! — RESERVATIONS OPENING SOON." Very much in Space Jaru territory. One to watch. — <em>Source: alidunworth.substack.com / allthefood.ie</em></div>
+          </div>
+        </div>
+
+        <!-- BAKO wine bar -->
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-green">New</span> <a href="https://www.instagram.com/p/Dam-ZeyMdkh/">BAKO — Wine Bar &amp; Speakeasy</a></div>
+            <div class="event-meta">&#128205; Off Grafton Street (under Amai by Viktor) · Wine bar / Speakeasy</div>
+            <div class="event-desc">New underground wine bar from the Amai by Viktor team — opened last week below their restaurant just off Grafton Street. Natural wine speakeasy format. Could be worth checking if you're in that end of town. — <em>Source: alidunworth.substack.com</em></div>
+          </div>
+        </div>
+
+        <!-- The Leeson -->
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag tag-green">New</span> <a href="https://www.instagram.com/the.leeson/">The Leeson</a></div>
+            <div class="event-meta">&#128205; Leeson Street · Neighbourhood bar</div>
+            <div class="event-desc">New neighbourhood bar from the M'O'Brien's team on Leeson Street — outdoor stools for summer cocktails, solid pedigree from the team. Simple and local. — <em>Source: alidunworth.substack.com</em></div>
+          </div>
+        </div>
+
+        <!-- Hatch Coffee Sandymount - coming soon -->
+        <div class="event-item">
+          <div class="event-info">
+            <div class="event-title"><span class="tag" style="background:#888">Coming</span> <a href="https://www.instagram.com/p/DagGrxtu_M_/">Hatch Coffee — Sandymount</a></div>
+            <div class="event-meta">&#128205; Sandymount · Specialty coffee</div>
+            <div class="event-desc">Hatch (already in Glasthule and Blackrock) is opening a third location in Sandymount. Good for a coastal coffee stop if you're heading south on the DART. — <em>Source: alidunworth.substack.com</em></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>Early heads-up — detailed plan follows on Friday · Generated Wed 5 August 2026 · Sources: met.ie, ifi.ie, lighthousecinema.ie, songkick.com, howthrootsandblues.com, alidunworth.substack.com, allthefood.ie</footer>
+  </main>
+</div>
+</body>
+</html>
