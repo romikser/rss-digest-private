@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sunday Running Brief — 9 August 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#e8e8f0;font:13px/1.5 "Hiragino Sans","MS PGothic",Arial,sans-serif;color:#333;}
+a{color:#0000cc;text-decoration:none;}
+a:hover{text-decoration:underline;color:#cc0000;}
+#header{background:#fff;border-bottom:3px solid #cc0000;padding:5px 10px;display:flex;align-items:center;justify-content:space-between;}
+#header h1{font-size:15px;font-weight:bold;color:#cc0000;}
+#header .sub{font-size:11px;color:#666;}
+#wrap{max-width:760px;margin:6px auto;padding:0 6px 40px;}
+#sidebar{display:none;}
+.card{background:#fff;border:1px solid #aaaacc;margin-bottom:6px;overflow:hidden;}
+.card-header{background:linear-gradient(180deg,#d8e8f8 0%,#b8ccec 100%);border-bottom:1px solid #aaaacc;padding:4px 8px;font-weight:bold;font-size:12px;color:#333;line-height:1.6;}
+.card-body{padding:8px 10px;}
+.weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.weather-day{border:1px solid #aaaacc;padding:8px;text-align:center;background:#f7f7fd;}
+.weather-day .date{font-size:11px;color:#666;margin-bottom:3px;}
+.weather-day .temp{font-size:20px;font-weight:bold;color:#cc0000;}
+.weather-day .desc{font-size:11px;color:#555;margin-top:3px;}
+.weather-day .rain{font-size:10px;color:#0000cc;margin-top:2px;}
+.event-item{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #e0e0ee;}
+.event-item:last-child{border-bottom:none;}
+.event-img{width:110px;height:74px;object-fit:cover;border:1px solid #aaaacc;flex-shrink:0;background:#eeeef8;}
+.event-img-placeholder{width:110px;height:74px;background:#eeeef8;border:1px solid #aaaacc;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:10px;}
+.event-info{flex:1;min-width:0;}
+.event-title{font-weight:bold;font-size:13px;line-height:1.4;margin-bottom:3px;}
+.event-title a{color:#0000cc;text-decoration:none;}
+.event-title a:hover{text-decoration:underline;color:#cc0000;}
+.event-meta{font-size:10px;color:#888;margin-bottom:2px;}
+.event-desc{font-size:11px;color:#555;line-height:1.5;}
+.tag{display:inline-block;background:#cc0000;color:#fff;font-size:10px;padding:1px 4px;margin-right:3px;vertical-align:middle;}
+.tag-blue{background:#0000cc;}
+.tag-green{background:#1a7a1a;}
+.tag-mubi{background:#1c3f6e;}
+.sidebar-card{display:none;}
+.notes-list{list-style:none;}
+.notes-list li{padding:4px 0 4px 12px;border-bottom:1px solid #e0e0ee;font-size:11px;color:#555;position:relative;}
+.notes-list li::before{content:'▶';font-size:8px;color:#cc0000;position:absolute;left:0;top:6px;}
+.timeline-item{padding:6px 0 6px 14px;border-left:2px solid #aaaacc;margin-left:4px;position:relative;margin-bottom:3px;}
+.timeline-item::before{content:'';width:7px;height:7px;background:#cc0000;border-radius:50%;position:absolute;left:-5px;top:10px;}
+.timeline-time{font-size:10px;color:#cc0000;font-weight:bold;margin-bottom:1px;}
+.timeline-title{font-size:12px;font-weight:bold;}
+.timeline-detail{font-size:10px;color:#888;}
+.hero-img{width:100%;height:180px;object-fit:cover;display:block;border-bottom:1px solid #aaaacc;}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+.stat-box{background:#f7f7fd;border:1px solid #aaaacc;padding:8px;text-align:center;}
+.stat-box .label{font-size:11px;color:#666;margin-bottom:3px;}
+.stat-box .value{font-size:20px;font-weight:bold;color:#cc0000;}
+.stat-box .unit{font-size:11px;color:#888;}
+.rain-timeline{display:flex;gap:3px;margin-top:8px;align-items:flex-end;}
+.rain-bar{flex:1;background:#b8ccec;border-radius:2px 2px 0 0;text-align:center;font-size:9px;color:#333;position:relative;}
+.rain-bar.high{background:#cc0000;}
+.rain-bar.med{background:#e88;}
+.rain-bar.low{background:#b8ccec;}
+.rain-bar .pct{padding:2px 0;display:block;}
+.rain-bar .hr{font-size:8px;color:#888;margin-top:2px;}
+footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px solid #ccc;background:#f0f0f8;margin-top:4px;}
+</style>
+</head>
+<body>
+<div id="header">
+  <h1>&#x1F3C3; Sunday Running Brief</h1>
+  <span class="sub">Dublin &middot; Sunday 9 August 2026</span>
+</div>
+<img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/PhoenixParkWMurphy.jpg/1280px-PhoenixParkWMurphy.jpg" alt="Phoenix Park, Dublin" onerror="this.remove()">
+<div id="wrap" style="grid-template-columns:1fr">
+  <main>
+
+    <div class="card">
+      <div class="card-header">&#x1F324; Tomorrow&#39;s Conditions &mdash; Sunday 9 August</div>
+      <div class="card-body">
+        <div class="stat-grid">
+          <div class="stat-box"><div class="label">High</div><div class="value">22</div><div class="unit">&deg;C</div></div>
+          <div class="stat-box"><div class="label">Feels like</div><div class="value">19</div><div class="unit">&deg;C</div></div>
+          <div class="stat-box"><div class="label">Morning rain</div><div class="value">80</div><div class="unit">% (4&ndash;8am)</div></div>
+          <div class="stat-box"><div class="label">Wind</div><div class="value">16</div><div class="unit">km/h SW</div></div>
+          <div class="stat-box"><div class="label">Sunrise</div><div class="value">05:55</div><div class="unit"></div></div>
+          <div class="stat-box"><div class="label">Sunset</div><div class="value">21:05</div><div class="unit"></div></div>
+        </div>
+        <div style="margin-top:10px;">
+          <div style="font-size:11px;color:#666;margin-bottom:4px;font-weight:bold;">Rain chance by hour &mdash; key window</div>
+          <div class="rain-timeline">
+            <div class="rain-bar high" style="height:52px;"><span class="pct">80%</span><span class="hr">6am</span></div>
+            <div class="rain-bar high" style="height:52px;"><span class="pct">80%</span><span class="hr">7am</span></div>
+            <div class="rain-bar med" style="height:34px;"><span class="pct">50%</span><span class="hr">8am</span></div>
+            <div class="rain-bar med" style="height:28px;"><span class="pct">40%</span><span class="hr">9am</span></div>
+            <div class="rain-bar med" style="height:28px;"><span class="pct">40%</span><span class="hr">10am</span></div>
+            <div class="rain-bar low" style="height:14px;"><span class="pct">20%</span><span class="hr">11am</span></div>
+            <div class="rain-bar low" style="height:14px;"><span class="pct">20%</span><span class="hr">12pm</span></div>
+            <div class="rain-bar low" style="height:8px;"><span class="pct">10%</span><span class="hr">1pm</span></div>
+            <div class="rain-bar low" style="height:8px;"><span class="pct">10%</span><span class="hr">2pm</span></div>
+            <div class="rain-bar low" style="height:14px;"><span class="pct">20%</span><span class="hr">3pm</span></div>
+            <div class="rain-bar low" style="height:20px;"><span class="pct">30%</span><span class="hr">4pm</span></div>
+            <div class="rain-bar low" style="height:20px;"><span class="pct">30%</span><span class="hr">5pm</span></div>
+          </div>
+          <div style="font-size:10px;color:#cc0000;margin-top:4px;">&#x25B6; Heavy rain 4&ndash;8am. Clearing through mid-morning. Best window opens around 11am.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">&#x23F0; Best Time to Run</div>
+      <div class="card-body">
+        <div class="timeline-item">
+          <div class="timeline-time">11:00 &mdash; 13:00</div>
+          <div class="timeline-title">Primary window &mdash; 18&ndash;20&deg;C, 20% rain, 9 mph SW</div>
+          <div class="timeline-detail">Morning rain has largely cleared. Mild, slightly overcast. Roads and paths will be damp but runnable. Good temperature for effort.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">13:00 &mdash; 15:00</div>
+          <div class="timeline-title">Backup window &mdash; 20&ndash;22&deg;C, 10% rain, warming up</div>
+          <div class="timeline-detail">Driest and warmest part of the day. Good if you want maximum comfort. UV index 6 (high) &mdash; apply SPF.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">15:00+</div>
+          <div class="timeline-title">Showers return &mdash; 20&ndash;30% chance from mid-afternoon</div>
+          <div class="timeline-detail">Still doable but risk of a passing shower increases into the evening. Less ideal for a longer run.</div>
+        </div>
+        <div style="background:#fffbe6;border:1px solid #e8c840;padding:6px 8px;margin-top:8px;font-size:11px;color:#555;">
+          <strong>Verdict:</strong> Skip the early morning &mdash; it&#39;s properly wet out there until 9&ndash;10am. Head out at 11am for a comfortable long run. Phoenix Park loop (~8km) or Grand Canal to Portobello and back.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">&#x1F455; What to Wear</div>
+      <div class="card-body">
+        <ul class="notes-list">
+          <li><strong>Light windbreaker or packable jacket</strong> &mdash; paths will be damp from morning rain; carry something you can tie around your waist</li>
+          <li><strong>Short sleeves underneath</strong> &mdash; 19&ndash;21&deg;C in the window, will feel warm once moving</li>
+          <li><strong>Shorts</strong> &mdash; comfortable for the temperature range</li>
+          <li><strong>Sunscreen SPF 30+</strong> &mdash; UV index 6 (High), even on a cloudy August day in Dublin this matters</li>
+          <li><strong>Trail or road shoes with grip</strong> &mdash; Phoenix Park grass will be wet after morning rain</li>
+          <li><strong>Cap optional</strong> &mdash; SW wind at 16 km/h; useful if rain lingers</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">&#x26A0;&#xFE0F; Heads Up</div>
+      <div class="card-body">
+        <ul class="notes-list">
+          <li><strong>Heavy rain before 9am</strong> &mdash; 50&ndash;80% chance 4&ndash;8am. Don&#39;t bother with an early start; paths and grass will be soaked regardless.</li>
+          <li><strong>SW wind into your face heading south/southwest</strong> &mdash; plan your route so the tougher leg is the outbound and wind is with you home.</li>
+          <li><strong>UV index 6 (High)</strong> &mdash; surprisingly easy to burn in August even through cloud cover. Put on SPF before you leave.</li>
+          <li><strong>Phoenix Park deer</strong> &mdash; fallow deer are active in summer mornings; give them space especially on the main loop.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">&#x1F5FA; Route Suggestions from The Liberties</div>
+      <div class="card-body">
+        <div class="timeline-item">
+          <div class="timeline-time">Phoenix Park main loop</div>
+          <div class="timeline-title">~8km &mdash; 15 min run from Cork Street</div>
+          <div class="timeline-detail">Cross Conyngham Rd, enter by Islandbridge Gate. Flat, wide paths, iconic. Damp grass &mdash; stick to the main road loop if it&#39;s been heavy rain.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">Grand Canal &mdash; Portobello loop</div>
+          <div class="timeline-title">~6km &mdash; flat, towpath, starts 10 min from home</div>
+          <div class="timeline-detail">Head to Portobello Harbour, run east along the canal to Leeson St, return via South Circular Rd. Flat, paved, sheltered from wind.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">Liffey Boardwalk &amp; Docklands</div>
+          <div class="timeline-title">~9km out-and-back &mdash; good for photography</div>
+          <div class="timeline-detail">Head east along the quays, cross at the Samuel Beckett Bridge, return on the north quays. Industrial-cool views, good surface even after rain.</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>Sunday Running Brief &middot; Generated Saturday 8 August 2026 &middot; Weather: Met Office / Met &Eacute;ireann</footer>
+  </main>
+</div>
+</body>
+</html>
