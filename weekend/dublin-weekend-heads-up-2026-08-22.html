@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏙️ Dublin Weekend Heads-Up · Aug 22–23</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #e8e8f0;
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", "Yu Gothic", sans-serif;
+    font-size: 13px;
+    color: #111;
+    line-height: 1.5;
+  }
+  a { color: #0000cc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* HEADER */
+  .site-header {
+    background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
+    color: #fff;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  .site-header h1 { font-size: 20px; font-weight: bold; letter-spacing: 0.02em; }
+  .site-header .date-badge {
+    font-size: 12px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 3px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  /* LAYOUT */
+  .container { max-width: 900px; margin: 0 auto; padding: 12px 12px 24px; }
+
+  /* CARD */
+  .card {
+    background: #fff;
+    border: 1px solid #aaaacc;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .card-header {
+    background: linear-gradient(to bottom, #d8e8f8, #b8ccec);
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #aaaacc;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-body { padding: 10px 12px; }
+
+  /* WEATHER */
+  .weather-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .weather-day {
+    border: 1px solid #ccd;
+    border-radius: 4px;
+    padding: 10px 12px;
+    background: linear-gradient(to bottom, #f8f8ff, #eeeef8);
+  }
+  .weather-day .day-name {
+    font-weight: bold;
+    font-size: 13px;
+    color: #334;
+    border-bottom: 1px solid #ccd;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+  }
+  .weather-day .temp {
+    font-size: 26px;
+    font-weight: bold;
+    color: #cc0000;
+    line-height: 1;
+  }
+  .weather-day .temp-range {
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+  }
+  .weather-day .desc {
+    font-size: 12px;
+    color: #333;
+    margin-top: 6px;
+  }
+  .weather-meta { display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap; }
+  .weather-meta span {
+    font-size: 11px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .rain-pct { color: #0066cc !important; font-weight: bold; }
+
+  /* EVENTS */
+  .event-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eeeef4;
+  }
+  .event-item:last-child { border-bottom: none; }
+  .event-thumb {
+    width: 110px;
+    height: 74px;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    flex-shrink: 0;
+    background: #dde;
+  }
+  .event-thumb-placeholder {
+    width: 110px;
+    height: 74px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #c8c8e0, #a8a8c8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+  }
+  .event-info { flex: 1; min-width: 0; }
+  .event-title {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.3;
+  }
+  .event-title a { color: #0000cc; }
+  .event-meta {
+    font-size: 11px;
+    color: #666;
+    margin-top: 2px;
+  }
+  .event-desc { font-size: 12px; color: #333; margin-top: 4px; }
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .tag-star { background: #cc0000; color: #fff; }
+  .tag-mubi { background: #1a1a3a; color: #fff; }
+  .tag-ifi { background: #1a4a8a; color: #fff; }
+  .tag-lh { background: #2a5a9a; color: #fff; }
+  .tag-new { background: #228b22; color: #fff; }
+  .tag-free { background: #666; color: #fff; }
+
+  /* CINEMA */
+  .film-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eeeef4;
+  }
+  .film-item:last-child { border-bottom: none; }
+  .film-thumb {
+    width: 56px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    flex-shrink: 0;
+    background: #dde;
+  }
+  .film-thumb-placeholder {
+    width: 56px;
+    height: 80px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #c8c8e0, #888);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .film-info { flex: 1; }
+  .film-title { font-size: 13px; font-weight: bold; }
+  .film-title a { color: #0000cc; }
+  .film-meta { font-size: 11px; color: #666; margin-top: 2px; }
+  .film-desc { font-size: 12px; color: #333; margin-top: 4px; }
+
+  /* FOOD */
+  .food-item {
+    padding: 7px 0;
+    border-bottom: 1px solid #eeeef4;
+  }
+  .food-item:last-child { border-bottom: none; }
+  .food-name { font-size: 13px; font-weight: bold; }
+  .food-name a { color: #0000cc; }
+  .food-meta { font-size: 11px; color: #666; margin-top: 1px; }
+  .food-desc { font-size: 12px; color: #333; margin-top: 3px; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    font-size: 11px;
+    color: #888;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <h1>🏙️ Dublin Weekend Heads-Up</h1>
+  <span class="date-badge">Sat 22 – Sun 23 August 2026</span>
+</div>
+
+<div class="container">
+
+  <!-- WEATHER -->
+  <div class="card">
+    <div class="card-header">🌤 Weekend Weather — Dublin</div>
+    <div class="card-body">
+      <div class="weather-grid">
+        <div class="weather-day">
+          <div class="day-name">Saturday 22 Aug</div>
+          <div class="temp">18°C</div>
+          <div class="temp-range">Low 9°C — High 18°C</div>
+          <div class="desc">Mostly cloudy, showers possible</div>
+          <div class="weather-meta">
+            <span class="rain-pct">🌧 50% rain</span>
+            <span>💨 W 30 km/h</span>
+          </div>
+        </div>
+        <div class="weather-day">
+          <div class="day-name">Sunday 23 Aug</div>
+          <div class="temp">19°C</div>
+          <div class="temp-range">Low 10°C — High 19°C</div>
+          <div class="desc">Largely dry, brightening up</div>
+          <div class="weather-meta">
+            <span class="rain-pct">🌧 20% rain</span>
+            <span>💨 W 21 km/h</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:11px;color:#888;margin-top:8px;">Sources: Met Office / AccuWeather — forecasts subject to change</p>
+    </div>
+  </div>
+
+  <!-- EVENTS -->
+  <div class="card">
+    <div class="card-header">🎫 This Weekend's Events</div>
+    <div class="card-body">
+
+      <!-- ANNA @ block. -->
+      <div class="event-item">
+        <div class="event-thumb-placeholder">🎛</div>
+        <div class="event-info">
+          <div class="event-title">
+            <a href="https://www.eventbrite.ie/e/block-x-encore-x-vibez-emotion-anna-tickets-1992413414156" target="_blank">ANNA — block × Encore × Vibez Emotion</a>
+            <span class="tag tag-star">★ Roman's pick</span>
+          </div>
+          <div class="event-meta">📍 block., Dublin 8 &nbsp;|&nbsp; 🕚 Sat 22 Aug, 11:00 PM – 2:30 AM</div>
+          <div class="event-desc">Portuguese techno powerhouse ANNA headlines at block. in a three-promoter collab. Pure, uncompromising techno — expect driving four-on-the-floor with ambient depth.</div>
+        </div>
+      </div>
+
+      <!-- Dublin City Fleadh -->
+      <div class="event-item">
+        <img class="event-thumb" src="https://romikser.github.io/rss-digest-private/assets/images/06ef04812cab.jpg" alt="Dublin City Fleadh 2026">
+        <div class="event-info">
+          <div class="event-title">
+            <a href="https://dublin.ie/whats-on/listings/dublin-city-council-dublin-city-fleadh/" target="_blank">Dublin City Fleadh 2026</a>
+            <span class="tag tag-free">FREE</span>
+          </div>
+          <div class="event-meta">📍 Smithfield, Capel St, Meeting House Sq &amp; more &nbsp;|&nbsp; 🕛 Sat &amp; Sun, 12:00 PM – 6:00 PM</div>
+          <div class="event-desc">Free, unticketed city-wide festival of traditional Irish music. Saturday: Andy Irvine &amp; Quilty, Sharon Shannon Big Band. Sunday: Máirtín O'Connor Trio, Dervish, Kíla. Pop-up street sessions and céilís throughout.</div>
+        </div>
+      </div>
+
+      <!-- Dalkey Lobster Festival -->
+      <div class="event-item">
+        <img class="event-thumb" src="https://romikser.github.io/rss-digest-private/assets/images/56776316a579.jpg" alt="Dalkey Lobster Festival">
+        <div class="event-info">
+          <div class="event-title">
+            <a href="https://dalkeylobsterfestival.com/" target="_blank">Dalkey Lobster Festival</a>
+            <span class="tag tag-star">★ Market vibe</span>
+          </div>
+          <div class="event-meta">📍 Castle Street, Dalkey &nbsp;|&nbsp; 🗓 Sat 22 &amp; Sun 23 Aug</div>
+          <div class="event-desc">Coastal food festival with lobster rolls, oysters, crab claws, paella &amp; seafood chowder. Tramyard Village market with vintage clothing, art, jewellery and artisan goods. Fine art &amp; craft fair in Dalkey Town Hall.</div>
+        </div>
+      </div>
+
+      <!-- The Weeknd -->
+      <div class="event-item">
+        <div class="event-thumb-placeholder">🎤</div>
+        <div class="event-info">
+          <div class="event-title">
+            <a href="https://allevents.in/dublin/the-weeknd-after-hours-til-dawn-tour/210003163544015" target="_blank">The Weeknd — After Hours Til Dawn Tour</a>
+          </div>
+          <div class="event-meta">📍 Croke Park &nbsp;|&nbsp; 🕔 Sat 22 &amp; Sun 23 Aug, 5:00 PM</div>
+          <div class="event-desc">The record-breaking stadium spectacle returns for two nights at Croker. If you have tickets, expect a full visual production lighting up the Dublin skyline.</div>
+        </div>
+      </div>
+
+      <!-- Phil Lynott Convention -->
+      <div class="event-item">
+        <div class="event-thumb-placeholder">🎸</div>
+        <div class="event-info">
+          <div class="event-title">
+            <a href="https://allevents.in/dublin/40th-anniversary-to-celebrate-phils-legacy-of-music/200029567621704" target="_blank">Phil Lynott Convention — 40th Anniversary</a>
+          </div>
+          <div class="event-meta">📍 The Button Factory, Curved Street &nbsp;|&nbsp; 🕡 Sat 22 Aug, 6:30 PM – 10:30 PM</div>
+          <div class="event-desc">Celebratory event marking 40 years of Phil Lynott's legacy, featuring live music, tributes, and the community that keeps the Thin Lizzy spirit alive.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CINEMA -->
+  <div class="card">
+    <div class="card-header">🎬 Cinema This Weekend</div>
+    <div class="card-body">
+
+      <!-- MUBI Go -->
+      <div class="film-item">
+        <img class="film-thumb" src="https://romikser.github.io/rss-digest-private/assets/images/35866524172b.jpg" alt="Teenage Sex and Death at Camp Miasma">
+        <div class="film-info">
+          <div class="film-title">
+            <a href="https://mubi.com/en/ie/films/teenage-sex-and-death-at-camp-miasma" target="_blank">Teenage Sex and Death at Camp Miasma</a>
+            <span class="tag tag-mubi">MUBI Go</span>
+          </div>
+          <div class="film-meta">Dir. Jane Schoenbrun · 2026 · 106 min · 16 · At IFI &amp; Lighthouse</div>
+          <div class="film-desc">Your MUBI Go ticket this week. Cannes Un Certain Regard opener &amp; Queer Palm winner. A queer filmmaker hired to reboot a slasher franchise — meta-horror with Gillian Anderson, intentional artificiality &amp; substantial gore. Schoenbrun's most accessible film yet.</div>
+        </div>
+      </div>
+
+      <!-- IFI: The Odyssey 70mm -->
+      <div class="film-item">
+        <img class="film-thumb" src="https://romikser.github.io/rss-digest-private/assets/images/ddf4ba086bf8.png" alt="The Odyssey">
+        <div class="film-info">
+          <div class="film-title">
+            <a href="https://ifi.ie/film/the-odyssey/" target="_blank">The Odyssey</a>
+            <span class="tag tag-ifi">IFI</span>
+          </div>
+          <div class="film-meta">Dir. Christopher Nolan · 2026 · 172 min · Sat 14:20 &amp; 17:00 · Sun 18:45 · Also in 70MM Sat 14:20</div>
+          <div class="film-desc">Nolan's epic Homer adaptation in glorious 70mm on Saturday. If you haven't seen it on the big format, this is your moment.</div>
+        </div>
+      </div>
+
+      <!-- IFI: Tony -->
+      <div class="film-item">
+        <div class="film-thumb-placeholder">🎞</div>
+        <div class="film-info">
+          <div class="film-title">
+            <a href="https://ifi.ie/whats-on/" target="_blank">Tony</a>
+            <span class="tag tag-ifi">IFI</span>
+          </div>
+          <div class="film-meta">Sat 13:40, 20:20 · Sun 13:00, 17:40 — Also at Lighthouse</div>
+          <div class="film-desc">One of the weekend's buzzed-about titles, playing across both IFI and Lighthouse Cinema.</div>
+        </div>
+      </div>
+
+      <!-- IFI: Amores Perros 4K -->
+      <div class="film-item">
+        <div class="film-thumb-placeholder">🐕</div>
+        <div class="film-info">
+          <div class="film-title">
+            <a href="https://ifi.ie/whats-on/" target="_blank">Amores Perros — 4K Restoration</a>
+            <span class="tag tag-ifi">IFI</span>
+          </div>
+          <div class="film-meta">Iñárritu · 2000 · 18 · Sat 18:00 — Also at Lighthouse</div>
+          <div class="film-desc">Iñárritu's visceral Mexico City triptych restored in 4K — if you've never caught it on film, do not miss it.</div>
+        </div>
+      </div>
+
+      <!-- Lighthouse: The End of Oak Street -->
+      <div class="film-item">
+        <div class="film-thumb-placeholder">🌳</div>
+        <div class="film-info">
+          <div class="film-title">
+            <a href="https://www.lighthousecinema.ie/" target="_blank">The End of Oak Street</a>
+            <span class="tag tag-lh">Lighthouse</span>
+          </div>
+          <div class="film-meta">Dir. David Robert Mitchell · 15A · 100 min · Multiple showtimes</div>
+          <div class="film-desc">Mitchell (It Follows, Under the Silver Lake) returns with another eerie suburban psychodrama. Quietly unsettling.</div>
+        </div>
+      </div>
+
+      <!-- Lighthouse: Stop! That! Train! -->
+      <div class="film-item">
+        <div class="film-thumb-placeholder">🚂</div>
+        <div class="film-info">
+          <div class="film-title">
+            <a href="https://www.lighthousecinema.ie/" target="_blank">Stop! That! Train!</a>
+            <span class="tag tag-lh">Lighthouse</span>
+          </div>
+          <div class="film-meta">From Fri 21 Aug · Multiple showtimes this weekend</div>
+          <div class="film-desc">New release opening at Lighthouse this Friday — catching it fresh this weekend.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOD & OPENINGS -->
+  <div class="card">
+    <div class="card-header">🍽 New Openings &amp; Food</div>
+    <div class="card-body">
+
+      <div class="food-item">
+        <div class="food-name">
+          Wagamama Dundrum
+          <span class="tag tag-new">New</span>
+          <span class="tag tag-star">★ Japanese</span>
+        </div>
+        <div class="food-meta">📍 Dundrum Town Centre &nbsp;|&nbsp; Ramen, Katsu, Yaki Soba</div>
+        <div class="food-desc">Wagamama's latest Dublin location, now open in Dundrum. Familiar high-volume Japanese comfort food — chicken katsu curry, chilli chicken ramen, teriyaki. Easy solo or group option post-Weeknd.</div>
+      </div>
+
+      <div class="food-item">
+        <div class="food-name">
+          Achara
+          <span class="tag tag-new">New · Summer 2026</span>
+        </div>
+        <div class="food-meta">📍 Aston Quay, Dublin 2 &nbsp;|&nbsp; Northern Thai BBQ</div>
+        <div class="food-desc">Northern Thai BBQ showcasing Irish produce — Donegal squid, Leinster lamb ribs. One of the most talked-about summer openings.</div>
+      </div>
+
+      <div class="food-item">
+        <div class="food-name">
+          Kaldero
+          <span class="tag tag-new">New · Summer 2026</span>
+        </div>
+        <div class="food-meta">📍 South King Street, Dublin 2 &nbsp;|&nbsp; Irish-Filipino Fusion</div>
+        <div class="food-desc">Dublin's first Irish-Filipino restaurant with open-fire cooking. Unique, shareable plates — worth the curiosity.</div>
+      </div>
+
+      <div class="food-item">
+        <div class="food-name">
+          The Ivy Asia
+          <span class="tag tag-new">New · Summer 2026</span>
+        </div>
+        <div class="food-meta">📍 Dawson Street, Dublin 2 &nbsp;|&nbsp; Pan-Asian fine dining</div>
+        <div class="food-desc">The Ivy Group's first international expansion — Pan-Asian menu in a grand Dawson Street setting. Smart choice for a special dinner.</div>
+      </div>
+
+      <div class="food-item">
+        <div class="food-name">
+          Hawker
+          <span class="tag tag-new">New · Summer 2026</span>
+        </div>
+        <div class="food-meta">📍 Rathgar Road, Dublin 6 &nbsp;|&nbsp; Modern Chinese street food</div>
+        <div class="food-desc">From the Hang Dai team — modern Chinese with shareable plates. Laid-back and neighbourhood-friendly. Great for a Sunday roam.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    Early heads-up — detailed plan follows on Friday &nbsp;·&nbsp; Generated Wed 19 Aug 2026 &nbsp;·&nbsp; Weather: Met Office / AccuWeather · Events: AllEvents, Eventbrite, RA, IFI, Lighthouse, Visit Dublin
+  </footer>
+
+</div>
+</body>
+</html>
