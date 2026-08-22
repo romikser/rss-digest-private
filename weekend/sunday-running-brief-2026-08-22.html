@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏃 Sunday Running Brief — Dublin, 23 Aug 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Arial, sans-serif;
+    background: #e8e8f0;
+    color: #222;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    background: linear-gradient(135deg, #1a2a6c, #2a4a9c, #1a2a6c);
+    color: #fff;
+    padding: 0;
+  }
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 16px 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .site-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .header-sub {
+    font-size: 0.9rem;
+    opacity: 0.82;
+    letter-spacing: 0.03em;
+  }
+  .header-tagline {
+    width: 100%;
+    font-size: 0.78rem;
+    opacity: 0.65;
+    padding-top: 2px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ── Layout ── */
+  .page-body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 16px;
+    display: grid;
+    gap: 14px;
+  }
+
+  /* ── Cards ── */
+  .card {
+    background: #fff;
+    border: 1px solid #aaaacc;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+  }
+  .card-header {
+    background: linear-gradient(to bottom, #d8e8f8, #b8ccec);
+    padding: 8px 14px;
+    border-bottom: 1px solid #aaaacc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-header h2 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #1a1a4a;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .card-header .icon {
+    font-size: 1rem;
+  }
+  .card-body {
+    padding: 14px;
+  }
+
+  /* ── Hero image ── */
+  .hero-card .card-body {
+    padding: 0;
+  }
+  .hero-img {
+    width: 100%;
+    display: block;
+    height: 260px;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+  .hero-caption {
+    background: #f4f4f8;
+    border-top: 1px solid #aaaacc;
+    padding: 6px 12px;
+    font-size: 0.74rem;
+    color: #666;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── Stat grid ── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .stat-cell {
+    padding: 10px 8px;
+    text-align: center;
+    border-right: 1px solid #e0e0ea;
+    border-bottom: 1px solid #e0e0ea;
+  }
+  .stat-cell:nth-child(3n) { border-right: none; }
+  .stat-cell:nth-last-child(-n+3) { border-bottom: none; }
+  .stat-label {
+    font-size: 0.68rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .stat-value {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #cc0000;
+    line-height: 1;
+  }
+  .stat-unit {
+    font-size: 0.72rem;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  /* ── Best Time ── */
+  .best-time-window {
+    background: #f0f4f0;
+    border: 1px solid #b0ccb0;
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
+  .best-time-window .window-label {
+    font-size: 0.72rem;
+    color: #3a7a3a;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .best-time-window .window-time {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  .reasoning {
+    font-size: 0.83rem;
+    color: #444;
+    line-height: 1.55;
+  }
+  .hourly-strip {
+    display: flex;
+    gap: 4px;
+    margin-top: 10px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .hourly-tick {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 5px 7px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    min-width: 54px;
+  }
+  .hourly-tick.good { background: #e8f4e8; border-color: #b0d8b0; }
+  .hourly-tick.ok   { background: #fff8e8; border-color: #e0d090; }
+  .hourly-tick .h-time { font-size: 0.68rem; color: #666; font-weight: 700; }
+  .hourly-tick .h-temp { font-size: 0.88rem; font-weight: 700; color: #222; }
+  .hourly-tick .h-rain { font-size: 0.68rem; color: #888; }
+
+  /* ── Wear list ── */
+  .wear-list {
+    list-style: none;
+    display: grid;
+    gap: 6px;
+  }
+  .wear-list li {
+    font-size: 0.84rem;
+    color: #333;
+    line-height: 1.45;
+    padding-left: 18px;
+    position: relative;
+  }
+  .wear-list li::before {
+    content: '▸';
+    color: #cc0000;
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+    top: 1px;
+  }
+
+  /* ── Heads Up ── */
+  .headsup-list {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+  .headsup-list li {
+    font-size: 0.84rem;
+    color: #333;
+    line-height: 1.5;
+    padding: 8px 10px;
+    background: #fffbe8;
+    border-left: 3px solid #cc0000;
+    border-radius: 0 4px 4px 0;
+  }
+  .headsup-list li.info {
+    background: #f0f4ff;
+    border-left-color: #4466cc;
+  }
+  .headsup-list li.clear {
+    background: #f0f8f0;
+    border-left-color: #44aa44;
+  }
+
+  /* ── Footer ── */
+  footer {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 10px 16px 24px;
+    font-size: 0.72rem;
+    color: #888;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  footer a { color: #4466cc; text-decoration: none; }
+  .footer-divider {
+    border: none;
+    border-top: 1px solid #c8c8d8;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <h1>🏃 Sunday Running Brief</h1>
+    <span class="header-sub">Dublin · 23 August 2026</span>
+    <div class="header-tagline">Your morning forecast for the roads and trails</div>
+  </div>
+</header>
+
+<main class="page-body">
+
+  <!-- Hero Image -->
+  <div class="card hero-card">
+    <div class="card-body">
+      <img
+        class="hero-img"
+        src="https://romikser.github.io/rss-digest-private/assets/images/776e2e0f71ec.jpg"
+        alt="Phoenix Park, Dublin — a favourite long-run destination"
+      >
+    </div>
+    <div class="hero-caption">
+      📍 Phoenix Park, Dublin — Europe's largest enclosed urban park &amp; a runners' paradise
+    </div>
+  </div>
+
+  <!-- Weather Card -->
+  <div class="card">
+    <div class="card-header">
+      <span class="icon">🌤</span>
+      <h2>Sunday Weather — Dublin</h2>
+    </div>
+    <div class="card-body" style="padding:0;">
+      <div class="stat-grid">
+        <div class="stat-cell">
+          <div class="stat-label">High Temp</div>
+          <div class="stat-value">17°</div>
+          <div class="stat-unit">Celsius</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Feels Like</div>
+          <div class="stat-value">17°</div>
+          <div class="stat-unit">at noon</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Rain Risk</div>
+          <div class="stat-value">&lt;5%</div>
+          <div class="stat-unit">all day</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Wind</div>
+          <div class="stat-value">8</div>
+          <div class="stat-unit">km/h ENE</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Sunrise</div>
+          <div class="stat-value" style="font-size:1.1rem;">06:19</div>
+          <div class="stat-unit">AM</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">Sunset</div>
+          <div class="stat-value" style="font-size:1.1rem;">20:35</div>
+          <div class="stat-unit">PM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Best Time to Run -->
+  <div class="card">
+    <div class="card-header">
+      <span class="icon">⏱</span>
+      <h2>Best Time to Run</h2>
+    </div>
+    <div class="card-body">
+      <div class="best-time-window">
+        <div class="window-label">Recommended Window</div>
+        <div class="window-time">07:00 – 11:00 &nbsp;<small style="font-size:0.75rem;color:#555">or midday 12–15:00</small></div>
+      </div>
+      <p class="reasoning">
+        Sunday's forecast is exceptional — sunny skies from sunrise to sunset with virtually zero rain chance (≤5%) throughout daylight hours. Wind is light all day (4–11 km/h ENE), meaning no headwind battles.
+        <br><br>
+        <strong>Morning runners (7–11am):</strong> temperatures rise from a crisp 8°C at dawn to a comfortable 13–17°C — ideal for longer efforts and tempo work. If you're marathon training, this is your long-run window.
+        <br><br>
+        <strong>Midday (12–15:00):</strong> the day peaks at 17°C with full sunshine — great for shorter, faster workouts. Grab sunscreen.
+      </p>
+      <div class="hourly-strip">
+        <div class="hourly-tick ok">
+          <div class="h-time">06:00</div>
+          <div class="h-temp">8°C</div>
+          <div class="h-rain">12%🌙</div>
+        </div>
+        <div class="hourly-tick good">
+          <div class="h-time">09:00</div>
+          <div class="h-temp">13°C</div>
+          <div class="h-rain">5%☀️</div>
+        </div>
+        <div class="hourly-tick good">
+          <div class="h-time">12:00</div>
+          <div class="h-temp">17°C</div>
+          <div class="h-rain">2%☀️</div>
+        </div>
+        <div class="hourly-tick good">
+          <div class="h-time">15:00</div>
+          <div class="h-temp">17°C</div>
+          <div class="h-rain">3%☀️</div>
+        </div>
+        <div class="hourly-tick good">
+          <div class="h-time">18:00</div>
+          <div class="h-temp">15°C</div>
+          <div class="h-rain">4%☀️</div>
+        </div>
+        <div class="hourly-tick ok">
+          <div class="h-time">21:00</div>
+          <div class="h-temp">12°C</div>
+          <div class="h-rain">9%🌙</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What to Wear -->
+  <div class="card">
+    <div class="card-header">
+      <span class="icon">👕</span>
+      <h2>What to Wear</h2>
+    </div>
+    <div class="card-body">
+      <ul class="wear-list">
+        <li><strong>Running shorts + technical tee</strong> — 17°C peak is warm enough for summer kit; singlet if you run hot</li>
+        <li><strong>Light base layer for early starts</strong> — 6–8am temps around 8°C: add a long-sleeve you can tie around your waist</li>
+        <li><strong>Sunglasses</strong> — full sunshine forecast all day, especially midday</li>
+        <li><strong>SPF 30+ sunscreen</strong> — apply if running between 10am and 3pm</li>
+        <li><strong>No rain jacket needed</strong> — rain probability stays below 5% throughout running hours; leave the waterproof at home</li>
+        <li><strong>Cap optional</strong> — low wind, so a cap adds shade without overheating</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Heads Up -->
+  <div class="card">
+    <div class="card-header">
+      <span class="icon">⚠️</span>
+      <h2>Heads Up</h2>
+    </div>
+    <div class="card-body">
+      <ul class="headsup-list">
+        <li class="info">
+          🦌 <strong>Phoenix Park deer:</strong> the fallow deer herd is active in the early morning — stay on paths, especially on the Chesterfield Avenue grass verges
+        </li>
+        <li class="info">
+          🌅 <strong>Early sunrise (06:19):</strong> great if you want a dawn run before the park fills up — it will be fully light well before 7am
+        </li>
+        <li class="clear">
+          ✅ <strong>Zero weather risks today</strong> — no wind warnings, no rain, no heat stress. One of Dublin's better August Sundays for a long run
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <hr class="footer-divider">
+  Generated by Hermes Agent · Saturday 22 August 2026, 21:00 IST ·
+  Weather data: <a href="https://wttr.in/Dublin">wttr.in/Dublin</a> &amp;
+  <a href="https://www.met.ie/forecasts/Dublin">Met Éireann</a>
+</footer>
+
+</body>
+</html>
