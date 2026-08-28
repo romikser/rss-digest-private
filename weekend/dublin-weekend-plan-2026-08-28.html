@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dublin Weekend Plan — 29–30 August 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #e8e8f0;
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Arial, sans-serif;
+    font-size: 14px;
+    color: #111;
+    padding: 12px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  a { color: #0000cc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Header */
+  .site-header {
+    background: linear-gradient(135deg, #d8e8f8 0%, #b8ccec 100%);
+    border: 1px solid #aaaacc;
+    border-radius: 6px;
+    padding: 14px 18px 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .site-header h1 { font-size: 22px; color: #cc0000; font-weight: 700; letter-spacing: -0.5px; }
+  .site-header .date-range { font-size: 13px; color: #444; font-weight: 500; }
+  .site-header .generated { font-size: 11px; color: #777; margin-top: 2px; }
+
+  /* Cards */
+  .card {
+    background: #fff;
+    border: 1px solid #aaaacc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .card-header {
+    background: linear-gradient(to right, #d8e8f8, #e8f0fc);
+    border-bottom: 1px solid #aaaacc;
+    padding: 7px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-body { padding: 10px 12px; }
+
+  /* Weather grid */
+  .weather-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .weather-day {
+    border: 1px solid #c8c8dc;
+    border-radius: 4px;
+    padding: 10px;
+    background: #f8f8fd;
+  }
+  .weather-day.better { border-color: #88aacc; background: #eef4fd; }
+  .weather-day h3 { font-size: 13px; font-weight: 700; color: #222; margin-bottom: 4px; }
+  .weather-temp { font-size: 22px; font-weight: 700; color: #cc0000; }
+  .weather-temp .low { font-size: 14px; color: #666; font-weight: 500; }
+  .weather-desc { font-size: 12px; color: #444; margin: 3px 0; }
+  .weather-meta { font-size: 11px; color: #666; }
+  .weather-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge-best { background: #d4edda; color: #155724; }
+
+  .verdict-banner {
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .verdict-balanced { background: #ddeeff; color: #003366; border: 1px solid #aaccee; }
+  .next-wkd { font-size: 12px; color: #555; font-style: italic; margin-top: 4px; }
+
+  /* Friday tonight card */
+  .tonight-desc { font-size: 11px; color: #777; margin-bottom: 8px; }
+  .event-list { list-style: none; }
+  .event-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    align-items: flex-start;
+  }
+  .event-item:last-child { border-bottom: none; }
+  .event-thumb {
+    width: 80px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 3px;
+    flex-shrink: 0;
+    border: 1px solid #ddd;
+  }
+  .event-info { flex: 1; }
+  .event-title { font-size: 13px; font-weight: 700; color: #111; }
+  .event-venue { font-size: 12px; color: #0000cc; }
+  .event-meta { font-size: 11px; color: #666; margin-top: 2px; }
+  .event-desc { font-size: 11px; color: #444; margin-top: 2px; }
+  .star { color: #cc0000; font-size: 13px; }
+
+  /* Tags */
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-right: 3px;
+    vertical-align: middle;
+    letter-spacing: 0.3px;
+  }
+  .tag-mubi { background: #001f5b; color: #fff; }
+  .tag-ifi { background: #1a4a8a; color: #fff; }
+  .tag-lh { background: #2a5a9a; color: #fff; }
+  .tag-rt { background: #fa320a; color: #fff; }
+  .tag-new { background: #218838; color: #fff; }
+  .tag-free { background: #6c757d; color: #fff; }
+  .tag-70mm { background: #8b1a1a; color: #fff; }
+  .tag-netflix { background: #e50914; color: #fff; }
+  .tag-apple { background: #555; color: #fff; }
+  .tag-rent { background: #444; color: #fff; }
+  .tag-fandango { background: #b06030; color: #fff; }
+
+  /* Day divider */
+  .day-divider {
+    background: #e0e8f8;
+    border-top: 1px solid #b8c8e0;
+    border-bottom: 1px solid #b8c8e0;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #334;
+    margin: 0 -12px;
+  }
+
+  /* Cinema */
+  .cinema-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .cinema-item {
+    border: 1px solid #dde;
+    border-radius: 4px;
+    padding: 8px;
+    background: #fafafe;
+  }
+  .cinema-item img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-bottom: 6px;
+    border: 1px solid #ddd;
+  }
+  .cinema-title { font-size: 12px; font-weight: 700; color: #111; margin-bottom: 3px; }
+  .cinema-director { font-size: 11px; color: #555; }
+  .cinema-desc { font-size: 11px; color: #444; margin-top: 3px; }
+  .cinema-times { font-size: 11px; color: #0000cc; margin-top: 3px; }
+
+  /* Streaming */
+  .stream-list { list-style: none; }
+  .stream-item {
+    padding: 7px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .stream-item:last-child { border-bottom: none; }
+  .stream-title { font-size: 13px; font-weight: 700; }
+  .stream-meta { font-size: 11px; color: #555; margin-top: 2px; }
+  .stream-desc { font-size: 11px; color: #444; margin-top: 2px; }
+
+  /* Food */
+  .food-list { list-style: none; }
+  .food-item {
+    padding: 7px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .food-item:last-child { border-bottom: none; }
+  .food-name { font-size: 13px; font-weight: 700; }
+  .food-type { font-size: 11px; color: #555; }
+  .food-desc { font-size: 11px; color: #444; margin-top: 2px; }
+
+  .weather-icon { font-size: 20px; }
+
+  @media (max-width: 580px) {
+    .weather-grid { grid-template-columns: 1fr; }
+    .cinema-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="site-header">
+  <div>
+    <h1>🏙️ Dublin Weekend Plan</h1>
+    <div class="date-range">Friday 28 – Sunday 30 August 2026</div>
+    <div class="generated">Generated Fri 28 Aug · 08:00 Dublin time</div>
+  </div>
+</div>
+
+<!-- WEATHER CARD -->
+<div class="card">
+  <div class="card-header">🌦️ Weather This Weekend</div>
+  <div class="card-body">
+    <div class="weather-grid">
+      <!-- Friday evening -->
+      <div class="weather-day" style="grid-column: 1 / -1; padding: 8px 10px;">
+        <h3>Tonight — Friday 28 Aug</h3>
+        <span class="weather-icon">🌧️</span>
+        <div class="weather-desc">Rain extending from the SW, strong gusts at times. Clearing toward midnight.</div>
+        <div class="weather-meta">🌡️ 21°C &nbsp;|&nbsp; 💨 Strong SW wind &nbsp;|&nbsp; 🌧️ Rain likely</div>
+      </div>
+      <!-- Saturday -->
+      <div class="weather-day better">
+        <h3>Saturday 29 Aug <span class="weather-badge badge-best">BETTER DAY</span></h3>
+        <div class="weather-icon">⛅</div>
+        <div class="weather-temp">16°C <span class="low">/ 14°C</span></div>
+        <div class="weather-desc">Heavy rain in the morning, clearing eastwards by lunchtime. Sunny spells and showers in the afternoon — mostly dry by evening with late sunshine.</div>
+        <div class="weather-meta">🌧️ 60% rain AM → 20% PM &nbsp;|&nbsp; 💨 4 m/s SW</div>
+      </div>
+      <!-- Sunday -->
+      <div class="weather-day">
+        <h3>Sunday 30 Aug</h3>
+        <div class="weather-icon">🌧️</div>
+        <div class="weather-temp">17°C <span class="low">/ 13°C</span></div>
+        <div class="weather-desc">Dull, wet day. Outbreaks of rain throughout, heavy and persistent at times.</div>
+        <div class="weather-meta">🌧️ 80% rain all day &nbsp;|&nbsp; 💨 7 m/s (gusty)</div>
+      </div>
+    </div>
+    <div class="verdict-banner verdict-balanced">
+      ☁️ <strong>Balanced weekend</strong> — Saturday afternoon/evening salvageable; Sunday is a write-off. Plan active stuff Sat PM, lean into indoor options Sunday.
+    </div>
+    <div class="next-wkd">📅 Next weekend (5–6 Sep): drier — fair morning Saturday, afternoon showers only, clear evening. Slightly better overall.</div>
+  </div>
+</div>
+
+<!-- TONIGHT CARD -->
+<div class="card">
+  <div class="card-header">🎶 Tonight — Friday Evening (28 Aug)</div>
+  <div class="card-body">
+    <div class="tonight-desc">Rain expected this evening — great excuse to head to a gig. Doors usually 6–7pm.</div>
+    <ul class="event-list">
+
+      <!-- Berlioz + Sofia Kourtesis -->
+      <li class="event-item">
+        <img class="event-thumb" src="https://romikser.github.io/rss-digest-private/assets/images/6216ea75d15f.png" alt="Berlioz Sofia Kourtesis">
+        <div class="event-info">
+          <div class="event-title"><span class="star">★</span> Berlioz + Sofia Kourtesis + Wider Than Pictures</div>
+          <div class="event-venue"><a href="https://www.songkick.com/concerts/42951092-berlioz-at-collins-barracks">Collins Barracks (National Museum of Ireland)</a></div>
+          <div class="event-meta">Fri 28 Aug · Doors 18:00 · €45</div>
+          <div class="event-desc">Outdoor summer concert on the grounds of Collins Barracks. Sofia Kourtesis brings her experimental deep house; Berlioz headlining. Unmissable electronic bill.</div>
+        </div>
+      </li>
+
+      <!-- Jalen Ngonda -->
+      <li class="event-item">
+        <div class="event-info">
+          <div class="event-title">Jalen Ngonda</div>
+          <div class="event-venue"><a href="https://www.ticketmaster.ie/jalen-ngonda-tickets/artist/5231822">The Academy, Dublin</a></div>
+          <div class="event-meta">Fri 28 Aug · 19:00 · Low availability</div>
+          <div class="event-desc">Rising neo-soul talent — lush, Motown-inflected R&amp;B with genuine songwriting chops. Intimate Academy show.</div>
+        </div>
+      </li>
+
+      <!-- Joy Anonymous -->
+      <li class="event-item">
+        <div class="event-info">
+          <div class="event-title">Joy Anonymous</div>
+          <div class="event-venue">Workman's Club, Wellington Quay</div>
+          <div class="event-meta">Fri 28 Aug · Late night</div>
+          <div class="event-desc">Alternative/indie late-night session at one of Dublin's most reliably good small venues. Good for post-dinner drinks.</div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<!-- WEEKEND EVENTS CARD -->
+<div class="card">
+  <div class="card-header">📅 Active Weekend — Events</div>
+  <div class="card-body">
+
+    <div class="day-divider">Saturday 29 August</div>
+    <ul class="event-list">
+
+      <!-- Peoples Photography -->
+      <li class="event-item">
+        <div class="event-info">
+          <div class="event-title"><span class="star">★</span> Peoples Photography 2026 <span class="tag tag-free">FREE</span></div>
+          <div class="event-venue"><a href="https://peoplesphotography.ie/">Railings of St. Stephen's Green</a></div>
+          <div class="event-meta">Sat–Sun 29–30 Aug · 10:00–18:00 · Free, no ticket needed</div>
+          <div class="event-desc">Ireland's largest outdoor photography exhibition — 30+ years running. Hundreds of prints hung along the Green's railings: landscape, portraiture, monochrome, photojournalism, abstract. A genuinely brilliant free outing, especially Saturday afternoon when the weather clears.</div>
+        </div>
+      </li>
+
+      <!-- Riverdance -->
+      <li class="event-item">
+        <div class="event-info">
+          <div class="event-title">Riverdance — Live on Stage</div>
+          <div class="event-venue"><a href="https://www.gaietytheatre.ie/">The Gaiety Theatre, South King Street</a></div>
+          <div class="event-meta">Sat 29 Aug · 15:00</div>
+          <div class="event-desc">The iconic Irish dance spectacular. Worth seeing once — high production values and genuinely impressive choreography.</div>
+        </div>
+      </li>
+
+      <!-- Dublin City Council Ceol Country -->
+      <li class="event-item">
+        <div class="event-info">
+          <div class="event-title">Dublin City Council Ceol Country — Nathan Carter <span class="tag tag-free">FREE</span></div>
+          <div class="event-venue">Dublin City Centre (outdoor stage)</div>
+          <div class="event-meta">Sat 29 Aug · Afternoon · Free</div>
+          <div class="event-desc">Dublin City Council's free outdoor country music celebration headlined by Ireland's biggest country star Nathan Carter. Good craic if you're already in the city centre Saturday afternoon.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="day-divider" style="margin-top: 8px;">Sunday 30 August — Stay indoors or quick dash out</div>
+    <ul class="event-list">
+
+      <!-- Peoples Photography (last day) -->
+      <li class="event-item">
+        <div class="event-info">
+          <div class="event-title"><span class="star">★</span> Peoples Photography 2026 — Last Day <span class="tag tag-free">FREE</span></div>
+          <div class="event-venue"><a href="https://peoplesphotography.ie/">Railings of St. Stephen's Green</a></div>
+          <div class="event-meta">Sun 30 Aug · 10:00–18:00 · Free</div>
+          <div class="event-desc">Final day of the exhibition. Head out in the morning before the heaviest rain sets in. St. Stephen's Green is covered by the railings so prints are sheltered from light showers.</div>
+        </div>
+      </li>
+
+      <!-- Bon Jovi -->
+      <li class="event-item">
+        <div class="event-info">
+          <div class="event-title">Bon Jovi — Live at Croke Park</div>
+          <div class="event-venue"><a href="https://www.crokepark.ie/">Croke Park, Jones's Road</a></div>
+          <div class="event-meta">Sun 30 Aug · Evening · Major arena show</div>
+          <div class="event-desc">Stadium rock legend, enormous production. Expect 80,000+ crowd. The rain won't stop them — bring waterproofs if you have tickets.</div>
+        </div>
+      </li>
+
+      <!-- Ceol Country Sunday -->
+      <li class="event-item">
+        <div class="event-info">
+          <div class="event-title">Dublin City Council Ceol Country — Braden Hull <span class="tag tag-free">FREE</span></div>
+          <div class="event-venue">Dublin City Centre (outdoor stage)</div>
+          <div class="event-meta">Sun 30 Aug · Afternoon · Free</div>
+          <div class="event-desc">Country music continues with Braden Hull. Worth a lunchtime wander if you're nearby — free, no fuss.</div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<!-- CINEMA CARD -->
+<div class="card">
+  <div class="card-header">🎬 Cinema This Weekend</div>
+  <div class="card-body">
+    <div class="cinema-grid">
+
+      <!-- MUBI Go: Rosebush Pruning -->
+      <div class="cinema-item" style="border-color: #001f5b;">
+        <img src="https://romikser.github.io/rss-digest-private/assets/images/26ddfb63ccd9.png" alt="Rosebush Pruning">
+        <div class="cinema-title">
+          <span class="tag tag-mubi">MUBI GO ★</span><br>
+          <a href="https://mubi.com/en/gb/films/rosebush-pruning">Rosebush Pruning</a>
+        </div>
+        <div class="cinema-director">Dir. Karim Aïnouz · 2026 · 95 min</div>
+        <div class="cinema-desc">A wickedly cutthroat satire of class, fashion, and privilege. Elle Fanning, Callum Turner, Riley Keough. Written by Efthimis Filippou (Dogtooth). Use your MUBI Go ticket — free this week at participating Dublin cinemas.</div>
+      </div>
+
+      <!-- IFI: The Odyssey -->
+      <div class="cinema-item">
+        <img src="https://romikser.github.io/rss-digest-private/assets/images/915b6412b319.jpg" alt="The Odyssey">
+        <div class="cinema-title">
+          <span class="tag tag-ifi">IFI</span> <span class="tag tag-70mm">70mm</span><br>
+          <a href="https://ifi.ie/film/the-odyssey/">The Odyssey</a>
+        </div>
+        <div class="cinema-director">Dir. Christopher Nolan · 2026 · 172 min · 15A</div>
+        <div class="cinema-desc">Epic Homeric adaptation in 70mm on the IFI's large screen. Matt Damon, Anne Hathaway, Tom Holland. Nolan's most spectacular work — this is the only way to see it properly.</div>
+        <div class="cinema-times">🕒 Fri 15:00 · Book ahead</div>
+      </div>
+
+      <!-- IFI: Tony -->
+      <div class="cinema-item">
+        <img src="https://romikser.github.io/rss-digest-private/assets/images/8e837868c939.jpg" alt="Tony">
+        <div class="cinema-title">
+          <span class="tag tag-ifi">IFI</span><br>
+          <a href="https://ifi.ie/film/tony/">Tony</a>
+        </div>
+        <div class="cinema-director">Dir. Matt Johnson · 2026 · 106 min · 15A</div>
+        <div class="cinema-desc">Anthony Bourdain origin story — Cape Cod, 1975, age 19. Spoiled, charismatic, self-destructive. From the director of Blackberry. A sharply funny coming-of-culinary-age film.</div>
+        <div class="cinema-times">🕒 Fri 15:45, 18:15 · Sat/Sun check ifi.ie</div>
+      </div>
+
+      <!-- IFI: Bitter Christmas -->
+      <div class="cinema-item">
+        <div class="cinema-title">
+          <span class="tag tag-ifi">IFI</span><br>
+          <a href="https://ifi.ie/film/bitter-christmas/">Bitter Christmas</a>
+        </div>
+        <div class="cinema-director">Dir. Pedro Almodóvar · 15A</div>
+        <div class="cinema-desc">An advertising director confronting unresolved desires and buried anxieties. Open captioning available. Classic late Almodóvar moodiness.</div>
+        <div class="cinema-times">🕒 Fri 13:00, 20:50</div>
+      </div>
+
+      <!-- Lighthouse: The Invite -->
+      <div class="cinema-item">
+        <div class="cinema-title">
+          <span class="tag tag-lh">Lighthouse</span><br>
+          <a href="https://www.lighthousecinema.ie/">The Invite</a>
+        </div>
+        <div class="cinema-director">Dir. Olivia Wilde · 2026 · 107 min · 16</div>
+        <div class="cinema-desc">A24 dinner-party comedy thriller. Seth Rogen, Penélope Cruz, Edward Norton. Marriage under strain, enigmatic neighbours, night spirals. A Sundance hit. 96% RT.</div>
+        <div class="cinema-times">🕒 Fri 15:35 · check lighthousecinema.ie</div>
+      </div>
+
+      <!-- Lighthouse: Kiki's Delivery Service -->
+      <div class="cinema-item">
+        <div class="cinema-title">
+          <span class="tag tag-lh">Lighthouse</span><br>
+          <a href="https://www.lighthousecinema.ie/">Kiki's Delivery Service 4K</a>
+        </div>
+        <div class="cinema-director">Dir. Hayao Miyazaki · 1989 · 103 min · G</div>
+        <div class="cinema-desc">Gorgeous 4K restoration of the Studio Ghibli classic — a young witch finding independence in a coastal city. Pure magic, beautifully restored.</div>
+        <div class="cinema-times">🕒 Fri 16:00, 18:30 (subtitled)</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- STREAMING CARD -->
+<div class="card">
+  <div class="card-header">🍿 Streaming at Home (Sunday is perfect for this)</div>
+  <div class="card-body">
+    <ul class="stream-list">
+
+      <li class="stream-item">
+        <div class="stream-title">
+          <span class="tag tag-rt">97% RT</span>
+          Hadestown: The Musical
+          <span class="tag tag-rent">RENT</span>
+        </div>
+        <div class="stream-meta">Dir. Brett Sullivan · 2026 · 2h 21m · Amazon / Apple TV / Fandango (~€22)</div>
+        <div class="stream-desc">Proshot Broadway musical based on the Orpheus myth. Rachel Chavkin's acclaimed production finally captured properly for home viewing. Stunning performances and production design.</div>
+      </li>
+
+      <li class="stream-item">
+        <div class="stream-title">
+          <span class="tag tag-rt">96% RT</span>
+          The Invite
+          <span class="tag tag-rent">VOD</span>
+        </div>
+        <div class="stream-meta">Dir. Olivia Wilde · 2026 · Amazon / Apple TV / Google Play (rent/buy)</div>
+        <div class="stream-desc">Also in cinemas this weekend — A24 dinner-party thriller with Seth Rogen, Penélope Cruz, Edward Norton. Sharp, darkly funny, great ensemble.</div>
+      </li>
+
+      <li class="stream-item">
+        <div class="stream-title">
+          <span class="tag tag-rt">93% RT</span>
+          Don't Say Good Luck
+          <span class="tag tag-netflix">Netflix</span>
+        </div>
+        <div class="stream-meta">Dir. Julia Hart · 2026 · Netflix</div>
+        <div class="stream-desc">Musical teen drama with Sunny Sandler, Melanie Lynskey, Steve Buscemi. Sophie is ready for the high school musical spotlight — until drama erupts at home. Charming and funny.</div>
+      </li>
+
+      <li class="stream-item">
+        <div class="stream-title">
+          <span class="tag tag-rt">93% RT</span>
+          Toy Story 5
+          <span class="tag tag-fandango">Fandango</span>
+        </div>
+        <div class="stream-meta">Dir. Andrew Stanton · 2026 · 1h 42m · Fandango at Home</div>
+        <div class="stream-desc">The beloved toy gang faces Lilypad, an AI tablet with strong opinions on parenting. Better than expected — genuinely moving. Available to stream Aug 18.</div>
+      </li>
+
+      <li class="stream-item">
+        <div class="stream-title">
+          <span class="tag tag-rt">92% RT</span>
+          Rose of Nevada
+          <span class="tag tag-apple">Apple TV</span>
+        </div>
+        <div class="stream-meta">Dir. Mark Jenkin · 2026 · Apple TV / Plex / Prime (rent)</div>
+        <div class="stream-desc">From the director of Bait and Enys Men — moody, atmospheric British cinema. Jenkin's signature analogue visual style and off-kilter storytelling.</div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<!-- FOOD & OPENINGS CARD -->
+<div class="card">
+  <div class="card-header">🍽️ New Restaurants &amp; Openings Worth Knowing</div>
+  <div class="card-body">
+    <ul class="food-list">
+
+      <li class="food-item">
+        <div class="food-name">
+          <span class="tag tag-new">New</span>
+          <a href="https://www.earlytable.ie/articles/10-dublin-restaurant-openings">Hawker</a> — Rathgar Road, Dublin 6
+        </div>
+        <div class="food-type">Modern Chinese Street Food · From the Hang Dai team</div>
+        <div class="food-desc">Hong Kong hawker culture in a Rathgar local: cheeseburger spring rolls, Xinjiang lamb skewers, reimagined sweet and sour pork. Shareable plates, ideal for groups. Same kitchen as the beloved Hang Dai.</div>
+      </li>
+
+      <li class="food-item">
+        <div class="food-name">
+          <span class="tag tag-new">New</span>
+          <a href="https://www.earlytable.ie/articles/10-dublin-restaurant-openings">Achara</a> — Aston Quay, Dublin 2
+        </div>
+        <div class="food-type">Northern Thai BBQ · By the Crudo/Hera team</div>
+        <div class="food-desc">Bold Thai BBQ technique applied to Irish produce — Donegal squid, Leinster lamb ribs on the fire. Ambitious and exciting. City centre location on the Quays.</div>
+      </li>
+
+      <li class="food-item">
+        <div class="food-name">
+          <span class="tag tag-new">New</span>
+          <a href="https://www.earlytable.ie/articles/10-dublin-restaurant-openings">Kaldero</a> — South King Street, Dublin 2
+        </div>
+        <div class="food-type">Irish-Filipino · Dublin's first</div>
+        <div class="food-desc">Dublin's only Irish-Filipino restaurant — regional Filipino flavours meet Irish ingredients over open fire. A genuinely unique addition. Next to the Gaiety, ideal for pre-show.</div>
+      </li>
+
+      <li class="food-item">
+        <div class="food-name">
+          <span class="tag tag-new">New</span>
+          <a href="https://www.earlytable.ie/articles/10-dublin-restaurant-openings">Allta na Farraige</a> — Grand Canal Dock, Dublin 2
+        </div>
+        <div class="food-type">Seafood &amp; Cocktail Bar · From the Allta team</div>
+        <div class="food-desc">Creative seafood bar from one of Dublin's most acclaimed teams. Lobster and prawn oil cocktails, refined small plates. The Docklands spot to know.</div>
+      </li>
+
+      <li class="food-item">
+        <div class="food-name">
+          <span class="tag tag-new">New</span>
+          <a href="https://www.earlytable.ie/articles/10-dublin-restaurant-openings">Amai by Viktor</a> — Harry Street, Dublin 2
+        </div>
+        <div class="food-type">Modern Fine Dining · Michelin-listed within 55 days of opening</div>
+        <div class="food-desc">Rapid rise — Michelin recognition in under two months. Creative, precise cuisine in a compact city-centre room. Worth a booking if you want a proper dinner this weekend.</div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<div style="text-align:center; font-size:11px; color:#888; margin-top:10px; padding-bottom:10px;">
+  Generated by Hermes Agent · Dublin Weekend Plan · Fri 28 Aug 2026 08:00
+</div>
+
+</body>
+</html>
