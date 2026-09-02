@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dublin Weekend Heads-Up | 5–6 September 2026</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #e8e8f0;
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", "Yu Gothic", sans-serif;
+      font-size: 13px;
+      color: #111;
+      padding-bottom: 24px;
+    }
+    .header {
+      background: #cc0000;
+      color: #fff;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-title { font-size: 19px; font-weight: bold; letter-spacing: 0.03em; }
+    .header-date { font-size: 13px; opacity: 0.92; }
+    .container { max-width: 900px; margin: 12px auto; padding: 0 12px; }
+    .card { background: #fff; border: 1px solid #aaaacc; margin-bottom: 12px; border-radius: 2px; }
+    .card-header {
+      background: linear-gradient(to bottom, #d8e8f8, #b8ccec);
+      padding: 7px 12px;
+      font-weight: bold;
+      font-size: 13px;
+      border-bottom: 1px solid #aaaacc;
+      color: #222244;
+    }
+    /* Weather */
+    .weather-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .weather-day { padding: 12px 18px; border-right: 1px solid #e0e0ee; }
+    .weather-day:last-child { border-right: none; }
+    .weather-day-label { font-weight: bold; font-size: 14px; color: #222244; margin-bottom: 5px; }
+    .weather-temp { font-size: 24px; font-weight: bold; color: #333; }
+    .weather-row { display: flex; align-items: center; gap: 10px; margin: 4px 0; }
+    .weather-icon { font-size: 30px; }
+    .weather-desc { color: #555; margin: 4px 0; }
+    .weather-detail { color: #777; font-size: 11px; line-height: 1.5; }
+    .transport-warn {
+      background: #fff8e0;
+      border-left: 4px solid #cc7700;
+      padding: 8px 14px;
+      margin: 10px 12px;
+      font-size: 12px;
+      color: #554400;
+      border-radius: 2px;
+      line-height: 1.5;
+    }
+    /* Events */
+    .event-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 10px 12px;
+      border-bottom: 1px solid #eeeef8;
+      gap: 10px;
+    }
+    .event-item:last-child { border-bottom: none; }
+    .event-thumb-placeholder {
+      width: 110px;
+      height: 74px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #cccce0, #aaaacc);
+      border: 1px solid #aaaacc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      border-radius: 2px;
+    }
+    .event-body { flex: 1; min-width: 0; }
+    .event-title { font-weight: bold; font-size: 13px; line-height: 1.4; }
+    .event-title a { color: #0000cc; text-decoration: none; }
+    .event-title a:hover { text-decoration: underline; }
+    .event-meta { color: #666; font-size: 11px; margin: 3px 0; line-height: 1.4; }
+    .event-desc { color: #444; font-size: 12px; margin-top: 4px; line-height: 1.5; }
+    /* Tags */
+    .tag {
+      display: inline-block;
+      padding: 1px 5px;
+      border-radius: 2px;
+      font-size: 10px;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+    .tag-star { background: #cc0000; color: #fff; margin-left: 5px; }
+    .tag-mubi { background: #001a40; color: #fff; }
+    .tag-cinema { background: #336699; color: #fff; }
+    .tag-new { background: #336633; color: #fff; }
+    .tag-national { background: #cc6600; color: #fff; }
+    /* Cinema */
+    .cinema-banner {
+      background: linear-gradient(90deg, #cc5500, #ee8800);
+      color: #fff;
+      padding: 8px 14px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    .film-item { padding: 9px 14px; border-bottom: 1px solid #eeeef8; }
+    .film-item:last-child { border-bottom: none; }
+    .film-title { font-weight: bold; font-size: 13px; line-height: 1.4; }
+    .film-title a { color: #0000cc; text-decoration: none; }
+    .film-title a:hover { text-decoration: underline; }
+    .film-meta { color: #666; font-size: 11px; margin: 2px 0; }
+    .film-desc { color: #444; font-size: 12px; margin-top: 3px; line-height: 1.5; }
+    /* Food */
+    .food-item { padding: 9px 14px; border-bottom: 1px solid #eeeef8; }
+    .food-item:last-child { border-bottom: none; }
+    .food-name { font-weight: bold; font-size: 13px; }
+    .food-name a { color: #0000cc; text-decoration: none; }
+    .food-name a:hover { text-decoration: underline; }
+    .food-meta { color: #666; font-size: 11px; margin: 2px 0; }
+    .food-desc { color: #444; font-size: 12px; margin-top: 3px; line-height: 1.5; }
+    /* Footer */
+    .footer {
+      text-align: center;
+      color: #666;
+      font-size: 11px;
+      padding: 12px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-title">🏙️ Dublin Weekend Heads-Up</div>
+  <div class="header-date">Saturday 5 – Sunday 6 September 2026</div>
+</div>
+
+<div class="container">
+
+  <!-- WEATHER -->
+  <div class="card">
+    <div class="card-header">🌦️ Weather Forecast — Dublin</div>
+    <div class="weather-grid">
+      <div class="weather-day">
+        <div class="weather-day-label">Saturday 5 Sep</div>
+        <div class="weather-row">
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temp">15–19°C</div>
+        </div>
+        <div class="weather-desc">Outbreaks of rain, overcast</div>
+        <div class="weather-detail">
+          💨 Moderate to fresh westerly winds<br>
+          🌧️ Rain likely through the day<br>
+          <span style="color:#aaa;">Source: Met Éireann</span>
+        </div>
+      </div>
+      <div class="weather-day">
+        <div class="weather-day-label">Sunday 6 Sep</div>
+        <div class="weather-row">
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temp">15–19°C</div>
+        </div>
+        <div class="weather-desc">Light rain morning → afternoon clouds clearing</div>
+        <div class="weather-detail">
+          💨 Gentle southerly breeze<br>
+          🌧️ Light rain early, drying up by afternoon<br>
+          <span style="color:#aaa;">Source: Met Éireann / weather-forecast.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="transport-warn">
+      ⚠️ <strong>Saturday night transport alert:</strong> Katie Taylor's farewell fight at Croke Park draws 80,000+ fans — main card 7pm, ring walk ~10pm. Luas Red Line and Dublin Bus will be extremely packed from 6pm. If heading out Saturday evening, leave early or plan your route around Croke Park.
+    </div>
+  </div>
+
+  <!-- EVENTS -->
+  <div class="card">
+    <div class="card-header">🎟️ Events This Weekend</div>
+
+    <div class="event-item">
+      <div class="event-thumb-placeholder">🥊</div>
+      <div class="event-body">
+        <div class="event-title">
+          <a href="https://crokepark.ie/news-and-events/katie-taylor-v-flora-pili-at-croke-park" target="_blank">Katie Taylor vs Flora Pili — Farewell Fight</a>
+          <span class="tag tag-star">★ Historic night</span>
+        </div>
+        <div class="event-meta">📍 Croke Park, Dublin 3 · Sat 5 Sep · Main card 7pm · Ring walk ~10pm · Sky Sports / DAZN</div>
+        <div class="event-desc">Ireland's greatest-ever boxer fights her final professional bout in front of 82,000 at Croke Park — an emotional, once-in-a-generation Dublin night. Even if boxing isn't your thing, the city atmosphere will be electric all evening. Be aware: transport will be hectic.</div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-thumb-placeholder">🎸</div>
+      <div class="event-body">
+        <div class="event-title">
+          <a href="https://www.songkick.com/venues/29945-3arena/calendar" target="_blank">The Waterboys — Fisherman's Blues Revue feat. Steve Earle</a>
+        </div>
+        <div class="event-meta">📍 3Arena, North Wall Quay · Sat 5 Sep · Doors from 7pm</div>
+        <div class="event-desc">Mike Scott brings the full <em>Fisherman's Blues</em> experience to the 3Arena, joined by alt-country legend Steve Earle. A classic of Irish rock meets Celtic folk on Dublin's biggest stage.</div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-thumb-placeholder">🎨</div>
+      <div class="event-body">
+        <div class="event-title">
+          <a href="https://ifi.ie/whats-on" target="_blank">Guggi — Portrait of an Artist (IFI)</a>
+          <span class="tag tag-star">★ Art pick</span>
+        </div>
+        <div class="event-meta">📍 Irish Film Institute, 6 Eustace St, Temple Bar · Sat & Sun · Check ifi.ie for times</div>
+        <div class="event-desc">Intimate documentary portrait of Irish visual artist Guggi — from his anarchic days with post-punk legends Virgin Prunes in 1980s Dublin to his quiet life as a contemporary painter. A rare look at the intersection of punk, friendship, and art. Perfect rainy-afternoon watch.</div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-thumb-placeholder">🎬</div>
+      <div class="event-body">
+        <div class="event-title">
+          <a href="https://www.dublinlive.ie/whats-on/film-news/national-cinema-weekend-dublin-cinema-34549749" target="_blank">National Cinema Weekend — €4 Tickets All Weekend</a>
+          <span class="tag tag-national">Sat–Sun only</span>
+        </div>
+        <div class="event-meta">📍 IFI · Lighthouse · Omniplex · ODEON · All Dublin cinemas · Sat 5 & Sun 6 Sep · From €4</div>
+        <div class="event-desc">Once a year, every cinema in Dublin drops tickets to €4 — and this is that weekend. Catch The Odyssey (Nolan), Spider-Man: Brand New Day, Dog Stars, Insidious: Out of the Further, or anything at IFI / Lighthouse for almost nothing. Don't miss it.</div>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-thumb-placeholder">🎵</div>
+      <div class="event-body">
+        <div class="event-title">
+          <a href="https://www.songkick.com/metro-areas/29314-ireland-dublin/september-2026" target="_blank">More live music → Songkick Dublin / Entertainment.ie</a>
+        </div>
+        <div class="event-meta">📍 Button Factory · Sugar Club · Whelan's · Various venues</div>
+        <div class="event-desc">Full weekend listings across all Dublin venues — club nights, smaller gigs, and late-night sessions. Check Songkick and Entertainment.ie for anything from electronic to jazz to indie shows.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CINEMA -->
+  <div class="card">
+    <div class="card-header">🎞️ Cinema</div>
+    <div class="cinema-banner">🎟️ National Cinema Weekend — €4 tickets at all Dublin cinemas, Sat 5 & Sun 6 Sep</div>
+
+    <div class="film-item">
+      <div class="film-title">
+        <span class="tag tag-mubi">MUBI GO</span>
+        &nbsp;<a href="https://mubi.com/en/go" target="_blank">This week's hand-picked film — check mubi.com/go</a>
+      </div>
+      <div class="film-meta">📍 IFI & Lighthouse Cinema (Dublin MUBI Go partners) · Redeem your free weekly ticket</div>
+      <div class="film-desc">MUBI Go selects one film per week for subscribers to see free at a partner cinema. Check mubi.com/go now for this week's pick — valid at IFI and Light House Cinema in Dublin.<br><em>On the horizon: Fatherland (dir. Paweł Pawlikowski, with Sandra Hüller) arrives in Irish cinemas 23 Oct via MUBI.</em></div>
+    </div>
+
+    <div class="film-item">
+      <div class="film-title">
+        <span class="tag tag-cinema">IFI</span>
+        &nbsp;<a href="https://ifi.ie/films/de-gaulle-resistance" target="_blank">De Gaulle Part One: Resistance</a>
+      </div>
+      <div class="film-meta">📍 IFI, 6 Eustace St · Dir. Antonin Baudy · Starring Simon Abkarian · See ifi.ie for times · €4 weekend</div>
+      <div class="film-desc">From France's collapse in 1940 to the birth of the Free French movement in exile — an intimate yet sweeping biopic of one of the 20th century's most complex statesmen. Strong character work from Abkarian.</div>
+    </div>
+
+    <div class="film-item">
+      <div class="film-title">
+        <span class="tag tag-cinema">IFI</span>
+        &nbsp;<a href="https://ifi.ie/ifi-programme" target="_blank">Archive At Lunchtime — Free Saturday Screening</a>
+      </div>
+      <div class="film-meta">📍 IFI · Sat 5 Sep · 12.45pm · Free, no booking needed</div>
+      <div class="film-desc">IFI's free weekly lunchtime series from the Irish Film Archive — different each week, always surprising. Show up and discover a piece of Irish screen history. Good for a rainy Saturday morning.</div>
+    </div>
+
+    <div class="film-item">
+      <div class="film-title">
+        <span class="tag tag-cinema">Lighthouse</span>
+        &nbsp;<a href="https://www.lighthousecinema.ie/film/the-odyssey" target="_blank">The Odyssey (Christopher Nolan)</a>
+      </div>
+      <div class="film-meta">📍 Light House Cinema, Smithfield · Released 17 Jul · €4 this weekend</div>
+      <div class="film-desc">Nolan's epic — Robert Pattinson, Matt Damon, Anne Hathaway, Lupita Nyong'o, Charlize Theron, Zendaya, Tom Holland. Still showing strong. If you haven't caught it on the big screen yet, €4 weekend is the time.</div>
+    </div>
+
+  </div>
+
+  <!-- FOOD & OPENINGS -->
+  <div class="card">
+    <div class="card-header">🍽️ New Openings &amp; Food Picks</div>
+
+    <div class="food-item">
+      <div class="food-name">
+        <span class="tag tag-new">New</span>
+        &nbsp;<a href="https://www.mongoose.ie/" target="_blank">Mongoose</a>
+      </div>
+      <div class="food-meta">📍 78 Thomas Street, Dublin 8 (next door to Variety Jones) · Open Sun–Tue · Opened April 2026</div>
+      <div class="food-desc">Second restaurant from the Michelin-starred Variety Jones team — 26 seats, simple a la carte market menu, tall arched windows. <strong>Open Sunday</strong>, ideal for a long relaxed lunch. Neighbourhood feel, serious cooking without the formality.</div>
+    </div>
+
+    <div class="food-item">
+      <div class="food-name">
+        <span class="tag tag-new">New</span>
+        &nbsp;<a href="https://www.rte.ie/lifestyle/food/2025/1229/1548049-where-to-eat-in-ireland-2026-new-openings-and-hot-spots/" target="_blank">Ringsend Road Bakery</a>
+      </div>
+      <div class="food-meta">📍 Boland's Mills development, Ringsend Road · Opened 2026</div>
+      <div class="food-desc">Third outpost of Thibault Peigne's acclaimed bakery group (Russell Street & Parnell Street). Daily-baked pastries, excellent coffee, great for a morning stop before heading into town. Worth the short detour south of the Liffey.</div>
+    </div>
+
+    <div class="food-item">
+      <div class="food-name">
+        <a href="https://www.lovindublin.com/new-openings/bars-restaurants-dublin" target="_blank">Kip Wine Bar</a>
+        <span style="color:#888;font-size:11px;margin-left:6px;">(opening soon · watch this space)</span>
+      </div>
+      <div class="food-meta">📍 Northside Dublin · Exact location TBC</div>
+      <div class="food-desc">Neighbourhood wine bar with small plates, snacks, and carefully curated wines &amp; beer — opening soon on the northside. Follow their socials for the date. Dublin's natural wine scene is quietly building up north of the Liffey.</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="card">
+    <div class="footer">
+      Early heads-up — detailed plan follows on Friday &nbsp;·&nbsp;
+      Generated Wed 2 Sep 2026 &nbsp;·&nbsp;
+      Sources: Met Éireann · Entertainment.ie · Songkick · IFI · Lighthouse Cinema · MUBI · Lovin Dublin · Matchroom Boxing · Dublin Live
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
