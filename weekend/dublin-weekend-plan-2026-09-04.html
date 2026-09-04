@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏙️ Dublin Weekend Plan — 5–6 September 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #e8e8f0;
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 13px;
+    color: #111;
+    line-height: 1.5;
+  }
+  a { color: #0000cc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── Header ── */
+  #header {
+    background: linear-gradient(135deg, #d8e8f8 0%, #b8ccec 100%);
+    border-bottom: 2px solid #8899bb;
+    padding: 12px 16px 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  #header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #cc0000;
+    letter-spacing: -0.5px;
+  }
+  #header .date-range {
+    font-size: 13px;
+    color: #445;
+    font-weight: 500;
+  }
+  #header .generated {
+    margin-left: auto;
+    font-size: 11px;
+    color: #778;
+  }
+
+  /* ── Layout ── */
+  .page { max-width: 960px; margin: 0 auto; padding: 12px 10px; }
+
+  /* ── Cards ── */
+  .card {
+    background: #fff;
+    border: 1px solid #aaaacc;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .card-header {
+    background: linear-gradient(to right, #d8e8f8, #dde8f4);
+    border-bottom: 1px solid #aaaacc;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-header h2 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #222266;
+    letter-spacing: 0.2px;
+  }
+  .card-header .card-badge {
+    font-size: 10px;
+    background: #cc0000;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-weight: 700;
+  }
+  .card-body { padding: 10px 12px; }
+
+  /* ── Weather ── */
+  .weather-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .weather-day {
+    border: 1px solid #ccccdd;
+    border-radius: 3px;
+    padding: 10px 12px;
+    background: #f8f8fc;
+    position: relative;
+  }
+  .weather-day.better {
+    border-color: #99aabb;
+    background: #f0f4f8;
+  }
+  .weather-day .day-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #556;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .weather-day .better-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 9px;
+    background: #336699;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .weather-day .temp-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin: 4px 0;
+  }
+  .weather-day .temp-hi { font-size: 26px; font-weight: 700; color: #333; }
+  .weather-day .temp-lo { font-size: 14px; color: #778; }
+  .weather-day .weather-desc { font-size: 12px; color: #334; margin-bottom: 5px; }
+  .weather-meta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .weather-meta span {
+    font-size: 11px;
+    color: #556;
+  }
+  .weather-meta .rain { color: #3366aa; font-weight: 600; }
+  .weather-meta .wind { color: #668; }
+
+  .weather-verdict {
+    padding: 8px 12px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .weather-verdict.active { background: #d4ecd4; color: #225522; border: 1px solid #99cc99; }
+  .weather-verdict.balanced { background: #d4e4f4; color: #223355; border: 1px solid #88aacc; }
+  .weather-verdict.relax { background: #f4e8c4; color: #443311; border: 1px solid #ccaa66; }
+  .weather-verdict .next-wkd {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+
+  /* ── Event / Film Items ── */
+  .event-list { display: flex; flex-direction: column; gap: 0; }
+  .event-item {
+    display: flex;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid #eeeef4;
+    align-items: flex-start;
+  }
+  .event-item:last-child { border-bottom: none; }
+  .event-thumb {
+    width: 72px;
+    min-width: 72px;
+    height: 52px;
+    object-fit: cover;
+    border: 1px solid #ccccdd;
+    border-radius: 2px;
+    background: #e4e4ec;
+  }
+  .event-thumb-placeholder {
+    width: 72px;
+    min-width: 72px;
+    height: 52px;
+    background: #dddde8;
+    border: 1px solid #ccccdd;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #9999aa;
+  }
+  .event-info { flex: 1; min-width: 0; }
+  .event-title-row { display: flex; align-items: baseline; gap: 5px; flex-wrap: wrap; margin-bottom: 2px; }
+  .event-title { font-size: 13px; font-weight: 700; color: #111; }
+  .star-match { color: #cc6600; font-size: 12px; }
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 2px;
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+  .tag-venue { background: #e8e8f8; color: #334; border: 1px solid #ccccdd; }
+  .tag-time { background: #f4f0e8; color: #554; border: 1px solid #ddccaa; }
+  .tag-mubi { background: #1a1a6e; color: #fff; }
+  .tag-ifi { background: #2244aa; color: #fff; }
+  .tag-lh { background: #226688; color: #fff; }
+  .tag-rt { background: #fa320a; color: #fff; }
+  .tag-new { background: #228833; color: #fff; }
+  .tag-genre { background: #553399; color: #fff; }
+  .tag-free { background: #449944; color: #fff; }
+  .tag-sold-out { background: #aa2222; color: #fff; }
+  .event-meta { font-size: 11px; color: #778; margin-top: 2px; }
+  .event-desc { font-size: 12px; color: #334; margin-top: 2px; line-height: 1.4; }
+
+  /* ── Day divider ── */
+  .day-divider {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 6px 0 8px;
+  }
+  .day-divider span {
+    font-size: 11px;
+    font-weight: 700;
+    color: #556;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .day-divider hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid #ccccdd;
+  }
+
+  /* ── Film grid for cinema ── */
+  .film-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .film-card {
+    border: 1px solid #ccccdd;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #f8f8fc;
+  }
+  .film-poster {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+    background: #dddde8;
+  }
+  .film-poster-ph {
+    width: 100%;
+    height: 100px;
+    background: #dddde8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #9999aa;
+  }
+  .film-info { padding: 6px 7px; }
+  .film-title { font-size: 12px; font-weight: 700; color: #111; line-height: 1.3; margin-bottom: 3px; }
+  .film-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 3px; }
+  .film-meta { font-size: 10px; color: #778; }
+  .film-desc { font-size: 11px; color: #334; margin-top: 3px; line-height: 1.35; }
+
+  /* ── Streaming ── */
+  .stream-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media (max-width: 500px) { .stream-list { grid-template-columns: 1fr; } }
+  .stream-item {
+    border: 1px solid #ccccdd;
+    border-radius: 3px;
+    padding: 8px 10px;
+    background: #f8f8fc;
+  }
+  .stream-title-row { display: flex; align-items: baseline; gap: 5px; margin-bottom: 3px; flex-wrap: wrap; }
+  .stream-title { font-size: 13px; font-weight: 700; color: #111; }
+  .stream-meta { font-size: 11px; color: #778; }
+  .stream-desc { font-size: 11px; color: #334; margin-top: 3px; }
+
+  /* ── Food ── */
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    gap: 8px;
+  }
+  .food-card {
+    border: 1px solid #ccccdd;
+    border-radius: 3px;
+    padding: 8px 10px;
+    background: #f8f8fc;
+  }
+  .food-name { font-size: 13px; font-weight: 700; color: #111; margin-bottom: 2px; }
+  .food-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 3px; }
+  .food-location { font-size: 11px; color: #778; margin-bottom: 2px; }
+  .food-desc { font-size: 11px; color: #334; line-height: 1.35; }
+
+  /* ── MUBI Go featured box ── */
+  .mubi-featured {
+    background: #0d0d2b;
+    border-radius: 3px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    border: 1px solid #2a2a6e;
+  }
+  .mubi-label {
+    font-size: 10px;
+    font-weight: 700;
+    background: #1a1a6e;
+    color: #aabbff;
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .mubi-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 3px; }
+  .mubi-meta { font-size: 11px; color: #8899cc; margin-bottom: 4px; }
+  .mubi-desc { font-size: 12px; color: #ccd; line-height: 1.4; }
+  .mubi-cta {
+    margin-top: 6px;
+    font-size: 11px;
+    color: #aabbff;
+    font-weight: 600;
+  }
+
+  /* ── Section labels inside cards ── */
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #556;
+    margin: 6px 0 4px;
+    border-bottom: 1px solid #e4e4ec;
+    padding-bottom: 2px;
+  }
+
+  @media (max-width: 600px) {
+    .weather-grid { grid-template-columns: 1fr; }
+    .film-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div id="header">
+  <h1>🏙️ Dublin Weekend Plan</h1>
+  <span class="date-range">Friday 4 — Sunday 6 September 2026</span>
+  <span class="generated">Generated Fri 8am</span>
+</div>
+
+<div class="page">
+
+  <!-- ═══ WEATHER ═══ -->
+  <div class="card">
+    <div class="card-header">
+      <h2>☁️ Weekend Weather</h2>
+    </div>
+    <div class="card-body">
+      <div class="weather-grid">
+
+        <!-- Saturday -->
+        <div class="weather-day better">
+          <div class="better-badge">Better Day</div>
+          <div class="day-label">Saturday 5 Sep</div>
+          <div class="temp-row">
+            <span class="temp-hi">19°</span>
+            <span class="temp-lo">/ 12°C</span>
+          </div>
+          <div class="weather-desc">Dry start with morning sunshine; cloud builds through the afternoon. Light rain or drizzle developing by evening. Generally pleasant for outdoor plans before dusk.</div>
+          <div class="weather-meta">
+            <span class="rain">🌧 Rain: ~35% (eve)</span>
+            <span class="wind">💨 Light SW 15–20 km/h</span>
+          </div>
+        </div>
+
+        <!-- Sunday -->
+        <div class="weather-day">
+          <div class="day-label">Sunday 6 Sep</div>
+          <div class="temp-row">
+            <span class="temp-hi">21°</span>
+            <span class="temp-lo">/ 11°C</span>
+          </div>
+          <div class="weather-desc">Breezy with fresh and gusty southerly winds. Outbreaks of rain moving east through the morning and afternoon; clearing by early evening. Warmer but wetter — plan indoor activities or evening outings.</div>
+          <div class="weather-meta">
+            <span class="rain">🌧 Rain: ~70%</span>
+            <span class="wind">💨 Gusty S 30–45 km/h</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="weather-verdict balanced">
+        <span>📊 Verdict: <strong>Balanced weekend</strong> — Saturday is the clear pick for outdoor plans; Sunday leans indoor.</span>
+        <span class="next-wkd">📅 Next weekend (12–13 Sep): looks wetter — typical mid-September</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ TONIGHT (FRIDAY) ═══ -->
+  <div class="card">
+    <div class="card-header">
+      <h2>🌙 Tonight — Friday 4 September</h2>
+      <span class="card-badge">Evening 17–18°C · Dry</span>
+    </div>
+    <div class="card-body">
+      <div class="event-list">
+
+        <div class="event-item">
+          <div class="event-thumb-placeholder">🎛️</div>
+          <div class="event-info">
+            <div class="event-title-row">
+              <span class="event-title">Étienne de Crécy</span>
+              <span class="star-match">★</span>
+              <span class="tag tag-genre">Electronic</span>
+            </div>
+            <div style="margin-bottom:3px;">
+              <span class="tag tag-venue">Workman's Club</span>
+              <span class="tag tag-time">Tonight · Doors TBC</span>
+            </div>
+            <div class="event-desc">French electronic legend — architect of <em>Super Discount</em> — bringing his signature tech-house and electro sets to one of Dublin's best intimate venues. Perfect Roman pick.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-thumb-placeholder">🥁</div>
+          <div class="event-info">
+            <div class="event-title-row">
+              <span class="event-title">S.P.Y</span>
+              <span class="star-match">★</span>
+              <span class="tag tag-genre">D&amp;B / Underground</span>
+            </div>
+            <div style="margin-bottom:3px;">
+              <span class="tag tag-venue">Racket Space</span>
+              <span class="tag tag-time">11pm – 3am</span>
+            </div>
+            <div class="event-desc">Absys Rec × Bodytonic present underground D&amp;B legend S.P.Y — first Dublin appearance in two years. Pure liquid/jump-up warehouse energy for late-night diehards.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-thumb-placeholder">🎷</div>
+          <div class="event-info">
+            <div class="event-title-row">
+              <span class="event-title">Black Country, New Road</span>
+              <span class="star-match">★</span>
+              <span class="tag tag-genre">Post-Rock / Art</span>
+            </div>
+            <div style="margin-bottom:3px;">
+              <span class="tag tag-venue">National Concert Hall</span>
+              <span class="tag tag-time">Tonight</span>
+            </div>
+            <div class="event-desc">Mercury-nominated experimental collective bringing chamber-pop and post-rock grandeur to the NCH. Cerebral and beautiful — very different from the Racket Space.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ WEEKEND EVENTS ═══ -->
+  <div class="card">
+    <div class="card-header">
+      <h2>📅 Weekend Events — Sat &amp; Sun</h2>
+      <span class="card-badge">Better day: Saturday</span>
+    </div>
+    <div class="card-body">
+
+      <div class="day-divider">
+        <span>Saturday 5 Sep</span>
+        <hr>
+      </div>
+
+      <div class="event-list">
+
+        <div class="event-item">
+          <img class="event-thumb" src="https://romikser.github.io/rss-digest-private/assets/images/b946e640a4bc.jpeg" alt="Rachel Chinouriri" loading="lazy">
+          <div class="event-info">
+            <div class="event-title-row">
+              <span class="event-title">Rachel Chinouriri</span>
+              <span class="star-match">★</span>
+              <span class="tag tag-genre">Alt-R&amp;B / Alt</span>
+            </div>
+            <div style="margin-bottom:3px;">
+              <span class="tag tag-venue">The Academy</span>
+              <span class="tag tag-time">Sat evening</span>
+            </div>
+            <div class="event-desc">UK alt-R&amp;B star touring ahead of sophomore album <em>I think I spoke too soon</em> (Oct 16). Intimate headline set — already done US arenas supporting Gracie Abrams. Tickets on Ticketmaster.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-thumb-placeholder">🖼️</div>
+          <div class="event-info">
+            <div class="event-title-row">
+              <span class="event-title">Miriam McConnon: <em>No Mirrors Left in Gaza</em></span>
+              <span class="star-match">★</span>
+              <span class="tag tag-genre">Art Exhibition</span>
+            </div>
+            <div style="margin-bottom:3px;">
+              <span class="tag tag-venue">Olivier Cornet Gallery · Great Denmark St</span>
+              <span class="tag tag-free">Free</span>
+              <span class="tag tag-time">Until 27 Sep</span>
+            </div>
+            <div class="event-desc">Solo show exploring conflict, identity, and absence. Running through September 27 — this weekend is a good slot before crowds build. Also viewable in the gallery's 3D online space.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-thumb-placeholder">🥁</div>
+          <div class="event-info">
+            <div class="event-title-row">
+              <span class="event-title">Brazilian Independence Day with 353 Samba &amp; Namangaia</span>
+              <span class="tag tag-genre">Samba / Live</span>
+            </div>
+            <div style="margin-bottom:3px;">
+              <span class="tag tag-venue">Wigwam · Middle Abbey St</span>
+              <span class="tag tag-time">6pm – 1:30am</span>
+            </div>
+            <div class="event-desc">Authentic samba bands, food, caipirinhas, and dancing to celebrate Brazil's Independence Day. Loose and festive — good for a Saturday dinner-into-night vibe.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="day-divider" style="margin-top:10px;">
+        <span>Sunday 6 Sep</span>
+        <hr>
+      </div>
+
+      <div class="event-list">
+
+        <div class="event-item">
+          <div class="event-thumb-placeholder">🎵</div>
+          <div class="event-info">
+            <div class="event-title-row">
+              <span class="event-title">Sigur Rós</span>
+              <span class="star-match">★★</span>
+              <span class="tag tag-genre">Post-Rock / Ethereal</span>
+            </div>
+            <div style="margin-bottom:3px;">
+              <span class="tag tag-venue">Bord Gáis Energy Theatre</span>
+              <span class="tag tag-time">Sun evening</span>
+            </div>
+            <div class="event-desc"><strong>Weekend highlight.</strong> Icelandic legends performing their signature glacial soundscapes. The Bord Gáis is a magnificent space for this — one of the most immersive live shows you can see. Don't miss it.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-thumb-placeholder">🎛️</div>
+          <div class="event-info">
+            <div class="event-title-row">
+              <span class="event-title">Frost Children</span>
+              <span class="star-match">★</span>
+              <span class="tag tag-genre">Electronic / Indie</span>
+            </div>
+            <div style="margin-bottom:3px;">
+              <span class="tag tag-venue">Whelan's</span>
+              <span class="tag tag-time">Sun evening</span>
+            </div>
+            <div class="event-desc">NYC sibling duo making hyperpop/electronic music with a cult following. Weird, fun, danceable — and Whelan's is perfect for it. Also playing Tengu later that night.</div>
+          </div>
+        </div>
+
+        <div class="event-item">
+          <div class="event-thumb-placeholder">🎧</div>
+          <div class="event-info">
+            <div class="event-title-row">
+              <span class="event-title">Courtney Cox (with Storm &amp; Rusalka)</span>
+              <span class="star-match">★</span>
+              <span class="tag tag-genre">Electronic / Club</span>
+            </div>
+            <div style="margin-bottom:3px;">
+              <span class="tag tag-venue">Racket Space</span>
+              <span class="tag tag-time">Sun night</span>
+            </div>
+            <div class="event-desc">Underground Sunday club night at Racket Space — techno/electronic with support from Storm and Rusalka. Good alternative if Sigur Rós sells out or for after.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CINEMA ═══ -->
+  <div class="card">
+    <div class="card-header">
+      <h2>🎬 Cinema This Weekend</h2>
+    </div>
+    <div class="card-body">
+
+      <!-- MUBI Go -->
+      <div class="mubi-featured">
+        <div style="flex:1">
+          <div class="mubi-label">🎟 MUBI Go — Free Ticket This Week</div>
+          <div class="mubi-title">Check the MUBI Go App</div>
+          <div class="mubi-meta">Your weekly free cinema ticket is ready to claim</div>
+          <div class="mubi-desc">MUBI Go picks one hand-curated film per week for members. Open the MUBI Go app, select a showtime near you, and get a QR code for the box office. This week's MUBI September arrivals include <strong>Erupcja</strong> (Pete Ohs, 2025) — a free-spirited sun-soaked party film — and <strong>Summer 1993</strong> (Carla Simón) arriving on MUBI this weekend.</div>
+          <div class="mubi-cta">→ Open <a href="https://mubi.com/go" style="color:#aabbff;">mubi.com/go</a> to claim your ticket</div>
+        </div>
+      </div>
+
+      <div class="section-label">IFI — Irish Film Institute · Temple Bar</div>
+      <div class="film-grid">
+
+        <div class="film-card">
+          <img class="film-poster" src="https://romikser.github.io/rss-digest-private/assets/images/61b990984b17.png" alt="The Odyssey" loading="lazy">
+          <div class="film-info">
+            <div class="film-title">The Odyssey</div>
+            <div class="film-tags">
+              <span class="tag tag-ifi">IFI</span>
+              <span class="tag tag-time">12:55 · 70mm</span>
+            </div>
+            <div class="film-meta">Christopher Nolan · 172 min · 15A</div>
+            <div class="film-desc">Epic Homer adaptation — Matt Damon as Odysseus, Anne Hathaway, Tom Holland. Shot in 70mm; the IFI is one of the only places to see it correctly. Spectacular.</div>
+          </div>
+        </div>
+
+        <div class="film-card">
+          <img class="film-poster" src="https://romikser.github.io/rss-digest-private/assets/images/8e837868c939.jpg" alt="Tony" loading="lazy">
+          <div class="film-info">
+            <div class="film-title">Tony</div>
+            <div class="film-tags">
+              <span class="tag tag-ifi">IFI</span>
+              <span class="tag tag-time">20:50</span>
+            </div>
+            <div class="film-meta">Matt Johnson · 106 min · 15A</div>
+            <div class="film-desc">Origin story of 19-year-old Anthony Bourdain in 1975 Cape Cod — the summer that shaped the man. Warmly received festival favourite.</div>
+          </div>
+        </div>
+
+        <div class="film-card">
+          <div class="film-poster-ph">🎬</div>
+          <div class="film-info">
+            <div class="film-title">Bitter Christmas</div>
+            <div class="film-tags">
+              <span class="tag tag-ifi">IFI</span>
+              <span class="tag tag-lh">LH</span>
+              <span class="tag tag-time">15:30 / 20:40</span>
+            </div>
+            <div class="film-meta">Pedro Almodóvar · 111 min · 15A</div>
+            <div class="film-desc">An ad director retreats to Lanzarote to process grief; a filmmaker weaves her story into drama. Almodóvar working in his late, sun-drenched mode. Also at Lighthouse 14:20, 18:30.</div>
+          </div>
+        </div>
+
+        <div class="film-card">
+          <img class="film-poster" src="https://romikser.github.io/rss-digest-private/assets/images/ef4c0557f166.jpg" alt="Leviticus" loading="lazy">
+          <div class="film-info">
+            <div class="film-title">Leviticus</div>
+            <div class="film-tags">
+              <span class="tag tag-ifi">IFI</span>
+              <span class="tag tag-time">16:00 · 18:00</span>
+            </div>
+            <div class="film-meta">Adrian Chiarella · 88 min · 16</div>
+            <div class="film-desc">Two teenagers' secret relationship is exposed, triggering a conversion ceremony that summons something supernatural. Queer horror debut — unsettling and original.</div>
+          </div>
+        </div>
+
+        <div class="film-card">
+          <img class="film-poster" src="https://romikser.github.io/rss-digest-private/assets/images/d0a8a944f8c0.png" alt="I Want Your Sex" loading="lazy">
+          <div class="film-info">
+            <div class="film-title">I Want Your Sex</div>
+            <div class="film-tags">
+              <span class="tag tag-ifi">IFI</span>
+              <span class="tag tag-time">16:20 · 21:15</span>
+            </div>
+            <div class="film-meta">Gregg Araki · 90 min · 18</div>
+            <div class="film-desc">Araki's return — first film in 10+ years. Elliot becomes the sexual muse of an older artist; a frank, stylish exploration of desire and generational sexual politics. Also at Lighthouse 21:15. <span class="tag tag-rt">91% RT</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="section-label" style="margin-top:12px;">Light House Cinema · Smithfield</div>
+      <div class="film-grid">
+
+        <div class="film-card">
+          <div class="film-poster-ph">🎭</div>
+          <div class="film-info">
+            <div class="film-title">Late Fame</div>
+            <div class="film-tags">
+              <span class="tag tag-lh">LH</span>
+              <span class="tag tag-time">12:00 · 20:30</span>
+            </div>
+            <div class="film-meta">Kent Jones · 96 min · 15A</div>
+            <div class="film-desc">An overlooked NYC poet is suddenly rediscovered by enthusiastic twentysomethings. Dry, wry — what it means to be celebrated too late, or maybe just in time.</div>
+          </div>
+        </div>
+
+        <div class="film-card">
+          <div class="film-poster-ph">🧙</div>
+          <div class="film-info">
+            <div class="film-title">Kiki's Delivery Service 4K</div>
+            <div class="film-tags">
+              <span class="tag tag-lh">LH</span>
+              <span class="tag tag-time">13:00 · Subtitled</span>
+            </div>
+            <div class="film-meta">Hayao Miyazaki · 103 min · G</div>
+            <div class="film-desc">Studio Ghibli classic restored in 4K. Young witch finds her footing in a new city — pure warmth, charm, and gorgeous hand-drawn animation.</div>
+          </div>
+        </div>
+
+        <div class="film-card">
+          <img class="film-poster" src="https://romikser.github.io/rss-digest-private/assets/images/6ea2e738acf0.jpg" alt="Colony" loading="lazy">
+          <div class="film-info">
+            <div class="film-title">Colony</div>
+            <div class="film-tags">
+              <span class="tag tag-lh">LH</span>
+              <span class="tag tag-time">17:45</span>
+            </div>
+            <div class="film-meta">Yeon Sang-ho · 123 min · 16</div>
+            <div class="film-desc">Director of <em>Train to Busan</em> returns with a biotech conference that goes horrifically wrong as a mutating virus spreads. Korean blockbuster horror — visceral and well-paced.</div>
+          </div>
+        </div>
+
+        <div class="film-card">
+          <div class="film-poster-ph">🐺</div>
+          <div class="film-info">
+            <div class="film-title">Coyote vs. Acme</div>
+            <div class="film-tags">
+              <span class="tag tag-lh">LH</span>
+              <span class="tag tag-time">15:20</span>
+            </div>
+            <div class="film-meta">Dave Green · 103 min · PG</div>
+            <div class="film-desc">Wile E. Coyote sues ACME for product liability after decades of chaos. Live-action/animated comedy that Warner Bros. tried to bury — now getting its proper theatrical release. <span class="tag tag-rt">96% RT</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ STREAMING AT HOME ═══ -->
+  <div class="card">
+    <div class="card-header">
+      <h2>🛋️ Streaming at Home — Certified Fresh, Newest</h2>
+    </div>
+    <div class="card-body">
+      <div class="stream-list">
+
+        <div class="stream-item">
+          <div class="stream-title-row">
+            <span class="stream-title">Coyote vs. Acme</span>
+            <span class="tag tag-rt">96% RT</span>
+          </div>
+          <div class="stream-meta">Dave Green · 2026 · 103 min</div>
+          <div class="stream-desc">The film Warner Bros. refused to release is finally here — Wile E. Coyote takes ACME to court in a hilarious live-action/animated hybrid. One of the year's most fun surprises.</div>
+        </div>
+
+        <div class="stream-item">
+          <div class="stream-title-row">
+            <span class="stream-title">Wallace &amp; Gromit: Vengeance Most Fowl</span>
+            <span class="tag tag-rt">100% RT</span>
+          </div>
+          <div class="stream-meta">Nick Park, Merlin Crossingham · 2024 · Netflix</div>
+          <div class="stream-desc">The beloved duo is back in a glorious, funny special about garden gnomes and surveillance technology. Aardman at their absolute peak — don't sleep on it.</div>
+        </div>
+
+        <div class="stream-item">
+          <div class="stream-title-row">
+            <span class="stream-title">Toy Story 5</span>
+            <span class="tag tag-rt">93% RT</span>
+          </div>
+          <div class="stream-meta">2026 · Disney+</div>
+          <div class="stream-desc">Streaming Aug 18. Pixar's long-awaited continuation earns its spurs — touching, inventive, and not the cash-grab many feared.</div>
+        </div>
+
+        <div class="stream-item">
+          <div class="stream-title-row">
+            <span class="stream-title">Rose of Nevada</span>
+            <span class="tag tag-rt">92% RT</span>
+          </div>
+          <div class="stream-meta">2026 · Streaming Aug 18</div>
+          <div class="stream-desc">One of the year's quietly great films — earned a 92% on Rotten Tomatoes and slipped onto streaming with very little fanfare. Worth your Saturday night.</div>
+        </div>
+
+        <div class="stream-item">
+          <div class="stream-title-row">
+            <span class="stream-title">Romería</span>
+            <span class="tag tag-rt">92% RT</span>
+          </div>
+          <div class="stream-meta">2026 · Streaming Aug 18</div>
+          <div class="stream-desc">92% certified fresh. Festival circuit favourite now on streaming — expect something emotionally precise and visually considered.</div>
+        </div>
+
+        <div class="stream-item">
+          <div class="stream-title-row">
+            <span class="stream-title">Mayday</span>
+            <span class="tag tag-rt">84% RT</span>
+          </div>
+          <div class="stream-meta">2026 · Streaming from 4 Sep</div>
+          <div class="stream-desc">Brand new on streaming today (Sep 4). Fresh pick for a rainy Sunday afternoon — check platforms now.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ FOOD & OPENINGS ═══ -->
+  <div class="card">
+    <div class="card-header">
+      <h2>🍽️ New Openings &amp; Worth-Knowing Spots</h2>
+    </div>
+    <div class="card-body">
+      <div class="food-grid">
+
+        <div class="food-card">
+          <div class="food-tags">
+            <span class="tag tag-new">New</span>
+            <span class="tag tag-genre">Northern Thai BBQ</span>
+          </div>
+          <div class="food-name">Achara</div>
+          <div class="food-location">📍 Aston Quay, Dublin 2</div>
+          <div class="food-desc">From the Crudo / Hera team — Northern Thai BBQ using Donegal squid, Leinster lamb ribs, and other Irish produce. Sounds excellent. Weekend queue likely.</div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-tags">
+            <span class="tag tag-new">New</span>
+            <span class="tag tag-genre">Irish-Filipino</span>
+          </div>
+          <div class="food-name">Kaldero</div>
+          <div class="food-location">📍 South King Street, Dublin 2</div>
+          <div class="food-desc">Dublin's <strong>first Irish-Filipino restaurant</strong> — open-fire cooking with regional Filipino flavours. A genuine gap in the city's food scene, now filled.</div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-tags">
+            <span class="tag tag-new">New</span>
+            <span class="tag tag-genre">Seasonal Irish</span>
+          </div>
+          <div class="food-name">Comet</div>
+          <div class="food-location">📍 Joshua Lane, Dublin 2</div>
+          <div class="food-desc">Nordic-influenced produce-first cooking by Kevin O'Donnell (ex-Bastible, Kadeau Copenhagen). Quiet, focused, and probably the best new tasting-menu option in the city right now.</div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-tags">
+            <span class="tag tag-new">New</span>
+            <span class="tag tag-genre">Seafood Bar</span>
+          </div>
+          <div class="food-name">Allta na Farraige</div>
+          <div class="food-location">📍 Grand Canal Dock, Dublin 2</div>
+          <div class="food-desc">Seafood cocktail bar from the team behind the acclaimed Allta tasting menu. "Equally original and thrilling" — oysters, natural wine, and harbour views. Great for Sunday early evening.</div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-tags">
+            <span class="tag tag-new">New</span>
+            <span class="tag tag-genre">Chinese Street Food</span>
+          </div>
+          <div class="food-name">Hawker</div>
+          <div class="food-location">📍 Rathgar Road, Dublin 6</div>
+          <div class="food-desc">Hong Kong street food by the Hang Dai team — Sichuan spring rolls, Iberico sweet &amp; sour pork. Modern and punchy; brings a proper Hong Kong sensibility to a Dublin southside address.</div>
+        </div>
+
+        <div class="food-card">
+          <div class="food-tags">
+            <span class="tag tag-new">New</span>
+            <span class="tag tag-genre">Thai / SE Asian</span>
+          </div>
+          <div class="food-name">Kin Dee</div>
+          <div class="food-location">📍 Leeson Street Upper</div>
+          <div class="food-desc">Sister to Little Kitchen; thirteen signature Thai dishes including a Thai-style scotch egg. Lunch menu all-starters €9, mains €18 — very good value for the area.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; font-size:11px; color:#889; padding: 6px 0 14px;">
+    Generated automatically · Dublin Weekend Plan · Fri 4 Sep 2026 08:00 IST
+  </div>
+
+</div>
+</body>
+</html>
