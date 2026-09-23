@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dublin Weekend Heads-Up — Sep 26–27, 2026</title>
+<style>
+  body {
+    background: #e8e8f0;
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #222;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-bottom: 24px;
+  }
+  .header {
+    background: #cc0000;
+    color: #fff;
+    padding: 14px 16px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .header .date-range {
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 4px;
+    opacity: 0.9;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #aaaacc;
+    margin: 14px 12px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .card-header {
+    background: linear-gradient(to bottom, #d8e8f8, #b8ccec);
+    border-bottom: 1px solid #aaaacc;
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+  }
+  .card-body {
+    padding: 10px 12px;
+  }
+  .weather-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .weather-day {
+    border: 1px solid #ccccdd;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+    background: #f4f6fc;
+  }
+  .weather-day h3 {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    color: #0000cc;
+  }
+  .weather-temp {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 4px 0;
+  }
+  .weather-desc {
+    font-size: 12px;
+    color: #444;
+    margin: 2px 0;
+  }
+  .weather-rain {
+    font-size: 12px;
+    color: #0055aa;
+  }
+  .weather-note {
+    font-size: 11px;
+    color: #888;
+    margin-top: 8px;
+  }
+  .event-item {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0ec;
+  }
+  .event-item:last-child {
+    border-bottom: none;
+  }
+  .thumb {
+    width: 110px;
+    height: 74px;
+    object-fit: cover;
+    border: 1px solid #ccccdd;
+    flex-shrink: 0;
+    background: #eeeef6;
+  }
+  .thumb-placeholder {
+    width: 110px;
+    height: 74px;
+    border: 1px solid #ccccdd;
+    background: #eeeef6;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+  }
+  .event-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .event-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .event-title-row a {
+    color: #0000cc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .event-title-row a:hover {
+    text-decoration: underline;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    background: #cc0000;
+    border-radius: 2px;
+    padding: 1px 5px;
+    vertical-align: middle;
+  }
+  .tag-navy {
+    background: #223366;
+  }
+  .tag-blue {
+    background: #3366aa;
+  }
+  .tag-green {
+    background: #2a8a4a;
+  }
+  .event-meta {
+    font-size: 12px;
+    color: #666;
+    margin: 3px 0 3px 0;
+  }
+  .event-desc {
+    font-size: 12px;
+    color: #333;
+    margin: 0;
+  }
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    padding: 16px 12px 24px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    🏙️ Dublin Weekend Heads-Up
+    <span class="date-range">Saturday 26 – Sunday 27 September 2026</span>
+  </div>
+
+  <div class="card">
+    <div class="card-header">☀️ Weather</div>
+    <div class="card-body">
+      <div class="weather-grid">
+        <div class="weather-day">
+          <h3>Saturday 26</h3>
+          <div class="weather-temp">15–19°C</div>
+          <div class="weather-desc">Dry, bright start with sunny spells; scattered showers, heavier rain moving into west/north later</div>
+          <div class="weather-rain">Rain: scattered showers</div>
+          <div class="weather-rain">Wind: moderate–fresh S/SW</div>
+        </div>
+        <div class="weather-day">
+          <h3>Sunday 27</h3>
+          <div class="weather-temp">13–17°C</div>
+          <div class="weather-desc">Generally cloudy with widespread rain, heavy at times</div>
+          <div class="weather-rain">Rain: widespread</div>
+          <div class="weather-rain">Wind: moderate–fresh S, easing W later</div>
+        </div>
+      </div>
+      <div class="weather-note">Source: Met Éireann national forecast. No official rain % published — described qualitatively.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">🎉 Events</div>
+    <div class="card-body">
+
+      <div class="event-item">
+        <img class="thumb-placeholder" style="display:none;">
+        <div class="thumb-placeholder">No image</div>
+        <div class="event-info">
+          <div class="event-title-row">
+            <a href="https://www.eventbrite.ie/e/max-cooper-dj-bf30-tickets-1994148186908" target="_blank" rel="noopener">Max Cooper DJ — Button Factory 30th Anniversary</a>
+            <span class="tag">★</span>
+          </div>
+          <div class="event-meta">Button Factory, Temple Bar · Sat 26 Sep, 11:00pm–3:00am</div>
+          <p class="event-desc">Electronic composer known for fusing music, visuals and science headlines the venue's 30-year anniversary series. Over-18s, ID required.</p>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <img class="thumb" src="https://romikser.github.io/rss-digest-private/assets/images/6cc5c4830377.jpeg" alt="Student Forum 2026 exhibition">
+        <div class="event-info">
+          <div class="event-title-row">
+            <a href="https://thedouglashyde.ie/" target="_blank" rel="noopener">Student Forum 2026: "The Conditions of Being Here"</a>
+            <span class="tag">★</span>
+          </div>
+          <div class="event-meta">Douglas Hyde Gallery, TCD · Sat–Sun, 12–5pm (live performance Sat 1–2:30pm)</div>
+          <p class="event-desc">Group exhibition on how artists are shaped by urban/rural environments, activated by a live durational performance on Saturday.</p>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <img class="thumb" src="https://romikser.github.io/rss-digest-private/assets/images/d36e0598fd47.jpg" alt="Joe Jackson Hope and Fury Tour">
+        <div class="event-info">
+          <div class="event-title-row">
+            <a href="https://www.3olympia.ie/whats-on/joe-jackson" target="_blank" rel="noopener">Joe Jackson — Hope and Fury Tour</a>
+          </div>
+          <div class="event-meta">3Olympia Theatre · Sun 27 Sep, doors 7:00pm</div>
+          <p class="event-desc">Veteran alt/new-wave songwriter on tour behind new album "Hope and Fury." Note: sold out.</p>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="thumb-placeholder">No image</div>
+        <div class="event-info">
+          <div class="event-title-row">
+            <a href="https://3arena.ie/events/westlife" target="_blank" rel="noopener">Westlife — The 25th Anniversary World Tour</a>
+          </div>
+          <div class="event-meta">3Arena · Sat 26 Sep, doors 6:00pm (final night of 5-night residency)</div>
+          <p class="event-desc">Large-scale arena finale marking Westlife's 25th anniversary, with special guest BIIRD.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">🎬 Cinema</div>
+    <div class="card-body">
+
+      <div class="event-item">
+        <img class="thumb" src="https://romikser.github.io/rss-digest-private/assets/images/f07772459277.jpg" alt="Bad Apples MUBI Go pick">
+        <div class="event-info">
+          <div class="event-title-row">
+            <a href="https://mubi.com/go" target="_blank" rel="noopener">Bad Apples</a>
+            <span class="tag tag-navy">MUBI GO</span>
+          </div>
+          <div class="event-meta">dir. Jonatan Etzler · Playing at IFI &amp; Light House this weekend</div>
+          <p class="event-desc">Saoirse Ronan stars as an overwhelmed teacher whose handling of a disruptive pupil spirals into a moral quagmire — dark satire on Britain's education system. Free with MUBI GO membership.</p>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <img class="thumb" src="https://romikser.github.io/rss-digest-private/assets/images/bb5229e31aa2.png" alt="The Lost Children of Tuam poster">
+        <div class="event-info">
+          <div class="event-title-row">
+            <a href="https://ifi.ie/films/the-lost-children-of-tuam-2" target="_blank" rel="noopener">The Lost Children of Tuam</a>
+            <span class="tag tag-blue">IFI</span>
+          </div>
+          <div class="event-meta">dir. Frank Berry · Sat 1:30pm, 6:45pm · Sun 11:00am, 4:40pm, 6:40pm</div>
+          <p class="event-desc">Restrained, moving procedural following historian Catherine Corless's investigation into the Tuam mother-and-baby home burials.</p>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <img class="thumb" src="https://romikser.github.io/rss-digest-private/assets/images/5201787960d9.png" alt="Everybody Digs Bill Evans poster">
+        <div class="event-info">
+          <div class="event-title-row">
+            <a href="https://www.lighthousecinema.ie/film/everybody-digs-bill-evans" target="_blank" rel="noopener">Everybody Digs Bill Evans</a>
+            <span class="tag tag-blue">Light House</span>
+          </div>
+          <div class="event-meta">dir. Grant Gee · Also showing at IFI · Daily screenings, ~12:30–6:20pm</div>
+          <p class="event-desc">Jazz pianist Bill Evans forms his perfect trio, then must find his way back to music after tragedy — Silver Bear winner at Berlin 2026.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">🍽️ Food &amp; New Openings</div>
+    <div class="card-body">
+
+      <div class="event-item">
+        <img class="thumb" src="https://romikser.github.io/rss-digest-private/assets/images/0d2f2e6f0c22.jpg" alt="Little Canton">
+        <div class="event-info">
+          <div class="event-title-row">
+            <a href="https://www.allthefood.ie/restaurants/little-canton" target="_blank" rel="noopener">Little Canton</a>
+            <span class="tag tag-green">New</span>
+          </div>
+          <div class="event-meta">Drury Hall, Stephen St Lower, Dublin 2</div>
+          <p class="event-desc">Hong Kong-style cha chaan teng from the China Hunan/Hakkahan team — roast duck, char siu, and viral iced lemon tea with "teddy bear" ice.</p>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="thumb-placeholder">No image</div>
+        <div class="event-info">
+          <div class="event-title-row">
+            <a href="https://www.thelinenyard.ie/" target="_blank" rel="noopener">The Linen Yard</a>
+            <span class="tag tag-green">New</span>
+          </div>
+          <div class="event-meta">Greenmount Ave, Harold's Cross, Dublin 12</div>
+          <p class="event-desc">Dog-friendly food yard — coffee, sourdough pizza, poké and churros — alongside a Nordic wellness spa with wood-fired sauna and plunge pool.</p>
+        </div>
+      </div>
+
+      <div class="event-item">
+        <div class="thumb-placeholder">No image</div>
+        <div class="event-info">
+          <div class="event-title-row">
+            <a href="https://districtmagazine.ie/news/news-round-up-openers-closures-launches-and-dog-friendly-cafes/" target="_blank" rel="noopener">Be Sweet Café</a>
+            <span class="tag tag-green">New</span>
+          </div>
+          <div class="event-meta">14 Clarendon Street, Dublin 2</div>
+          <p class="event-desc">First sit-in café from Howth confectioner Be Sweet — colourful spirulina and butterfly pea lattes, cakes and pastries.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    Early heads-up — detailed plan follows on Friday
+  </div>
+
+</div>
+</body>
+</html>
