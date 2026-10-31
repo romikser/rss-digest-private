@@ -40,12 +40,20 @@ button.w.on{color:#cc0000;border-bottom-color:#cc0000;}
 .quiz-bar{padding:5px 10px;background:#fff3cc;border-top:1px solid #cccc00;font-size:12px;display:flex;align-items:center;gap:10px;}
 .quiz-btn{padding:2px 10px;background:#eeeef8;border:1px solid #aaaacc;color:#0000cc;font-size:12px;cursor:pointer;font-family:inherit;}
 .quiz-btn:hover{background:#d8e8f8;}
+.tadoku-intro{padding:10px 12px 4px;font-size:13px;line-height:1.55;}
+.tadoku-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:8px 12px 12px;}
+.tadoku-card{display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:12px;background:#f7f7fd;border:1px solid #d9d9eb;border-radius:3px;min-width:0;}
+.tadoku-card strong{font-size:15px;line-height:1.5;overflow-wrap:anywhere;}
+.tadoku-card a{font-size:13px;font-weight:bold;}
+.tadoku-level{font-size:11px;color:#555;}
+.tadoku-credit{padding:0 12px 12px;color:#666;font-size:11px;line-height:1.5;}
+@media(max-width:520px){.tadoku-grid{grid-template-columns:1fr;}}
 footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px solid #ccc;background:#f0f0f8;margin-top:2px;}
 </style>
 </head>
 <body>
 <div id="hd"><div id="hd-in"><div id="logo">日本語練習<span> · ダブリン</span></div><div id="hd-r">2026年10月31日</div></div></div>
-<div id="nav"><a href="#t1" class="on">第1テキスト</a><a href="#t2">第2テキスト</a><a href="#t3">第3テキスト</a><a href="#vocab">語彙</a></div>
+<div id="nav"><a href="#t1" class="on">第1テキスト</a><a href="#t2">第2テキスト</a><a href="#t3">第3テキスト</a><a href="#tadoku-picks">Tadoku N5/N4</a><a href="#vocab">語彙</a></div>
 <div id="wrap">
 <div class="box" id="t1">
 <div class="bh">① ダブリンの<ruby>雨<rt>あめ</rt></ruby>とコーヒー<span class="sub">文法: 〜てから ／ 〜のに ／ 〜ながら</span></div>
@@ -80,6 +88,7 @@ footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px so
 <tr><td><ruby>見<rt>み</rt></ruby></td><td>み</td><td>see</td></tr><tr><td><ruby>気<rt>き</rt></ruby></td><td>き</td><td>feeling / interest</td></tr><tr><td><ruby>一<rt>いち</rt></ruby></td><td>いち</td><td>one</td></tr><tr><td><ruby>音<rt>おと</rt></ruby></td><td>おと</td><td>sound</td></tr><tr><td><ruby>本<rt>ほん</rt></ruby></td><td>ほん</td><td>book</td></tr>
 </tbody></table>
 </div>
+<section class="box" id="tadoku-picks"><div class="bh">Tadoku · 今日の読みもの <span class="sub">Free graded readers</span></div><div class="tadoku-intro">Two real Japanese books alongside today’s practice texts. Pick either one; skip difficult words and change books if it feels too hard.</div><div class="tadoku-grid"><div class="tadoku-card" data-level="1"><span class="tadoku-level">N5 · Tadoku Level 1</span><strong>泣く女</strong><a href="https://tadoku.org/japanese/book/38370/" target="_blank" rel="noopener noreferrer" aria-label="Read 泣く女 on Tadoku (opens in new tab)">Read on Tadoku ↗</a></div><div class="tadoku-card" data-level="2"><span class="tadoku-level">N4 · Tadoku Level 2</span><strong>やせうま</strong><a href="https://tadoku.org/japanese/book/3152/" target="_blank" rel="noopener noreferrer" aria-label="Read やせうま on Tadoku (opens in new tab)">Read on Tadoku ↗</a></div></div><p class="tadoku-credit">Books by <a href="https://tadoku.org/japanese/en/" target="_blank" rel="noopener noreferrer">NPO多言語多読</a>. Read on Tadoku; books are not hosted here. Levels 1/2 correspond approximately to JLPT N5/N4.</p></section>
 </div>
 <div id="tip"></div>
 <script>
