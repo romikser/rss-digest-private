@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>日本語練習 · 2026-11-11</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#e8e8f0;font:12px/1.5 "Hiragino Sans","MS PGothic","MS Gothic",Arial,sans-serif;color:#333;}
+a{color:#0000cc;text-decoration:none;}
+#hd{background:#fff;border-bottom:3px solid #cc0000;padding:4px 10px;}
+#hd-in{display:flex;align-items:center;justify-content:space-between;}
+#logo{font-size:15px;font-weight:bold;color:#cc0000;}
+#logo span{color:#333;font-weight:normal;font-size:13px;}
+#hd-r{font-size:11px;color:#666;}
+#nav{background:#eeeef8;border-bottom:1px solid #aaaacc;padding:0 10px;line-height:1;}
+#nav a{display:inline-block;padding:4px 10px;font-size:12px;color:#0000cc;border:1px solid transparent;border-bottom:none;margin-bottom:-1px;position:relative;background:transparent;text-decoration:none;}
+#nav a.on{background:#fff;border-color:#aaaacc #aaaacc #fff;color:#333;font-weight:bold;}
+#nav a:hover{background:#f5f5ff;border-color:#aaaacc;color:#333;}
+#wrap{max-width:760px;margin:6px auto;padding:0 6px;}
+.box{background:#fff;border:1px solid #aaaacc;margin-bottom:6px;overflow:hidden;}
+.bh{background:linear-gradient(180deg,#d8e8f8 0%,#b8ccec 100%);border-bottom:1px solid #aaaacc;padding:3px 8px;font-size:12px;font-weight:bold;color:#333;line-height:1.6;}
+.bh .sub{float:right;font-size:10px;font-weight:normal;color:#555;line-height:1.9;}
+.text-area{padding:14px 16px;font-size:18px;line-height:2.8;font-family:"Hiragino Sans","Meiryo","Yu Gothic",sans-serif;}
+.gnote{padding:4px 10px 6px;font-size:11px;color:#666;background:#f7f7fd;border-top:1px solid #e0e0ee;}
+ruby rt{font-size:.45em;color:#888;}
+button.w{display:inline;background:none;border:none;border-bottom:1px dotted #0000cc;color:#0000cc;font:inherit;font-size:1em;padding:0;margin:0;cursor:pointer;line-height:inherit;-webkit-tap-highlight-color:rgba(0,0,204,.15);}
+button.w:hover{color:#cc0000;border-bottom-color:#cc0000;}
+button.w.on{color:#cc0000;border-bottom-color:#cc0000;}
+#tip{display:none;position:fixed;background:#ffff99;color:#333;padding:5px 10px;font-size:11px;font-family:Arial,sans-serif;z-index:9999;white-space:nowrap;border:1px solid #cccc00;box-shadow:2px 2px 4px rgba(0,0,0,.25);pointer-events:none;line-height:1.5;}
+#tip.on{display:block;}
+#tip::after{content:'';position:absolute;left:var(--ax,50%);transform:translateX(-50%);border:5px solid transparent;}
+#tip.up::after{bottom:100%;border-bottom-color:#cccc00;}
+#tip.dn::after{top:100%;border-top-color:#cccc00;}
+.ktable{width:100%;border-collapse:collapse;font-size:12px;margin-top:0;}
+.ktable th{background:#eeeef8;padding:4px 8px;text-align:left;border:1px solid #aaaacc;font-weight:bold;color:#333;}
+.ktable td{padding:4px 8px;border:1px solid #e0e0ee;}
+.ktable td:first-child{font-size:15px;font-family:"Hiragino Sans","Meiryo",sans-serif;width:2.5em;}
+.ktable tr:nth-child(even) td{background:#f7f7fd;}
+.quiz-bar{padding:5px 10px;background:#fff3cc;border-top:1px solid #cccc00;font-size:12px;display:flex;align-items:center;gap:10px;}
+.quiz-btn{padding:2px 10px;background:#eeeef8;border:1px solid #aaaacc;color:#0000cc;font-size:12px;cursor:pointer;font-family:inherit;}
+.quiz-btn:hover{background:#d8e8f8;}
+.tadoku-intro{padding:10px 12px 4px;font-size:13px;line-height:1.55;}
+.tadoku-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:8px 12px 12px;}
+.tadoku-card{display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:12px;background:#f7f7fd;border:1px solid #d9d9eb;border-radius:3px;min-width:0;}
+.tadoku-card strong{font-size:15px;line-height:1.5;overflow-wrap:anywhere;}
+.tadoku-card a{font-size:13px;font-weight:bold;}
+.tadoku-level{font-size:11px;color:#555;}
+.tadoku-credit{padding:0 12px 12px;color:#666;font-size:11px;line-height:1.5;}
+@media(max-width:520px){.tadoku-grid{grid-template-columns:1fr;}}
+footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px solid #ccc;background:#f0f0f8;margin-top:2px;}
+</style>
+</head>
+<body>
+<div id="hd"><div id="hd-in"><div id="logo">日本語練習<span> · ダブリン</span></div><div id="hd-r">2026-11-11</div></div></div>
+<div id="nav"><a href="#t1" class="on">第1テキスト</a><a href="#t2">第2テキスト</a><a href="#t3">第3テキスト</a><a href="#tadoku-picks">Tadoku N5/N4</a><a href="#vocab">語彙</a></div>
+<div id="wrap">
+<div class="box" id="t1">
+<div class="bh">① レモンを半分にしたあと <span class="sub">文法: 〜ことになる ／ 〜ておく ／ 〜つもり</span></div>
+<div class="text-area">
+<p><button class="w" data-en="cooking class"><ruby>料理教室<rt>りょうりきょうしつ</rt></ruby></button>で、サキたちはレモンのケーキを作ることになりました。先生は「<button class="w" data-en="peel; rind"><ruby>皮<rt>かわ</rt></ruby></button>を使いますから、洗っておいてください」と言いました。サキはレモンを<button class="w" data-en="all; entirely"><ruby>全部<rt>ぜんぶ</rt></ruby></button>しぼるつもりで、<button class="w" data-en="half"><ruby>半分<rt>はんぶん</rt></ruby></button>に切ってしまいました。ボウルにすっぱい<button class="w" data-en="juice"><ruby>汁<rt>しる</rt></ruby></button>が入り、友だちが目を丸くしました。「これではケーキがすっぱすぎませんか」とサキが聞きました。先生は「まだケーキのたねはありますか」と言いました。</p>
+<p>友だちが<button class="w" data-en="refrigerator"><ruby>冷蔵庫<rt>れいぞうこ</rt></ruby></button>からたねを出すと、先生は二つに分けました。一つにはいつもの<button class="w" data-en="amount"><ruby>量<rt>りょう</rt></ruby></button>の皮を入れ、もう一つにはしぼった汁を入れました。<button class="w" data-en="until it finishes baking"><ruby>焼<rt>や</rt></ruby>けるまで</button>、みんなでどちらがおいしいか<ruby>紙<rt>かみ</rt></ruby>に<button class="w" data-en="prediction; guess"><ruby>予想<rt>よそう</rt></ruby></button>を書きました。すっぱい方はそのままだと<ruby>強<rt>つよ</rt></ruby>い味でしたが、先生がヨーグルトをのせました。すると、こちらが好きだと言う人もいました。サキはレシピの「皮」に丸をつけ、次はよく読むつもりです。</p>
+</div>
+<div class="gnote">〜ことになる: a decision is made; 〜ておく: do something in preparation; 〜つもり: intend to do something. 「皮を使う」のに、サキは汁までしぼってしまいました。</div>
+<div class="quiz-bar"><button class="quiz-btn">クイズ開始</button> 下線のことばを押すと英語が出ます。</div>
+<table class="ktable"><tr><th>漢字</th><th>読み</th><th>意味</th></tr><tr><td>皮</td><td>かわ</td><td>peel</td></tr><tr><td>量</td><td>りょう</td><td>amount</td></tr><tr><td>予想</td><td>よそう</td><td>prediction</td></tr></table>
+</div>
+<div class="box" id="t2">
+<div class="bh">② 画面の外の三歩 <span class="sub">文法: 〜のに ／ 〜かもしれない ／ 〜うちに</span></div>
+<div class="text-area">
+<p><button class="w" data-en="after finishing watching a film"><ruby>映画<rt>えいが</rt></ruby>を見<ruby>終<rt>お</rt></ruby>わったあと</button>、<ruby>映画館<rt>えいがかん</rt></ruby>で話し合いがありました。マオは<ruby>最後<rt>さいご</rt></ruby>の<button class="w" data-en="scene"><ruby>場面<rt>ばめん</rt></ruby></button>がかなしいと思ったのに、となりの人は笑っていました。「どうして笑ったんですか」と聞くと、「足の音が聞こえたから」と答えました。<button class="w" data-en="the main character"><ruby>主人公<rt>しゅじんこう</rt></ruby></button>は一人で部屋にいるのに、<button class="w" data-en="from off-screen"><ruby>画面<rt>がめん</rt></ruby>の外から</button>足音がしたそうです。聞こえなかったので、<ruby>係<rt>かかり</rt></ruby>の人にたのんで、その場面をもう一度見ました。<button class="w" data-en="to listen carefully">耳をすます</button>と、三回、木のゆかを歩く音がしました。</p>
+<p>「帰ってきた犬かもしれません」とマオが言いました。となりの人は「私は子どもだと思いました」と言いました。映画には<button class="w" data-en="answer"><ruby>答<rt>こた</rt></ruby>え</button>が書いてありませんし、作った人もいません。けれど、音について話しているうちに、ほかの場面まで思い出しました。帰る前、マオは三回の音を<button class="w" data-en="to jot down; make a note">メモしました</button>。同じ映画を見たのに、二人には少しちがう<button class="w" data-en="story"><ruby>物語<rt>ものがたり</rt></ruby></button>がのこりました。</p>
+</div>
+<div class="gnote">〜のに: although / despite; 〜かもしれない: might be; 〜うちに: while something is happening. 音の正体は決めず、二人の読み方のちがいを楽しみます。</div>
+<div class="quiz-bar"><button class="quiz-btn">クイズ開始</button> 下線のことばを押すと英語が出ます。</div>
+<table class="ktable"><tr><th>漢字</th><th>読み</th><th>意味</th></tr><tr><td>場面</td><td>ばめん</td><td>scene</td></tr><tr><td>主人公</td><td>しゅじんこう</td><td>main character</td></tr><tr><td>物語</td><td>ものがたり</td><td>story</td></tr></table>
+</div>
+<div class="box" id="t3">
+<div class="bh">③ 坂で聞こえた音 <span class="sub">文法: 〜と ／ 〜つもり ／ 〜たまま</span></div>
+<div class="text-area">
+<p><button class="w" data-en="bicycle"><ruby>自転車<rt>じてんしゃ</rt></ruby></button>で<button class="w" data-en="hill; slope"><ruby>坂<rt>さか</rt></ruby></button>を上っていると、<ruby>後<rt>うし</rt></ruby>ろからカタカタと音がしました。止まって<button class="w" data-en="tire">タイヤ</button>を見ましたが、何もついていません。坂の上まで走るつもりだったので、少し先へ<ruby>進<rt>すす</rt></ruby>みました。しかし音は大きくなり、こわくなって道のはしに止まりました。近くで休んでいた男の人が「<button class="w" data-en="why not look at your bag?">かばんを見てみたら</button>」と言いました。かばんは自転車の後ろにかけたままで、横の小さな<button class="w" data-en="metal fitting; clasp"><ruby>金具<rt>かなぐ</rt></ruby></button>がゆれていました。</p>
+<p>金具が自転車に<ruby>当<rt>あ</rt></ruby>たって、あの音が出ていたのです。こわれたと思っていた私は<button class="w" data-en="to feel relieved">ほっとして</button>、金具をかばんの中に入れました。男の人は「自転車より先に、<button class="w" data-en="things you carry; belongings"><ruby>持<rt>も</rt></ruby>ち<ruby>物<rt>もの</rt></ruby></button>を見るといいですよ」と笑いました。そのあとは<button class="w" data-en="quiet"><ruby>静<rt>しず</rt></ruby>か</button>になりましたが、坂は思ったより長く<ruby>感<rt>かん</rt></ruby>じました。上に着いて水を飲むと、今度は自分の<button class="w" data-en="breathing"><ruby>息<rt>いき</rt></ruby></button>だけが聞こえました。下り道では速く走らず、その静かさを楽しみました。</p>
+</div>
+<div class="gnote">〜と: when one thing happens, another follows; 〜つもり: intention; 〜たまま: left in a certain state. 自転車ではなく、かばんの金具が音を出していました。</div>
+<div class="quiz-bar"><button class="quiz-btn">クイズ開始</button> 下線のことばを押すと英語が出ます。</div>
+<table class="ktable"><tr><th>漢字</th><th>読み</th><th>意味</th></tr><tr><td>坂</td><td>さか</td><td>hill</td></tr><tr><td>金具</td><td>かなぐ</td><td>metal fitting</td></tr><tr><td>息</td><td>いき</td><td>breath</td></tr></table>
+</div>
+<section class="box" id="tadoku-picks"><div class="bh">Tadoku · 今日の読みもの <span class="sub">Free graded readers</span></div><div class="tadoku-intro">Two real Japanese books alongside today’s practice texts. Pick either one; skip difficult words and change books if it feels too hard.</div><div class="tadoku-grid"><div class="tadoku-card" data-level="1"><span class="tadoku-level">N5 · Tadoku Level 1</span><strong>三まいのおふだ</strong><a href="https://tadoku.org/japanese/book/47818/" target="_blank" rel="noopener noreferrer" aria-label="Read 三まいのおふだ on Tadoku (opens in new tab)">Read on Tadoku ↗</a></div><div class="tadoku-card" data-level="2"><span class="tadoku-level">N4 · Tadoku Level 2</span><strong>北海道</strong><a href="https://tadoku.org/japanese/book/6987/" target="_blank" rel="noopener noreferrer" aria-label="Read 北海道 on Tadoku (opens in new tab)">Read on Tadoku ↗</a></div></div><p class="tadoku-credit">Books by <a href="https://tadoku.org/japanese/en/" target="_blank" rel="noopener noreferrer">NPO多言語多読</a>. Read on Tadoku; books are not hosted here. Levels 1/2 correspond approximately to JLPT N5/N4.</p></section>
+</div>
+<div id="tip"></div>
+<script>
+var tip=document.getElementById('tip'),active=null;
+function pos(el){
+  var r=el.getBoundingClientRect(),vw=window.innerWidth;
+  var tw=Math.min(300,vw*.9);
+  tip.style.maxWidth=tw+'px';
+  var cx=r.left+r.width/2;
+  var left=Math.max(8,Math.min(cx-tw/2,vw-tw-8));
+  tip.style.left=left+'px';
+  var ax=Math.max(12,Math.min(cx-left,tw-12));
+  tip.style.setProperty('--ax',ax+'px');
+  var th=tip.offsetHeight||30;
+  if(r.top>=th+12){tip.style.top=(r.top-th-8)+'px';tip.className='on dn';}
+  else{tip.style.top=(r.bottom+8)+'px';tip.className='on up';}
+}
+function show(el){
+  if(active)active.classList.remove('on');
+  active=el;el.classList.add('on');
+  tip.textContent=el.getAttribute('data-en');
+  tip.classList.add('on');pos(el);
+}
+function hide(){if(active){active.classList.remove('on');active=null;}tip.className='';}
+document.querySelectorAll('button.w').forEach(function(el){
+  el.addEventListener('click',function(e){e.stopPropagation();active===this?hide():show(this);});
+});
+document.addEventListener('click',hide);
+window.addEventListener('scroll',function(){if(active)pos(active);},{passive:true});
+window.addEventListener('resize',function(){if(active)pos(active);},{passive:true});
+
+// Quiz mode
+var quizMode=false;
+document.querySelectorAll('.quiz-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    quizMode=!quizMode;
+    document.querySelectorAll('button.w').forEach(function(el){
+      el.style.borderBottomStyle=quizMode?'solid':'dotted';
+      el.style.color=quizMode?'#333':'#0000cc';
+    });
+    document.querySelectorAll('.quiz-btn').forEach(function(b){
+      b.textContent=quizMode?'クイズ終了':'クイズ開始';
+      b.style.background=quizMode?'#ffe0e0':'#eeeef8';
+    });
+    if(quizMode)hide();
+  });
+});
+</script>
+<footer>日本語練習 · ダブリン ｜ デイリー練習</footer>
+</body>
+</html>
