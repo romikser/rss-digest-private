@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>日本語練習 · 2026-11-13</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#e8e8f0;font:12px/1.5 "Hiragino Sans","MS PGothic","MS Gothic",Arial,sans-serif;color:#333;}
+a{color:#0000cc;text-decoration:none;}
+#hd{background:#fff;border-bottom:3px solid #cc0000;padding:4px 10px;}
+#hd-in{display:flex;align-items:center;justify-content:space-between;}
+#logo{font-size:15px;font-weight:bold;color:#cc0000;}
+#logo span{color:#333;font-weight:normal;font-size:13px;}
+#hd-r{font-size:11px;color:#666;}
+#nav{background:#eeeef8;border-bottom:1px solid #aaaacc;padding:0 10px;line-height:1;}
+#nav a{display:inline-block;padding:4px 10px;font-size:12px;color:#0000cc;border:1px solid transparent;border-bottom:none;margin-bottom:-1px;position:relative;background:transparent;text-decoration:none;}
+#nav a.on{background:#fff;border-color:#aaaacc #aaaacc #fff;color:#333;font-weight:bold;}
+#nav a:hover{background:#f5f5ff;border-color:#aaaacc;color:#333;}
+#wrap{max-width:760px;margin:6px auto;padding:0 6px;}
+.box{background:#fff;border:1px solid #aaaacc;margin-bottom:6px;overflow:hidden;}
+.bh{background:linear-gradient(180deg,#d8e8f8 0%,#b8ccec 100%);border-bottom:1px solid #aaaacc;padding:3px 8px;font-size:12px;font-weight:bold;color:#333;line-height:1.6;}
+.bh .sub{float:right;font-size:10px;font-weight:normal;color:#555;line-height:1.9;}
+.text-area{padding:14px 16px;font-size:18px;line-height:2.8;font-family:"Hiragino Sans","Meiryo","Yu Gothic",sans-serif;}
+.gnote{padding:4px 10px 6px;font-size:11px;color:#666;background:#f7f7fd;border-top:1px solid #e0e0ee;}
+ruby rt{font-size:.45em;color:#888;}
+button.w{display:inline;background:none;border:none;border-bottom:1px dotted #0000cc;color:#0000cc;font:inherit;font-size:1em;padding:0;margin:0;cursor:pointer;line-height:inherit;-webkit-tap-highlight-color:rgba(0,0,204,.15);}
+button.w:hover{color:#cc0000;border-bottom-color:#cc0000;}
+button.w.on{color:#cc0000;border-bottom-color:#cc0000;}
+#tip{display:none;position:fixed;background:#ffff99;color:#333;padding:5px 10px;font-size:11px;font-family:Arial,sans-serif;z-index:9999;white-space:nowrap;border:1px solid #cccc00;box-shadow:2px 2px 4px rgba(0,0,0,.25);pointer-events:none;line-height:1.5;}
+#tip.on{display:block;}
+#tip::after{content:'';position:absolute;left:var(--ax,50%);transform:translateX(-50%);border:5px solid transparent;}
+#tip.up::after{bottom:100%;border-bottom-color:#cccc00;}
+#tip.dn::after{top:100%;border-top-color:#cccc00;}
+.ktable{width:100%;border-collapse:collapse;font-size:12px;margin-top:0;}
+.ktable th{background:#eeeef8;padding:4px 8px;text-align:left;border:1px solid #aaaacc;font-weight:bold;color:#333;}
+.ktable td{padding:4px 8px;border:1px solid #e0e0ee;}
+.ktable td:first-child{font-size:15px;font-family:"Hiragino Sans","Meiryo",sans-serif;width:2.5em;}
+.ktable tr:nth-child(even) td{background:#f7f7fd;}
+.quiz-bar{padding:5px 10px;background:#fff3cc;border-top:1px solid #cccc00;font-size:12px;display:flex;align-items:center;gap:10px;}
+.quiz-btn{padding:2px 10px;background:#eeeef8;border:1px solid #aaaacc;color:#0000cc;font-size:12px;cursor:pointer;font-family:inherit;}
+.quiz-btn:hover{background:#d8e8f8;}
+.tadoku-intro{padding:10px 12px 4px;font-size:13px;line-height:1.55;}
+.tadoku-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:8px 12px 12px;}
+.tadoku-card{display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:12px;background:#f7f7fd;border:1px solid #d9d9eb;border-radius:3px;min-width:0;}
+.tadoku-card strong{font-size:15px;line-height:1.5;overflow-wrap:anywhere;}
+.tadoku-card a{font-size:13px;font-weight:bold;}
+.tadoku-level{font-size:11px;color:#555;}
+.tadoku-credit{padding:0 12px 12px;color:#666;font-size:11px;line-height:1.5;}
+@media(max-width:520px){.tadoku-grid{grid-template-columns:1fr;}}
+footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px solid #ccc;background:#f0f0f8;margin-top:2px;}
+</style>
+</head>
+<body>
+<div id="hd"><div id="hd-in"><div id="logo">日本語練習<span> · ダブリン</span></div><div id="hd-r">2026-11-13</div></div></div>
+<div id="nav"><a href="#t1" class="on">第1テキスト</a><a href="#t2">第2テキスト</a><a href="#t3">第3テキスト</a><a href="#tadoku-picks">Tadoku N5/N4</a><a href="#vocab">語彙</a></div>
+<div id="wrap">
+<div class="box" id="t1">
+<div class="bh">① 白い箱が作る星<span class="sub">文法: 〜たら ／ 〜つもり ／ 〜のに</span></div>
+<div class="text-area"><p><ruby>町<rt>まち</rt></ruby>の<button class="w" data-en="town square"><ruby>広場<rt>ひろば</rt></ruby></button>に、<ruby>夕方<rt>ゆうがた</rt></ruby>だけ<ruby>光<rt>ひか</rt></ruby>る<ruby>新<rt>あたら</rt></ruby>しい<button class="w" data-en="artwork"><ruby>作品<rt>さくひん</rt></ruby></button>が<button class="w" data-en="was placed"><ruby>置<rt>お</rt></ruby>かれました</button>。<ruby>昼<rt>ひる</rt></ruby>に見ると、ただの白い<button class="w" data-en="box">箱</button>が三つあります。<button class="w" data-en="happened to pass by"><ruby>通<rt>とお</rt></ruby>りかかった</button>ハルは、「これが<ruby>作品<rt>さくひん</rt></ruby>なの」と友だちに<ruby>聞<rt>き</rt></ruby>きました。友だちは<button class="w" data-en="without answering"><ruby>答<rt>こた</rt></ruby>えずに</button>、日が<button class="w" data-en="to set (sun)"><ruby>落<rt>お</rt></ruby>ちる</button>まで<ruby>待<rt>ま</rt></ruby>とうと言いました。</p><p><ruby>暗<rt>くら</rt></ruby>くなったら、箱の中から<ruby>細<rt>ほそ</rt></ruby>い<ruby>光が<rt>ひかりが</rt></ruby>出て、<ruby>近<rt>ちか</rt></ruby>くの<button class="w" data-en="wall"><ruby>壁<rt>かべ</rt></ruby></button>に大きな<ruby>丸<rt>まる</rt></ruby>をかきました。ハルが箱の前に立つと、<ruby>丸<rt>まる</rt></ruby>が二つに<button class="w" data-en="split into two"><ruby>分<rt>わ</rt></ruby>かれました</button>。「<ruby>私<rt>わたし</rt></ruby>の<button class="w" data-en="shadow"><ruby>影<rt>かげ</rt></ruby></button>も<ruby>作品<rt>さくひん</rt></ruby>に入るんだね」とハルは<ruby>笑<rt>わら</rt></ruby>いました。友だちが<ruby>横<rt>よこ</rt></ruby>に来ると、二人の<ruby>影<rt>かげ</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>に小さな<ruby>星<rt>ほし</rt></ruby>ができました。</p><p><ruby>星<rt>ほし</rt></ruby>は二人が<button class="w" data-en="to move apart"><ruby>離<rt>はな</rt></ruby>れる</button>とすぐに<ruby>消<rt>き</rt></ruby>えました。ハルはもう一度<ruby>同<rt>おな</rt></ruby>じ<button class="w" data-en="place"><ruby>場所<rt>ばしょ</rt></ruby></button>に立つつもりでしたが、今度は<ruby>知<rt>し</rt></ruby>らない人に<ruby>場所<rt>ばしょ</rt></ruby>をゆずりました。その人は<ruby>星<rt>ほし</rt></ruby>を見て、後ろにいた子どもを<button class="w" data-en="called over"><ruby>呼<rt>よ</rt></ruby>びました</button>。白い箱は<ruby>動<rt>うご</rt></ruby>かないのに、<ruby>作品<rt>さくひん</rt></ruby>の<ruby>形<rt>かたち</rt></ruby>は少しずつ<ruby>変<rt>か</rt></ruby>わっていきました。</p></div>
+<div class="gnote">暗くなったら＝when it gets dark; 立つつもりでした＝intended to stand; 動かないのに＝although it does not move。</div>
+<div class="quiz-bar"><button class="quiz-btn" type="button">クイズ開始</button><span>青い言葉を押すと英訳が見られます。</span></div>
+<table class="ktable"><tr><th>漢字</th><th>読み・意味</th></tr><tr><td><ruby>広場<rt>ひろば</rt></ruby></td><td>square</td></tr><tr><td><ruby>作品<rt>さくひん</rt></ruby></td><td>artwork</td></tr><tr><td><ruby>影<rt>かげ</rt></ruby></td><td>shadow</td></tr></table>
+</div>
+<div class="box" id="t2">
+<div class="bh">② 水の底のゴーグル<span class="sub">文法: 〜てしまう ／ 〜たら ／ 〜ので</span></div>
+<div class="text-area"><p><ruby>朝<rt>あさ</rt></ruby>のプールで、ナオは<button class="w" data-en="short"><ruby>短<rt>みじか</rt></ruby>い</button><ruby>時間<rt>じかん</rt></ruby>だけ<ruby>泳<rt>およ</rt></ruby>ぐつもりでした。となりの<button class="w" data-en="swimming lane">コース</button>から「パチン」と<ruby>音<rt>おと</rt></ruby>が<ruby>聞<rt>き</rt></ruby>こえました。<ruby>女<rt>おんな</rt></ruby>の人のゴーグルの<button class="w" data-en="strap">ひも</button>が<ruby>切<rt>き</rt></ruby>れて、<ruby>片方<rt>かたほう</rt></ruby>が水に<button class="w" data-en="sank (unfortunately)"><ruby>沈<rt>しず</rt></ruby>んでしまいました</button>。ナオは<ruby>泳<rt>およ</rt></ruby>ぐのをやめて<ruby>下<rt>した</rt></ruby>を見ました。</p><p><button class="w" data-en="bottom"><ruby>底<rt>そこ</rt></ruby></button>には<ruby>青<rt>あお</rt></ruby>い<ruby>線<rt>せん</rt></ruby>があり、ゴーグルはその<ruby>線<rt>せん</rt></ruby>の<ruby>上に<rt>うえに</rt></ruby>見えました。ナオが<button class="w" data-en="when (I) tried to pick it up"><ruby>拾<rt>ひろ</rt></ruby>おうとしたら</button>、<ruby>女<rt>おんな</rt></ruby>の人は「そこは<ruby>深<rt>ふか</rt></ruby>いですよ」と言いました。二人は<button class="w" data-en="staff member"><ruby>係<rt>かかり</rt></ruby>の人</button>に<ruby>話<rt>はな</rt></ruby>して、<ruby>長<rt>なが</rt></ruby>い<button class="w" data-en="pole"><ruby>棒<rt>ぼう</rt></ruby></button>を<ruby>借<rt>か</rt></ruby>りました。<ruby>棒<rt>ぼう</rt></ruby>の<ruby>先<rt>さき</rt></ruby>にゴーグルを<ruby>引<rt>ひ</rt></ruby>っかけると、水の<ruby>上まで<rt>うえまで</rt></ruby><ruby>上<rt>あ</rt></ruby>がってきました。</p><p>ひもは<ruby>直<rt>なお</rt></ruby>らなかったので、<ruby>女<rt>おんな</rt></ruby>の人は今日は<ruby>泳<rt>およ</rt></ruby>がずに<ruby>帰<rt>かえ</rt></ruby>ると言いました。ところがナオが<button class="w" data-en="spare"><ruby>予備<rt>よび</rt></ruby></button>のゴーグルを出すと、<ruby>女<rt>おんな</rt></ruby>の人は「少しだけ<ruby>借<rt>か</rt></ruby>りてもいいですか」と<ruby>聞<rt>き</rt></ruby>きました。二人は<ruby>同<rt>おな</rt></ruby>じ<ruby>速<rt>はや</rt></ruby>さで<ruby>泳<rt>およ</rt></ruby>ぎ、ナオは<button class="w" data-en="plan"><ruby>予定<rt>よてい</rt></ruby></button>より<ruby>長<rt>なが</rt></ruby>く水の中にいました。<ruby>帰<rt>かえ</rt></ruby>るとき、<ruby>女<rt>おんな</rt></ruby>の人は「<ruby>次<rt>つぎ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>が<ruby>予備<rt>よび</rt></ruby>を<ruby>持<rt>も</rt></ruby>ってきます」と<ruby>笑<rt>わら</rt></ruby>いました。</p></div>
+<div class="gnote">沈んでしまいました＝ended up sinking; 拾おうとしたら＝when he tried to retrieve it; 直らなかったので＝because it could not be fixed。</div>
+<div class="quiz-bar"><button class="quiz-btn" type="button">クイズ開始</button><span>青い言葉を押すと英訳が見られます。</span></div>
+<table class="ktable"><tr><th>漢字</th><th>読み・意味</th></tr><tr><td><ruby>沈<rt>しず</rt></ruby></td><td>sink</td></tr><tr><td><ruby>底<rt>そこ</rt></ruby></td><td>bottom</td></tr><tr><td><ruby>予備<rt>よび</rt></ruby></td><td>spare</td></tr></table>
+</div>
+<div class="box" id="t3">
+<div class="bh">③ 赤い糸が二本<span class="sub">文法: 〜まま ／ 〜ば ／ 〜と</span></div>
+<div class="text-area"><p><ruby>駅<rt>えき</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くの<button class="w" data-en="clothing repair shop"><ruby>洋服<rt>ようふく</rt></ruby>の<ruby>修理<rt>しゅうり</rt></ruby>店</button>へ、タクは<ruby>上着<rt>うわぎ</rt></ruby>を<ruby>持<rt>も</rt></ruby>っていきました。<button class="w" data-en="pocket">ポケット</button>が<ruby>開<rt>あ</rt></ruby>いたままで、<ruby>物<rt>もの</rt></ruby>が<button class="w" data-en="likely to fall"><ruby>落<rt>お</rt></ruby>ちそう</button>だったからです。店の人は「ここだけ<button class="w" data-en="if (we) sew"><ruby>縫<rt>ぬ</rt></ruby>えば</button>、まだ<ruby>着<rt>き</rt></ruby>られますよ」と言いました。タクは<ruby>新品<rt>しんぴん</rt></ruby>を<ruby>買<rt>か</rt></ruby>うより、これを<ruby>直<rt>なお</rt></ruby>したいと思っていました。</p><p><button class="w" data-en="work; repair work"><ruby>作業<rt>さぎょう</rt></ruby></button>を<ruby>待<rt>ま</rt></ruby>つ<ruby>間<rt>あいだ</rt></ruby>、店の人が<ruby>古<rt>ふる</rt></ruby>い<button class="w" data-en="thread"><ruby>糸<rt>いと</rt></ruby></button>を一本見せました。「前にだれかが、ちがう<ruby>色<rt>いろ</rt></ruby>で<ruby>直<rt>なお</rt></ruby>したようですね」。タクは<button class="w" data-en="did not remember"><ruby>覚<rt>おぼ</rt></ruby>えていませんでした</button>が、<ruby>上着<rt>うわぎ</rt></ruby>をよく見ると、<ruby>左<rt>ひだり</rt></ruby>のそでにも<ruby>赤<rt>あか</rt></ruby>い<ruby>糸<rt>いと</rt></ruby>がありました。店の人は「<ruby>今回<rt>こんかい</rt></ruby>も<ruby>赤<rt>あか</rt></ruby>にしますか、それとも<ruby>目立<rt>めだ</rt></ruby>たない<ruby>色<rt>いろ</rt></ruby>にしますか」と<ruby>聞<rt>き</rt></ruby>きました。</p><p>タクは少し<ruby>考<rt>かんが</rt></ruby>えてから、<ruby>赤<rt>あか</rt></ruby>でお<ruby>願<rt>ねが</rt></ruby>いしますと<ruby>答<rt>こた</rt></ruby>えました。できあがったポケットには、<ruby>短<rt>みじか</rt></ruby>い<ruby>赤<rt>あか</rt></ruby>い<ruby>線<rt>せん</rt></ruby>が一本<button class="w" data-en="had been added"><ruby>増<rt>ふ</rt></ruby>えていました</button>。<ruby>上着<rt>うわぎ</rt></ruby>を<ruby>着<rt>き</rt></ruby>ると、<ruby>赤<rt>あか</rt></ruby>い<ruby>線<rt>せん</rt></ruby>が<ruby>左右<rt>さゆう</rt></ruby>で<button class="w" data-en="facing each other"><ruby>向<rt>む</rt></ruby>かい合って</button>見えました。タクは<ruby>帰<rt>かえ</rt></ruby>りの<ruby>電車<rt>でんしゃ</rt></ruby>で、前の<ruby>修理<rt>しゅうり</rt></ruby>はいつ、だれがしてくれたのか<ruby>考<rt>かんが</rt></ruby>えました。</p></div>
+<div class="gnote">開いたまま＝left open; 縫えば＝if sewn; 着ると＝when he put it on。</div>
+<div class="quiz-bar"><button class="quiz-btn" type="button">クイズ開始</button><span>青い言葉を押すと英訳が見られます。</span></div>
+<table class="ktable"><tr><th>漢字</th><th>読み・意味</th></tr><tr><td><ruby>修理<rt>しゅうり</rt></ruby></td><td>repair</td></tr><tr><td><ruby>縫<rt>ぬ</rt></ruby></td><td>sew</td></tr><tr><td><ruby>糸<rt>いと</rt></ruby></td><td>thread</td></tr></table>
+</div>
+<section class="box" id="tadoku-picks"><div class="bh">Tadoku · 今日の読みもの <span class="sub">Free graded readers</span></div><div class="tadoku-intro">Two real Japanese books alongside today’s practice texts. Pick either one; skip difficult words and change books if it feels too hard.</div><div class="tadoku-grid"><div class="tadoku-card" data-level="1"><span class="tadoku-level">N5 · Tadoku Level 1</span><strong>京都のかえると大阪のかえる</strong><a href="https://tadoku.org/japanese/book/64041/" target="_blank" rel="noopener noreferrer" aria-label="Read 京都のかえると大阪のかえる on Tadoku (opens in new tab)">Read on Tadoku ↗</a></div><div class="tadoku-card" data-level="2"><span class="tadoku-level">N4 · Tadoku Level 2</span><strong>鏡のない村</strong><a href="https://tadoku.org/japanese/book/61371/" target="_blank" rel="noopener noreferrer" aria-label="Read 鏡のない村 on Tadoku (opens in new tab)">Read on Tadoku ↗</a></div></div><p class="tadoku-credit">Books by <a href="https://tadoku.org/japanese/en/" target="_blank" rel="noopener noreferrer">NPO多言語多読</a>. Read on Tadoku; books are not hosted here. Levels 1/2 correspond approximately to JLPT N5/N4.</p></section>
+</div>
+<div id="tip"></div>
+<script>
+var tip=document.getElementById('tip'),active=null;
+function pos(el){
+  var r=el.getBoundingClientRect(),vw=window.innerWidth;
+  var tw=Math.min(300,vw*.9);
+  tip.style.maxWidth=tw+'px';
+  var cx=r.left+r.width/2;
+  var left=Math.max(8,Math.min(cx-tw/2,vw-tw-8));
+  tip.style.left=left+'px';
+  var ax=Math.max(12,Math.min(cx-left,tw-12));
+  tip.style.setProperty('--ax',ax+'px');
+  var th=tip.offsetHeight||30;
+  if(r.top>=th+12){tip.style.top=(r.top-th-8)+'px';tip.className='on dn';}
+  else{tip.style.top=(r.bottom+8)+'px';tip.className='on up';}
+}
+function show(el){
+  if(active)active.classList.remove('on');
+  active=el;el.classList.add('on');
+  tip.textContent=el.getAttribute('data-en');
+  tip.classList.add('on');pos(el);
+}
+function hide(){if(active){active.classList.remove('on');active=null;}tip.className='';}
+document.querySelectorAll('button.w').forEach(function(el){
+  el.addEventListener('click',function(e){e.stopPropagation();active===this?hide():show(this);});
+});
+document.addEventListener('click',hide);
+window.addEventListener('scroll',function(){if(active)pos(active);},{passive:true});
+window.addEventListener('resize',function(){if(active)pos(active);},{passive:true});
+
+// Quiz mode
+var quizMode=false;
+document.querySelectorAll('.quiz-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    quizMode=!quizMode;
+    document.querySelectorAll('button.w').forEach(function(el){
+      el.style.borderBottomStyle=quizMode?'solid':'dotted';
+      el.style.color=quizMode?'#333':'#0000cc';
+    });
+    document.querySelectorAll('.quiz-btn').forEach(function(b){
+      b.textContent=quizMode?'クイズ終了':'クイズ開始';
+      b.style.background=quizMode?'#ffe0e0':'#eeeef8';
+    });
+    if(quizMode)hide();
+  });
+});
+</script>
+<footer>日本語練習 · ダブリン ｜ デイリー練習</footer>
+</body>
+</html>
