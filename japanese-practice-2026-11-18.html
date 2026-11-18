@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>日本語練習 · 2026-11-18</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#e8e8f0;font:12px/1.5 "Hiragino Sans","MS PGothic","MS Gothic",Arial,sans-serif;color:#333;}
+a{color:#0000cc;text-decoration:none;}
+#hd{background:#fff;border-bottom:3px solid #cc0000;padding:4px 10px;}
+#hd-in{display:flex;align-items:center;justify-content:space-between;}
+#logo{font-size:15px;font-weight:bold;color:#cc0000;}
+#logo span{color:#333;font-weight:normal;font-size:13px;}
+#hd-r{font-size:11px;color:#666;}
+#nav{background:#eeeef8;border-bottom:1px solid #aaaacc;padding:0 10px;line-height:1;}
+#nav a{display:inline-block;padding:4px 10px;font-size:12px;color:#0000cc;border:1px solid transparent;border-bottom:none;margin-bottom:-1px;position:relative;background:transparent;text-decoration:none;}
+#nav a.on{background:#fff;border-color:#aaaacc #aaaacc #fff;color:#333;font-weight:bold;}
+#nav a:hover{background:#f5f5ff;border-color:#aaaacc;color:#333;}
+#wrap{max-width:760px;margin:6px auto;padding:0 6px;}
+.box{background:#fff;border:1px solid #aaaacc;margin-bottom:6px;overflow:hidden;}
+.bh{background:linear-gradient(180deg,#d8e8f8 0%,#b8ccec 100%);border-bottom:1px solid #aaaacc;padding:3px 8px;font-size:12px;font-weight:bold;color:#333;line-height:1.6;}
+.bh .sub{float:right;font-size:10px;font-weight:normal;color:#555;line-height:1.9;}
+.text-area{padding:14px 16px;font-size:18px;line-height:2.8;font-family:"Hiragino Sans","Meiryo","Yu Gothic",sans-serif;}
+.gnote{padding:4px 10px 6px;font-size:11px;color:#666;background:#f7f7fd;border-top:1px solid #e0e0ee;}
+ruby rt{font-size:.45em;color:#888;}
+button.w{display:inline;background:none;border:none;border-bottom:1px dotted #0000cc;color:#0000cc;font:inherit;font-size:1em;padding:0;margin:0;cursor:pointer;line-height:inherit;-webkit-tap-highlight-color:rgba(0,0,204,.15);}
+button.w:hover{color:#cc0000;border-bottom-color:#cc0000;}
+button.w.on{color:#cc0000;border-bottom-color:#cc0000;}
+#tip{display:none;position:fixed;background:#ffff99;color:#333;padding:5px 10px;font-size:11px;font-family:Arial,sans-serif;z-index:9999;white-space:nowrap;border:1px solid #cccc00;box-shadow:2px 2px 4px rgba(0,0,0,.25);pointer-events:none;line-height:1.5;}
+#tip.on{display:block;}
+#tip::after{content:'';position:absolute;left:var(--ax,50%);transform:translateX(-50%);border:5px solid transparent;}
+#tip.up::after{bottom:100%;border-bottom-color:#cccc00;}
+#tip.dn::after{top:100%;border-top-color:#cccc00;}
+.ktable{width:100%;border-collapse:collapse;font-size:12px;margin-top:0;}
+.ktable th{background:#eeeef8;padding:4px 8px;text-align:left;border:1px solid #aaaacc;font-weight:bold;color:#333;}
+.ktable td{padding:4px 8px;border:1px solid #e0e0ee;}
+.ktable td:first-child{font-size:15px;font-family:"Hiragino Sans","Meiryo",sans-serif;width:2.5em;}
+.ktable tr:nth-child(even) td{background:#f7f7fd;}
+.quiz-bar{padding:5px 10px;background:#fff3cc;border-top:1px solid #cccc00;font-size:12px;display:flex;align-items:center;gap:10px;}
+.quiz-btn{padding:2px 10px;background:#eeeef8;border:1px solid #aaaacc;color:#0000cc;font-size:12px;cursor:pointer;font-family:inherit;}
+.quiz-btn:hover{background:#d8e8f8;}
+.tadoku-intro{padding:10px 12px 4px;font-size:13px;line-height:1.55;}
+.tadoku-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:8px 12px 12px;}
+.tadoku-card{display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:12px;background:#f7f7fd;border:1px solid #d9d9eb;border-radius:3px;min-width:0;}
+.tadoku-card strong{font-size:15px;line-height:1.5;overflow-wrap:anywhere;}
+.tadoku-card a{font-size:13px;font-weight:bold;}
+.tadoku-level{font-size:11px;color:#555;}
+.tadoku-credit{padding:0 12px 12px;color:#666;font-size:11px;line-height:1.5;}
+@media(max-width:520px){.tadoku-grid{grid-template-columns:1fr;}}
+footer{text-align:center;font-size:11px;color:#888;padding:5px;border-top:1px solid #ccc;background:#f0f0f8;margin-top:2px;}
+</style>
+</head>
+<body>
+<div id="hd"><div id="hd-in"><div id="logo">日本語練習<span> · ダブリン</span></div><div id="hd-r">2026-11-18</div></div></div>
+<div id="nav"><a href="#t1" class="on">第1テキスト</a><a href="#t2">第2テキスト</a><a href="#t3">第3テキスト</a><a href="#tadoku-picks">Tadoku N5/N4</a><a href="#vocab">語彙</a></div>
+<div id="wrap">
+<div class="box" id="t1"><div class="bh">① たねの名まえ<span class="sub">文法: 〜ておく ／ 〜のに ／ 〜なら</span></div><div class="text-area"><p><ruby>町<rt>まち</rt></ruby>の<button class="w" data-en="shared garden"><ruby>共同<rt>きょうどう</rt></ruby>の<ruby>畑<rt>はたけ</rt></ruby></button>で、サラは<button class="w" data-en="seeds">たね</button>を<ruby>分<rt>わ</rt></ruby>ける<ruby>日<rt>ひ</rt></ruby>のために、<button class="w" data-en="small packets"><ruby>小<rt>ちい</rt></ruby>さな<ruby>袋<rt>ふくろ</rt></ruby></button>をならべていました。<ruby>袋<rt>ふくろ</rt></ruby>には「トマト」と<ruby>書<rt>か</rt></ruby>いてあります。けれども、となりの<ruby>人<rt>ひと</rt></ruby>が「このたねは、トマトよりずっと<ruby>大<rt>おお</rt></ruby>きいよ」と<ruby>言<rt>い</rt></ruby>いました。サラは<button class="w" data-en="photo from last year"><ruby>去年<rt>きょねん</rt></ruby>の<ruby>写真<rt>しゃしん</rt></ruby></button>を<ruby>見<rt>み</rt></ruby>たのに、<ruby>名前<rt>なまえ</rt></ruby>を<ruby>書<rt>か</rt></ruby>いたところはうつっていません。<ruby>間違<rt>まちが</rt></ruby>えたまま<ruby>配<rt>くば</rt></ruby>ると、みんなの<ruby>畑<rt>はたけ</rt></ruby>に<ruby>何<rt>なに</rt></ruby>が<ruby>出<rt>で</rt></ruby>るか<ruby>分<rt>わ</rt></ruby>からなくなります。</p><p>そこで、サラは<button class="w" data-en="without opening the packets"><ruby>袋<rt>ふくろ</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けずに</button>、<ruby>古<rt>ふる</rt></ruby>い<ruby>箱<rt>はこ</rt></ruby>を<ruby>調<rt>しら</rt></ruby>べました。<ruby>箱<rt>はこ</rt></ruby>の<ruby>底<rt>そこ</rt></ruby>に、<button class="w" data-en="illustrated note"><ruby>絵<rt>え</rt></ruby>をかいた<ruby>紙<rt>かみ</rt></ruby></button>が<ruby>一枚<rt>いちまい</rt></ruby>だけ<ruby>残<rt>のこ</rt></ruby>っていました。<ruby>絵<rt>え</rt></ruby>には、<ruby>大<rt>おお</rt></ruby>きなたねのよこに「かぼちゃ」とあります。サラは<button class="w" data-en="new labels"><ruby>新<rt>あたら</rt></ruby>しい<ruby>札<rt>ふだ</rt></ruby></button>を<ruby>作<rt>つく</rt></ruby>っておき、「<ruby>自信<rt>じしん</rt></ruby>がないものなら、<ruby>名前<rt>なまえ</rt></ruby>を<ruby>書<rt>か</rt></ruby>かないで」と<ruby>伝<rt>つた</rt></ruby>えました。<ruby>次<rt>つぎ</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>は<button class="w" data-en="plain white packet"><ruby>白<rt>しろ</rt></ruby>い<ruby>袋<rt>ふくろ</rt></ruby></button>を<ruby>持<rt>も</rt></ruby>ってきて、「これは<ruby>何<rt>なん</rt></ruby>でしょう」と<ruby>笑<rt>わら</rt></ruby>いました。サラは「<ruby>育<rt>そだ</rt></ruby>てたら<ruby>分<rt>わ</rt></ruby>かりますね」と<ruby>答<rt>こた</rt></ruby>え、<ruby>袋<rt>ふくろ</rt></ruby>に「お<ruby>楽<rt>たの</rt></ruby>しみ」と<ruby>書<rt>か</rt></ruby>きました。</p></div><div class="gnote">「〜ておく」prepares labels; 「〜のに」 contrasts an expectation; 「〜なら」 sets a condition.</div><div class="quiz-bar"><button class="quiz-btn" type="button">クイズ開始</button> Tap a blue phrase for its meaning.</div><table class="ktable"><tr><th>漢字</th><th>Meaning</th></tr><tr><td><ruby>畑<rt>はたけ</rt></ruby></td><td>field / garden plot</td></tr><tr><td><ruby>袋<rt>ふくろ</rt></ruby></td><td>bag / packet</td></tr><tr><td><ruby>札<rt>ふだ</rt></ruby></td><td>label / tag</td></tr></table></div>
+<div class="box" id="t2"><div class="bh">② まだ<ruby>熱<rt>あつ</rt></ruby>い<ruby>皿<rt>さら</rt></ruby><span class="sub">文法: 〜ところ ／ 〜てしまう ／ 〜より</span></div><div class="text-area"><p><ruby>陶芸<rt>とうげい</rt></ruby>の<ruby>教室<rt>きょうしつ</rt></ruby>で、ユキは<button class="w" data-en="blue plate"><ruby>青<rt>あお</rt></ruby>い<ruby>皿<rt>さら</rt></ruby></button>を<ruby>受<rt>う</rt></ruby>け<ruby>取<rt>と</rt></ruby>りに<ruby>来<rt>き</rt></ruby>ました。<ruby>先生<rt>せんせい</rt></ruby>が<button class="w" data-en="kiln"><ruby>窯<rt>かま</rt></ruby></button>を<ruby>開<rt>あ</rt></ruby>けたところで、<ruby>皿<rt>さら</rt></ruby>はまだ<ruby>熱<rt>あつ</rt></ruby>そうです。ユキは「<ruby>私<rt>わたし</rt></ruby>のはどれですか」と<ruby>聞<rt>き</rt></ruby>きました。<ruby>同<rt>おな</rt></ruby>じ<ruby>青<rt>あお</rt></ruby>い<ruby>皿<rt>さら</rt></ruby>が<button class="w" data-en="two flat objects"><ruby>二枚<rt>にまい</rt></ruby></button>あり、<button class="w" data-en="mark on the underside"><ruby>底<rt>そこ</rt></ruby>の<ruby>印<rt>しるし</rt></ruby></button>もよく<ruby>似<rt>に</rt></ruby>ています。<ruby>一枚<rt>いちまい</rt></ruby>には、ふちに<ruby>小<rt>ちい</rt></ruby>さな<ruby>白<rt>しろ</rt></ruby>い<ruby>点<rt>てん</rt></ruby>がありました。ユキは<ruby>自分<rt>じぶん</rt></ruby>がその<ruby>点<rt>てん</rt></ruby>をつけてしまったと<ruby>思<rt>おも</rt></ruby>いました。</p><p>でも、もう<ruby>一人<rt>ひとり</rt></ruby>の<ruby>生徒<rt>せいと</rt></ruby>は「それは<ruby>私<rt>わたし</rt></ruby>の<button class="w" data-en="identifying mark"><ruby>目印<rt>めじるし</rt></ruby></button>です」と<ruby>言<rt>い</rt></ruby>いました。ユキはあわてて<ruby>謝<rt>あやま</rt></ruby>り、<ruby>手<rt>て</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>っこめました。<ruby>先生<rt>せんせい</rt></ruby>は<button class="w" data-en="until it cools"><ruby>冷<rt>さ</rt></ruby>めるまで</button><ruby>待<rt>ま</rt></ruby>ってから、<ruby>皿<rt>さら</rt></ruby>の<ruby>底<rt>そこ</rt></ruby>を<ruby>見<rt>み</rt></ruby>せました。もう<ruby>一枚<rt>いちまい</rt></ruby>には、ユキが<ruby>昨日<rt>きのう</rt></ruby>かいた<button class="w" data-en="small circle"><ruby>小<rt>ちい</rt></ruby>さな<ruby>丸<rt>まる</rt></ruby></button>がありました。<ruby>写真<rt>しゃしん</rt></ruby>より<ruby>色<rt>いろ</rt></ruby>が<ruby>深<rt>ふか</rt></ruby>くなっていて、すぐには<ruby>分<rt>わ</rt></ruby>からなかったのです。「<ruby>失敗<rt>しっぱい</rt></ruby>したと<ruby>思<rt>おも</rt></ruby>ったのに」とユキが<ruby>言<rt>い</rt></ruby>うと、<ruby>先生<rt>せんせい</rt></ruby>は「<ruby>火<rt>ひ</rt></ruby>が<ruby>色<rt>いろ</rt></ruby>を<ruby>変<rt>か</rt></ruby>えたんだよ」と<ruby>答<rt>こた</rt></ruby>えました。ユキは<button class="w" data-en="white dot"><ruby>白<rt>しろ</rt></ruby>い<ruby>点<rt>てん</rt></ruby></button>のないほうを<ruby>選<rt>えら</rt></ruby>び、<ruby>両手<rt>りょうて</rt></ruby>で<ruby>持<rt>も</rt></ruby>って<ruby>帰<rt>かえ</rt></ruby>りました。</p></div><div class="gnote">「〜ところ」marks the moment something has just happened; 「〜てしまう」 expresses an unintended act; 「〜より」 compares.</div><div class="quiz-bar"><button class="quiz-btn" type="button">クイズ開始</button> Tap a blue phrase for its meaning.</div><table class="ktable"><tr><th>漢字</th><th>Meaning</th></tr><tr><td><ruby>窯<rt>かま</rt></ruby></td><td>kiln</td></tr><tr><td><ruby>印<rt>しるし</rt></ruby></td><td>mark</td></tr><tr><td><ruby>皿<rt>さら</rt></ruby></td><td>plate</td></tr></table></div>
+<div class="box" id="t3"><div class="bh">③ もう<ruby>一<rt>ひと</rt></ruby>つの<ruby>見出<rt>みだ</rt></ruby>し<span class="sub">文法: 〜ことになる ／ 〜まま ／ 〜ようになる</span></div><div class="text-area"><p><ruby>近所<rt>きんじょ</rt></ruby>の<button class="w" data-en="small local paper"><ruby>小<rt>ちい</rt></ruby>さな<ruby>新聞<rt>しんぶん</rt></ruby></button>に、<ruby>読者<rt>どくしゃ</rt></ruby>から<button class="w" data-en="short letter"><ruby>短<rt>みじか</rt></ruby>い<ruby>手紙<rt>てがみ</rt></ruby></button>が<ruby>届<rt>とど</rt></ruby>きました。「<ruby>私<rt>わたし</rt></ruby>の<ruby>通<rt>とお</rt></ruby>りには、<ruby>朝<rt>あさ</rt></ruby>だけ<button class="w" data-en="long shadow"><ruby>長<rt>なが</rt></ruby>い<ruby>影<rt>かげ</rt></ruby></button>ができます」と<ruby>書<rt>か</rt></ruby>いてあります。<ruby>編集<rt>へんしゅう</rt></ruby>をするレナは、それを<ruby>来週<rt>らいしゅう</rt></ruby>の<ruby>紙面<rt>しめん</rt></ruby>にのせることにしました。ところが、<ruby>手紙<rt>てがみ</rt></ruby>には<ruby>通<rt>とお</rt></ruby>りの<ruby>名前<rt>なまえ</rt></ruby>がありません。<button class="w" data-en="address"><ruby>住所<rt>じゅうしょ</rt></ruby></button>もないので、<ruby>返事<rt>へんじ</rt></ruby>を<ruby>出<rt>だ</rt></ruby>すこともできません。レナは<ruby>紙<rt>かみ</rt></ruby>を<ruby>机<rt>つくえ</rt></ruby>に<ruby>置<rt>お</rt></ruby>いたまま、<ruby>朝<rt>あさ</rt></ruby>の<ruby>町<rt>まち</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>きました。</p><p><ruby>日<rt>ひ</rt></ruby>が<ruby>上<rt>あ</rt></ruby>がると、<button class="w" data-en="building shadows"><ruby>建物<rt>たてもの</rt></ruby>の<ruby>影<rt>かげ</rt></ruby></button>はどんどん<ruby>短<rt>みじか</rt></ruby>くなります。<ruby>細<rt>ほそ</rt></ruby>い<ruby>道<rt>みち</rt></ruby>に<ruby>入<rt>はい</rt></ruby>ると、<button class="w" data-en="utility pole"><ruby>電柱<rt>でんちゅう</rt></ruby></button>の<ruby>影<rt>かげ</rt></ruby>だけが、<ruby>道<rt>みち</rt></ruby>の<ruby>先<rt>さき</rt></ruby>まで<ruby>伸<rt>の</rt></ruby>びていました。レナはそこに<ruby>立<rt>た</rt></ruby>って、<ruby>道<rt>みち</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>を<button class="w" data-en="notebook"><ruby>手帳<rt>てちょう</rt></ruby></button>に<ruby>書<rt>か</rt></ruby>きました。<ruby>新聞<rt>しんぶん</rt></ruby>には「<ruby>影<rt>かげ</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてくれた<ruby>人<rt>ひと</rt></ruby>へ」と<button class="w" data-en="headline"><ruby>見出<rt>みだ</rt></ruby>し</button>をつけました。<ruby>翌週<rt>よくしゅう</rt></ruby>、<ruby>同<rt>おな</rt></ruby>じ<ruby>字<rt>じ</rt></ruby>の<ruby>手紙<rt>てがみ</rt></ruby>がまた<ruby>来<rt>き</rt></ruby>ました。「<ruby>道<rt>みち</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>は<ruby>合<rt>あ</rt></ruby>っています。でも<ruby>影<rt>かげ</rt></ruby>は、<ruby>毎日<rt>まいにち</rt></ruby><ruby>少<rt>すこ</rt></ruby>しずつ<ruby>動<rt>うご</rt></ruby>くんですよ」。レナはその<ruby>日<rt>ひ</rt></ruby>から、<ruby>新聞<rt>しんぶん</rt></ruby>を<ruby>配<rt>くば</rt></ruby>るとき、<button class="w" data-en="line at her feet"><ruby>足元<rt>あしもと</rt></ruby>の<ruby>線<rt>せん</rt></ruby></button>も<ruby>見<rt>み</rt></ruby>るようになりました。</p></div><div class="gnote">「〜ことになる」states a decision; 「〜まま」 leaves something unchanged; 「〜ようになる」 describes a new habit.</div><div class="quiz-bar"><button class="quiz-btn" type="button">クイズ開始</button> Tap a blue phrase for its meaning.</div><table class="ktable"><tr><th>漢字</th><th>Meaning</th></tr><tr><td><ruby>影<rt>かげ</rt></ruby></td><td>shadow</td></tr><tr><td><ruby>見出し<rt>みだし</rt></ruby></td><td>headline</td></tr><tr><td><ruby>電柱<rt>でんちゅう</rt></ruby></td><td>utility pole</td></tr></table></div>
+<section class="box" id="tadoku-picks"><div class="bh">Tadoku · 今日の読みもの <span class="sub">Free graded readers</span></div><div class="tadoku-intro">Two real Japanese books alongside today’s practice texts. Pick either one; skip difficult words and change books if it feels too hard.</div><div class="tadoku-grid"><div class="tadoku-card" data-level="1"><span class="tadoku-level">N5 · Tadoku Level 1</span><strong>ピーターラビットのお話</strong><a href="https://tadoku.org/japanese/book/7348/" target="_blank" rel="noopener noreferrer" aria-label="Read ピーターラビットのお話 on Tadoku (opens in new tab)">Read on Tadoku ↗</a></div><div class="tadoku-card" data-level="2"><span class="tadoku-level">N4 · Tadoku Level 2</span><strong>吉四六さんの話 ～舟のお金～</strong><a href="https://tadoku.org/japanese/book/3155/" target="_blank" rel="noopener noreferrer" aria-label="Read 吉四六さんの話 ～舟のお金～ on Tadoku (opens in new tab)">Read on Tadoku ↗</a></div></div><p class="tadoku-credit">Books by <a href="https://tadoku.org/japanese/en/" target="_blank" rel="noopener noreferrer">NPO多言語多読</a>. Read on Tadoku; books are not hosted here. Levels 1/2 correspond approximately to JLPT N5/N4.</p></section>
+</div>
+<div id="tip"></div>
+<script>
+var tip=document.getElementById('tip'),active=null;
+function pos(el){
+  var r=el.getBoundingClientRect(),vw=window.innerWidth;
+  var tw=Math.min(300,vw*.9);
+  tip.style.maxWidth=tw+'px';
+  var cx=r.left+r.width/2;
+  var left=Math.max(8,Math.min(cx-tw/2,vw-tw-8));
+  tip.style.left=left+'px';
+  var ax=Math.max(12,Math.min(cx-left,tw-12));
+  tip.style.setProperty('--ax',ax+'px');
+  var th=tip.offsetHeight||30;
+  if(r.top>=th+12){tip.style.top=(r.top-th-8)+'px';tip.className='on dn';}
+  else{tip.style.top=(r.bottom+8)+'px';tip.className='on up';}
+}
+function show(el){
+  if(active)active.classList.remove('on');
+  active=el;el.classList.add('on');
+  tip.textContent=el.getAttribute('data-en');
+  tip.classList.add('on');pos(el);
+}
+function hide(){if(active){active.classList.remove('on');active=null;}tip.className='';}
+document.querySelectorAll('button.w').forEach(function(el){
+  el.addEventListener('click',function(e){e.stopPropagation();active===this?hide():show(this);});
+});
+document.addEventListener('click',hide);
+window.addEventListener('scroll',function(){if(active)pos(active);},{passive:true});
+window.addEventListener('resize',function(){if(active)pos(active);},{passive:true});
+
+// Quiz mode
+var quizMode=false;
+document.querySelectorAll('.quiz-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    quizMode=!quizMode;
+    document.querySelectorAll('button.w').forEach(function(el){
+      el.style.borderBottomStyle=quizMode?'solid':'dotted';
+      el.style.color=quizMode?'#333':'#0000cc';
+    });
+    document.querySelectorAll('.quiz-btn').forEach(function(b){
+      b.textContent=quizMode?'クイズ終了':'クイズ開始';
+      b.style.background=quizMode?'#ffe0e0':'#eeeef8';
+    });
+    if(quizMode)hide();
+  });
+});
+</script>
+<footer>日本語練習 · ダブリン ｜ デイリー練習</footer>
+</body>
+</html>
